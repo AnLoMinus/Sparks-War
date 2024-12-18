@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר | מלחמת הניצוצות</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">✉️ צור קשר</h1>
+        <p>נשמח לשמוע ממך ולענות על כל שאלה!</p>
+        <div class="header-description">
+            <p>הצטרפו למסע המופלא של מלחמת הניצוצות. שתפו אותנו ברעיונות, שאלות או כל דבר אחר שתרצו לספר.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="recruitment-section">
+            <h2>✨ הצטרפו לשורות הלוחמים</h2>
+            <div class="recruitment-grid">
+                <div class="recruitment-card">
+                    <div class="card-icon">🌟</div>
+                    <h3>חיל האורות</h3>
+                    <p>מחפשים לוחמי אור בעלי יכולת הגנה, ריפוי והארה</p>
+                    <ul class="requirements-list">
+                        <li>✨ יכולת שליטה באור</li>
+                        <li>💫 אמונה חזקה</li>
+                        <li>🛡️ כושר הגנה</li>
+                    </ul>
+                    <button class="recruit-btn" data-force="lights">
+                        <span class="btn-icon">⚔️</span>
+                        <span class="btn-text">הגש מועמדות לחיל האורות</span>
+                    </button>
+                </div>
+
+                <div class="recruitment-card">
+                    <div class="card-icon">🧹</div>
+                    <h3>חיל מטאטא</h3>
+                    <p>דרושים מטהרי שטח ומנקי אנרגיות שליליות</p>
+                    <ul class="requirements-list">
+                        <li>🧹 יכולת טיהור</li>
+                        <li>💨 שליטה ברוחות</li>
+                        <li>🌪️ ניקוי אנרגטי</li>
+                    </ul>
+                    <button class="recruit-btn" data-force="broom">
+                        <span class="btn-icon">⚔️</span>
+                        <span class="btn-text">הגש מועמדות לחיל מטאטא</span>
+                    </button>
+                </div>
+
+                <div class="recruitment-card">
+                    <div class="card-icon">⚔️</div>
+                    <h3>חיל גבורת האור</h3>
+                    <p>מחפשים לוחמים אמיצים למאבק בכוחות האופל</p>
+                    <ul class="requirements-list">
+                        <li>⚔️ כושר לחימה</li>
+                        <li>🎯 דיוק ומיומנות</li>
+                        <li>💪 חוסן נפשי</li>
+                    </ul>
+                    <button class="recruit-btn" data-force="warriors">
+                        <span class="btn-icon">⚔️</span>
+                        <span class="btn-text">הגש מועמדות לחיל גבורת האור</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="contact-wrapper">
+            <section class="contact-form-section">
+                <h2>🌟 טופס יצירת קשר</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">שם מלא:</label>
+                        <input type="text" id="name" name="name" required placeholder="הכנס את שמך המלא">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">אימייל:</label>
+                        <input type="email" id="email" name="email" required placeholder="הכנס את כתובת האימייל שלך">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">נושא הפנייה:</label>
+                        <select id="subject" name="subject">
+                            <option value="general">פנייה כללית</option>
+                            <option value="bug">דיווח על באג</option>
+                            <option value="suggestion">הצעה לשיפור</option>
+                            <option value="collaboration">הצעת שיתוף פעולה</option>
+                            <option value="other">אחר</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">תוכן ההודעה:</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="כתוב את הודעתך כאן..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-icon">✨</span>
+                        <span class="btn-text">שלח הודעה</span>
+                    </button>
+                </form>
+            </section>
+
+            <section class="contact-info-section">
+                <h2>💫 דרכים נוספות ליצירת קשר</h2>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="card-icon">📱</div>
+                        <h3>טלפון</h3>
+                        <p>03-1234567</p>
+                        <p class="card-subtitle">זמין בימים א'-ה' | 9:00-17:00</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="card-icon">📧</div>
+                        <h3>אימייל</h3>
+                        <p>contact@wots.com</p>
+                        <p class="card-subtitle">מענה תוך 24 שעות</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="card-icon">📍</div>
+                        <h3>כתובת</h3>
+                        <p>רחוב הניצוצות 1, תל אביב</p>
+                        <p class="card-subtitle">קומה 4, משרד 420</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h3>🌐 עקבו אחרינו</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">📘 פייסבוק</a>
+                        <a href="#" class="social-icon">📸 אינסטגרם</a>
+                        <a href="#" class="social-icon">🐦 טוויטר</a>
+                        <a href="#" class="social-icon">🎮 דיסקורד</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>כל הזכויות שמורות © 2024 🌟</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // יצירת אנימציית ניצוץ
+            const sparkle = document.createElement('div');
+            sparkle.className = 'form-sparkle';
+            this.appendChild(sparkle);
+
+            // הצגת הודעת הצלחה
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.textContent = '✨ ההודעה נשלחה בהצלחה! ✨';
+            this.appendChild(successMessage);
+
+            // הסרת ההודעה והניצוץ אחרי 3 שניות
+            setTimeout(() => {
+                sparkle.remove();
+                successMessage.remove();
+                this.reset();
+            }, 3000);
+        });
+    </script>
+
+    <script>
+        // הוספת אירועי לחיצה לכפתורי הגיוס
+        document.querySelectorAll('.recruit-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const force = this.dataset.force;
+                const forceName = this.closest('.recruitment-card').querySelector('h3').textContent;
+
+                // יצירת אנימציית ניצוץ
+                const sparkle = document.createElement('div');
+                sparkle.className = 'form-sparkle';
+                this.appendChild(sparkle);
+
+                // הצגת הודעת אישור
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.textContent = `✨ בקשתך להצטרף ל${forceName} התקבלה! ✨`;
+                document.body.appendChild(successMessage);
+
+                // הסרת האנימציה וההודעה
+                setTimeout(() => {
+                    sparkle.remove();
+                    successMessage.remove();
+                    // גלילה לטופס יצירת הקשר
+                    document.querySelector('.contact-form-section').scrollIntoView({ behavior: 'smooth' });
+                    // הגדרת נושא הפנייה
+                    document.querySelector('#subject').value = 'general';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+
+</html>

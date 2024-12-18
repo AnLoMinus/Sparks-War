@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ניטור מערכת</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset some default styling */
+        body,
+        h1,
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #status {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        #data {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #f4f4f4;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>מערכת ניטור</h1>
+    </header>
+    <main>
+        <section>
+            <h2>סטטוס המערכת</h2>
+            <div id="status">
+                <p id="status-message">מחובר...</p>
+            </div>
+        </section>
+        <section>
+            <h2>נתונים אחרונים</h2>
+            <div id="data">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>זמן</th>
+                            <th>נתון</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-body">
+                        <!-- נתונים יתווספו כאן -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // פונקציה להוסיף נתונים חדשים לטבלה
+            function addData(time, data) {
+                const tableBody = document.getElementById('data-body');
+                const row = document.createElement('tr');
+                row.innerHTML = `
+            <td>${time}</td>
+            <td>${data}</td>
+        `;
+                tableBody.appendChild(row);
+            }
+
+            // פונקציה לעדכון מצב המערכת
+            function updateStatus(message) {
+                const statusMessage = document.getElementById('status-message');
+                statusMessage.textContent = message;
+            }
+
+            // דוגמה להוסיף נתונים אחרי 2 שניות
+            setTimeout(() => {
+                addData(new Date().toLocaleTimeString(), 'נתון חדש');
+                updateStatus('הנתונים עודכנו');
+            }, 2000);
+
+            // דוגמה להוסיף נתונים נוספים אחרי 5 שניות
+            setTimeout(() => {
+                addData(new Date().toLocaleTimeString(), 'נתון נוסף');
+                updateStatus('הנתונים עודכנו שוב');
+            }, 5000);
+        });
+
+    </script>
+</body>
+
+</html>

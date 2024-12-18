@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #E0E0E0;
+        }
+
+        .container {
+            background-color: #1E1E1E;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 450px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #BB86FC;
+            font-size: 24px;
+        }
+
+        .url-input {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #A1A1A1;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background-color: #2E2E2E;
+            color: #E0E0E0;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"]::placeholder {
+            color: #757575;
+        }
+
+        button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #03DAC6;
+            color: #121212;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #018786;
+        }
+
+        .results {
+            margin-top: 25px;
+        }
+
+        h2 {
+            color: #BB86FC;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        #result-output {
+            background-color: #2E2E2E;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 60px;
+            color: #E0E0E0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Content Monitoring System</h1>
+
+        <div class="url-input">
+            <label for="url">Enter Website URL:</label>
+            <input type="text" id="url" placeholder="http://example.com">
+            <button onclick="analyzeContent()">Analyze</button>
+        </div>
+
+        <div class="results">
+            <h2>Analysis Results:</h2>
+            <div id="result-output">No analysis yet.</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function analyzeContent() {
+            const url = document.getElementById('url').value;
+            const resultOutput = document.getElementById('result-output');
+
+            if (!url) {
+                resultOutput.textContent = 'Please enter a valid URL.';
+                return;
+            }
+
+            // ניתוח חכם מתקדם
+            resultOutput.textContent = 'Analyzing content at ' + url + '...\n';
+
+            // שלבי ניתוח מדומים עם לוגיקה חכמה
+            setTimeout(() => {
+                const analysisResult = analyzeUrl(url);
+                const analysisSummary = summarizeContentAnalysis(analysisResult);
+                const finalVerdict = provideFinalVerdict(analysisSummary);
+
+                resultOutput.textContent = `Content Analysis for ${url}:\n\n` +
+                    `Malicious Content: ${analysisResult.maliciousCount}\n` +
+                    `Suspicious Keywords: ${analysisResult.suspiciousKeywords.join(', ')}\n` +
+                    `Safety Level: ${finalVerdict.safetyLevel}\n` +
+                    `Recommendation: ${finalVerdict.recommendation}`;
+            }, 2000);
+        }
+
+        function analyzeUrl(url) {
+            // פונקציה מדומה לניתוח תוכן URL, ניתן לשלב API חיצוני
+            const maliciousContent = Math.random() > 0.5; // מדומה
+            const suspiciousKeywords = maliciousContent ? ['illegal', 'harmful', 'phishing'] : ['safe', 'educational'];
+
+            return {
+                maliciousCount: maliciousContent ? Math.floor(Math.random() * 5) + 1 : 0,
+                suspiciousKeywords: suspiciousKeywords
+            };
+        }
+
+        function summarizeContentAnalysis(analysisResult) {
+            // סיכום הניתוח ומסקנות
+            return {
+                highRisk: analysisResult.maliciousCount > 3,
+                moderateRisk: analysisResult.maliciousCount > 0 && analysisResult.maliciousCount <= 3,
+                lowRisk: analysisResult.maliciousCount === 0
+            };
+        }
+
+        function provideFinalVerdict(summary) {
+            // מסקנות סופיות והמלצות
+            if (summary.highRisk) {
+                return {
+                    safetyLevel: 'High Risk',
+                    recommendation: 'Avoid visiting this site.'
+                };
+            } else if (summary.moderateRisk) {
+                return {
+                    safetyLevel: 'Moderate Risk',
+                    recommendation: 'Proceed with caution.'
+                };
+            } else {
+                return {
+                    safetyLevel: 'Low Risk',
+                    recommendation: 'This site appears to be safe.'
+                };
+            }
+        }
+
+    </script>
+</body>
+
+</html>

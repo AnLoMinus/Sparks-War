@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לוח בקרה - אבטחת מידע והאקינג</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset some default styling */
+        body,
+        h1,
+        h2,
+        p,
+        button {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1e1e1e;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #controls,
+        #status,
+        #logs,
+        #settings {
+            background: #3a3a3a;
+            border: 1px solid #444;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        form button {
+            background: #28a745;
+            color: #ffffff;
+        }
+
+        form button:hover {
+            background: #218838;
+        }
+
+        #logs-container {
+            background: #1e1e1e;
+            border: 1px solid #444;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+
+    <style>
+        /* Reset some default styling */
+        body,
+        h1,
+        h2,
+        p,
+        button {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: #ffffff;
+            line-height: 1.6;
+            direction: rtl;
+            /* Set text direction to right-to-left */
+        }
+
+        header {
+            background: #1e1e1e;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        #controls,
+        #status,
+        #logs,
+        #settings {
+            background: #3a3a3a;
+            border: 1px solid #444;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            /* Align buttons correctly in RTL */
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #ffffff;
+            color: #000000;
+        }
+
+        form button {
+            background: #28a745;
+            color: #ffffff;
+        }
+
+        form button:hover {
+            background: #218838;
+        }
+
+        #logs-container {
+            background: #1e1e1e;
+            border: 1px solid #444;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #advanced-scan {
+            margin-top: 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>לוח בקרה - אבטחת מידע והאקינג</h1>
+    </header>
+    <main>
+        <section id="controls">
+            <h2>ניהול תוכנות</h2>
+            <div class="control-panel">
+                <button id="startScan">התחל סריקה</button>
+                <button id="stopScan">עצור סריקה</button>
+                <button id="viewLogs">הצג לוגים</button>
+            </div>
+        </section>
+        <section id="status">
+            <h2>סטטוס המערכת</h2>
+            <p id="status-message">מחובר...</p>
+        </section>
+        <section id="logs">
+            <h2>לוגים</h2>
+            <div id="logs-container">
+                <p>לא קיימים לוגים כרגע.</p>
+            </div>
+        </section>
+        <section id="settings">
+            <h2>הגדרות</h2>
+            <form id="settings-form">
+                <label for="scanInterval">מרווח סריקה (בשניות):</label>
+                <input type="number" id="scanInterval" name="scanInterval" value="30" min="1">
+                <button type="submit">שמור</button>
+            </form>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startScanButton = document.getElementById('startScan');
+            const stopScanButton = document.getElementById('stopScan');
+            const viewLogsButton = document.getElementById('viewLogs');
+            const logsContainer = document.getElementById('logs-container');
+            const statusMessage = document.getElementById('status-message');
+            const settingsForm = document.getElementById('settings-form');
+            const scanIntervalInput = document.getElementById('scanInterval');
+
+            let scanInterval = parseInt(scanIntervalInput.value) * 1000;
+            let scanTimer;
+
+            // פונקציה להתחיל סריקה
+            function startScan() {
+                statusMessage.textContent = 'סריקה פועלת...';
+                scanTimer = setInterval(() => {
+                    // דוגמה לסריקת נתונים
+                    const currentTime = new Date().toLocaleTimeString();
+                    const logMessage = `סריקה בוצעה בשעה ${currentTime}`;
+                    addLog(logMessage);
+                }, scanInterval);
+            }
+
+            // פונקציה להפסיק סריקה
+            function stopScan() {
+                statusMessage.textContent = 'סריקה נעצרה.';
+                clearInterval(scanTimer);
+            }
+
+            // פונקציה להוסיף לוגים
+            function addLog(message) {
+                const logEntry = document.createElement('p');
+                logEntry.textContent = message;
+                logsContainer.appendChild(logEntry);
+            }
+
+            // הפעלת סריקה בעת לחיצה על כפתור
+            startScanButton.addEventListener('click', startScan);
+            stopScanButton.addEventListener('click', stopScan);
+
+            // הצגת לוגים בעת לחיצה על כפתור
+            viewLogsButton.addEventListener('click', () => {
+                logsContainer.style.display = logsContainer.style.display === 'none' ? 'block' : 'none';
+            });
+
+            // עדכון מרווח סריקה
+            settingsForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                scanInterval = parseInt(scanIntervalInput.value) * 1000;
+                statusMessage.textContent = 'מרווח סריקה עודכן.';
+                if (scanTimer) {
+                    clearInterval(scanTimer);
+                    startScan();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

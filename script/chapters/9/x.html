@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לוח בקרה אבטחת מידע</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2f2f2f;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        section {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        h1,
+        h2 {
+            border-bottom: 2px solid #f5f5f5;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .box {
+            background-color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .box h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .box p {
+            margin: 5px 0;
+        }
+
+        .highlight {
+            color: #00ff00;
+        }
+
+        .dark-theme {
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .card {
+            background-color: #444;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>לוח בקרה אבטחת מידע</h1>
+    </header>
+
+    <section id="overview" class="container">
+        <div class="box">
+            <h2>תצוגת מצב רשת</h2>
+            <p>סטטוס חיבור: <span id="connection-status" class="highlight">נמצא בחיבור</span></p>
+            <p>משתמשים פעילים: <span id="active-users" class="highlight">0</span></p>
+            <p>פעילות חשודה: <span id="suspicious-activity" class="highlight">0</span></p>
+            <button class="button" onclick="updateNetworkStatus()">עדכן מצב רשת</button>
+        </div>
+        <div class="box">
+            <h2>תצוגת מצב שרתים</h2>
+            <p>ביצועים: <span id="server-performance" class="highlight">נפלא</span></p>
+            <p>עדכונים אחרונים: <span id="server-updates" class="highlight">עכשיו</span></p>
+            <button class="button" onclick="updateServerStatus()">עדכן מצב שרתים</button>
+        </div>
+    </section>
+
+    <section id="monitoring" class="container">
+        <div class="box">
+            <h2>תפריט ניטור</h2>
+            <h3>סטטוס שירותים</h3>
+            <div id="services-status" class="card"> <!-- דינמי --> </div>
+            <h3>סטטוס תהליכים</h3>
+            <div id="process-status" class="card"> <!-- דינמי --> </div>
+            <h3>התרעות בזמן אמת</h3>
+            <div id="alerts" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshMonitoring()">רענן ניטור</button>
+        </div>
+        <div class="box">
+            <h2>תחזוקה</h2>
+            <h3>עדכונים אחרונים</h3>
+            <div id="recent-updates" class="card"> <!-- דינמי --> </div>
+            <h3>תיקונים</h3>
+            <div id="fixes" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshMaintenance()">רענן תחזוקה</button>
+        </div>
+    </section>
+
+    <section id="security" class="container">
+        <div class="box">
+            <h2>חומת אש</h2>
+            <h3>תצורת חומת האש</h3>
+            <div id="firewall-config" class="card"> <!-- דינמי --> </div>
+            <h3>התרעות</h3>
+            <div id="firewall-alerts" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="updateFirewall()">עדכן חומת אש</button>
+        </div>
+        <div class="box">
+            <h2>אימות משתמשים</h2>
+            <h3>סטטוס אימות</h3>
+            <div id="auth-status" class="card"> <!-- דינמי --> </div>
+            <h3>נסיונות גישה לא מורשים</h3>
+            <div id="unauthorized-access" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="updateAuthStatus()">עדכן אימות משתמשים</button>
+        </div>
+    </section>
+
+    <section id="risk-management" class="container">
+        <div class="box">
+            <h2>סקירות סיכונים</h2>
+            <h3>דוחות שבועיים</h3>
+            <div id="weekly-reports" class="card"> <!-- דינמי --> </div>
+            <h3>דוחות חודשיים</h3>
+            <div id="monthly-reports" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshRiskManagement()">רענן ניהול סיכונים</button>
+        </div>
+        <div class="box">
+            <h2>פגיעויות</h2>
+            <h3>רשימת פגיעויות ידועות</h3>
+            <div id="known-vulnerabilities" class="card"> <!-- דינמי --> </div>
+            <h3>פעולות לתיקון</h3>
+            <div id="actions-to-fix" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshVulnerabilities()">רענן פגיעויות</button>
+        </div>
+    </section>
+
+    <section id="attacks-defense" class="container">
+        <div class="box">
+            <h2>התקפות אחרונות</h2>
+            <h3>פרטי התקפות אחרונות</h3>
+            <div id="attack-details" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshAttacks()">רענן התקפות</button>
+        </div>
+        <div class="box">
+            <h2>תגובות להגנה</h2>
+            <h3>פעולות מנע</h3>
+            <div id="defense-actions" class="card"> <!-- דינמי --> </div>
+            <h3>סקירות אירועים</h3>
+            <div id="event-reviews" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshDefense()">רענן הגנה</button>
+        </div>
+    </section>
+
+    <section id="reports-stats" class="container">
+        <div class="box">
+            <h2>סטטיסטיקות פעילות</h2>
+            <h3>גרפים של תעבורה</h3>
+            <div id="traffic-graphs" class="card"> <!-- דינמי --> </div>
+            <h3>דו"ח הודעות שגיאה</h3>
+            <div id="error-reports" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshStats()">רענן סטטיסטיקות</button>
+        </div>
+        <div class="box">
+            <h2>דו"ח אבטחה</h2>
+            <h3>סיכומים יומיים</h3>
+            <div id="daily-summaries" class="card"> <!-- דינמי --> </div>
+            <h3>סיכומים שבועיים</h3>
+            <div id="weekly-summaries" class="card"> <!-- דינמי --> </div>
+            <h3>סיכומים חודשיים</h3>
+            <div id="monthly-summaries" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshSecurityReports()">רענן דו"ח אבטחה</button>
+        </div>
+    </section>
+
+    <script>
+        function updateNetworkStatus() {
+            document.getElementById('connection-status').innerText = "נמצא בחיבור";
+            document.getElementById('active-users').innerText = "5";
+            document.getElementById('suspicious-activity').innerText = "2";
+        }
+
+        function updateServerStatus() {
+            document.getElementById('server-performance').innerText = "מצוין";
+            document.getElementById('server-updates').innerText = "עודכן עכשיו";
+        }
+
+        function refreshMonitoring() {
+            document.getElementById('services-status').innerText = "כל השירותים פועלים.";
+            document.getElementById('process-status').innerText = "תהליכים פועלים כראוי.";
+            document.getElementById('alerts').innerText = "אין התרעות חדשות.";
+        }
+
+        function refreshMaintenance() {
+            document.getElementById('recent-updates').innerText = "לא נמצאו עדכונים חדשים.";
+            document.getElementById('fixes').innerText = "כל התיקונים בוצעו.";
+        }
+
+        function updateFirewall() {
+            document.getElementById('firewall-config').innerText = "הגדרות מעודכנות.";
+            document.getElementById('firewall-alerts').innerText = "אין התרעות חדשות.";
+        }
+
+        function updateAuthStatus() {
+            document.getElementById('auth-status').innerText = "אימות תקין.";
+            document.getElementById('unauthorized-access').innerText = "אין ניסיונות גישה לא מורשים.";
+        }
+
+        function refreshRiskManagement() {
+            document.getElementById('weekly-reports').innerText = "סקירה שבועית הושלמה.";
+            document.getElementById('monthly-reports').innerText = "סקירה חודשית הושלמה.";
+        }
+
+        function refreshVulnerabilities() {
+            document.getElementById('known-vulnerabilities').innerText = "אין פגיעויות חדשות.";
+            document.getElementById('actions-to-fix').innerText = "כל הפעולות בוצעו.";
+        }
+
+        function refreshAttacks() {
+            document.getElementById('attack-details').innerText = "אין התקפות חדשות.";
+        }
+
+        function refreshDefense() {
+            document.getElementById('defense-actions').innerText = "כל פעולות המנע הושלמו.";
+            document.getElementById('event-reviews').innerText = "סקירה של האירועים הושלמה.";
+        }
+
+        function refreshStats() {
+            document.getElementById('traffic-graphs').innerText = "נתוני התעבורה מעודכנים.";
+            document.getElementById('error-reports').innerText = "לא נמצאו שגיאות חדשות.";
+        }
+
+        function refreshSecurityReports() {
+            document.getElementById('daily-summaries').innerText = "סיכום יומי מעודכן.";
+            document.getElementById('weekly-summaries').innerText = "סיכום שבועי מעודכן.";
+            document.getElementById('monthly-summaries').innerText = "סיכום חודשי מעודכן.";
+        }
+    </script>
+</body>
+
+</html>

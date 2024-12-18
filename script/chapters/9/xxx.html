@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לוח בקרה אבטחת מידע</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2f2f2f;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        section {
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        h1,
+        h2 {
+            border-bottom: 2px solid #f5f5f5;
+            padding-bottom: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .box {
+            background-color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .box h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .box p {
+            margin: 5px 0;
+        }
+
+        .highlight {
+            color: #00ff00;
+        }
+
+        .dark-theme {
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+        }
+
+        .button {
+            display: inline-block;
+            width: 100%;
+            padding: 10px 20px;
+            margin: 10px 0;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .card {
+            background-color: #444;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .status {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .item {
+            background-color: #555;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .item h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .item p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>לוח בקרה אבטחת מידע</h1>
+    </header>
+
+    <section id="overview" class="container">
+        <div class="box">
+            <h2>תצוגת מצב רשת</h2>
+            <p>סטטוס חיבור: <span id="connection-status" class="highlight">נמצא בחיבור</span></p>
+            <p>משתמשים פעילים: <span id="active-users" class="highlight">0</span></p>
+            <p>פעילות חשודה: <span id="suspicious-activity" class="highlight">0</span></p>
+            <button class="button" onclick="updateNetworkStatus()">עדכן מצב רשת</button>
+            <button class="button" onclick="viewNetworkDetails()">צפה בפרטי רשת</button>
+            <button class="button" onclick="resetNetwork()">אפס מצב רשת</button>
+            <button class="button" onclick="generateNetworkReport()">צור דוח רשת</button>
+            <button class="button" onclick="exportNetworkData()">ייצא נתוני רשת</button>
+        </div>
+        <div class="box">
+            <h2>תצוגת מצב שרתים</h2>
+            <p>ביצועים: <span id="server-performance" class="highlight">נפלא</span></p>
+            <p>עדכונים אחרונים: <span id="server-updates" class="highlight">עכשיו</span></p>
+            <button class="button" onclick="updateServerStatus()">עדכן מצב שרתים</button>
+            <button class="button" onclick="viewServerDetails()">צפה בפרטי שרתים</button>
+            <button class="button" onclick="resetServer()">אפס מצב שרתים</button>
+            <button class="button" onclick="generateServerReport()">צור דוח שרתים</button>
+            <button class="button" onclick="exportServerData()">ייצא נתוני שרתים</button>
+        </div>
+    </section>
+
+    <section id="monitoring" class="container">
+        <div class="box">
+            <h2>תפריט ניטור</h2>
+            <h3>סטטוס שירותים</h3>
+            <div id="services-status" class="card"> <!-- דינמי --> </div>
+            <h3>סטטוס תהליכים</h3>
+            <div id="process-status" class="card"> <!-- דינמי --> </div>
+            <h3>התרעות בזמן אמת</h3>
+            <div id="alerts" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshMonitoring()">רענן ניטור</button>
+            <button class="button" onclick="viewMonitoringDetails()">צפה בפרטי ניטור</button>
+            <button class="button" onclick="resetMonitoring()">אפס ניטור</button>
+            <button class="button" onclick="generateMonitoringReport()">צור דוח ניטור</button>
+            <button class="button" onclick="exportMonitoringData()">ייצא נתוני ניטור</button>
+        </div>
+        <div class="box">
+            <h2>תחזוקה</h2>
+            <h3>עדכונים אחרונים</h3>
+            <div id="recent-updates" class="card"> <!-- דינמי --> </div>
+            <h3>תיקונים</h3>
+            <div id="fixes" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshMaintenance()">רענן תחזוקה</button>
+            <button class="button" onclick="viewMaintenanceDetails()">צפה בפרטי תחזוקה</button>
+            <button class="button" onclick="resetMaintenance()">אפס תחזוקה</button>
+            <button class="button" onclick="generateMaintenanceReport()">צור דוח תחזוקה</button>
+            <button class="button" onclick="exportMaintenanceData()">ייצא נתוני תחזוקה</button>
+        </div>
+    </section>
+
+    <section id="security" class="container">
+        <div class="box">
+            <h2>חומת אש</h2>
+            <h3>תצורת חומת האש</h3>
+            <div id="firewall-config" class="card"> <!-- דינמי --> </div>
+            <h3>התרעות</h3>
+            <div id="firewall-alerts" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="updateFirewall()">עדכן חומת אש</button>
+            <button class="button" onclick="viewFirewallDetails()">צפה בפרטי חומת אש</button>
+            <button class="button" onclick="resetFirewall()">אפס חומת אש</button>
+            <button class="button" onclick="generateFirewallReport()">צור דוח חומת אש</button>
+            <button class="button" onclick="exportFirewallData()">ייצא נתוני חומת אש</button>
+        </div>
+        <div class="box">
+            <h2>אימות משתמשים</h2>
+            <h3>סטטוס אימות</h3>
+            <div id="auth-status" class="card"> <!-- דינמי --> </div>
+            <h3>נסיונות גישה לא מורשים</h3>
+            <div id="unauthorized-access" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="updateAuthStatus()">עדכן אימות משתמשים</button>
+            <button class="button" onclick="viewAuthDetails()">צפה בפרטי אימות משתמשים</button>
+            <button class="button" onclick="resetAuth()">אפס אימות משתמשים</button>
+            <button class="button" onclick="generateAuthReport()">צור דוח אימות משתמשים</button>
+            <button class="button" onclick="exportAuthData()">ייצא נתוני אימות משתמשים</button>
+        </div>
+    </section>
+
+    <section id="risk-management" class="container">
+        <div class="box">
+            <h2>ניהול סיכונים</h2>
+            <h3>דוחות שבועיים</h3>
+            <div id="weekly-reports" class="card"> <!-- דינמי --> </div>
+            <h3>דוחות חודשיים</h3>
+            <div id="monthly-reports" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshRiskManagement()">רענן ניהול סיכונים</button>
+            <button class="button" onclick="viewRiskManagementDetails()">צפה בפרטי ניהול סיכונים</button>
+            <button class="button" onclick="resetRiskManagement()">אפס ניהול סיכונים</button>
+            <button class="button" onclick="generateRiskReport()">צור דוח ניהול סיכונים</button>
+            <button class="button" onclick="exportRiskData()">ייצא נתוני ניהול סיכונים</button>
+        </div>
+    </section>
+
+    <section id="vulnerabilities" class="container">
+        <div class="box">
+            <h2>פגיעויות</h2>
+            <h3>פגיעויות ידועות</h3>
+            <div id="known-vulnerabilities" class="card"> <!-- דינמי --> </div>
+            <h3>פעולות לתיקון</h3>
+            <div id="actions-to-fix" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshVulnerabilities()">רענן פגיעויות</button>
+            <button class="button" onclick="viewVulnerabilitiesDetails()">צפה בפרטי פגיעויות</button>
+            <button class="button" onclick="resetVulnerabilities()">אפס פגיעויות</button>
+            <button class="button" onclick="generateVulnerabilitiesReport()">צור דוח פגיעויות</button>
+            <button class="button" onclick="exportVulnerabilitiesData()">ייצא נתוני פגיעויות</button>
+        </div>
+    </section>
+
+    <section id="attacks" class="container">
+        <div class="box">
+            <h2>התקפות</h2>
+            <h3>פרטי התקפות</h3>
+            <div id="attack-details" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshAttacks()">רענן התקפות</button>
+            <button class="button" onclick="viewAttackDetails()">צפה בפרטי התקפות</button>
+            <button class="button" onclick="resetAttacks()">אפס התקפות</button>
+            <button class="button" onclick="generateAttackReport()">צור דוח התקפות</button>
+            <button class="button" onclick="exportAttackData()">ייצא נתוני התקפות</button>
+        </div>
+    </section>
+
+    <section id="defense" class="container">
+        <div class="box">
+            <h2>תגובות להגנה</h2>
+            <h3>פעולות שננקטו למניעת התקפות</h3>
+            <div id="defense-actions" class="card"> <!-- דינמי --> </div>
+            <h3>סקירת אירועים</h3>
+            <div id="event-reviews" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshDefense()">רענן תגובות להגנה</button>
+            <button class="button" onclick="viewDefenseDetails()">צפה בפרטי תגובות להגנה</button>
+            <button class="button" onclick="resetDefense()">אפס תגובות להגנה</button>
+            <button class="button" onclick="generateDefenseReport()">צור דוח תגובות להגנה</button>
+            <button class="button" onclick="exportDefenseData()">ייצא נתוני תגובות להגנה</button>
+        </div>
+    </section>
+
+    <section id="reports" class="container">
+        <div class="box">
+            <h2>דוחות וסטטיסטיקות</h2>
+            <h3>סטטיסטיקות פעילות</h3>
+            <div id="traffic-graphs" class="card"> <!-- דינמי --> </div>
+            <h3>דו"ח אבטחה</h3>
+            <div id="daily-summaries" class="card"> <!-- דינמי --> </div>
+            <div id="weekly-summaries" class="card"> <!-- דינמי --> </div>
+            <div id="monthly-summaries" class="card"> <!-- דינמי --> </div>
+            <button class="button" onclick="refreshStats()">רענן סטטיסטיקות</button>
+            <button class="button" onclick="viewReportsDetails()">צפה בפרטי דוחות וסטטיסטיקות</button>
+            <button class="button" onclick="resetStats()">אפס סטטיסטיקות</button>
+            <button class="button" onclick="generateStatsReport()">צור דוח סטטיסטיקות</button>
+            <button class="button" onclick="exportStatsData()">ייצא נתוני סטטיסטיקות</button>
+        </div>
+    </section>
+
+    <script>
+        // עדכון פרטי רשת
+        function updateNetworkStatus() {
+            document.getElementById('connection-status').innerText = "נמצא בחיבור";
+            document.getElementById('active-users').innerText = "5";
+            document.getElementById('suspicious-activity').innerText = "2";
+        }
+        function viewNetworkDetails() {
+            alert("הצגת פרטי רשת לא זמינה כרגע.");
+        }
+        function resetNetwork() {
+            alert("איפוס מצב רשת.");
+        }
+        function generateNetworkReport() {
+            alert("יצירת דוח רשת.");
+        }
+        function exportNetworkData() {
+            alert("ייצוא נתוני רשת.");
+        }
+
+        // עדכון פרטי שרתים
+        function updateServerStatus() {
+            document.getElementById('server-performance').innerText = "מצוין";
+            document.getElementById('server-updates').innerText = "עודכן עכשיו";
+        }
+        function viewServerDetails() {
+            alert("הצגת פרטי שרתים לא זמינה כרגע.");
+        }
+        function resetServer() {
+            alert("איפוס מצב שרתים.");
+        }
+        function generateServerReport() {
+            alert("יצירת דוח שרתים.");
+        }
+        function exportServerData() {
+            alert("ייצוא נתוני שרתים.");
+        }
+
+        // ניטור ותחזוקה
+        function refreshMonitoring() {
+            document.getElementById('services-status').innerText = "כל השירותים פועלים.";
+            document.getElementById('process-status').innerText = "תהליכים פועלים כראוי.";
+            document.getElementById('alerts').innerText = "אין התרעות חדשות.";
+        }
+        function viewMonitoringDetails() {
+            alert("הצגת פרטי ניטור לא זמינה כרגע.");
+        }
+        function resetMonitoring() {
+            alert("איפוס מצב ניטור.");
+        }
+        function generateMonitoringReport() {
+            alert("יצירת דוח ניטור.");
+        }
+        function exportMonitoringData() {
+            alert("ייצוא נתוני ניטור.");
+        }
+
+        // תחזוקה
+        function refreshMaintenance() {
+            document.getElementById('recent-updates').innerText = "לא נמצאו עדכונים חדשים.";
+            document.getElementById('fixes').innerText = "כל התיקונים בוצעו.";
+        }
+        function viewMaintenanceDetails() {
+            alert("הצגת פרטי תחזוקה לא זמינה כרגע.");
+        }
+        function resetMaintenance() {
+            alert("איפוס מצב תחזוקה.");
+        }
+        function generateMaintenanceReport() {
+            alert("יצירת דוח תחזוקה.");
+        }
+        function exportMaintenanceData() {
+            alert("ייצוא נתוני תחזוקה.");
+        }
+
+        // חומת אש
+        function updateFirewall() {
+            document.getElementById('firewall-config').innerText = "הגדרות מעודכנות.";
+            document.getElementById('firewall-alerts').innerText = "אין התרעות חדשות.";
+        }
+        function viewFirewallDetails() {
+            alert("הצגת פרטי חומת אש לא זמינה כרגע.");
+        }
+        function resetFirewall() {
+            alert("איפוס מצב חומת אש.");
+        }
+        function generateFirewallReport() {
+            alert("יצירת דוח חומת אש.");
+        }
+        function exportFirewallData() {
+            alert("ייצוא נתוני חומת אש.");
+        }
+
+        // אימות משתמשים
+        function updateAuthStatus() {
+            document.getElementById('auth-status').innerText = "אימות תקין.";
+            document.getElementById('unauthorized-access').innerText = "אין ניסיונות גישה לא מורשים.";
+        }
+        function viewAuthDetails() {
+            alert("הצגת פרטי אימות משתמשים לא זמינה כרגע.");
+        }
+        function resetAuth() {
+            alert("איפוס מצב אימות משתמשים.");
+        }
+        function generateAuthReport() {
+            alert("יצירת דוח אימות משתמשים.");
+        }
+        function exportAuthData() {
+            alert("ייצוא נתוני אימות משתמשים.");
+        }
+
+        // ניהול סיכונים
+        function refreshRiskManagement() {
+            document.getElementById('weekly-reports').innerText = "דוחות שבועיים מעודכנים.";
+            document.getElementById('monthly-reports').innerText = "דוחות חודשיים מעודכנים.";
+        }
+        function viewRiskManagementDetails() {
+            alert("הצגת פרטי ניהול סיכונים לא זמינה כרגע.");
+        }
+        function resetRiskManagement() {
+            alert("איפוס מצב ניהול סיכונים.");
+        }
+        function generateRiskReport() {
+            alert("יצירת דוח ניהול סיכונים.");
+        }
+        function exportRiskData() {
+            alert("ייצוא נתוני ניהול סיכונים.");
+        }
+
+        // פגיעויות
+        function refreshVulnerabilities() {
+            document.getElementById('known-vulnerabilities').innerText = "פגיעויות ידועות מעודכנות.";
+            document.getElementById('actions-to-fix').innerText = "פעולות לתיקון מעודכנות.";
+        }
+        function viewVulnerabilitiesDetails() {
+            alert("הצגת פרטי פגיעויות לא זמינה כרגע.");
+        }
+        function resetVulnerabilities() {
+            alert("איפוס מצב פגיעויות.");
+        }
+        function generateVulnerabilitiesReport() {
+            alert("יצירת דוח פגיעויות.");
+        }
+        function exportVulnerabilitiesData() {
+            alert("ייצוא נתוני פגיעויות.");
+        }
+
+        // התקפות
+        function refreshAttacks() {
+            document.getElementById('attack-details').innerText = "פרטי התקפות מעודכנים.";
+        }
+        function viewAttackDetails() {
+            alert("הצגת פרטי התקפות לא זמינה כרגע.");
+        }
+        function resetAttacks() {
+            alert("איפוס מצב התקפות.");
+        }
+        function generateAttackReport() {
+            alert("יצירת דוח התקפות.");
+        }
+        function exportAttackData() {
+            alert("ייצוא נתוני התקפות.");
+        }
+
+        // תגובות להגנה
+        function refreshDefense() {
+            document.getElementById('defense-actions').innerText = "פעולות להגנה מעודכנות.";
+            document.getElementById('event-reviews').innerText = "סקירות אירועים מעודכנות.";
+        }
+        function viewDefenseDetails() {
+            alert("הצגת פרטי תגובות להגנה לא זמינה כרגע.");
+        }
+        function resetDefense() {
+            alert("איפוס מצב תגובות להגנה.");
+        }
+        function generateDefenseReport() {
+            alert("יצירת דוח תגובות להגנה.");
+        }
+        function exportDefenseData() {
+            alert("ייצוא נתוני תגובות להגנה.");
+        }
+
+        // דוחות וסטטיסטיקות
+        function refreshStats() {
+            document.getElementById('traffic-graphs').innerText = "סטטיסטיקות פעילות מעודכנות.";
+            document.getElementById('daily-summaries').innerText = "סיכומי יומיים מעודכנים.";
+            document.getElementById('weekly-summaries').innerText = "סיכומי שבועיים מעודכנים.";
+            document.getElementById('monthly-summaries').innerText = "סיכומי חודשיים מעודכנים.";
+        }
+        function viewReportsDetails() {
+            alert("הצגת פרטי דוחות וסטטיסטיקות לא זמינה כרגע.");
+        }
+        function resetStats() {
+            alert("איפוס מצב סטטיסטיקות.");
+        }
+        function generateStatsReport() {
+            alert("יצירת דוח סטטיסטיקות.");
+        }
+        function exportStatsData() {
+            alert("ייצוא נתוני סטטיסטיקות.");
+        }
+    </script>
+</body>
+
+</html>

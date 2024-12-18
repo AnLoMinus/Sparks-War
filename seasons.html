@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עונות | מלחמת הניצוצות</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+
+    <style>
+        .season-card {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .season-title {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .season-description {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .seasons-grid {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .seasons-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        .season-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .season-themes {
+            margin-top: 1rem;
+        }
+
+        .theme-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+        }
+
+        .theme-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.3rem 0;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        .plot-points {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        .season-characters,
+        .season-challenges,
+        .season-developments {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .character-list,
+        .challenge-list,
+        .development-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+        }
+
+        .character-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #ffd700;
+            margin: 0.5rem 0;
+        }
+
+        .challenge-item {
+            color: #ff6b6b;
+            margin: 0.5rem 0;
+        }
+
+        .development-item {
+            color: #4ecdc4;
+            margin: 0.5rem 0;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">✨ עונות מלחמת הניצוצות ✨</h1>
+        <p>המסע המופלא לאורך 24 העונות</p>
+    </header>
+
+    <div class="container">
+        <div class="seasons-grid">
+            <div class="season-card">
+                <h2 class="season-title">🌑 עונה 1: ההתחלה האפלה</h2>
+                <p class="season-description">העולם מתחיל להתמלא בחשכה כאשר כוחות הרשע פורצים לתוך ממלכות רבות. כל מדינה
+                    ותרבות מגלה את האתגרים הייחודיים לה ואת התגובות שלה לאיום האופל.</p>
+                <div class="season-details">
+                    <div class="season-themes">
+                        <h3>נושאים מרכזיים:</h3>
+                        <ul class="theme-list">
+                            <li class="theme-item">🔮 התעוררות הכוחות האפלים</li>
+                            <li class="theme-item">⚔️ גיוס לוחמי אור ראשונים</li>
+                            <li class="theme-item">🏰 הקמת מערכי הגנה</li>
+                            <li class="theme-item">📜 גילוי נבואות עתיקות</li>
+                        </ul>
+                    </div>
+                    <div class="plot-points">
+                        <h3>נקודות עלילה מרכזיות:</h3>
+                        <ul>
+                            <li>גילוי הסימנים הראשונים לחדירת האופל</li>
+                            <li>הקמת ברית ראשונית בין הממלכות</li>
+                            <li>אימון הלוחמים הראשונים</li>
+                            <li>חשיפת בוגדים בשורות הממלכה</li>
+                        </ul>
+                    </div>
+                    <div class="season-characters">
+                        <h3 class="section-title">דמויות מרכזיות:</h3>
+                        <ul class="character-list">
+                            <li class="character-item">👨‍🦳 הרב מרדכי - מנהיג רוחני ראשי</li>
+                            <li class="character-item">👸 נסיכה שירה - לוחמת האור הראשונה</li>
+                            <li class="character-item">🧙‍♂️ המכשף עזריאל - מגלה הנבואות</li>
+                            <li class="character-item">😈 השטן המסתתר - האויב הראשי</li>
+                        </ul>
+                    </div>
+                    <div class="season-challenges">
+                        <h3 class="section-title">אתגרים ייחודיים:</h3>
+                        <ul class="challenge-list">
+                            <li class="challenge-item">⚔️ התמודדות עם חדירה ראשונית של כוחות האופל</li>
+                            <li class="challenge-item">🏰 הקמת מערכת הגנה בזמן קצר</li>
+                            <li class="challenge-item">👥 זיהוי בוגדים בשורות הממלכה</li>
+                            <li class="challenge-item">📜 פענוח הנבואות העתיקות</li>
+                        </ul>
+                    </div>
+                    <div class="season-developments">
+                        <h3 class="section-title">התפתחויות טכנולוגיות/קסומות:</h3>
+                        <ul class="development-list">
+                            <li class="development-item">💫 פיתוח מערכת גילוי ניצוצות</li>
+                            <li class="development-item">🛡️ יצירת מגן אנרגיה ראשוני</li>
+                            <li class="development-item">🔮 פיתוח כלי נשק מבוססי אור</li>
+                            <li class="development-item">📱 מערכת תקשורת רוחנית</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌘 עונה 2: התחייה השחורה</h2>
+                <p class="season-description">כוחות האופל משתלטים על אזורים שונים בעולם, וכל תרבות נדרשת להתמודד עם
+                    השפעותיהם. נראה כיצד אמונות ודעות דתיות שונות מגיבות לאיום החדש.</p>
+                <div class="season-details">
+                    <div class="season-themes">
+                        <h3>נושאים מרכזיים:</h3>
+                        <ul class="theme-list">
+                            <li class="theme-item">🏺 מסורות דתיות עתיקות</li>
+                            <li class="theme-item">🔥 התנגשות אמונות</li>
+                            <li class="theme-item">🛡️ שיטות הגנה רוחניות</li>
+                            <li class="theme-item">💫 גילוי כוחות חדשים</li>
+                        </ul>
+                    </div>
+                    <div class="plot-points">
+                        <h3>נקודות עלילה מרכזיות:</h3>
+                        <ul>
+                            <li>חיפוש אחר ארטיפקטים קדושים</li>
+                            <li>מאבק על שליטה במקדשים עתיקים</li>
+                            <li>גילוי שיטות לחימה חדשות</li>
+                            <li>יצירת בריתות בין דתות שונות</li>
+                        </ul>
+                    </div>
+                    <div class="season-characters">
+                        <h3 class="section-title">דמויות מרכזיות:</h3>
+                        <ul class="character-list">
+                            <li class="character-item">🧙‍♀️ המכשפה לילית - מנהיגת כת האופל</li>
+                            <li class="character-item">👨‍🏫 פרופסור דניאל - חוקר הדתות העתיקות</li>
+                            <li class="character-item">👩‍🦰 רחל הלוחמת - מגינת המקדשים</li>
+                            <li class="character-item">👻 רוח העבר - ישות מסתורית</li>
+                        </ul>
+                    </div>
+                    <div class="season-challenges">
+                        <h3 class="section-title">אתגרים ייחודיים:</h3>
+                        <ul class="challenge-list">
+                            <li class="challenge-item">🏺 שמירה על ארטיפקטים קדושים</li>
+                            <li class="challenge-item">⚔️ מלחמה על שליטה במקדשים</li>
+                            <li class="challenge-item">🤝 יצירת בריתות בין דתות יריבות</li>
+                            <li class="challenge-item">💀 התמודדות עם כוחות מהעבר</li>
+                        </ul>
+                    </div>
+                    <div class="season-developments">
+                        <h3 class="section-title">התפתחויות טכנולוגיות/קסומות:</h3>
+                        <ul class="development-list">
+                            <li class="development-item">📿 שכלול טכניקות הגנה רוחניות</li>
+                            <li class="development-item">🔮 פיתוח כלי נשק משולבי אמונה</li>
+                            <li class="development-item">🏮 מערכת התראה מפני כוחות אפלים</li>
+                            <li class="development-item">🎭 טכנולוגיית זיהוי מתחזים</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">⚔️ עונה 3: המרד בממלכה</h2>
+                <p class="season-description">סכסוכים מתפרצים בין המדינות בעקבות השפעות האופל. כל מדינה נאלצת למצוא את
+                    הדרך לשמור על יציבותה וביטחונה תוך כדי מאבק פנימי.</p>
+                <div class="season-details">
+                    <div class="season-themes">
+                        <h3>נושאים מרכזיים:</h3>
+                        <ul class="theme-list">
+                            <li class="theme-item">🗡️ מרד פנימי</li>
+                            <li class="theme-item">👑 מאבקי כוח</li>
+                            <li class="theme-item">🤝 בריתות חדשות</li>
+                            <li class="theme-item">⚖️ איזון פוליטי</li>
+                        </ul>
+                    </div>
+                    <div class="season-characters">
+                        <h3 class="section-title">דמויות מרכזיות:</h3>
+                        <ul class="character-list">
+                            <li class="character-item">👨‍⚖️ השופט אליהו - מנהיג המורדים</li>
+                            <li class="character-item">👸 המלכה אסתר - שליטת הממלכה המאוחדת</li>
+                            <li class="character-item">🦹‍♂️ הבוגד יהודה - מפקד צבא שעבר לצד האופל</li>
+                            <li class="character-item">👨‍🎤 הנביא דוד - מתווך בין הצדדים</li>
+                        </ul>
+                    </div>
+                    <div class="season-challenges">
+                        <h3 class="section-title">אתגרים ייחודיים:</h3>
+                        <ul class="challenge-list">
+                            <li class="challenge-item">🏰 שמירה על אחדות הממלכה</li>
+                            <li class="challenge-item">🗺️ זיהוי בוגדים במערכת</li>
+                            <li class="challenge-item">⚔️ מלחמת אזרחים</li>
+                            <li class="challenge-item">🤝 יצירת הסכמי שלום</li>
+                        </ul>
+                    </div>
+                    <div class="plot-points">
+                        <h3>התפתחויות עלילתיות:</h3>
+                        <ul>
+                            <li>קשר להמשך: המרד מוביל לגילויים בעונה 4</li>
+                            <li>השפעה מהעבר: תוצאות מהעונות הקודמות</li>
+                            <li>פיצול הממלכה שישפיע על העונות הבאות</li>
+                            <li>יצירת מערכת פוליטית חדשה</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">📚 עונה 4: סודות העבר</h2>
+                <p class="season-description">החיפוש אחר מקורות האופל מוביל לחשיפת סודות שמקשרים את הכוחות הרעים לדתות
+                    והאמונות עתיקות. המדינות מוצאות את עצמן נאלצות להתמודד עם גילויים שמאתגרים את האמונות המרכזיות שלהן.
+                </p>
+                <div class="season-details">
+                    <div class="season-themes">
+                        <h3>נושאים מרכזיים:</h3>
+                        <ul class="theme-list">
+                            <li class="theme-item">📜 כתבים עתיקים</li>
+                            <li class="theme-item">🏺 ארכיאולוגיה קדושה</li>
+                            <li class="theme-item">🔮 נבואות נסתרות</li>
+                            <li class="theme-item">⚱️ אוצרות אבודים</li>
+                        </ul>
+                    </div>
+                    <div class="season-characters">
+                        <h3 class="section-title">דמויות מרכזיות:</h3>
+                        <ul class="character-list">
+                            <li class="character-item">👨‍🏫 פרופסור שמואל - חוקר העבר</li>
+                            <li class="character-item">👩‍🔬 ד"ר רבקה - מומחית לכתבים עתיקים</li>
+                            <li class="character-item">🧙‍♂️ הקוסם העתיק - שומר הסודות</li>
+                            <li class="character-item">👻 רוח העבר המסתורית</li>
+                        </ul>
+                    </div>
+                    <div class="season-challenges">
+                        <h3 class="section-title">אתגרים ייחודיים:</h3>
+                        <ul class="challenge-list">
+                            <li class="challenge-item">🗝️ פענוח כתבי הקודש העתיקים</li>
+                            <li class="challenge-item">🏛️ חקירת מקדשים נטושים</li>
+                            <li class="challenge-item">👻 התמודדות עם רוחות העבר</li>
+                            <li class="challenge-item">📚 שימור ידע עתיק</li>
+                        </ul>
+                    </div>
+                    <div class="plot-points">
+                        <h3>התפתחויות עלילתיות:</h3>
+                        <ul>
+                            <li>גילוי הקשר בין העבר להווה</li>
+                            <li>חשיפת סודות מהעונות הקודמות</li>
+                            <li>הכנה לאירועי העונה הבאה</li>
+                            <li>שינוי תפיסת העולם של הדמויות</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">💫 עונה 5: הכוחות האבודים</h2>
+                <p class="season-description">כוחות קדושים ששייכים למדינות שונות מתחילים להיעלם. כל מדינה מגייסת כוחות
+                    ושיטות חדשות כדי למצוא ולהשיב את הכוחות האבודים.</p>
+                <div class="season-details">
+                    <div class="season-themes">
+                        <h3>נושאים מרכזיים:</h3>
+                        <ul class="theme-list">
+                            <li class="theme-item">🔍 חיפוש אחר כוחות אבודים</li>
+                            <li class="theme-item">💎 אוצרות קדושים</li>
+                            <li class="theme-item">🏃 מרוץ נגד הזמן</li>
+                            <li class="theme-item">🤝 שיתופי פעולה בין-לאומיים</li>
+                        </ul>
+                    </div>
+                    <div class="season-characters">
+                        <h3 class="section-title">דמויות מרכזיות:</h3>
+                        <ul class="character-list">
+                            <li class="character-item">🧙‍♂️ המאסטר יוסף - מומחה לכוחות עתיקים</li>
+                            <li class="character-item">👩‍🔬 ד"ר מרים - חוקרת אנרגיות קדושות</li>
+                            <li class="character-item">🦹‍♀️ הגנבת המסתורית - גונבת הכוחות</li>
+                            <li class="character-item">👨‍💼 השגריר דוד - מתאם בין המדינות</li>
+                        </ul>
+                    </div>
+                    <div class="season-challenges">
+                        <h3 class="section-title">אתגרים ייחודיים:</h3>
+                        <ul class="challenge-list">
+                            <li class="challenge-item">🌍 מעקב אחר כוחות נעלמים</li>
+                            <li class="challenge-item">⚡ התמודדות עם חולשה רוחנית</li>
+                            <li class="challenge-item">🕵️ חקירת היעלמויות מסתוריות</li>
+                            <li class="challenge-item">🤺 קרבות עם גנבי כוחות</li>
+                        </ul>
+                    </div>
+                    <div class="plot-points">
+                        <h3>התפתחויות עלילתיות:</h3>
+                        <ul>
+                            <li>גילוי שיטה חדשה לאיתור כוחות</li>
+                            <li>חשיפת קשר בין ההיעלמויות</li>
+                            <li>פיתוח טכנולוגיות שימור כוח</li>
+                            <li>יצירת מאגר כוחות משותף</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌍 עונה 6: התחברות לממלכות אחרות</h2>
+                <p class="season-description">גיבורים מגלים ממלכות ותרבויות נוספות מעבר לגבולות הידועים, כולל דתות
+                    ואמונות חדשות. הם לומדים כיצד ליצור קשרים ושיתופי פעולה עם מדינות חדשות כדי להתמודד עם האיום המשותף.
+                </p>
+                <div class="season-details">
+                    <div class="season-themes">
+                        <h3>נושאים מרכזיים:</h3>
+                        <ul class="theme-list">
+                            <li class="theme-item">🗺️ גילוי עולמות חדשים</li>
+                            <li class="theme-item">🤝 דיפלומטיה בין-תרבותית</li>
+                            <li class="theme-item">📜 לימוד מסורות זרות</li>
+                            <li class="theme-item">🌈 שילוב כוחות שונים</li>
+                        </ul>
+                    </div>
+                    <div class="season-characters">
+                        <h3 class="section-title">דמויות מרכזיות:</h3>
+                        <ul class="character-list">
+                            <li class="character-item">👨‍✈️ הנווט אברהם - מגלה הממלכות</li>
+                            <li class="character-item">👩‍🏫 המתורגמנית שרה - מגשרת בין תרבויות</li>
+                            <li class="character-item">👑 מלך הממלכה הנסתרת</li>
+                            <li class="character-item">🧙‍♀️ המכשפה החכמה - יועצת רב-תרבותית</li>
+                        </ul>
+                    </div>
+                    <div class="season-challenges">
+                        <h3 class="section-title">אתגרים ייחודיים:</h3>
+                        <ul class="challenge-list">
+                            <li class="challenge-item">🗣️ התגברות על פערי שפה ותרבות</li>
+                            <li class="challenge-item">⚔️ התמודדות עם סכסוכים עתיקים</li>
+                            <li class="challenge-item">🤝 בניית אמון בין ממלכות</li>
+                            <li class="challenge-item">📜 יצירת הסכמים בין-תרבותיים</li>
+                        </ul>
+                    </div>
+                    <div class="plot-points">
+                        <h3>התפתחויות עלילתיות:</h3>
+                        <ul>
+                            <li>גילוי ממלכות נסתרות</li>
+                            <li>יצירת ברית בין-ממלכתית</li>
+                            <li>שילוב טכניקות לחימה שונות</li>
+                            <li>הקמת מועצה משותפת</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌟 עונה 7: התחייה הסופית</h2>
+                <p class="season-description">העולם נחלק לממלכות רבות כאשר האופל נמצא בשיא כוחו. המדינות נדרשות לשלב את
+                    כוחותיהן ולצאת לקרב עולמי על עתיד העולם.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌅 עונה 8: העולם החדש</h2>
+                <p class="season-description">לאחר הניצחון, המדינות מתחילות לבנות עולם חדש ומשולב, שבו כל תרבות ודת
+                    נדרשת למצוא את מקומה בעידן החדש.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">✨ עונה 9: הכוחות האמיתיים</h2>
+                <p class="season-description">הדתות והאמונות השונות מתחילות לחשוף את כוחותיהן האמיתיים. כל מדינה מגלה את
+                    כוחותיה הנסתרים ומיישמת אותם בשמירה על העולם החדש.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">⚡ עונה 10: העימותים הפנימיים</h2>
+                <p class="season-description">מתחילים לצוץ קונפליקטים פנימיים בין המדינות עקב חיכוכים בין דתות ואמונות
+                    שונות. הגיבורים צריכים לנהל את המשברים ולשמור על השקט בין האומות.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌑 עונה 11: החזון האפל</h2>
+                <p class="season-description">נבואה אפלה מגלה את איום האופל על העולם כולו. כל מדינה ודת צריכות להבין את
+                    הנבואה ולהתכונן לקרב הגדול.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌈 עונה 12: ההחלמה מהפיצול</h2>
+                <p class="season-description">העולם מתחיל להתרקם מחדש לאחר הקרב, והמדינות נדרשות להתמודד עם הפיצולים
+                    שנגרמו משנות הכאוס. כל תרבות מנסה לשקם ולהחזיר את ההרמוניה.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">☀️ עונה 13: התחזקות האור</h2>
+                <p class="season-description">כוחות האור מתחילים להתחזק ברחבי העולם. כל מדינה מתחילה לגלות שיטות חדשות
+                    לחיזוק כוחות האור שלהן ולמנוע את חזרת האופל.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🗺️ עונה 14: המסע אל מעבר לגבולות</h2>
+                <p class="season-description">הגיבורים יוצאים למסע מעבר לגבולות הידועים במטרה למצוא עזרה וכוחות חדשים,
+                    כולל גילוי של דתות ותרבויות נוספות.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">⚔️ עונה 15: הסכנה הכפולה</h2>
+                <p class="season-description">האופל מאיים בשני מישורים – פיזי ורוחני. המדינות נדרשות להתמודד עם סכנות
+                    כפולות ולמצוא דרכים להילחם באיומים בשני המישורים.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🏺 עונה 16: ההתמודדות עם עתיקות</h2>
+                <p class="season-description">כוחות רשע משתמשים בכוחות עתיקים מהעבר. הגיבורים ומדינות העולם מחפשים דרכים
+                    להתמודד עם כוחות עתיקים שמאיימים על השלווה.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌌 עונה 17: הכוחות האל-חומריים</h2>
+                <p class="season-description">התמודדות עם כוחות רוחניים ואל-חומריים שדורשים שיטות חדשות. כל מדינה מגלה
+                    דרכים להתמודד עם כוחות שאינם פיזיים.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🚀 עונה 18: הקונפליקט הגלקטי</h2>
+                <p class="season-description">הגיבורים נחשפים לעימותים חוצי גלקטיקה שמביאים לשיתוף פעולה עם יצורים
+                    ותרבויות מחוץ לכדור הארץ.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌓 עונה 19: המאבק במקביל</h2>
+                <p class="season-description">עימותים מתנהלים במציאות מקבילה, והשפעותיהם מתחילות להשפיע על העולם המרכזי.
+                    הגיבורים צריכים למצוא דרכים להתמודד עם השפעות כפולות.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌞 עונה 20: הגעת האור</h2>
+                <p class="season-description">האור מתחיל להתפשט בעולם, והשפעתו מתחילה להתרקם מחדש. כל מדינה נדרשת לשמור
+                    על היציבות ולהתמודד עם ההתנגדות האחרונה.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">✨ עונה 21: הכוחות החדשים</h2>
+                <p class="season-description">כוחות חדשים ומרשימים מתגלים בתהליך התחייה. כל מדינה משתמשת בכוחות החדשים
+                    כדי לחולל שינוי ולסיים את המאבק הסופי.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🏆 עונה 22: הניצחון הסופי</h2>
+                <p class="season-description">הקרב האחרון מתנהל עם ניצחון מוחלט של האור. המדינות חוגגות את הניצחון
+                    ומתחילות לבנות עתיד חדש.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌅 עונה 23: התקופה החדשה</h2>
+                <p class="season-description">עולם חדש מתהווה לאחר הניצחון. המדינות והתרבויות בונות סדר חדש שבו כל דת
+                    ואמונה מוצאת את מקומה.</p>
+            </div>
+
+            <div class="season-card">
+                <h2 class="season-title">🌕 עונה 24: הטוב הנצחי</h2>
+                <p class="season-description">העולם מגיע לשיא של טוב נצחי בכל העולמות. הגיבורים חוגגים את ההצלחה ובונים
+                    עתיד שבו הניצוץ הקדוש שולט ופורח, ומבטיח עתיד יציב ומאושר לכל הברואים.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>כל הזכויות שמורות © 2024 🌟</p>
+    </footer>
+</body>
+
+</html>

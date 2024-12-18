@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כוחות ויכולות | מלחמת הניצוצות</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+
+    <style>
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .power-card {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .power-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .power-title {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .power-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .power-list li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+
+        .power-category {
+            color: #00ff00;
+            font-weight: bold;
+            margin: 1.5rem 0 0.5rem 0;
+            border-right: 3px solid currentColor;
+            padding-right: 0.5rem;
+        }
+
+        .dark-forces .power-category {
+            color: #ff4444;
+        }
+
+        .abilities-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(145deg, #1c1c1c, #2a2a2a);
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .abilities-section h2 {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .ability-card {
+            background: linear-gradient(145deg, #242424, #1a1a1a);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .ability-title {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ffd700;
+        }
+
+        .sub-abilities {
+            padding: 0 1rem;
+        }
+
+        .sub-abilities h4 {
+            color: #00ff00;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dark-forces .sub-abilities h4 {
+            color: #ff4444;
+        }
+
+        .sub-abilities ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sub-abilities li {
+            margin: 0.8rem 0;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .sub-abilities li:hover {
+            transform: translateX(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* הוספת אנימציה לאימוג'ים */
+        .sub-abilities li::before {
+            content: attr(data-emoji);
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .sub-abilities li:hover::before {
+            transform: scale(1.2);
+        }
+
+        .force-unit {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+        }
+
+        .force-unit h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.3em;
+        }
+
+        .power-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.8rem 0;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        .power-list li:hover {
+            transform: translateX(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">✨ כוחות ויכולות ✨</h1>
+        <p>מדריך מקיף לכוחות הלחימה במלחמת הניצוצות</p>
+    </header>
+
+    <div class="container">
+        <section class="powers-grid">
+            <!-- כוחות האור -->
+            <div class="power-card">
+                <h2 class="power-title">🌟 כוחות האור</h2>
+
+                <!-- חיל האורות -->
+                <div class="force-unit">
+                    <h3>✨ חיל האורות</h3>
+
+                    <div class="power-category">כלי נשק</div>
+                    <ul class="power-list">
+                        <li>🗡️ חרבות אור - מרבות שמייצרות קרני אור חזקות שיכולות לשבור קסמים של כוחות הרשע</li>
+                        <li>🛡️ מגן אור - מגן שמגן על הלוחמים מפני התקפות רשע ומשקף קסמים</li>
+                    </ul>
+
+                    <div class="power-category">יכולות מרכזיות</div>
+                    <ul class="power-list">
+                        <li>💫 התקפות אור - שיגור קרני אור שמזיקים לרשע ומחזקים את כוחות האור</li>
+                        <li>🛡️ הגנה רוחנית - יצירת חומת אור שמגנה על אזורים מסוימים</li>
+                        <li>👁️ ראיית אור - יכולת לראות את מקורות הרשע ואזורי כוחותיהם</li>
+                    </ul>
+
+                    <div class="power-category">אופציות הרחבה</div>
+                    <ul class="power-list">
+                        <li>✨ כוחות אור חדשים - פיתוח קסמים חדשים המתמקדים באור</li>
+                        <li>🎓 מאגי אור - הכשרת דמויות חדשות שמתמחות בשימוש בכוחות אור</li>
+                        <li>🏰 מפקדות קדושות - הקמת מפקדות נוספות באזורים שונים</li>
+                    </ul>
+                </div>
+
+                <!-- חיל מטאטא -->
+                <div class="force-unit">
+                    <h3>🧹 חיל מטאטא</h3>
+
+                    <div class="power-category">כלי עבודה</div>
+                    <ul class="power-list">
+                        <li>🧹 מטליות קסומות - מטהרות ומסירות כוחות רשע</li>
+                        <li>✨ אבק קסום - מנקה שטחים מכוחות רעים</li>
+                    </ul>
+
+                    <div class="power-category">יכולות מרכזיות</div>
+                    <ul class="power-list">
+                        <li>🧼 ניקוי קסמים - ניקוי אזורים שנפגעו מכוחות רשע</li>
+                        <li>💖 ריפוי - ריפוי של פגיעות שנגרמו על ידי כוחות הרשע</li>
+                        <li>🌟 יצירת התפשטות - יצירת אזורים נטולי רשע</li>
+                    </ul>
+
+                    <div class="power-category">אופציות הרחבה</div>
+                    <ul class="power-list">
+                        <li>🔧 אביזרי ניקוי חדשים - פיתוח כלים ומכשירים חדשים</li>
+                        <li>💝 כוחות ריפוי חדשים - פיתוח יכולות ריפוי מתקדמות</li>
+                        <li>🌍 הרחבת שטחי ניקוי - הרחבת אזורי הפעולה</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- כוחות הרשע -->
+            <div class="power-card dark-forces">
+                <h2 class="power-title">🌑 כוחות הרשע</h2>
+
+                <!-- חיל טומאה -->
+                <div class="force-unit">
+                    <h3>☠️ חיל טומאה</h3>
+
+                    <div class="power-category">כלי נשק</div>
+                    <ul class="power-list">
+                        <li>⚔️ חרבות טומאה - מרבות שמפיצות אנרגיה של רשע</li>
+                        <li>💨 כוחות אבק שחור - אבק שמביא למוות או נזק חמור</li>
+                    </ul>
+
+                    <div class="power-category">יכולות מרכזיות</div>
+                    <ul class="power-list">
+                        <li>💀 התקפות טומאה - שיגור התקפות הרסניות</li>
+                        <li>🌀 שיבוש - שיבוש יכולות כוחות האור</li>
+                        <li>💔 פיצול רוחני - יצירת הפרעות פנימיות</li>
+                    </ul>
+
+                    <div class="power-category">אופציות הרחבה</div>
+                    <ul class="power-list">
+                        <li>🔮 כוחות רשע חדשים - פיתוח קסמים ואמצעים חדשים</li>
+                        <li>👥 צבאות רשע נוספים - יצירת יחידות חדשות</li>
+                        <li>🌑 הרחבת אזורי טומאה - שליטה על שטחים חדשים</li>
+                    </ul>
+                </div>
+
+                <!-- חיל כפירה -->
+                <div class="force-unit">
+                    <h3>👿 חיל כפירה</h3>
+
+                    <div class="power-category">כלי נשק</div>
+                    <ul class="power-list">
+                        <li>🏴 מקלות כפירה - מקלות שמבזבזים את כוח האמונה של אחרים ומפיצים כפירה</li>
+                        <li>🤖 טכנולוגיה של רשע - מכשירים וטכנולוגיות שמשבשות את כוח האמונה</li>
+                    </ul>
+
+                    <div class="power-category">יכולות מרכזיות</div>
+                    <ul class="power-list">
+                        <li>🎭 הפצת כפירה - הטלת ספק באמונות של כוחות האור</li>
+                        <li>💔 שיבוש אמונה - הפרעה בתהליך האמונה וביצירת חוסר אמון</li>
+                        <li>🌀 יצירת פיצולים רעיוניים - יצירת רעיונות וספקות מבלבלים</li>
+                    </ul>
+
+                    <div class="power-category">אופציות הרחבה</div>
+                    <ul class="power-list">
+                        <li>🔮 טכנולוגיות רשע נוספות - פיתוח מכשירים חדשים לשיבוש</li>
+                        <li>👥 הכשרת סוכני כפירה - הכשרת סוכנים להפצת ספקות</li>
+                        <li>🌑 הרחבת אזורי השפעה - שליטה באזורים חדשים</li>
+                    </ul>
+                </div>
+
+                <!-- חיל זנות -->
+                <div class="force-unit">
+                    <h3>💔 חיל זנות</h3>
+
+                    <div class="power-category">כלי נשק</div>
+                    <ul class="power-list">
+                        <li>💰 קסמים של שוחד - קסמים שמביאים לחולשה מוסרית</li>
+                        <li>🎭 אומנויות השפעה - יכולות להשפעה שלילית על התנהגות</li>
+                    </ul>
+
+                    <div class="power-category">יכולות מרכזיות</div>
+                    <ul class="power-list">
+                        <li>🎯 פיתוי - יכולת לפתות דמויות לסטות מהדרך</li>
+                        <li>👥 השפעה שלילית - השפעה על התנהגות ויצירת חוסר יושר</li>
+                        <li>⚠️ הפרעה מוסרית - שיבוש המוסריות ויצירת בלבול</li>
+                    </ul>
+
+                    <div class="power-category">אופציות הרחבה</div>
+                    <ul class="power-list">
+                        <li>🎭 קסמי פיתוי חדשים - פיתוח קסמים להשפעה מורחבת</li>
+                        <li>🔮 שיטות חדשות - פיתוח טכניקות השפעה נוספות</li>
+                        <li>🌍 הרחבת אזורי השפעה - שליטה באזורים חדשים</li>
+                    </ul>
+                </div>
+
+                <!-- חיל טכנולוגיה -->
+                <div class="force-unit">
+                    <h3>🤖 חיל טכנולוגיה</h3>
+
+                    <div class="power-category">כלי נשק</div>
+                    <ul class="power-list">
+                        <li>⚙️ מכונות רשע - מכונות מתקדמות לשיבוש פעילות האור</li>
+                        <li>📱 אמצעים אלקטרוניים - מכשירים לשיבוש זרימת האור</li>
+                    </ul>
+
+                    <div class="power-category">יכולות מרכזיות</div>
+                    <ul class="power-list">
+                        <li>💻 התקפות טכנולוגיות - שימוש בטכנולוגיה לפגיעה בכוחות האור</li>
+                        <li>🌑 שיבוש אור - שיבוש הזרימה והפעולה של כוחות האור</li>
+                        <li>🔓 התקפות סייבר - פגיעה באור ובהגנותיו</li>
+                    </ul>
+
+                    <div class="power-category">אופציות הרחבה</div>
+                    <ul class="power-list">
+                        <li>🔧 פיתוח מכונות חדשות - יצירת טכנולוגיות מתקדמות</li>
+                        <li>🤖 כוחות טכנולוגיים חדשים - יחידות עם יכולות משודרגות</li>
+                        <li>🌐 הרחבת אזורי שליטה - שליטה טכנולוגית באזורים חדשים</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="abilities-section">
+            <h2>🎯 יכולות מפורטות</h2>
+            <div class="powers-grid">
+                <!-- יכולות חיל האורות -->
+                <div class="ability-card">
+                    <h3 class="ability-title">✨ יכולות חיל האורות</h3>
+                    <div class="sub-abilities">
+                        <h4>התקפות אור</h4>
+                        <ul>
+                            <li>🌟 קרן אור ממוקדת - שיגור קרן אור חזקה לפגיעה מדויקת</li>
+                            <li>💥 פיצוץ אור - יצירת פיצוץ של אור שפוגע באויבים</li>
+                            <li>⚡ סופת אור - התקפה רחבה של אור שמכסה שטח גדול</li>
+                        </ul>
+
+                        <h4>הגנה רוחנית</h4>
+                        <ul>
+                            <li>🛡️ מגן אור - הגנה אישית מפני התקפות</li>
+                            <li>🏰 חומת אור - הגנה על שטח או קבוצה</li>
+                            <li>🌐 שדה הגנה - יצירת שדה מגן רחב</li>
+                        </ul>
+
+                        <h4>יכולת גילוי</h4>
+                        <ul>
+                            <li>👁️ ראיית אור - גילוי כוחות רשע וחשיפת מזימות</li>
+                            <li>🔍 זיהוי קסם - זיהוי סוגי קסמים והשפעותיהם</li>
+                            <li>💫 חישת אנרגיה - זיהוי מקורות אנרגיה חיובית ושלילית</li>
+                        </ul>
+
+                        <h4>יכולת ריפוי</h4>
+                        <ul>
+                            <li>💖 ריפוי אור - ריפוי פגיעות פיזיות ורוחניות</li>
+                            <li>✨ הסרת קללות - טיהור מהשפעות שליליות</li>
+                            <li>🌈 התחדשות - חידוש כוחות ואנרגיה</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- יכולות חיל מטאטא -->
+                <div class="ability-card">
+                    <h3 class="ability-title">🧹 יכולות חיל מטאטא</h3>
+                    <div class="sub-abilities">
+                        <h4>ניקוי קסמים</h4>
+                        <ul>
+                            <li>🧹 טיהור שטחים - ניקוי אזורים מכוחות רשע</li>
+                            <li>✨ פיזור אבק קסום - שימוש באבק מטהר</li>
+                            <li>💫 ניקוי אנרגטי - הסרת אנרגיות שליליות</li>
+                        </ul>
+
+                        <h4>ריפוי וטיהור</h4>
+                        <ul>
+                            <li>💝 ריפוי מהיר - טיפול מיידי בפגיעות</li>
+                            <li>🌟 הקלת סבל - הפחתת כאב וסבל</li>
+                            <li>✨ טיהור נפשי - ניקוי השפעות רוחניות שליליות</li>
+                        </ul>
+
+                        <h4>יצירת אזורים מוגנים</h4>
+                        <ul>
+                            <li>🏰 אזור טהור - יצירת מרחב מוגן מרשע</li>
+                            <li>🌐 שדה ניקוי - אזור שמנקה אוטומטית כוחות רעים</li>
+                            <li>💫 מעגל הגנה - יצירת מעגל מוגן מהשפעות חיצוניות</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- יכולות כוחות הרשע -->
+                <div class="ability-card dark-forces">
+                    <h3 class="ability-title">☠️ יכולות חיל טומאה</h3>
+                    <div class="sub-abilities">
+                        <h4>התקפות טומאה</h4>
+                        <ul>
+                            <li>⚔️ חרבות טומאה - התקפות עם אנרגיה שלילית</li>
+                            <li>💥 פיצוץ טומאה - פיצוצי אנרגיה הרסנית</li>
+                            <li>🌑 סופת חושך - יצירת סופה של אנרגיה שלילית</li>
+                        </ul>
+
+                        <h4>שיבוש והרס</h4>
+                        <ul>
+                            <li>🌀 שיבוש אור - נטרול כוחות האור</li>
+                            <li>💔 פיצול רוחני - יצירת קרעים פנימיים</li>
+                            <li>👻 הפצת פחד - יצירת אווירת פחד ובלבול</li>
+                        </ul>
+
+                        <h4>כוחות מתקדמים</h4>
+                        <ul>
+                            <li>🔮 ראיית טומאה - זיהוי נקודות חולשה</li>
+                            <li>🎭 מניפולציה - שליטה והשפעה על אחרים</li>
+                            <li>⚡ אנרגיה שלילית - שימוש בכוחות חושך</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ability-card dark-forces">
+                    <h3 class="ability-title">👿 יכולות חיל כפירה וזנות</h3>
+                    <div class="sub-abilities">
+                        <h4>🎭 הפצת כפירה</h4>
+                        <ul>
+                            <li data-emoji="💭">הפצת ספקות באמונות - זריעת ספקות במערכות אמונה</li>
+                            <li data-emoji="⚠️">שיבוש עקרונות מוסריים - ערעור תפיסות מוסר בסיסיות</li>
+                            <li data-emoji="📉">שחיקת אמונה - החלשה הדרגתית של אמונות</li>
+                        </ul>
+
+                        <h4>🎯 פיתוי והשפעה</h4>
+                        <ul>
+                            <li data-emoji="✨">קסמי פיתוי - יצירת אשליות מפתות</li>
+                            <li data-emoji="🌀">הפצת חטאים - השפעה שלילית על התנהגות</li>
+                            <li data-emoji="💫">יצירת תשוקות רעות - עיוות רצונות ומאוויים</li>
+                        </ul>
+
+                        <h4>🤖 טכנולוגיה ומניפולציה</h4>
+                        <ul>
+                            <li data-emoji="📱">מכשירי כפירה - טכנולוגיות לשיבוש אמונה</li>
+                            <li data-emoji="💰">טכנולוגיות שוחד - מערכות להשפעה והטיה</li>
+                            <li data-emoji="📢">הפצת שקרים - מערכות להפצת מידע כוזב</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ability-card dark-forces">
+                    <h3 class="ability-title">🤖 יכולות חיל טכנולוגיה</h3>
+                    <div class="sub-abilities">
+                        <h4>💻 התקפות טכנולוגיות</h4>
+                        <ul>
+                            <li data-emoji="💥">פיצוץ טכנולוגי - יצירת פיצוצים באמצעות טכנולוגיה מתקדמת</li>
+                            <li data-emoji="🚀">התקפות רקטות - שיגור רקטות חכמות עם יכולות מעקב</li>
+                            <li data-emoji="🔓">התקפות סייבר - חדירה למערכות ושיבוש פעילות האור</li>
+                        </ul>
+
+                        <h4>⚡ שיבוש ומניפולציה</h4>
+                        <ul>
+                            <li data-emoji="📱">מכשירי שיבוש אור - טכנולוגיה לנטרול כוחות האור</li>
+                            <li data-emoji="🚫">חסימת אנרגיה - מניעת זרימת אנרגיה חיובית</li>
+                            <li data-emoji="📡">עיכוב תקשורת - שיבוש תקשורת בין כוחות האור</li>
+                        </ul>
+
+                        <h4>🔧 פיתוח והרחבה</h4>
+                        <ul>
+                            <li data-emoji="⚙️">פיתוח מכונות חדשות - יצירת טכנולוגיות רשע מתקדמות</li>
+                            <li data-emoji="🏭">הקמת מתקנים טכנולוגיים - בניית תשתיות לפעילות טכנולוגית</li>
+                            <li data-emoji="🔍">מחקר וניצול חולשות - איתור וניצול נקודות תורפה</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>כל הזכויו שמורות © 2024 מלחמת הניצוצות</p>
+    </footer>
+</body>
+
+</html>

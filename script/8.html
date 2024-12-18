@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מלחמת הניצוצות - פרקים</title>
+
+    <style>
+        /* CSS Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f5f6fa;
+            --text-color: #2c3e50;
+            --card-background: #ffffff;
+            --border-radius: 8px;
+            --spacing: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: var(--spacing);
+        }
+
+        .month-section {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            padding: var(--spacing);
+            margin-bottom: var(--spacing);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .month-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .episode-card {
+            background-color: var(--card-background);
+            border: 1px solid #e1e1e1;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            transition: transform 0.2s ease;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .episode-number {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .episode-title {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        #monthFilter {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: var(--spacing);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            .episodes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .season-description {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.09);
+            border-radius: var(--border-radius);
+            text-align: right;
+
+        }
+
+        .season-description ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .season-description li {
+            margin: 10px 0;
+            padding: 5px 0;
+        }
+
+        .month-description {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: var(--border-radius);
+            line-height: 1.6;
+
+        }
+    </style>
+    <script src="scripts/footer.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>מלחמת הניצוצות</h1>
+        <p>עונה 1: ההתחלה האפלה</p>
+        <div class="season-description">
+            <p>סדרת פרקים המתארת את המאבק בין כוחות האור והחושך לאורך השנה העברית:</p>
+            <ul>
+                <li><strong>ניסן:</strong> התעוררות הכוחות הראשונית והתגלות האופל</li>
+                <li><strong>אייר:</strong> התחזקות כוחות האור וההתמודדות הראשונה</li>
+                <li><strong>סיון:</strong> התפתחות הכוחות והתגברות המאבק</li>
+                <li><strong>תמוז:</strong> עימותים מורכבים והתמודדות עם אתגרים חדשים</li>
+                <li><strong>אב:</strong> גילויים חדשים והתפתחויות דרמטיות</li>
+                <li><strong>אלול:</strong> התחזקות רוחנית והתמודדות עם אתגרי הנפש</li>
+                <li><strong>תשרי:</strong> תקופת מפנה והתחדשות כוחות האור</li>
+                <li><strong>מרחשוון:</strong> העמקת המאבק והתמודדות עם אתגרים מורכבים</li>
+                <li><strong>כסלו:</strong> גילוי אורות חדשים והתגברות על החושך</li>
+                <li><strong>שבט:</strong> התפתחויות דרמטיות וניצחונות משמעותיים</li>
+                <li><strong>אדר:</strong> הכרעת המערכה וניצחון הסופי של האור</li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <select id="monthFilter">
+            <option value="all">כל החודשים</option>
+            <option value="ניסן">ניסן</option>
+            <option value="אייר">אייר</option>
+            <option value="סיון">סיון</option>
+            <option value="תמוז">תמוז</option>
+            <option value="אב">אב</option>
+            <option value="אלול">אלול</option>
+            <option value="תשרי">תשרי</option>
+            <option value="מרחשוון">מרחשוון</option>
+            <option value="כסלו">כסלו</option>
+            <option value="שבט">שבט</option>
+            <option value="אדר">אדר</option>
+        </select>
+
+        <div id="episodesContainer"></div>
+    </div>
+
+    <script>
+        // JavaScript
+        const episodes = {
+            'ניסן': [
+                { number: 1, title: "התחלת התפרצות האופל בעולם" },
+                { number: 2, title: "כוחות האור מתעוררים במדינה אחת" },
+                { number: 3, title: "התפשטות האופל לעולם הרוחני" },
+                { number: 4, title: "קרב אשון נגד כוחות האופל" },
+                { number: 5, title: "גילוי סוד עתיק מהתורה" },
+                { number: 6, title: "התחזקות כוחות האור" },
+                { number: 7, title: "התארגנות הממלכה החדשה" },
+                { number: 8, title: "מסע חיפוש אחרי מקורות האופל" },
+                { number: 9, title: "עימותים פנימיים בממלכה" },
+                { number: 10, title: "גילוי קונספירציה עולמית" },
+                { number: 11, title: "התמודדות עם האופל במציאות מקבילה" },
+                { number: 12, title: "התערבות כוחות אל-חומריים" },
+                { number: 13, title: "סיכום מסעות הגיבורים" },
+                { number: 14, title: "התמודדות עם הרוחות הרעות" },
+                { number: 15, title: "חיפוש אחר עזרה מממלכות אחרות" },
+                { number: 16, title: "ק��ב ראשון עם כוח חדש" },
+                { number: 17, title: "גילוי הכוחות האמיתיים" },
+                { number: 18, title: "עימותים פנימיים" },
+                { number: 19, title: "התמודדות עם עימותים גלובליים" },
+                { number: 20, title: "השפעת החזון האפל" },
+                { number: 21, title: "התאוששות מהפיצול" },
+                { number: 22, title: "התחזקות האור" },
+                { number: 23, title: "ההתמודדות עם סכנות כפולות" },
+                { number: 24, title: "התמודדות עם כוחות רוחניים" },
+                { number: 25, title: "התמודדות עם כוחות עתיקים" },
+                { number: 26, title: "השגת עזרה חוצת גלקטיקה" },
+                { number: 27, title: "עימותים במציאות מקבילה" },
+                { number: 28, title: "התפשטות האור" },
+                { number: 29, title: "חזרת בית המקדש כאור עולמי" },
+                { number: 30, title: "תחילת העולם החדש" }
+            ],
+            'אייר': [
+                { number: 31, title: "גיבוש סדר חדש" },
+                { number: 32, title: "ההתמודדות עם כוחות אל-חומריים" },
+                { number: 33, title: "התמודדות עם בעיות פנימיות" },
+                { number: 34, title: "הניצחון הסופי של כוחות האור" },
+                { number: 35, title: "התקופה החדשה" },
+                { number: 36, title: "השגת כוח חדש" },
+                { number: 37, title: "השפעת הטוב הנצחי" },
+                { number: 38, title: "התמודדות עם אתגרים אחרונים" },
+                { number: 39, title: "הכוחות החדשים" },
+                { number: 40, title: "הקונפליקטים הגלקטיים" },
+                { number: 41, title: "ההתמודדות עם האופל ברמות שונות" },
+                { number: 42, title: "השגת האור הגדול" },
+                { number: 43, title: "חידוש הכוחות" },
+                { number: 44, title: "התמודדות עם בעיות גלובליות" },
+                { number: 45, title: "המשך הקרב הגדול" },
+                { number: 46, title: "השגת עזרה ממקורות חדשים" },
+                { number: 47, title: "התמודדות עם האתגרים האחרונים" },
+                { number: 48, title: "התמקדות בכוחות רוחניים" },
+                { number: 49, title: "מסע חיפוש אחר כוחות נוספים" },
+                { number: 50, title: "התאמה לעידן החדש" },
+                { number: 51, title: "חזרת כוחות עולמיים" },
+                { number: 52, title: "התמודדות עם השפעות רוחניות" },
+                { number: 53, title: "כוחות השפעה על העולם החדש" },
+                { number: 54, title: "השלמת התהליך" },
+                { number: 55, title: "התפשטות האור החדש" },
+                { number: 56, title: "התמודדות עם בעיות פנימיות" },
+                { number: 57, title: "המשך ההתמודדות עם האופל" },
+                { number: 58, title: "שיפור הכוחות" },
+                { number: 59, title: "סיום הסיפור" }
+            ],
+            'סיון': [
+                { number: 60, title: "תחילת תקופה חדשה" },
+                { number: 61, title: "ההתמודדות עם אתגרים חדשים" },
+                { number: 62, title: "השגת כוחות נוספים" },
+                { number: 63, title: "התמודדות עם בעיות גלובליות" },
+                { number: 64, title: "חידוש התקווה" },
+                { number: 65, title: "התחזקות כוחות האור" },
+                { number: 66, title: "התמודדות עם כוחות מקבילים" },
+                { number: 67, title: "התפתחות כוחות קדושים" },
+                { number: 68, title: "השגת כוח חדש" },
+                { number: 69, title: "התמודדות עם סכנות כפולות" },
+                { number: 70, title: "חידוש האור הגדול" },
+                { number: 71, title: "המשך ההתמודדות" },
+                { number: 72, title: "השגת עזרה חיצונית" },
+                { number: 73, title: "שיפור התמודדות עם האופל" },
+                { number: 74, title: "התמקדות בכוחות אל-חומריים" },
+                { number: 75, title: "פתרון בעיות עולמיות" },
+                { number: 76, title: "התמודדות עם אתגרים עולמיים" },
+                { number: 77, title: "חידוש תקווה עולמית" },
+                { number: 78, title: "השלמת שלב חדש" },
+                { number: 79, title: "התפשטות האור הגדול" },
+                { number: 80, title: "ההתמודדות עם האתגרים האחרונים" },
+                { number: 81, title: "השגת כוח חדש" },
+                { number: 82, title: "חידוש הקשרים" },
+                { number: 83, title: "חזרת האור" },
+                { number: 84, title: "המשך ההתמודדות עם האופל" },
+                { number: 85, title: "שיפור כוח האור" },
+                { number: 86, title: "התמודדות עם אתגרים נוספים" },
+                { number: 87, title: "התמקדות בכוחות רוחניים" },
+                { number: 88, title: "התאמה לעידן החדש" },
+                { number: 89, title: "סיום העונה" }
+            ],
+            'תמוז': [
+                { number: 90, title: "התמקדות בכוחות האור" },
+                { number: 91, title: "המשך ההתמודדות עם האופל" },
+                { number: 92, title: "השגת עזרה מחוץ לעולם" },
+                { number: 93, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 94, title: "חידוש הכוחות" },
+                { number: 95, title: "התמודדות עם בעיות גלובליות" },
+                { number: 96, title: "התחזקות הכוחות" },
+                { number: 97, title: "התמודדות עם אתגרים עולמיים" },
+                { number: 98, title: "השגת כוח חדש" },
+                { number: 99, title: "חידוש התפשטות האור" },
+                { number: 100, title: "פתרון בעיות עולמ��ות" },
+                { number: 101, title: "התמקדות בכוחות רוחניים" },
+                { number: 102, title: "חזרת האור הגדול" },
+                { number: 103, title: "התמודדות עם בעיות נוספות" },
+                { number: 104, title: "חידוש הקשרים" },
+                { number: 105, title: "התמודדות עם אתגרים אחרונים" },
+                { number: 106, title: "התפשטות האור בעולם" },
+                { number: 107, title: "המשך ההשפעה" },
+                { number: 108, title: "ההתמקדות בכוחות קדושים" },
+                { number: 109, title: "התמודדות עם בעיות פנימיות" },
+                { number: 110, title: "חידוש הידע" },
+                { number: 111, title: "חידוש כוח האור" },
+                { number: 112, title: "התמודדות עם אתגרים חדשים" },
+                { number: 113, title: "חזרת התפשטות האור" },
+                { number: 114, title: "פתרון בעיות גלובליות" },
+                { number: 115, title: "התמקדות בכוחות אל-חומריים" },
+                { number: 116, title: "התחזקות עולמית" },
+                { number: 117, title: "התמו��דות עם בעיות נוספות" },
+                { number: 118, title: "סיום העונה" }
+            ],
+            'אב': [
+                { number: 119, title: "התחלת התפשטות האור" },
+                { number: 120, title: "התמודדות עם בעיות גלובליות" },
+                { number: 121, title: "השגת כוח קדוש" },
+                { number: 122, title: "חידוש תקווה עולמית" },
+                { number: 123, title: "התמקדות בכוחות חדשים" },
+                { number: 124, title: "התמודדות עם אתגרים אחרונים" },
+                { number: 125, title: "השגת עזרה נוספת" },
+                { number: 126, title: "חידוש התפשטות האור" },
+                { number: 127, title: "פתרון בעיות עולמיות" },
+                { number: 128, title: "התמקדות בכוחות רוחניים" },
+                { number: 129, title: "חידוש האור הגדול" },
+                { number: 130, title: "התמודדות עם בעיות פנימיות" },
+                { number: 131, title: "חידוש התפשטות האור" },
+                { number: 132, title: "התמודדות עם אתגרים גלובליים" },
+                { number: 133, title: "ח��רת האור" },
+                { number: 134, title: "התמקדות בכוחות חדשים" },
+                { number: 135, title: "פתרון בעיות נוספות" },
+                { number: 136, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 137, title: "חידוש האור הגדול" },
+                { number: 138, title: "התמודדות עם בעיות נוספות" },
+                { number: 139, title: "חידוש התפשטות האור" },
+                { number: 140, title: "פתרון בעיות עולמיות" },
+                { number: 141, title: "התחזקות האור" },
+                { number: 142, title: "התמקדות בכוחות רוחניים" },
+                { number: 143, title: "התמודדות עם בעיות פנימיות" },
+                { number: 144, title: "חידוש הידע" },
+                { number: 145, title: "חזרת האור הגדול" },
+                { number: 146, title: "התמודדות עם אתגרים נוספים" },
+                { number: 147, title: "חידוש כוח האור" },
+                { number: 148, title: "סיום העונה" }
+            ],
+            'אלול': [
+                { number: 149, title: "התמקדות בכוחות האור" },
+                { number: 150, title: "חידוש התקווה" },
+                { number: 151, title: "התמודדות עם בעיות גלובליות" },
+                { number: 152, title: "השגת כוח חדש" },
+                { number: 153, title: "חידוש ההתפשטות" },
+                { number: 154, title: "פתרון בעיות עולמיות" },
+                { number: 155, title: "התמקדות בכוחות רוחניים" },
+                { number: 156, title: "חזרת האור הגדול" },
+                { number: 157, title: "התמודדות עם בעיות נוספות" },
+                { number: 158, title: "חידוש התפשטות האור" },
+                { number: 159, title: "פתרון בעיות עולמיות" },
+                { number: 160, title: "התמקדות בכוחות חדשים" },
+                { number: 161, title: "חידוש תקווה עולמית" },
+                { number: 162, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 163, title: "חידוש כוח האור" },
+                { number: 164, title: "חזרת האור" },
+                { number: 165, title: "התמודדות עם בעיות נוספות" },
+                { number: 166, title: "חידוש התפשטות האור" },
+                { number: 167, title: "פתרון בעיות גלובליות" },
+                { number: 168, title: "התמקדות בכוחות רוחניים" },
+                { number: 169, title: "חידוש האור הגדול" },
+                { number: 170, title: "התמודדות עם בעיות פנימיות" },
+                { number: 171, title: "חידוש הידע" },
+                { number: 172, title: "פתרון בעיות נוספות" },
+                { number: 173, title: "חזרת האור" },
+                { number: 174, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 175, title: "חידוש כוח האור" },
+                { number: 176, title: "התמקדות בכוחות רוחניים" },
+                { number: 177, title: "סיום העונה" }
+            ],
+            'תשרי': [
+                { number: 178, title: "תחילת תקופה חדשה" },
+                { number: 179, title: "התמקדות בכוחות האור" },
+                { number: 180, title: "חידוש תקווה עולמית" },
+                { number: 181, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 182, title: "חידוש ההתפשטות" },
+                { number: 183, title: "פתרון בעיות עולמיות" },
+                { number: 184, title: "התמקדות בכוחות רוחניים" },
+                { number: 185, title: "חידוש האור הגדול" },
+                { number: 186, title: "התמודדות עם בעיות נוספות" },
+                { number: 187, title: "חידוש התפשטות האור" },
+                { number: 188, title: "פתרון בעיות גלובליות" },
+                { number: 189, title: "התמקדות בכוחות חדשים" },
+                { number: 190, title: "חידוש תקווה עולמית" },
+                { number: 191, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 192, title: "חידוש כוח האור" },
+                { number: 193, title: "חזרת האור" },
+                { number: 194, title: "התמודדות עם בעיות נוספות" },
+                { number: 195, title: "חידוש התפשטות האור" },
+                { number: 196, title: "פתרון בעיות גלובליות" },
+                { number: 197, title: "התמקדות בכוחות רוחניים" },
+                { number: 198, title: "חידוש האור הגדול" },
+                { number: 199, title: "התמודדות עם בעיות פנימיות" },
+                { number: 200, title: "חידוש הידע" },
+                { number: 201, title: "חזרת האור הגדול" },
+                { number: 202, title: "התמודדות עם אתגרים נוספים" },
+                { number: 203, title: "חידוש כוח האור" },
+                { number: 204, title: "התמקדות בכוחות רוחניים" },
+                { number: 205, title: "התחזקות האור" },
+                { number: 206, title: "חידוש התפשטות האור" },
+                { number: 207, title: "סיום העונה" }
+            ],
+            'מרחשוון': [
+                { number: 208, title: "התמקדות בכוחות האור" },
+                { number: 209, title: "חידוש תקווה עולמית" },
+                { number: 210, title: "התמודדות עם בעיות גלובליות" },
+                { number: 211, title: "השגת כוח חדש" },
+                { number: 212, title: "חידוש ההתפשטות" },
+                { number: 213, title: "פתרון בעיות עולמיות" },
+                { number: 214, title: "התמקדות בכוחות רוחניים" },
+                { number: 215, title: "חזרת האור הגדול" },
+                { number: 216, title: "התמודדות עם בעיות נוספות" },
+                { number: 217, title: "חידוש התפשטות האור" },
+                { number: 218, title: "פתרון בעיות גלובליות" },
+                { number: 219, title: "התמקדות בכוחות חדשים" },
+                { number: 220, title: "חידוש תקווה עולמית" },
+                { number: 221, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 222, title: "חידוש כוח האור" },
+                { number: 223, title: "חזרת האור" },
+                { number: 224, title: "התמודדות עם בעיות נוספות" },
+                { number: 225, title: "חידוש התפשטות האור" },
+                { number: 226, title: "פתרון בעיות גלובליות" },
+                { number: 227, title: "התמקדות בכוחות רוחניים" },
+                { number: 228, title: "חידוש האור הגדול" },
+                { number: 229, title: "התמודדות עם בעיות פנימיות" },
+                { number: 230, title: "חידוש הידע" },
+                { number: 231, title: "חזרת האור הגדול" },
+                { number: 232, title: "התמודדות עם אתגרים נוספים" },
+                { number: 233, title: "חידוש כוח האור" },
+                { number: 234, title: "התמקדות בכוחות רוחניים" },
+                { number: 235, title: "התחזקות האור" },
+                { number: 236, title: "סיום העונה" }
+            ],
+            'כסלו': [
+                { number: 237, title: "התחלת תקופה חדשה" },
+                { number: 238, title: "התמקדות בכוחות האור" },
+                { number: 239, title: "חידוש תקווה עולמית" },
+                { number: 240, title: "התמודדות עם בעיות גלובליות" },
+                { number: 241, title: "השגת כוח חדש" },
+                { number: 242, title: "חידוש ההתפשטות" },
+                { number: 243, title: "פתרון בעיות עולמיות" },
+                { number: 244, title: "התמקדות בכוחות רוחניים" },
+                { number: 245, title: "חזרת האור הגדול" },
+                { number: 246, title: "התמודדות עם בעיות נוספות" },
+                { number: 247, title: "חי��וש התפשטות האור" },
+                { number: 248, title: "פתרון בעיות גלובליות" },
+                { number: 249, title: "התמקדות בכוחות חדשים" },
+                { number: 250, title: "חידוש תקווה עולמית" },
+                { number: 251, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 252, title: "חידוש כוח האור" },
+                { number: 253, title: "חזרת האור" },
+                { number: 254, title: "התמודדות עם בעיות נוספות" },
+                { number: 255, title: "חידוש התפשטות האור" },
+                { number: 256, title: "פתרון בעיות גלובליות" },
+                { number: 257, title: "התמקדות בכוחות רוחניים" },
+                { number: 258, title: "חידוש האור הגדול" },
+                { number: 259, title: "התמודדות עם בעיות פנימיות" },
+                { number: 260, title: "חידוש הידע" },
+                { number: 261, title: "חזרת האור הגדול" },
+                { number: 262, title: "התמודדות עם אתגרים נוספים" },
+                { number: 263, title: "חידוש כוח האור" },
+                { number: 264, title: "התמקדות בכוחות רוחניים" },
+                { number: 265, title: "התחזקות האור" },
+                { number: 266, title: "סיום העונה" }
+            ],
+            'שבט': [
+                { number: 267, title: "תחילת תקופה חדשה" },
+                { number: 268, title: "התמקדות בכוחות האור" },
+                { number: 269, title: "חידוש תקווה עולמית" },
+                { number: 270, title: "התמודדות עם בעיות גלובליות" },
+                { number: 271, title: "השגת כוח חדש" },
+                { number: 272, title: "חידוש ההתפשטות" },
+                { number: 273, title: "פתרון בעיות עולמיות" },
+                { number: 274, title: "התמקדות בכוחות רוחניים" },
+                { number: 275, title: "חזרת האור הגדול" },
+                { number: 276, title: "התמודדות עם בעיות נוספות" },
+                { number: 277, title: "חידוש התפשטות האור" },
+                { number: 278, title: "פתרון בעיות גלובליות" },
+                { number: 279, title: "התמקדות בכוחות חדשים" },
+                { number: 280, title: "חידוש תקווה עולמית" },
+                { number: 281, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 282, title: "חידוש כוח האור" },
+                { number: 283, title: "חזרת האור" },
+                { number: 284, title: "התמודדות עם בעיות נוספות" },
+                { number: 285, title: "חידוש התפשטות האור" },
+                { number: 286, title: "פתרון בעיות גלובליות" },
+                { number: 287, title: "התמקדות בכוחות רוחניים" },
+                { number: 288, title: "חידוש האור הגדול" },
+                { number: 289, title: "התמודדות עם בעיות פנימיות" },
+                { number: 290, title: "חידוש הידע" },
+                { number: 291, title: "חזרת האור הגדול" },
+                { number: 292, title: "התמודדות עם אתגרים נוספים" },
+                { number: 293, title: "חידוש כוח האור" },
+                { number: 294, title: "התמקדות בכוחות רוחניים" },
+                { number: 295, title: "התחזקות האור" },
+                { number: 296, title: "סיום העונה" }
+            ],
+            'אדר': [
+                { number: 297, title: "התמודדות עם בעיות עולמיות" },
+                { number: 298, title: "התמקדות בכוחות האור" },
+                { number: 299, title: "חידוש תקווה עולמית" },
+                { number: 300, title: "התמודדות עם בעיות נוספות" },
+                { number: 301, title: "חידוש התפשטות האור" },
+                { number: 302, title: "פתרון בעיות גלובליות" },
+                { number: 303, title: "התמקדות בכוחות רוחניים" },
+                { number: 304, title: "חזרת האור הגדול" },
+                { number: 305, title: "התמודדות עם בעיות נוספות" },
+                { number: 306, title: "חידוש התפשטות האור" },
+                { number: 307, title: "פתרון בעיות גלובליות" },
+                { number: 308, title: "התמקדות בכוחות חדשים" },
+                { number: 309, title: "חידוש תקווה עולמית" },
+                { number: 310, title: "התמודדות עם אתגרים פנימיים" },
+                { number: 311, title: "חידוש כוח האור" },
+                { number: 312, title: "חזרת האור" },
+                { number: 313, title: "התמודדות עם בעיות נוספות" },
+                { number: 314, title: "חידוש התפשטות האור" },
+                { number: 315, title: "פתרון בעיות גלובליות" },
+                { number: 316, title: "התמקדות בכוחות רוחניים" },
+                { number: 317, title: "חידוש האור הגדול" },
+                { number: 318, title: "התמודדות עם בעיות פנימיות" },
+                { number: 319, title: "חידוש הידע" },
+                { number: 320, title: "חזרת האור הגדול" },
+                { number: 321, title: "התמודדות עם אתגרים נוספים" },
+                { number: 322, title: "חידוש כוח האור" },
+                { number: 323, title: "התמקדות בכוחות רוחניים" },
+                { number: 324, title: "התחזקות האור" },
+                { number: 325, title: "חידוש התפשטות האור" },
+                { number: 326, title: "סיום העונה" }
+            ]
+        };
+
+        const monthDescriptions = {
+            'ניסן': `חודש ניסן מתאר את תחילת המאבק בין האור והחושך. הפרקים עוקבים אחר התעוררות כוחות האופל והתגובה הראשונית של כוחות האור. 
+                     במהלך החודש מתגלים סודות עתיקים, מתפתחים כוחות חדשים, ומתחילה ההתארגנות למאבק הגדול.`,
+
+            'אייר': `בחודש אייר מתחילה ההתמודדות האמיתית עם כוחות האופל. הפרקים מתארים את התחזקות כוחות האור, 
+             גילוי כוחות חדשים והתמודדות עם אתגרים ראשוניים.`,
+
+            'סיון': `חודש סיון מביא התפתחויות דרמטיות במאבק. הפרקים מתארים התעצמות של כוחות האור,
+             התמודדות עם אתגרים חדשים וגילויים מפתיעים.`,
+
+            'תמוז': `בחודש תמוז המאבק מגיע לשיאים חדשים. הפרקים מתארים עימותים מורכבים,
+             התמודדות עם כוחות חדשים ואתגרים בלתי צפויים.`,
+
+            'אב': `חודש אב מביא תפניות דרמטיות במאבק. הפרקים חושפים סודות חדשים,
+                   מתארים קרבות מכריעים והתפתחויות משמעותיות בעלילה.`,
+
+            'אלול': `בחודש אלול מתרחשת התעלות רוחנית משמעותית. הפרקים מתארים התמודדות עם אתגרי הנפש,
+             חיזוק כוחות האור והתכוננות לקראת הכרעה.`,
+
+            'תשרי': `חודש תשרי מהווה נקודת מפנה במאבק. הפרקים מתארים התחדשות כוחות האור,
+             ניצחונות משמעותיים והתקדמות לקראת ההכרעה.`,
+
+            'מרחשוון': `בחודש מרחשוון המאבק מעמיק. הפרקים מתארים התמודדות עם אתגרים מורכבים,
+                 גילויים חדשים והתקדמות משמעותית.`,
+
+            'כסלו': `חודש כסלו מביא את גילוי האור בחושך. הפרקים מתארים ניצחונות חשובים,
+             התגברות על מכשולים משמעותיים והתקרבות להכרעה.`,
+
+            'שבט': `בחודש שבט מתרחשות התפתחויות דרמטיות. הפרקים מתארים קרבות מכריעים,
+            ניצחונות משמעותיים והתקדמות לקראת הסיום.`,
+
+            'אדר': `חודש אדר מביא את ההכרעה הסופית. הפרקים מתארים את הניצחון הסופי של האור,
+            השלמת המשימה וסיום המאבק הגדול.`
+        };
+
+        function createEpisodeCard(episode) {
+            return `
+                <div class="episode-card">
+                    <span class="episode-number">פרק ${episode.number}</span>
+                    <h3 class="episode-title">${episode.title}</h3>
+                    ${episode.description ? `<p>${episode.description}</p>` : ''}
+                </div>
+            `;
+        }
+
+        function displayEpisodes(month = 'all') {
+            const container = document.getElementById('episodesContainer');
+            container.innerHTML = '';
+
+            if (month === 'all') {
+                Object.entries(episodes).forEach(([monthName, monthEpisodes]) => {
+                    const monthSection = document.createElement('div');
+                    monthSection.className = 'month-section';
+                    monthSection.innerHTML = `
+                        <h2 class="month-title">חודש ${monthName}</h2>
+                        <div class="month-description">${monthDescriptions[monthName]}</div>
+                        <div class="episodes-grid">
+                            ${monthEpisodes.map(createEpisodeCard).join('')}
+                        </div>
+                    `;
+                    container.appendChild(monthSection);
+                });
+            } else {
+                const monthEpisodes = episodes[month];
+                if (monthEpisodes) {
+                    const monthSection = document.createElement('div');
+                    monthSection.className = 'month-section';
+                    monthSection.innerHTML = `
+                        <h2 class="month-title">חודש ${month}</h2>
+                        <div class="month-description">${monthDescriptions[month]}</div>
+                        <div class="episodes-grid">
+                            ${monthEpisodes.map(createEpisodeCard).join('')}
+                        </div>
+                    `;
+                    container.appendChild(monthSection);
+                }
+            }
+        }
+
+        // Initialize the page
+        displayEpisodes();
+
+        // Add event listener for month filter
+        document.getElementById('monthFilter').addEventListener('change', (e) => {
+            displayEpisodes(e.target.value);
+        });
+    </script>
+</body>
+
+</html>
