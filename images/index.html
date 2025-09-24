@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>גלריית התמונות הקסומה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .image-params {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-align: right;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background-color: #555;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🌟 גלריית העולמות הקסומים 🌟</h1>
+    <div class="gallery" id="gallery"></div>
+    <script>
+        fetch('metadata.json')
+            .then(response => response.json())
+            .then(images => {
+                const galleryContainer = document.getElementById("gallery");
+
+                images.forEach(image => {
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+
+                    let tagsHTML = '';
+                    if (image.tags) {
+                        tagsHTML = `
+                            <div class="tags">
+                                ${image.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                        `;
+                    }
+
+                    let paramsHTML = '';
+                    if (image.imageParams) {
+                        paramsHTML = `
+                            <div class="image-params">
+                                <div><strong>יחס תמונה:</strong> ${image.imageParams.aspectRatio}</div>
+                                <div><strong>איכות:</strong> ${image.imageParams.quality}</div>
+                                <div><strong>סגנון:</strong> ${image.imageParams.style}</div>
+                                <div><strong>תאורה:</strong> ${image.imageParams.lighting}</div>
+                                <div><strong>מצלמה:</strong> ${image.imageParams.camera}</div>
+                                <div><strong>סגנון רינדור:</strong> ${image.imageParams.renderStyle}</div>
+                                <div><strong>פרמטרים נוספים:</strong> ${image.imageParams.additionalParams}</div>
+                            </div>
+                        `;
+                    }
+
+                    card.innerHTML = `
+                        <img src="images/${image.id}.webp" alt="${image.name}">
+                        <h2>${image.name}</h2>
+                        <p>${image.description}</p>
+                        ${tagsHTML}
+                        ${paramsHTML}
+                    `;
+                    galleryContainer.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading images:', error);
+                document.getElementById("gallery").innerHTML = '<p>שגיאה בטעינת התמונות 😢</p>';
+            });
+    </script>
+</body>
+
+</html>
