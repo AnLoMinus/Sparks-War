@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מפת האתר | מלחמת הניצוצות</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+
+    <style>
+        .sitemap-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .sitemap-section {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sitemap-section h2 {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .sitemap-category {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .sitemap-category h3 {
+            color: #00ff00;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sitemap-list li {
+            margin: 0.8rem 0;
+        }
+
+        .sitemap-list a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-list a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .sitemap-icon {
+            font-size: 1.2rem;
+        }
+
+        .dark-forces h3 {
+            color: #ff4444;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">🗺️ מפת האתר</h1>
+        <p>ניווט מהיר בעולם מלחמת הניצוצות</p>
+    </header>
+
+    <div class="sitemap-container">
+        <section class="sitemap-section">
+            <h2>📑 דפים ראשיים</h2>
+            <div class="sitemap-grid">
+                <div class="sitemap-category">
+                    <h3>🏠 דף הבית</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="index.html"><span class="sitemap-icon">✨</span>דף ראשי</a></li>
+                        <li><a href="index.html#project-summary"><span class="sitemap-icon">📝</span>תקציר הפרויקט</a>
+                        </li>
+                        <li><a href="index.html#plot-structure"><span class="sitemap-icon">📖</span>מבנה העלילה</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-category">
+                    <h3>⚔️ כוחות ויחידות</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="forces.html"><span class="sitemap-icon">🌟</span>כוחות האור</a></li>
+                        <li><a href="forces.html#dark-forces"><span class="sitemap-icon">🌑</span>כוחות האופל</a></li>
+                        <li><a href="forces.html#special-units"><span class="sitemap-icon">👥</span>יחידות מיוחדות</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-category">
+                    <h3>👥 דמויות</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="players.html"><span class="sitemap-icon">🦁</span>ליאון - שומר הרוח</a></li>
+                        <li><a href="players.html#light-characters"><span class="sitemap-icon">✨</span>גיבורי האור</a>
+                        </li>
+                        <li><a href="players.html#dark-characters"><span class="sitemap-icon">🌑</span>כוחות האופל</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="sitemap-section">
+            <h2>⚔️ מערכות לחימה</h2>
+            <div class="sitemap-grid">
+                <div class="sitemap-category">
+                    <h3>💫 כוחות ויכולות</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="powers.html#light-powers"><span class="sitemap-icon">✨</span>כוחות האור</a></li>
+                        <li><a href="powers.html#cleaning-powers"><span class="sitemap-icon">🧹</span>כוחות טיהור</a>
+                        </li>
+                        <li><a href="powers.html#tech-powers"><span class="sitemap-icon">🤖</span>כוחות טכנולוגיים</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-category">
+                    <h3>⚔️ נשק וציוד</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="weapons.html#light-weapons"><span class="sitemap-icon">⚔️</span>נשקי אור</a></li>
+                        <li><a href="weapons.html#tech-weapons"><span class="sitemap-icon">🤖</span>נשק טכנולוגי</a>
+                        </li>
+                        <li><a href="weapons.html#dark-weapons"><span class="sitemap-icon">🌑</span>נשקי אופל</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-category dark-forces">
+                    <h3>🌑 כוחות האופל</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="powers.html#dark-powers"><span class="sitemap-icon">☠️</span>כוחות טומאה</a></li>
+                        <li><a href="powers.html#corruption-powers"><span class="sitemap-icon">👿</span>כוחות השחתה</a>
+                        </li>
+                        <li><a href="powers.html#tech-corruption"><span class="sitemap-icon">🤖</span>טכנולוגיה
+                                שלילית</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="sitemap-section">
+            <h2>🌍 עולם המשחק</h2>
+            <div class="sitemap-grid">
+                <div class="sitemap-category">
+                    <h3>📍 מיקומים</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="#"><span class="sitemap-icon">🏛️</span>מקדש האור</a></li>
+                        <li><a href="#"><span class="sitemap-icon">🕳️</span>מערות הצללים</a></li>
+                        <li><a href="#"><span class="sitemap-icon">⭐</span>עמק הניצוצות</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-category">
+                    <h3>📚 היסטוריה ורקע</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="#"><span class="sitemap-icon">📜</span>סיפור הרקע</a></li>
+                        <li><a href="#"><span class="sitemap-icon">⚔️</span>קרבות היסטוריים</a></li>
+                        <li><a href="#"><span class="sitemap-icon">👑</span>דמויות מפתח</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-category">
+                    <h3>🤝 תרומה לפרויקט</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="#"><span class="sitemap-icon">📝</span>העלאת issues</a></li>
+                        <li><a href="#"><span class="sitemap-icon">🔄</span>שליחת pull requests</a></li>
+                        <li><a href="#"><span class="sitemap-icon">💡</span>הצעות לשיפור</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>כל הזכויות שמורות © 2024 מלחמת הניצוצות</p>
+    </footer>
+</body>
+
+</html>

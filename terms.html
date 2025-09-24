@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מונחים ומושגים | מלחמת הניצוצות</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+
+    <style>
+        .terms-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .terms-section {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .terms-section h2 {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .term-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .term-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .term-title {
+            color: #00ff00;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .term-icon {
+            font-size: 1.5rem;
+        }
+
+        .term-description {
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .dark-forces .term-title {
+            color: #ff4444;
+        }
+
+        .search-bar {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .term-category {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #ffd700;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">📚 מונחים ומושגים</h1>
+        <p>מילון המושגים של מלחמת הניצוצות</p>
+    </header>
+
+    <div class="terms-container">
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="חיפוש מונחים..." id="searchTerms">
+        </div>
+
+        <section class="terms-section">
+            <h2>✨ מושגי יסוד</h2>
+            <div class="terms-grid">
+                <div class="term-card">
+                    <div class="term-category">מושגי בסיס</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">✨</span>
+                        ניצוץ
+                    </h3>
+                    <p class="term-description">
+                        כוח פנימי ייחודי הקיים בכל אדם. הניצוץ מהווה את מקור הכוח הרוחני והיכולות המיוחדות של כל אדם.
+                        ניתן לפתח ולחזק את הניצוץ באמצעות אימון ומדיטציה.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-category">מושגי בסיס</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">🌟</span>
+                        אור פנימי
+                    </h3>
+                    <p class="term-description">
+                        האנרגיה החיובית הזורמת בתוך הניצוץ. האור הפנימי מהווה את המקור לכוחות הטובים ומשמש להגנה מפני
+                        כוחות האופל.
+                    </p>
+                </div>
+
+                <div class="term-card dark-forces">
+                    <div class="term-category">כוחות האופל</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">🌑</span>
+                        חושך פנימי
+                    </h3>
+                    <p class="term-description">
+                        אנרגיה שלילית המנסה להשתלט על הניצוץ. החושך הפנימי נוצר מרגשות שליליים ומהשפעת כוחות הרשע.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="terms-section">
+            <h2>⚔️ מושגי לחימה</h2>
+            <div class="terms-grid">
+                <div class="term-card">
+                    <div class="term-category">טכניקות קרב</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">⚡</span>
+                        התעלות ניצוץ
+                    </h3>
+                    <p class="term-description">
+                        טכניקה המאפשרת להגביר את עוצמת הניצוץ הפנימי לזמן קצר. משמשת בעיקר במצבי קרב קריטיים.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-category">טכניקות קרב</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">🛡️</span>
+                        מגן אור
+                    </h3>
+                    <p class="term-description">
+                        טכניקת הגנה המייצרת שדה אנרגיה מגן סביב המשתמש או קבוצה. יעיל במיוחד נגד התקפות אופל.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-category">טכניקות קרב</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">💫</span>
+                        שיתוף ניצוצות
+                    </h3>
+                    <p class="term-description">
+                        טכניקה מתקדמת המאפשרת לשני לוחמים או יותר לשלב את כוחות הניצוץ שלהם ליצירת התקפה או הגנה חזקה
+                        במיוחד.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="terms-section">
+            <h2>🧙‍♂️ מושגי קסם וטכנולוגיה</h2>
+            <div class="terms-grid">
+                <div class="term-card">
+                    <div class="term-category">טכנולוגיה קדושה</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">🤖</span>
+                        מיזוג טכנו-רוחני
+                    </h3>
+                    <p class="term-description">
+                        שילוב של טכנולוגיה מתקדמת עם אנרגיה רוחנית. משמש ליצירת כלי נשק וציוד מתקדם.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-category">קסם</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">✨</span>
+                        רשתות אור
+                    </h3>
+                    <p class="term-description">
+                        מערכת קסומה המחברת בין ניצוצות של לוחמים שונים. משמשת לתקשורת ושיתוף כוח.
+                    </p>
+                </div>
+
+                <div class="term-card dark-forces">
+                    <div class="term-category">טכנולוגיה אפלה</div>
+                    <h3 class="term-title">
+                        <span class="term-icon">⚡</span>
+                        וירוס רוחני
+                    </h3>
+                    <p class="term-description">
+                        תוכנה זדונית המשולבת באנרגיה שלילית. משמשת לפגיעה במערכות טכנו-רוחניות ובניצוצות.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // חיפוש מונחים
+        const searchInput = document.getElementById('searchTerms');
+        const termCards = document.querySelectorAll('.term-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            termCards.forEach(card => {
+                const title = card.querySelector('.term-title').textContent.toLowerCase();
+                const description = card.querySelector('.term-description').textContent.toLowerCase();
+                const category = card.querySelector('.term-category').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm) || category.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <p>כל הזכויות שמורות © 2024 מלחמת הניצוצות</p>
+    </footer>
+</body>
+
+</html>

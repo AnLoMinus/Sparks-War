@@ -9,14 +9,564 @@
     <script src="scripts/menu.js" defer></script>
     <script src="scripts/footer.js" defer></script>
 
+    <style>
+        .force-details-fields {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .form-subgroup {
+            margin: 1rem 0;
+        }
+
+        .form-subgroup label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffd700;
+        }
+
+        .form-subgroup input,
+        .form-subgroup textarea,
+        .form-subgroup select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+
+        .form-subgroup select[multiple] {
+            height: auto;
+            min-height: 100px;
+        }
+
+        .form-subgroup select option {
+            padding: 0.5rem;
+        }
+
+        .form-subgroup input:focus,
+        .form-subgroup textarea:focus,
+        .form-subgroup select:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+        }
+
+        /* אנימציה להופעת השדות */
+        .force-details-fields {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .force-details-fields[style*="block"] {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* סגנון לשדות ספציפיים לכל חיל */
+        .force-specific-fields {
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+        }
+
+        /* סגנונות ייחודיים לכל חיל */
+        [data-force="lights"]~.force-specific-fields {
+            background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(255, 255, 255, 0.05));
+        }
+
+        [data-force="broom"]~.force-specific-fields {
+            background: linear-gradient(145deg, rgba(173, 216, 230, 0.1), rgba(255, 255, 255, 0.05));
+        }
+
+        [data-force="tech"]~.force-specific-fields {
+            background: linear-gradient(145deg, rgba(0, 255, 0, 0.1), rgba(255, 255, 255, 0.05));
+        }
+
+        [data-force="matchmaking"]~.force-specific-fields {
+            background: linear-gradient(145deg, rgba(255, 192, 203, 0.1), rgba(255, 255, 255, 0.05));
+        }
+
+        .header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+                url('images/header-bg.jpg') center/cover;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .main-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #fff;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .highlight-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.2rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-icon {
+            font-size: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .highlight-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            text-align: right;
+        }
+
+        .highlight-title {
+            color: #ffd700;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .highlight-text {
+            color: #fff;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.5rem;
+            }
+
+            .main-description {
+                font-size: 1.1rem;
+                padding: 0 0.5rem;
+            }
+
+            .contact-highlights {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .highlight-item {
+                padding: 1rem;
+            }
+        }
+
+        .contact-info-section {
+            padding: 2rem;
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+            border-radius: 15px;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ffd700, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-card:hover::before {
+            opacity: 1;
+        }
+
+        .contact-card .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover .card-icon {
+            transform: scale(1.1);
+        }
+
+        .contact-card h3 {
+            color: #ffd700;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-card p {
+            color: #fff;
+            margin: 0.5rem 0;
+        }
+
+        .contact-card .card-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card .card-details {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 1.2rem;
+            }
+
+            .contact-card .card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+
+        .recruitment-section {
+            background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recruitment-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .recruitment-section h2 {
+            color: #ffd700;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .recruitment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 0 auto;
+        }
+
+        .recruitment-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .recruitment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, transparent, var(--card-color, #ffd700), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .recruitment-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .recruitment-card:hover::before {
+            opacity: 1;
+        }
+
+        /* צבעים ייחודיים לכל חיל */
+        .recruitment-card[data-force="lights"] {
+            --card-color: #ffd700;
+        }
+
+        .recruitment-card[data-force="broom"] {
+            --card-color: #87ceeb;
+        }
+
+        .recruitment-card[data-force="tech"] {
+            --card-color: #00ff00;
+        }
+
+        .recruitment-card[data-force="matchmaking"] {
+            --card-color: #ff69b4;
+        }
+
+        .recruitment-card .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .recruitment-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .recruitment-card h3 {
+            color: var(--card-color, #ffd700);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .recruitment-card p {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem;
+        }
+
+        .requirements-list li {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0.8rem 0;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: transform 0.2s ease;
+        }
+
+        .requirements-list li:hover {
+            transform: translateX(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .recruit-btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(145deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .recruit-btn:hover {
+            background: linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .recruitment-section {
+                padding: 2rem 1rem;
+            }
+
+            .recruitment-grid {
+                gap: 1.5rem;
+            }
+
+            .recruitment-card {
+                padding: 1.5rem;
+            }
+
+            .recruitment-card .card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2.5rem;
+            }
+
+            .recruitment-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
     <header class="header">
         <h1 class="title">✉️ צור קשר</h1>
-        <p>נשמח לשמוע ממך ולענות על כל שאלה!</p>
+        <h2 class="subtitle">✨ הצטרפו למלחמת הניצוצות ✨</h2>
         <div class="header-description">
-            <p>הצטרפו למסע המופלא של מלחמת הניצוצות. שתפו אותנו ברעיונות, שאלות או כל דבר אחר שתרצו לספר.</p>
+            <p class="main-description">
+                ברוכים הבאים למרכז הגיוס של מלחמת הניצוצות!
+                אנו מחפשים נשמות אמיצות שיצטרפו למאבק הקדוש נגד כוחות החושך.
+                בין אם אתם בעלי יכולות אור, מטהרים, מהנדסים או יועצים - יש לכם מקום בשורותינו.
+            </p>
+            <div class="contact-highlights">
+                <div class="highlight-item">
+                    <span class="highlight-icon">⚔️</span>
+                    <div class="highlight-content">
+                        <span class="highlight-title">הגשת מועמדות</span>
+                        <span class="highlight-text">הצטרפו לאחד מחיילות האור שלנו</span>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">💫</span>
+                    <div class="highlight-content">
+                        <span class="highlight-title">מידע ושאלות</span>
+                        <span class="highlight-text">קבלו מידע על תהליך הגיוס</span>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">📝</span>
+                    <div class="highlight-content">
+                        <span class="highlight-title">הצעות ורעיונות</span>
+                        <span class="highlight-text">שתפו אותנו ברעיונות חדשים</span>
+                    </div>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-icon">🤝</span>
+                    <div class="highlight-content">
+                        <span class="highlight-title">שיתופי פעולה</span>
+                        <span class="highlight-text">הציעו שיתופי פעולה במאבק</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -55,17 +605,32 @@
                 </div>
 
                 <div class="recruitment-card">
-                    <div class="card-icon">⚔️</div>
-                    <h3>חיל גבורת האור</h3>
-                    <p>מחפשים לוחמים אמיצים למאבק בכוחות האופל</p>
+                    <div class="card-icon">🤖</div>
+                    <h3>חיל טכנולוגיית האור</h3>
+                    <p>מחפשים מפתחי טכנולוגיה קדושה ומהנדסי אור</p>
                     <ul class="requirements-list">
-                        <li>⚔️ כושר לחימה</li>
-                        <li>🎯 דיוק ומיומנות</li>
-                        <li>💪 חוסן נפשי</li>
+                        <li>💻 ידע בתכנות ופיתוח</li>
+                        <li>✨ הבנה באנרגיית אור</li>
+                        <li>🔧 יכולות הנדסיות</li>
                     </ul>
-                    <button class="recruit-btn" data-force="warriors">
+                    <button class="recruit-btn" data-force="tech">
                         <span class="btn-icon">⚔️</span>
-                        <span class="btn-text">הגש מועמדות לחיל גבורת האור</span>
+                        <span class="btn-text">הגש מועמדות לחיל טכנולוגיית האור</span>
+                    </button>
+                </div>
+
+                <div class="recruitment-card">
+                    <div class="card-icon">💝</div>
+                    <h3>חיל השידוכים</h3>
+                    <p>דרושים יועצי זוגיות ומומחי חיבור נשמות</p>
+                    <ul class="requirements-list">
+                        <li>❤️ יכולת ראיית נשמות</li>
+                        <li>🤝 כישורי תיווך וגישור</li>
+                        <li>💑 הבנה בזוגיות</li>
+                    </ul>
+                    <button class="recruit-btn" data-force="matchmaking">
+                        <span class="btn-icon">⚔️</span>
+                        <span class="btn-text">הגש מועמדות לחיל השידוכים</span>
                     </button>
                 </div>
             </div>
@@ -89,11 +654,40 @@
                         <label for="subject">נושא הפנייה:</label>
                         <select id="subject" name="subject">
                             <option value="general">פנייה כללית</option>
+                            <option value="recruitment_lights">גיוס לחיל האורות</option>
+                            <option value="recruitment_broom">גיוס לחיל מטאטא</option>
+                            <option value="recruitment_tech">גיוס לחיל טכנולוגיית האור</option>
+                            <option value="recruitment_matchmaking">גיוס לחיל השידוכים</option>
                             <option value="bug">דיווח על באג</option>
                             <option value="suggestion">הצעה לשיפור</option>
                             <option value="collaboration">הצעת שיתוף פעולה</option>
                             <option value="other">אחר</option>
                         </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="force-details">פרטי גיוס נוספים:</label>
+                        <div class="force-details-fields" style="display: none;">
+                            <div class="form-subgroup">
+                                <label for="age">גיל:</label>
+                                <input type="number" id="age" name="age" min="18" max="120" placeholder="הכנס את גילך">
+                            </div>
+
+                            <div class="form-subgroup">
+                                <label for="experience">ניסיון קודם:</label>
+                                <textarea id="experience" name="experience" rows="3"
+                                    placeholder="פרט ניסיון רלוונטי לתפקיד..."></textarea>
+                            </div>
+
+                            <div class="form-subgroup">
+                                <label for="motivation">מה מניע אותך להצטרף לחיל?</label>
+                                <textarea id="motivation" name="motivation" rows="3"
+                                    placeholder="ספר לנו למה אתה רוצה להצטרף..."></textarea>
+                            </div>
+
+                            <div class="form-subgroup force-specific-fields">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -114,9 +708,10 @@
                 <div class="contact-cards">
                     <div class="contact-card">
                         <div class="card-icon">📱</div>
-                        <h3>טלפון</h3>
+                        <h3>טלפון חירום</h3>
                         <p>03-1234567</p>
-                        <p class="card-subtitle">זמין בימים א'-ה' | 9:00-17:00</p>
+                        <p class="card-subtitle">מוקד חירום 24/7</p>
+                        <p class="card-details">לדיווח על פעילות כוחות האופל</p>
                     </div>
 
                     <div class="contact-card">
@@ -124,13 +719,23 @@
                         <h3>אימייל</h3>
                         <p>contact@wots.com</p>
                         <p class="card-subtitle">מענה תוך 24 שעות</p>
+                        <p class="card-details">לפניות כלליות ובקשות מידע</p>
                     </div>
 
                     <div class="contact-card">
                         <div class="card-icon">📍</div>
-                        <h3>כתובת</h3>
+                        <h3>מפקדה ראשית</h3>
                         <p>רחוב הניצוצות 1, תל אביב</p>
-                        <p class="card-subtitle">קומה 4, משרד 420</p>
+                        <p class="card-subtitle">קומה 4, משרד האור</p>
+                        <p class="card-details">קבלת קהל בתיאום מראש</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="card-icon">💬</div>
+                        <h3>קהילת הלוחמים</h3>
+                        <p>הצטרפו לקבוצת הטלגרם</p>
+                        <p class="card-subtitle">t.me/wots_community</p>
+                        <p class="card-details">עדכונים שוטפים ותמיכה הדדית</p>
                     </div>
                 </div>
 
@@ -199,10 +804,115 @@
                     successMessage.remove();
                     // גלילה לטופס יצירת הקשר
                     document.querySelector('.contact-form-section').scrollIntoView({ behavior: 'smooth' });
-                    // הגדרת נושא הפנייה
-                    document.querySelector('#subject').value = 'general';
+                    // הגדרת נושא הפנייה בהתאם לחיל
+                    const subjectSelect = document.querySelector('#subject');
+                    switch (force) {
+                        case 'lights':
+                            subjectSelect.value = 'recruitment_lights';
+                            break;
+                        case 'broom':
+                            subjectSelect.value = 'recruitment_broom';
+                            break;
+                        case 'tech':
+                            subjectSelect.value = 'recruitment_tech';
+                            break;
+                        case 'matchmaking':
+                            subjectSelect.value = 'recruitment_matchmaking';
+                            break;
+                    }
                 }, 3000);
             });
+        });
+    </script>
+
+    <script>
+        // הוספת לוגיקה להצגת שדות גיוס נוספים
+        document.getElementById('subject').addEventListener('change', function () {
+            const forceDetails = document.querySelector('.force-details-fields');
+            const forceSpecific = document.querySelector('.force-specific-fields');
+            const isRecruitment = this.value.startsWith('recruitment_');
+
+            forceDetails.style.display = isRecruitment ? 'block' : 'none';
+
+            if (isRecruitment) {
+                forceSpecific.innerHTML = ''; // ניקוי שדות קודמים
+
+                // הוספת שדות ייחודיים לפי החיל
+                switch (this.value) {
+                    case 'recruitment_lights':
+                        forceSpecific.innerHTML = `
+                            <div class="form-subgroup">
+                                <label for="light-power">רמת שליטה באור:</label>
+                                <select id="light-power" name="light-power">
+                                    <option value="beginner">מתחיל</option>
+                                    <option value="intermediate">בינוני</option>
+                                    <option value="advanced">מתקדם</option>
+                                </select>
+                            </div>
+                            <div class="form-subgroup">
+                                <label for="healing-experience">ניסיון בריפוי:</label>
+                                <textarea id="healing-experience" name="healing-experience" rows="2"
+                                    placeholder="פרט ניסיון בריפוי..."></textarea>
+                            </div>
+                        `;
+                        break;
+
+                    case 'recruitment_broom':
+                        forceSpecific.innerHTML = `
+                            <div class="form-subgroup">
+                                <label for="cleaning-method">שיטת ניקוי מועדפת:</label>
+                                <select id="cleaning-method" name="cleaning-method">
+                                    <option value="energy">ניקוי אנרגטי</option>
+                                    <option value="spiritual">טיהור רוחני</option>
+                                    <option value="physical">ניקוי פיזי</option>
+                                </select>
+                            </div>
+                            <div class="form-subgroup">
+                                <label for="purification-experience">ניסיון בטיהור:</label>
+                                <textarea id="purification-experience" name="purification-experience" rows="2"
+                                    placeholder="פרט ניסיון בטיהור..."></textarea>
+                            </div>
+                        `;
+                        break;
+
+                    case 'recruitment_tech':
+                        forceSpecific.innerHTML = `
+                            <div class="form-subgroup">
+                                <label for="tech-skills">מיומנויות טכנולוגיות:</label>
+                                <select id="tech-skills" name="tech-skills" multiple>
+                                    <option value="programming">תכנות</option>
+                                    <option value="hardware">חומרה</option>
+                                    <option value="networks">רשתות</option>
+                                    <option value="ai">בינה מלאכותית</option>
+                                </select>
+                            </div>
+                            <div class="form-subgroup">
+                                <label for="light-tech-experience">ניסיון בטכנולוגיית אור:</label>
+                                <textarea id="light-tech-experience" name="light-tech-experience" rows="2"
+                                    placeholder="פרט ניסיון בטכנולוגיית אור..."></textarea>
+                            </div>
+                        `;
+                        break;
+
+                    case 'recruitment_matchmaking':
+                        forceSpecific.innerHTML = `
+                            <div class="form-subgroup">
+                                <label for="matchmaking-skills">כישורי שידוכים:</label>
+                                <select id="matchmaking-skills" name="matchmaking-skills" multiple>
+                                    <option value="soul-reading">קריאת נשמות</option>
+                                    <option value="counseling">ייעוץ זוגי</option>
+                                    <option value="mediation">גישור</option>
+                                </select>
+                            </div>
+                            <div class="form-subgroup">
+                                <label for="couples-helped">ניסיון בחיבור זוגות:</label>
+                                <textarea id="couples-helped" name="couples-helped" rows="2"
+                                    placeholder="פרט ניסיון בחיבור זוגות..."></textarea>
+                            </div>
+                        `;
+                        break;
+                }
+            }
         });
     </script>
 </body>

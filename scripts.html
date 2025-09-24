@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תסריטים | מלחמת הניצוצות</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+
+    <style>
+        .scripts-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .season-section {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .season-header {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .season-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .episode-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .episode-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .episode-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .episode-number {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .episode-content {
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .scene-list {
+            margin-top: 1rem;
+            padding-right: 1rem;
+            border-right: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .scene-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+
+        .scene-time {
+            color: #ffd700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-dialog {
+            margin: 0.5rem 0;
+            padding-right: 1rem;
+        }
+
+        .character-name {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        .dark-character {
+            color: #ff4444;
+        }
+
+        .script-notes {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">📝 תסריטים</h1>
+        <p>תסריטי העונות והפרקים של מלחמת הניצוצות</p>
+    </header>
+
+    <div class="scripts-container">
+        <!-- עונה 1: התעוררות האפלה -->
+        <section class="season-section">
+            <div class="season-header">
+                <h2 class="season-title">
+                    <span class="season-icon">🌅</span>
+                    עונה 1: התעוררות האפלה
+                </h2>
+                <span>פרקים 1-12</span>
+            </div>
+
+            <div class="episode-list">
+                <div class="episode-card">
+                    <div class="episode-number">
+                        <span class="episode-icon">✨</span>
+                        פרק 1: הניצוץ הראשון
+                    </div>
+                    <div class="episode-content">
+                        <p>ליאון, צעיר מבולבל בן 19, מוצא את עצמו נמשך למקדש עתיק בלב העיר. מה שמתחיל כסקרנות תמימה
+                            הופך לרגע מכונן שישנה את חייו ואת גורל העולם כולו.</p>
+
+                        <div class="scene-list">
+                            <div class="scene-item">
+                                <div class="scene-time">פתיחה - לילה</div>
+                                <p>מקדש עתיק, אור ירח חחלחל חודר דרך חלונות ויטראז' צבעוניים. אבק מרחף באוויר, נוצץ באור
+                                    הירח. ליאון פוסע בזהירות בין העמודים העתיקים.</p>
+
+                                <div class="character-dialog">
+                                    <span class="character-name">ליאון:</span>
+                                    <p>"משהו כאן... משהו קורא לי..."</p>
+                                    <p>(מתקרב לקיר עתיק מכוסה סמלים זוהרים)</p>
+                                    <p>"הסמלים האלה... הם כאילו... מדברים אליי."</p>
+                                </div>
+
+                                <div class="script-notes">
+                                    [אפקט: אבק הזהב באוויר מתחיל להסתחרר לאט, הופך לניצוצות אור קטנים. הסמלים על הקיר
+                                    מתחילים לזהור בעדינות. מוזיקת רקע מסתורית מתגברת]
+                                </div>
+                            </div>
+
+                            <div class="scene-item">
+                                <div class="scene-time">סצנת ביניים - לילה</div>
+                                <p>ליאון מגיע לאולם המרכזי של המקדש. מעגל אור עתיק חרוט ברצפה.</p>
+
+                                <div class="character-dialog">
+                                    <span class="character-name">ליאון:</span>
+                                    <p>(נוגע במעגל) "זה... חם?"</p>
+
+                                    <span class="character-name">קול עתיק:</span>
+                                    <p>(לוחש) "הגעת..."</p>
+
+                                    <span class="character-name">ליאון:</span>
+                                    <p>(נרתע) "מי שם? מי אתה?"</p>
+                                </div>
+
+                                <div class="script-notes">
+                                    [אפקט: המעגל מתחיל לזהור, גלי אור מתפשטים ברצפה. תאורה כחולה-זהובה ממלאת את החלל]
+                                </div>
+                            </div>
+
+                            <div class="scene-item">
+                                <div class="scene-time">סצנה מרכזית</div>
+                                <p>התעוררות הכוח - ליאון עומד במרכז המעגל הזוהר. אור מתפרץ מכל עבר.</p>
+
+                                <div class="character-dialog">
+                                    <span class="character-name">קול מסתורי:</span>
+                                    <p>"הניצוץ בחר בך, ליאון. אתה הראשון שיראה את האור האמיתי."</p>
+
+                                    <span class="character-name">ליאון:</span>
+                                    <p>(מביט בידיו המתחילות לזהור) "מה... מה קורה לי?"</p>
+
+                                    <span class="character-name">קול מסתורי:</span>
+                                    <p>"פקח את עיניך. ראה את העולם כפי שהוא באמת."</p>
+                                </div>
+
+                                <div class="script-notes">
+                                    [אפקט: עיניו של ליאון מתחילות לזהור בזהב. גל אור מתפרץ ממנו במעגלים. המצלמה מסתובבת
+                                    סביבו כשהוא מרחף מעט באוויר]
+                                </div>
+                            </div>
+
+                            <div class="scene-item">
+                                <div class="scene-time">סצנת קיום - שחר</div>
+                                <p>אור ראשון של בוקר. ליאון עומד בפתח המקדש, מביט בעולם בעיניים חדשות.</p>
+
+                                <div class="character-dialog">
+                                    <span class="character-name">ליאון:</span>
+                                    <p>"אני רואה... אני רואה את כולם. כל אדם... יש בו ניצוץ."</p>
+
+                                    <span class="character-name">קול מסתורי:</span>
+                                    <p>"זו רק ההתחלה, ליאון. המאבק על הניצוצות עומד להתחיל."</p>
+                                </div>
+
+                                <div class="script-notes">
+                                    [אפקט: מבט פנורמי על העיר המתעוררת. דרך עיניו של ליאון נראים ניצוצות אור קטנים בכל
+                                    מקום, כמו כוכבים קטנים המרחפים בין האנשים]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <div class="episode-number">
+                        <span class="episode-icon">🌑</span>
+                        פרק 2: צללים מתעוררים
+                    </div>
+                    <div class="episode-content">
+                        <p>כוחות האופל חשים בהתעוררות הניצוץ ומתחילים לפעול.</p>
+
+                        <div class="scene-list">
+                            <div class="scene-item">
+                                <div class="scene-time">פתיחה - דמדומים</div>
+                                <p>מעבדה אפלה במגדל שחור</p>
+
+                                <div class="character-dialog">
+                                    <span class="character-name dark-character">מנהיג האופל:</span>
+                                    <p>"הניצוץ התעורר... הזמן שלנו מתקרב."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <div class="episode-number">
+                        <span class="episode-icon">⚔️</span>
+                        פרק 3: המפגש הראשון
+                    </div>
+                    <div class="episode-content">
+                        <p>ליאון ופגש לראשונה עם כוחות האופל ומגלה את עוצמת כוחותיו.</p>
+
+                        <div class="scene-list">
+                            <div class="scene-item">
+                                <div class="scene-time">סצנת קרב - שקיעה</div>
+                                <p>רחוב צדדי בעיר העתיקה</p>
+
+                                <div class="character-dialog">
+                                    <span class="character-name">ליאון:</span>
+                                    <p>"לא אתן לכם להפיץ את החושך שלכם!"</p>
+                                </div>
+
+                                <div class="script-notes">
+                                    [אפקט: התנגשות בין אור לחושך, ניצוצות מתפזרים לכל עבר]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- עונה 2: התגבשות הכוחות -->
+        <section class="season-section">
+            <div class="season-header">
+                <h2 class="season-title">
+                    <span class="season-icon">⚔️</span>
+                    עונה 2: התגבשות הכוחות
+                </h2>
+                <span>פרקים 13-24</span>
+            </div>
+
+            <div class="episode-list">
+                <div class="episode-card">
+                    <div class="episode-number">
+                        <span class="episode-icon">🌸</span>
+                        פרק 13: הופעת חן
+                    </div>
+                    <div class="episode-content">
+                        <p>חן מגלה את כוחותיה המיוחדים ומצטרפת למאבק.</p>
+
+                        <div class="scene-list">
+                            <div class="scene-item">
+                                <div class="scene-time">זריחה - גן המקדש</div>
+
+                                <div class="character-dialog">
+                                    <span class="character-name">חן:</span>
+                                    <p>"אני רואה אותם... את כל הניצוצות. הם מספרים סיפור."</p>
+                                </div>
+
+                                <div class="script-notes">
+                                    [אפקט: פרחי אור נפתחים סביב חן בזמן שהיא מגלה את כוחותיה]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- עונה 3: המאבק מתעצם -->
+        <section class="season-section">
+            <div class="season-header">
+                <h2 class="season-title">
+                    <span class="season-icon">💫</span>
+                    עונה 3: המאבק מתעצם
+                </h2>
+                <span>פרקים 25-36</span>
+            </div>
+
+            <div class="episode-list">
+                <div class="episode-card">
+                    <div class="episode-number">
+                        <span class="episode-icon">🌟</span>
+                        פרק 25: איחוד הכוחות
+                    </div>
+                    <div class="episode-content">
+                        <p>ליאון וחן מגלים את כוחם המשותף ומתחילים לאמן את הדור הבא של לוחמי האור.</p>
+
+                        <div class="scene-list">
+                            <div class="scene-item">
+                                <div class="scene-time">חצר האימונים - בוקר</div>
+
+                                <div class="character-dialog">
+                                    <span class="character-name">ליאון:</span>
+                                    <p>"יחד, הכוח שלנו חזק פי כמה."</p>
+
+                                    <span class="character-name">חן:</span>
+                                    <p>"האור שלך והריפוי שלי - שילוב מושלם."</p>
+                                </div>
+
+                                <div class="script-notes">
+                                    [אפקט: מעגל אור מתפשט סביבם כשהם משלבים כוחות]
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>כל הזכויות שמורות © 2024 מלחמת הניצוצות</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הסיפור המלא | מלחמת הניצוצות</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+
+    <style>
+        .story-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .story-section {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .story-section h2 {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .story-content {
+            color: #fff;
+            line-height: 1.8;
+        }
+
+        .story-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2rem;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-right: 4px solid #ffd700;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: #ffd700;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .season-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .season-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .season-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .season-title {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .key-moment {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .character-spotlight {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .dark-moment {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff4444;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">📖 הסיפור המלא</h1>
+        <p>המסע המופלא של מלחמת הניצוצות</p>
+    </header>
+
+    <div class="story-container">
+        <section class="story-section">
+            <h2><span class="story-icon">🌟</span>פתיחה</h2>
+            <div class="story-content">
+                <p>בעולם שבו כל אדם נושא ניצוץ ייחודי בתוכו, מתחולל מאבק אפי בין כוחות האור לכוחות האופל. הניצוץ הפנימי,
+                    מקור הכוח והאור של כל אדם, הפך למוקד המאבק בין הטוב לרע.</p>
+
+                <div class="key-moment">
+                    <h3>✨ רגע מכונן</h3>
+                    <p>גילוי הניצוצות הראשון התרחש כאשר ליאון, שומר הרוח הראשון, גילה את יכולתו לראות את האור הפנימי בכל
+                        אדם.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <h2><span class="story-icon">📜</span>חלק ראשון: התעוררות האפלה</h2>
+            <div class="story-content">
+                <div class="season-grid">
+                    <div class="season-card">
+                        <h3 class="season-title">
+                            <span class="season-icon">🌑</span>
+                            עונה 1: ראשית החושך
+                        </h3>
+                        <p>כוחות האופל מתחילים להתעורר ולהחדיר ניצוצות שליליים לתוך בני האדם.</p>
+                        <ul>
+                            <li>הופעת סימני האפלה הראשונים</li>
+                            <li>גיוס לוחמי האור הראשונים</li>
+                            <li>הקמת מקדש האור</li>
+                        </ul>
+                    </div>
+
+                    <div class="season-card">
+                        <h3 class="season-title">
+                            <span class="season-icon">⚔️</span>
+                            עונה 2: המאבק מתחיל
+                        </h3>
+                        <p>ליאון וחן מובילים את המאבק הראשון נגד כוחות האופל.</p>
+                        <ul>
+                            <li>הקרב הראשון בעמק הניצוצות</li>
+                            <li>גילוי כוחות חדשים</li>
+                            <li>יצירת בריתות ראשונות</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="character-spotlight">
+                    <h3>🦁 זרקור על דמות: ליאון</h3>
+                    <p>ליאון, שומר הרוח הראשון, מגלה את יכולותיו המיוחדות ומתחיל להנהיג את כוחות האור במאבקם.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <h2><span class="story-icon">⚔️</span>חלק שני: התגבשות הכוחות</h2>
+            <div class="story-content">
+                <div class="season-grid">
+                    <div class="season-card">
+                        <h3 class="season-title">
+                            <span class="season-icon">🌟</span>
+                            עונה 3: הקמת החיילות
+                        </h3>
+                        <p>הקמת חיילות מיוחדים למאבק: חיל האורות, חיל מטאטא, חיל טכנולוגיית האור וחיל השידוכים.</p>
+                    </div>
+
+                    <div class="season-card">
+                        <h3 class="season-title">
+                            <span class="season-icon">🎭</span>
+                            עונה 4: מזימות האופל
+                        </h3>
+                        <p>כוחות האופל מפתחים אסטרטגיות חדשות ומתחילים להשתמש בטכנולוגיה לרעה.</p>
+                    </div>
+                </div>
+
+                <div class="dark-moment">
+                    <h3>🌑 רגע אפל</h3>
+                    <p>נפילת מקדש האור הראשון והצורך בבניית מערכת הגנה חדשה.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <h2><span class="story-icon">💫</span>חלק שלישי: שיא המאבק</h2>
+            <div class="story-content">
+                <div class="timeline-item">
+                    <h3>הקרב על עמק הניצוצות</h3>
+                    <p>קרב מכריע שבו כוחות האור וכוחות האופל נפגשים בעימות גדול על השליטה במקור הניצוצות.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>גילוי סוד הניצוצות</h3>
+                    <p>חן מגלה את הסוד העתיק של הניצוצות ואת הדרך להעצים אותם.</p>
+                </div>
+
+                <div class="character-spotlight">
+                    <h3>🌸 זרקור על דמות: חן</h3>
+                    <p>חן מגלה את יכולתה המיוחדת לראות ולחזק ניצוצות, והופכת לדמות מפתח במאבק.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <h2><span class="story-icon">🌅</span>חלק רביעי: לקראת הסוף</h2>
+            <div class="story-content">
+                <div class="season-grid">
+                    <div class="season-card">
+                        <h3 class="season-title">
+                            <span class="season-icon">⚡</span>
+                            עונה 23: הקרב האחרון
+                        </h3>
+                        <p>המאבק המכריע בין כוחות האור והאופל מתקרב.</p>
+                    </div>
+
+                    <div class="season-card">
+                        <h3 class="season-title">
+                            <span class="season-icon">✨</span>
+                            עונה 24: ניצחון האור
+                        </h3>
+                        <p>הניצחון הסופי של האור והקמת עידן חדש של הרמוניה.</p>
+                    </div>
+                </div>
+
+                <div class="key-moment">
+                    <h3>🌟 רגע השיא</h3>
+                    <p>איחוד כל הניצוצות והשבת האור לעולם.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>כל הזכויות שמורות © 2024 מלחמת הניצוצות</p>
+    </footer>
+
+    <script>
+        // אנימציות לכרטיסי העונות
+        const seasonCards = document.querySelectorAll('.season-card');
+        seasonCards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseout', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+
+</html>

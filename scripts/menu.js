@@ -89,6 +89,9 @@ const createMenu = () => {
     { text: "לוחמי האור", icon: "✨", href: "forces.html" },
     { text: "גלריה", icon: "🖼️", href: "gallery.html" },
     { text: "צור קשר", icon: "📧", href: "contact.html" },
+    { text: "סטורי", icon: "📚", href: "story.html" },
+    { text: "כלי נשק", icon: "🛡️", href: "weapons.html" },
+    { text: "תסריטים", icon: "🎥", href: "scripts.html" },
   ];
 
   const nav = document.createElement("nav");

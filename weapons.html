@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>נשקים וכלים | מלחמת הניצוצות</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+
+    <style>
+        .weapons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .weapon-category {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .weapon-category h2 {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .weapon-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .weapon-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .weapon-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .weapon-icon {
+            font-size: 1.5rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+            margin: 5% auto;
+            padding: 2rem;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ffd700;
+        }
+
+        .weapon-details {
+            margin-top: 1rem;
+        }
+
+        .weapon-details h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .weapon-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .weapon-details li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+
+        .dark-forces {
+            background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+        }
+
+        .dark-forces h2 {
+            color: #ff4444;
+            border-bottom-color: #ff4444;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title">⚔️ נשקים וכלים ⚔️</h1>
+        <p>מאגר הנשקים והכלים במלחמת הניצוצות</p>
+    </header>
+
+    <div class="container">
+        <section class="weapons-grid">
+            <!-- כלי נשק של חיל האורות -->
+            <div class="weapon-category">
+                <h2>🌟 נשקי חיל האורות</h2>
+                <ul class="weapon-list">
+                    <li class="weapon-item" data-weapon="light-sword">
+                        <span class="weapon-icon">⚔️</span>
+                        חרבות אור
+                    </li>
+                    <li class="weapon-item" data-weapon="light-shield">
+                        <span class="weapon-icon">🛡️</span>
+                        מגן אור
+                    </li>
+                    <li class="weapon-item" data-weapon="light-book">
+                        <span class="weapon-icon">📚</span>
+                        ספר הידע
+                    </li>
+                    <li class="weapon-item" data-weapon="light-lantern">
+                        <span class="weapon-icon">🏮</span>
+                        מנורת האור
+                    </li>
+                </ul>
+            </div>
+
+            <!-- כלי נשק של חיל מטאטא -->
+            <div class="weapon-category">
+                <h2>🧹 כלי חיל מטאטא</h2>
+                <ul class="weapon-list">
+                    <li class="weapon-item" data-weapon="magic-broom">
+                        <span class="weapon-icon">🧹</span>
+                        מטאטא הטיהור הקדוש
+                    </li>
+                    <li class="weapon-item" data-weapon="magic-dust">
+                        <span class="weapon-icon">✨</span>
+                        אבקת טיהור קסומה
+                    </li>
+                    <li class="weapon-item" data-weapon="cleaning-cloth">
+                        <span class="weapon-icon">🧼</span>
+                        מטליות קסומות
+                    </li>
+                </ul>
+            </div>
+
+            <!-- כלי נשק של חיל טכנולוגיית האור -->
+            <div class="weapon-category">
+                <h2>🤖 כלי טכנולוגיית האור</h2>
+                <ul class="weapon-list">
+                    <li class="weapon-item" data-weapon="tech-computer">
+                        <span class="weapon-icon">💻</span>
+                        מחשב קדוש מתקדם
+                    </li>
+                    <li class="weapon-item" data-weapon="tech-server">
+                        <span class="weapon-icon">🛡️</span>
+                        שרת הגנה אוטומטי
+                    </li>
+                    <li class="weapon-item" data-weapon="tech-comm">
+                        <span class="weapon-icon">📱</span>
+                        מכשירי תקשורת מקודשים
+                    </li>
+                </ul>
+            </div>
+
+            <!-- כלי נשק של חיל השידוכים -->
+            <div class="weapon-category">
+                <h2>💝 כלי חיל השידוכים</h2>
+                <ul class="weapon-list">
+                    <li class="weapon-item" data-weapon="love-bow">
+                        <span class="weapon-icon">💘</span>
+                        קשת האהבה העליונה
+                    </li>
+                    <li class="weapon-item" data-weapon="holy-ring">
+                        <span class="weapon-icon">💍</span>
+                        טבעת הזיווג המקודשת
+                    </li>
+                    <li class="weapon-item" data-weapon="connection-chain">
+                        <span class="weapon-icon">📿</span>
+                        שרשרת החיבורים הקדושה
+                    </li>
+                </ul>
+            </div>
+
+            <!-- כלי נשק של כוחות הרשע -->
+            <div class="weapon-category dark-forces">
+                <h2>🌑 נשקי כוחות הרשע</h2>
+                <ul class="weapon-list">
+                    <li class="weapon-item" data-weapon="dark-sword">
+                        <span class="weapon-icon">⚔️</span>
+                        חרבות טומאה
+                    </li>
+                    <li class="weapon-item" data-weapon="dark-dust">
+                        <span class="weapon-icon">💨</span>
+                        כוחות אבק שחור
+                    </li>
+                    <li class="weapon-item" data-weapon="dark-tech">
+                        <span class="weapon-icon">🤖</span>
+                        טכנולוגיה של רשע
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Modals -->
+        <div id="weaponModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="weapon-details">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Weapon data object
+        const weaponData = {
+            'light-sword': {
+                name: 'חרבות אור',
+                description: 'חרבות המייצרות קרני אור חזקות שיכולות לשבור קסמים של כוחות הרשע',
+                abilities: [
+                    'חיתוך קסמים שליליים',
+                    'הפצת אור מרפא',
+                    'יצירת מחסומי אור'
+                ],
+                stats: {
+                    power: 90,
+                    defense: 70,
+                    speed: 85
+                }
+            },
+            'light-shield': {
+                name: 'מגן האור',
+                description: 'מגן קסום העשוי מאור טהור המגן מפני התקפות כוחות האופל',
+                abilities: [
+                    'יצירת מחסום אור בלתי חדיר',
+                    'החזרת התקפות אופל',
+                    'הגנה קבוצתית'
+                ],
+                stats: {
+                    power: 60,
+                    defense: 95,
+                    speed: 50
+                }
+            },
+            'light-book': {
+                name: 'ספר הידע',
+                description: 'ספר עתיק המכיל ידע קדוש וטכניקות לחימה באופל',
+                abilities: [
+                    'לימוד טכניקות קדושות',
+                    'זיהוי חולשות האויב',
+                    'שיפור יכולות קרב'
+                ],
+                stats: {
+                    power: 75,
+                    defense: 60,
+                    speed: 40
+                }
+            },
+            'light-lantern': {
+                name: 'מנורת האור',
+                description: 'מנורה קסומה המפיצה אור קדוש המטהר אזורים מהשפעות שליליות',
+                abilities: [
+                    'טיהור שטח נרחב',
+                    'חשיפת ישויות נסתרות',
+                    'ריפוי קבוצתי'
+                ],
+                stats: {
+                    power: 85,
+                    defense: 65,
+                    speed: 30
+                }
+            },
+            'magic-broom': {
+                name: 'מטאטא הטיהור הקדוש',
+                description: 'מטאטא קסום המסוגל לטאטא ולנקות אנרגיות שליליות',
+                abilities: [
+                    'טיהור אזורים נרחבים',
+                    'הסרת קללות',
+                    'ניקוי אנרגטי עמוק'
+                ],
+                stats: {
+                    power: 70,
+                    defense: 80,
+                    speed: 90
+                }
+            },
+            'magic-dust': {
+                name: 'אבקת טיהור קסומה',
+                description: 'אבקה מיוחדת המטהרת ומנקה השפעות שליליות',
+                abilities: [
+                    'נטרול כישופים',
+                    'יצירת מחסום הגנה',
+                    'טיהור מיידי'
+                ],
+                stats: {
+                    power: 85,
+                    defense: 60,
+                    speed: 95
+                }
+            },
+            'cleaning-cloth': {
+                name: 'מטליות קסומות',
+                description: 'מטליות מיוחדות לניקוי וטיהור עדין של אובייקטים וישויות',
+                abilities: [
+                    'ניקוי מדויק',
+                    'הסרת כתמי טומאה',
+                    'שיקום אנרגטי'
+                ],
+                stats: {
+                    power: 50,
+                    defense: 75,
+                    speed: 100
+                }
+            },
+            'tech-computer': {
+                name: 'מחשב קדוש מתקדם',
+                description: 'מחשב המשלב טכנולוגיה וקדושה לניטור והגנה',
+                abilities: [
+                    'ניתוח התקפות אויב',
+                    'פיתוח הגנות מתקדמות',
+                    'תיאום כוחות'
+                ],
+                stats: {
+                    power: 80,
+                    defense: 90,
+                    speed: 100
+                }
+            },
+            'tech-server': {
+                name: 'שרת הגנה אוטומטי',
+                description: 'שרת מתקדם המספק הגנה אוטומטית מפני התקפות',
+                abilities: [
+                    'הגנה רשתית',
+                    'זיהוי איומים',
+                    'תגובה מיידית'
+                ],
+                stats: {
+                    power: 70,
+                    defense: 100,
+                    speed: 95
+                }
+            },
+            'tech-comm': {
+                name: 'מכשירי תקשורת מקודשים',
+                description: 'מערכת תקשורת מאובטחת המוגנת מפני האזנות והתקפות',
+                abilities: [
+                    'תקשורת מוצפנת',
+                    'זיהוי שיבושים',
+                    'העברת אנרגיה חיובית'
+                ],
+                stats: {
+                    power: 60,
+                    defense: 85,
+                    speed: 100
+                }
+            },
+            'love-bow': {
+                name: 'קשת האהבה העליונה',
+                description: 'קשת קסומה היוצרת חיבורים של אהבה אמיתית',
+                abilities: [
+                    'יצירת קשרי אהבה',
+                    'חיזוק זוגיות',
+                    'הגנה על משפחות'
+                ],
+                stats: {
+                    power: 95,
+                    defense: 70,
+                    speed: 80
+                }
+            },
+            'holy-ring': {
+                name: 'טבעת הזיווג המקודשת',
+                description: 'טבעת המחזקת קשרים זוגיים ומגינה על אהבה אמיתית',
+                abilities: [
+                    'חיזוק קשר זוגי',
+                    'הגנה מפני פיתויים',
+                    'העצמת אהבה'
+                ],
+                stats: {
+                    power: 85,
+                    defense: 90,
+                    speed: 60
+                }
+            },
+            'connection-chain': {
+                name: 'שרשרת החיבורים הקדושה',
+                description: 'שרשרת המחברת בין נשמות תאומות ומגינה על קשרים',
+                abilities: [
+                    'זיהוי זיווגים אמיתיים',
+                    'חיבור נשמות',
+                    'הגנה על קשרים'
+                ],
+                stats: {
+                    power: 90,
+                    defense: 85,
+                    speed: 70
+                }
+            },
+            'dark-sword': {
+                name: 'חרבות טומאה',
+                description: 'חרבות אפלות המפיצות כוחות רשע וטומאה',
+                abilities: [
+                    'חיתוך אור קדוש',
+                    'הפצת חושך',
+                    'שיבוש אנרגיות חיוביות'
+                ],
+                stats: {
+                    power: 95,
+                    defense: 60,
+                    speed: 90
+                }
+            },
+            'dark-dust': {
+                name: 'כוחות אבק שחור',
+                description: 'אבק רעיל המחליש ומזהם אנרגיות חיוביות',
+                abilities: [
+                    'זיהום אנרגטי',
+                    'החלשת כוחות אור',
+                    'יצירת ערפל רעיל'
+                ],
+                stats: {
+                    power: 85,
+                    defense: 70,
+                    speed: 100
+                }
+            },
+            'dark-tech': {
+                name: 'טכנולוגיה של רשע',
+                description: 'מערכות טכנולוגיות מתקדמות המשמשות להפצת רוע',
+                abilities: [
+                    'שיבוש מערכות',
+                    'התקפות סייבר',
+                    'הפצת וירוסים רוחניים'
+                ],
+                stats: {
+                    power: 90,
+                    defense: 80,
+                    speed: 95
+                }
+            }
+        };
+
+        // Modal functionality
+        const modal = document.getElementById('weaponModal');
+        const closeBtn = document.querySelector('.close-modal');
+        const weaponItems = document.querySelectorAll('.weapon-item');
+
+        weaponItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const weaponId = item.getAttribute('data-weapon');
+                const weaponInfo = weaponData[weaponId];
+
+                if (weaponInfo) {
+                    const details = document.querySelector('.weapon-details');
+                    details.innerHTML = `
+                        <h3>${weaponInfo.name}</h3>
+                        <p>${weaponInfo.description}</p>
+                        <h4>יכולות:</h4>
+                        <ul>
+                            ${weaponInfo.abilities.map(ability => `<li>${ability}</li>`).join('')}
+                        </ul>
+                        <h4>נתונים:</h4>
+                        <ul>
+                            <li>עוצמה: ${weaponInfo.stats.power}</li>
+                            <li>הגנה: ${weaponInfo.stats.defense}</li>
+                            <li>מהירות: ${weaponInfo.stats.speed}</li>
+                        </ul>
+                    `;
+                }
+
+                modal.style.display = 'block';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
