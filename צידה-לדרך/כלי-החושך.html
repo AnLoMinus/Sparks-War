@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הכרת כוחות החושך - צידה לדרך ⚠️</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2e1a1a 0%, #1a1a1a 100%);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 9pt;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #8b0000 0%, #ff4444 100%);
+            padding: 0.8rem 0.5rem;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .warning-box {
+            background: #4a2020;
+            border: 2px solid #ff4444;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            text-align: center;
+        }
+
+        .warning-box h2 {
+            color: #ff6b6b;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .warning-box p {
+            color: #ffcccc;
+            line-height: 1.3;
+            font-size: 0.85rem;
+            margin: 0.3rem 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #2c3e50;
+            color: #ff6b6b;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0.3rem;
+            font-size: 0.85rem;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0.5cm;
+        }
+
+        .force-section {
+            background: #3e2a2a;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 1px solid rgba(255, 68, 68, 0.3);
+            page-break-inside: avoid;
+        }
+
+        .force-section h2 {
+            color: #ff6b6b;
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        .tool-card {
+            background: #3c2c2c;
+            border-radius: 6px;
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 68, 68, 0.2);
+            page-break-inside: avoid;
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-icon {
+            font-size: 1.3rem;
+        }
+
+        .tool-name {
+            color: #ff6b6b;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .tool-description {
+            color: #d0d0d0;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .danger-section,
+        .defense-section {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+        }
+
+        .section-title {
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            margin: 0 0 0.4rem 0;
+            font-weight: bold;
+        }
+
+        .defense-title {
+            color: #90ee90;
+        }
+
+        .danger-list,
+        .defense-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .danger-item {
+            padding: 0.3rem 0.5rem;
+            margin: 0.2rem 0;
+            background: rgba(255, 68, 68, 0.1);
+            border-radius: 3px;
+            border-right: 2px solid #ff6b6b;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .defense-item {
+            padding: 0.3rem 0.5rem;
+            margin: 0.2rem 0;
+            background: rgba(144, 238, 144, 0.1);
+            border-radius: 3px;
+            border-right: 2px solid #90ee90;
+            color: #b0e0b0;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .category-intro {
+            background: rgba(255, 68, 68, 0.1);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            border-right: 3px solid #ff6b6b;
+        }
+
+        .category-intro h3 {
+            color: #ff6b6b;
+            margin: 0 0 0.4rem 0;
+            font-size: 1rem;
+        }
+
+        .category-intro p {
+            color: #d0d0d0;
+            line-height: 1.3;
+            margin: 0.3rem 0;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            background: #1a1a2e;
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 8pt;
+            }
+
+            .main-header {
+                background: #ff4444;
+                padding: 0.3cm;
+            }
+
+            .main-header h1 {
+                font-size: 14pt;
+                color: white;
+            }
+
+            .back-button {
+                display: none;
+            }
+
+            .container {
+                padding: 0.3cm;
+            }
+
+            .warning-box {
+                border: 1px solid #ccc;
+                padding: 0.3cm;
+                margin: 0.2cm 0;
+            }
+
+            .force-section {
+                border: 1px solid #ccc;
+                padding: 0.3cm;
+                margin: 0.2cm 0;
+                background: white;
+            }
+
+            .force-section h2 {
+                font-size: 12pt;
+                color: black;
+            }
+
+            .tool-grid {
+                gap: 0.3cm;
+            }
+
+            .tool-card {
+                border: 1px solid #ddd;
+                padding: 0.2cm;
+                background: #f9f9f9;
+            }
+
+            .tool-name {
+                color: black;
+                font-size: 9pt;
+            }
+
+            .section-title {
+                color: black;
+                font-size: 8pt;
+            }
+
+            .danger-item,
+            .defense-item {
+                font-size: 7pt;
+                padding: 0.1cm;
+            }
+
+            .category-intro {
+                border: 1px solid #ddd;
+                padding: 0.2cm;
+            }
+
+            footer {
+                padding: 0.2cm;
+                font-size: 7pt;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>⚠️ הכרת כוחות החושך ⚠️</h1>
+        <p>להכיר, להבין ולהתגונן - מדריך להגנה מפני כוחות האופל</p>
+        <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+    </header>
+
+    <div class="container">
+        <div class="warning-box">
+            <h2>⚠️ הערת אזהרה חשובה ⚠️</h2>
+            <p>
+                <strong>מדריך זה נועד למטרות לימוד והגנה בלבד!</strong>
+                <br><br>
+                הידע על כוחות החושך מוצג כאן כדי לאפשר לך להכיר, לזהות ולהתגונן מפניהם.
+                <br>
+                <strong style="color: #ff6b6b;">אין להשתמש בכלים אלה לרעה או לפגיעה באחרים!</strong>
+                <br><br>
+                הכוח האמיתי נמצא תמיד בצד האור - בטוב, באהבה, ובחמלה.
+                <br>
+                השימוש היחיד המותר בידע זה הוא להגנה ולמניעת נזק.
+            </p>
+        </div>
+
+        <!-- חיל טומאה -->
+        <section class="force-section">
+            <h2>☠️ חיל טומאה - מפיצי הרוע והחושך</h2>
+
+            <div class="category-intro">
+                <h3>מהות החיל:</h3>
+                <p>
+                    חיל טומאה מתמחה בהפצת זוהמה רוחנית, יצירת חושך והשחתה. הם משתמשים
+                    בכוחות טומאה לפגיעה בטוהר ובקדושה, ומנסים לזהם כל דבר טוב שנוצר.
+                </p>
+                <p>
+                    <strong>מטרתם:</strong> להפיץ רוע, לזהם טוהר, וליצור סביבה של חושך ויאוש.
+                </p>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">⚔️</span>
+                        <h3 class="tool-name">חרבות טומאה</h3>
+                    </div>
+                    <p class="tool-description">
+                        חרבות אפלות המפיצות כוחות רשע וטומאה. הן עשויות מאנרגיה שלילית מרוכזת
+                        ויכולות לחתוך את האור הקדוש.
+                    </p>
+                    <div class="danger-section">
+                        <h4 class="section-title">סכנות:</h4>
+                        <ul class="danger-list">
+                            <li class="danger-item">⚫ חיתוך אור קדוש והחלשתו</li>
+                            <li class="danger-item">🌑 הפצת חושך ויאוש</li>
+                            <li class="danger-item">💔 שיבוש אנרגיות חיוביות</li>
+                            <li class="danger-item">😈 זיהום רוחני של הסביבה</li>
+                        </ul>
+                    </div>
+                    <div class="defense-section">
+                        <h4 class="section-title defense-title">דרכי הגנה:</h4>
+                        <ul class="defense-list">
+                            <li class="defense-item">🛡️ שימוש במגן אור חזק</li>
+                            <li class="defense-item">✨ חיזוק האור הפנימי</li>
+                            <li class="defense-item">📿 תפילות הגנה ומנטרות</li>
+                            <li class="defense-item">🧹 טיהור מיידי של המרחב</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">💨</span>
+                        <h3 class="tool-name">אבק שחור</h3>
+                    </div>
+                    <p class="tool-description">
+                        אבק רעיל המחליש ומזהם אנרגיות חיוביות. האבק חודר לכל מקום ומשאיר
+                        שכבה של חושך וטומאה.
+                    </p>
+                    <div class="danger-section">
+                        <h4 class="section-title">סכנות:</h4>
+                        <ul class="danger-list">
+                            <li class="danger-item">🦠 זיהום אנרגטי מהיר</li>
+                            <li class="danger-item">😷 החלשת כוחות אור</li>
+                            <li class="danger-item">🌫️ יצירת ערפל רעיל</li>
+                            <li class="danger-item">💀 פגיעה בבריאות רוחנית</li>
+                        </ul>
+                    </div>
+                    <div class="defense-section">
+                        <h4 class="section-title defense-title">דרכי הגנה:</h4>
+                        <ul class="defense-list">
+                            <li class="defense-item">✨ אבקת טיהור קסומה</li>
+                            <li class="defense-item">🧹 ניקוי יסודי במטאטא קדוש</li>
+                            <li class="defense-item">💨 סינון אוויר רוחני</li>
+                            <li class="defense-item">🛡️ מחסום הגנה מראש</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- חיל כפירה -->
+        <section class="force-section">
+            <h2>👿 חיל כפירה - מערערי האמונה</h2>
+
+            <div class="category-intro">
+                <h3>מהות החיל:</h3>
+                <p>
+                    חיל כפירה מתמחה בהפצת ספקות וערעור האמונה. הם יוצרים בלבול, מפיצים
+                    רעיונות שגויים, ומערערים את העקרונות המוסריים של האנשים.
+                </p>
+                <p>
+                    <strong>מטרתם:</strong> להחליש את האמונה, ליצור ספקות, ולהרוס את היסודות הרוחניים.
+                </p>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">🏴</span>
+                        <h3 class="tool-name">מקלות כפירה</h3>
+                    </div>
+                    <p class="tool-description">
+                        מקלות שמבזבזים את כוח האמונה של אחרים ומפיצים כפירה וספקות.
+                        המקלות פועלים על התודעה והמחשבה.
+                    </p>
+                    <div class="danger-section">
+                        <h4 class="section-title">סכנות:</h4>
+                        <ul class="danger-list">
+                            <li class="danger-item">💭 הפצת ספקות באמונות</li>
+                            <li class="danger-item">⚠️ שיבוש עקרונות מוסריים</li>
+                            <li class="danger-item">📉 שחיקת אמונה הדרגתית</li>
+                            <li class="danger-item">🌀 יצירת בלבול רעיוני</li>
+                        </ul>
+                    </div>
+                    <div class="defense-section">
+                        <h4 class="section-title defense-title">דרכי הגנה:</h4>
+                        <ul class="defense-list">
+                            <li class="defense-item">📚 חיזוק הידע והלימוד</li>
+                            <li class="defense-item">🧘 מדיטציה ותפילה קבועה</li>
+                            <li class="defense-item">👥 קהילה תומכת ומחזקת</li>
+                            <li class="defense-item">💪 בניית ביטחון פנימי</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">📱</span>
+                        <h3 class="tool-name">טכנולוגיות שיבוש אמונה</h3>
+                    </div>
+                    <p class="tool-description">
+                        מכשירים וטכנולוגיות שמשבשות את כוח האמונה והתקשורת הרוחנית.
+                        הטכנולוגיה פועלת בשקט ובהדרגה.
+                    </p>
+                    <div class="danger-section">
+                        <h4 class="section-title">סכנות:</h4>
+                        <ul class="danger-list">
+                            <li class="danger-item">📢 הפצת מידע כוזב</li>
+                            <li class="danger-item">🎭 יצירת אשליות ומרמה</li>
+                            <li class="danger-item">📉 החלשה דיגיטלית של אמונה</li>
+                            <li class="danger-item">🌐 שיבוש רשתות רוחניות</li>
+                        </ul>
+                    </div>
+                    <div class="defense-section">
+                        <h4 class="section-title defense-title">דרכי הגנה:</h4>
+                        <ul class="defense-list">
+                            <li class="defense-item">🔍 בדיקת מקורות מידע</li>
+                            <li class="defense-item">🛡️ הגנות סייבר רוחניות</li>
+                            <li class="defense-item">⏸️ ניתוק זמני מטכנולוגיה</li>
+                            <li class="defense-item">🧠 פיתוח חשיבה ביקורתית</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- חיל זנות -->
+        <section class="force-section">
+            <h2>💔 חיל זנות - מפיצי התאוות</h2>
+
+            <div class="category-intro">
+                <h3>מהות החיל:</h3>
+                <p>
+                    חיל זנות מתמחה בפיתוי והשפעה שלילית על היחסים הבין-אישיים. הם יוצרים
+                    תשוקות רעות, משתמשים במניפולציות רגשיות, ומנסים להרוס קשרים טהורים.
+                </p>
+                <p>
+                    <strong>מטרתם:</strong> לפגוע בקשרים, להפיץ תאוות, ולהרוס קדושת המשפחה.
+                </p>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">🎭</span>
+                        <h3 class="tool-name">קסמי פיתוי</h3>
+                    </div>
+                    <p class="tool-description">
+                        קסמים שמביאים לחולשה מוסרית ומפתים אנשים לסטות מהדרך הנכונה.
+                        הקסמים פועלים על הרגשות והתשוקות.
+                    </p>
+                    <div class="danger-section">
+                        <h4 class="section-title">סכנות:</h4>
+                        <ul class="danger-list">
+                            <li class="danger-item">✨ יצירת אשליות מפתות</li>
+                            <li class="danger-item">💫 עיוות רצונות ומאוויים</li>
+                            <li class="danger-item">💔 פגיעה בקשרים קיימים</li>
+                            <li class="danger-item">😈 החלשה מוסרית הדרגתית</li>
+                        </ul>
+                    </div>
+                    <div class="defense-section">
+                        <h4 class="section-title defense-title">דרכי הגנה:</h4>
+                        <ul class="defense-list">
+                            <li class="defense-item">💪 חיזוק הרצון והמשמעת</li>
+                            <li class="defense-item">👥 שמירה על גבולות בריאים</li>
+                            <li class="defense-item">💑 טיפוח קשרים טהורים</li>
+                            <li class="defense-item">🛡️ הגנה מפני פיתויים</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">🎯</span>
+                        <h3 class="tool-name">מניפולציות רגשיות</h3>
+                    </div>
+                    <p class="tool-description">
+                        טכניקות מתוחכמות להשפעה על רגשות והתנהגות. המניפולציות עובדות
+                        בשקט ובעדינות, מבלי שהקורבן מבין.
+                    </p>
+                    <div class="danger-section">
+                        <h4 class="section-title">סכנות:</h4>
+                        <ul class="danger-list">
+                            <li class="danger-item">🎭 שליטה רגשית נסתרת</li>
+                            <li class="danger-item">💔 יצירת תלות רגשית</li>
+                            <li class="danger-item">🌀 עיוות תפיסת המציאות</li>
+                            <li class="danger-item">😢 פגיעה בביטחון העצמי</li>
+                        </ul>
+                    </div>
+                    <div class="defense-section">
+                        <h4 class="section-title defense-title">דרכי הגנה:</h4>
+                        <ul class="defense-list">
+                            <li class="defense-item">🧠 פיתוח מודעות עצמית</li>
+                            <li class="defense-item">🗣️ תקשורת פתוחה וישירה</li>
+                            <li class="defense-item">👥 ייעוץ וליווי מקצועי</li>
+                            <li class="defense-item">💪 חיזוק העצמאות הרגשית</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- חיל טכנולוגיה -->
+        <section class="force-section">
+            <h2>🤖 חיל טכנולוגיה - משתמשי הטכנולוגיה לרעה</h2>
+
+            <div class="category-intro">
+                <h3>מהות החיל:</h3>
+                <p>
+                    חיל טכנולוגיה מתמחה בשימוש בטכנולוגיה לרעה. הם מבצעים התקפות סייבר,
+                    משבשים מערכות, ומפתחים טכנולוגיות זדוניות להפצת רוע.
+                </p>
+                <p>
+                    <strong>מטרתם:</strong> לשבש, לתקוף, ולהשתמש בטכנולוגיה כנשק נגד האור.
+                </p>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">💻</span>
+                        <h3 class="tool-name">התקפות סייבר</h3>
+                    </div>
+                    <p class="tool-description">
+                        התקפות דיגיטליות מתוחכמות המכוונות למערכות האור. ההתקפות משלבות
+                        טכנולוגיה וכוחות אפלים.
+                    </p>
+                    <div class="danger-section">
+                        <h4 class="section-title">סכנות:</h4>
+                        <ul class="danger-list">
+                            <li class="danger-item">🔓 חדירה למערכות מוגנות</li>
+                            <li class="danger-item">🦠 הפצת וירוסים רוחניים</li>
+                            <li class="danger-item">📡 שיבוש תקשורת</li>
+                            <li class="danger-item">💾 גניבת מידע קדוש</li>
+                        </ul>
+                    </div>
+                    <div class="defense-section">
+                        <h4 class="section-title defense-title">דרכי הגנה:</h4>
+                        <ul class="defense-list">
+                            <li class="defense-item">🛡️ מערכות הגנה מתקדמות</li>
+                            <li class="defense-item">🔒 הצפנה קוונטית</li>
+                            <li class="defense-item">👁️ ניטור מתמיד</li>
+                            <li class="defense-item">🔄 גיבויים רוחניים</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">⚙️</span>
+                        <h3 class="tool-name">מכונות זדוניות</h3>
+                    </div>
+                    <p class="tool-description">
+                        מכונות מתקדמות שנבנו לשיבוש פעילות האור והפצת רוע. המכונות
+                        פועלות באופן אוטונומי וללא מעצורים.
+                    </p>
+                    <div class="danger-section">
+                        <h4 class="section-title">סכנות:</h4>
+                        <ul class="danger-list">
+                            <li class="danger-item">⚡ שיבוש מערכות אוטומטי</li>
+                            <li class="danger-item">🤖 רובוטים זדוניים</li>
+                            <li class="danger-item">📡 משבשי אותות</li>
+                            <li class="danger-item">💥 התקפות מתואמות</li>
+                        </ul>
+                    </div>
+                    <div class="defense-section">
+                        <h4 class="section-title defense-title">דרכי הגנה:</h4>
+                        <ul class="defense-list">
+                            <li class="defense-item">🤖 רובוטים מוארים נגדיים</li>
+                            <li class="defense-item">🛡️ מערכות נגד שיבוש</li>
+                            <li class="defense-item">⚡ ניתוק חירום</li>
+                            <li class="defense-item">✨ קידוש הטכנולוגיה</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>✨ כל הזכויות שמורות © 2024 - מלחמת הניצוצות ✨</p>
+        <p><strong>זכור: הידע כאן הוא להגנה בלבד. השתמש בחוכמה ובאחריות.</strong></p>
+    </footer>
+</body>
+
+</html>

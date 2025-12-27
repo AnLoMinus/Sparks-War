@@ -1,0 +1,115 @@
+════════════════════════════════════════════════════════════════════════
+              🧹 הוראות ליצירת תמונה: מטאטא הטיהור הקדוש 🧹
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: מטאטא הטיהור הקדוש
+קטגוריה: חיל מטאטא
+כוח: כוחות האור ⭐
+נדירות: נפוץ
+עוצמה: 70 | הגנה: 80 | מהירות: 90
+
+📝 תיאור מפורט:
+────────────────
+מטאטא עתיק אלגנטי עם ידית מעץ לבן מאיר מגולף בסמלי קדושה. הזיפים עשויים 
+מסיבי אור זהובים-לבנים המנצנצים. מעוטר בסרט משי לבן-זהוב קשור סביב הידית. 
+זוהר טהור מקיף את הזיפים. המטאטא מסוגל לטאטא אנרגיות שליליות ורוחות רעות.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K fantasy art: Elegant ancient sacred broom floating at gentle 
+diagonal angle. Handle made of glowing white sacred wood carved with holy symbols and 
+intricate patterns. Bristles made of golden-white light fibers sparkling and shimmering 
+with divine energy. White-gold silk ribbon tied beautifully around the handle in an 
+elegant bow. Pure purifying glow surrounding the bristles with small light particles 
+floating around.
+
+The broom is hovering gracefully in mid-air at a soft diagonal angle, showing both 
+elegance and purpose. The white wood handle is smooth and polished, engraved with 
+sacred symbols that glow softly. The bristles are made of compressed light fibers, 
+each one shimmering with golden-white radiance. A luxurious silk ribbon wrapped 
+around the handle adds a touch of divine elegance.
+
+VISUAL DETAILS:
+- Handle: White sacred wood, smooth polished surface, carved holy symbols
+- Bristles: Golden-white light fibers, sparkling, semi-transparent, luminous
+- Ribbon: White-gold silk ribbon tied in elegant bow, flowing gracefully
+- Glow: Soft purifying aura around bristles, gentle radiance
+- Particles: Small golden-white light particles floating around
+- Background: Clean ethereal atmosphere with soft white-gold gradient
+
+LIGHTING:
+- Bristles emitting gentle golden-white glow
+- Carved symbols on handle glowing softly
+- Ribbon catching divine light with silk sheen
+- Ambient purifying radiance filling the space
+- Soft sparkles and light particles
+- Clean, pure lighting creating sacred atmosphere
+- Subtle lens flares from bristle tips
+
+COMPOSITION:
+- Broom positioned at gentle diagonal (about 30 degrees)
+- Floating gracefully in center of frame
+- Handle in upper portion, bristles pointing down-left
+- Ribbon flowing naturally with movement
+- Clean background with minimal distractions
+- Light particles creating sense of motion and purification
+- Depth with soft background blur
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic sacred fantasy art, clean aesthetic
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, Octane Render quality
+- Materials: Sacred wood shader, light fiber bristles, silk ribbon shader
+- Lighting: Soft volumetric lighting, gentle glow, clean illumination
+- Aspect Ratio: 3:4 (portrait) or 1:1 (square)
+- Quality: Photorealistic, crisp details, 4K textures
+
+MOOD & ATMOSPHERE:
+- Pure, clean, sacred, efficient
+- Gentle purifying energy
+- Elegant and graceful presence
+- Practical yet divine tool
+- Sense of cleansing and renewal
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, dirty, broken, old worn broom, modern plastic broom, dark, gloomy, 
+witch broom, halloween, scary, damaged bristles, rusty, text, watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה היפר-ריאליסטית 8K: מטאטא עתיק אלגנטי קדוש מרחף בזווית אלכסונית 
+עדינה. ידית עשויה מעץ לבן קדוש זוהר מגולף בסמלי קדושה ודוגמאות מורכבות. 
+זיפים עשויים מסיבי אור זהובים-לבנים נוצצים ומנצנצים באנרגיה אלוהית. סרט 
+משי לבן-זהוב קשור בצורה יפה סביב הידית בקשר אלגנטי. זוהר טיהור טהור מקיף 
+את הזיפים עם חלקיקי אור קטנים מרחפים מסביב.
+
+המטאטא מרחף בחן באוויר בזווית אלכסונית רכה. הידית מעץ לבן חלקה ומלוטשת, 
+חרוטה בסמלים קדושים הזוהרים ברוך. הזיפים עשויים מסיבי אור דחוסים, כל אחד 
+מנצנץ בזוהר זהוב-לבן. סרט משי מפואר כרוך סביב הידית.
+
+חומרים: עץ לבן קדוש, סיבי אור זהובים-לבנים, סרט משי לבן-זהוב
+תאורה: זוהר עדין זהוב-לבן, הילת טיהור, חלקיקי אור
+סגנון: היפר-ריאליסטי, נקי, Unreal Engine 5
+מצב רוח: טהור, נקי, קדוש, יעיל
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 3:4 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את סיבי האור והסרט המשי
+✅ Stable Diffusion: השתמש במודלים לאור רך וטיהור
+✅ Leonardo.ai: PhotoReal v2, נקיון ואור
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

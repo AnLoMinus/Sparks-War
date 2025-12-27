@@ -1,0 +1,119 @@
+════════════════════════════════════════════════════════════════════════
+              ✨ הוראות ליצירת תמונה: אבקת טיהור קסומה ✨
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: אבקת טיהור קסומה
+קטגוריה: חיל מטאטא
+כוח: כוחות האור ⭐
+נדירות: נדיר
+עוצמה: 85 | הגנה: 60 | מהירות: 95
+
+📝 תיאור מפורט:
+────────────────
+שקית משי לבנה-זהובה קסומה פתוחה למחצה, אבקת אור זהובה מנצנצת נשפכת ממנה 
+ומתפזרת באוויר. כל גרגיר אבקה הוא כוכבון מאיר קטן. עננת אבק זהובה יוצרת 
+דוגמאות מנדלה באוויר. האבקה מטהרת ומנקה השפעות שליליות באופן מיידי.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K fantasy art: Magical white-gold silk pouch floating, open and 
+tilted, spilling glowing golden dust particles into the air. Each particle is a tiny 
+glowing star sparkling brilliantly. The golden dust cloud creates beautiful mandala 
+patterns in mid-air as it disperses. Thousands of individual glowing particles each 
+shining like miniature stars creating a mesmerizing magical effect.
+
+The silk pouch is ornately embroidered with sacred patterns and tied with golden cord. 
+The magical dust pours out gracefully, each grain radiating its own golden light. The 
+dust forms swirling mandala sacred geometry patterns as it spreads through the air. 
+Golden cloud of sparkling particles creating an enchanting atmosphere.
+
+VISUAL DETAILS:
+- Pouch: Luxurious white-gold silk with golden sacred embroidery
+- Dust particles: Individual glowing golden particles, each a tiny star
+- Pattern: Mandala sacred geometry formations in the dust cloud
+- Glow: Each particle emitting its own golden light
+- Cloud: Golden shimmering dust cloud spreading elegantly
+- Background: Soft gradient with ethereal atmosphere, warm lighting
+
+LIGHTING:
+- Each dust particle glowing individually like tiny stars
+- Collective golden cloud creating warm ambient light
+- Silk pouch reflecting golden light with sheen
+- Soft sparkles and glimmers throughout
+- Magical luminescence from dust cloud
+- Warm golden atmosphere filling the scene
+- Bokeh effect from individual particles
+
+COMPOSITION:
+- Pouch positioned upper-center, tilted at pouring angle
+- Dust flowing downward and outward in graceful arc
+- Mandala patterns forming in the dispersing cloud
+- Thousands of individual particles visible
+- Dynamic movement captured in flowing dust
+- Soft focus background with sharp particle details
+- Magical energy radiating outward
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic magical fantasy art, enchanting aesthetic
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, particle system, Octane Render
+- Materials: Silk shader, individual glowing particle shaders
+- Lighting: Particle-based lighting, volumetric dust cloud, HDR
+- Effects: Motion blur on particles, depth of field, bloom, bokeh
+- Aspect Ratio: 1:1 (square) or 4:5 (portrait)
+- Quality: Photorealistic, maximum particle detail, 4K textures
+
+MOOD & ATMOSPHERE:
+- Magical, enchanting, purifying, mystical
+- Warm golden light creating sense of cleansing
+- Sparkling and mesmerizing presence
+- Sacred and powerful energy
+- Joyful and uplifting feeling
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, static dust, grey dust, dirty, sand, modern plastic bag, dark, 
+gloomy, toxic, poison, green dust, evil, demonic, text, watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה היפר-ריאליסטית 8K: שקית משי לבנה-זהובה קסומה מרחפת, פתוחה 
+ונוטה, שופכת חלקיקי אבק זהובים זוהרים לאוויר. כל חלקיק הוא כוכב זעיר זוהר 
+הנוצץ בצורה מבריקה. ענן האבק הזהוב יוצר דוגמאות מנדלה יפהפיות באוויר 
+בעת התפזרותו. אלפי חלקיקים זוהרים בודדים כל אחד זוהר כמו כוכב מיניאטורי.
+
+שקית המשי מרוקמת בעיטורים בדוגמאות קדושות וקשורה בחוט זהב. האבק הקסום 
+נשפך בחן, כל גרגיר מקרין אור זהוב משלו. האבק יוצר דוגמאות מנדלה מסתחררות 
+בעת התפשטותו באוויר. ענן זהוב של חלקיקים נוצצים.
+
+חומרים: משי לבן-זהוב, חלקיקי אבק זוהרים, רקמת זהב קדושה
+תאורה: כל חלקיק זוהר בנפרד, ענן זהוב, נצנוצים, בוקה
+סגנון: היפר-ריאליסטי קסום, Unreal Engine 5, מערכת חלקיקים
+מצב רוח: קסום, מקסים, מטהר, מיסטי
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 1:1 --v 6 --style raw --q 2 --chaos 20
+✅ DALL-E 3: הדגש את החלקיקים הבודדים ודוגמאות המנדלה
+✅ Stable Diffusion: השתמש ב-particle effects ו-bokeh
+✅ Leonardo.ai: Fantasy Art v2 עם particle systems
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "magical particle system, bokeh effect"
+• הוסף "sacred geometry, mandala patterns"
+• הוסף "glowing dust cloud, golden sparkles"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

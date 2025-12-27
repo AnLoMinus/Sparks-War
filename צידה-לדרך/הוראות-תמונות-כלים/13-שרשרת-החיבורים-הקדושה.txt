@@ -1,0 +1,123 @@
+════════════════════════════════════════════════════════════════════════
+            📿 הוראות ליצירת תמונה: שרשרת החיבורים הקדושה 📿
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: שרשרת החיבורים הקדושה
+קטגוריה: חיל השידוכים
+כוח: כוחות האור ⭐
+נדירות: מיתי
+עוצמה: 90 | הגנה: 85 | מהירות: 70
+
+📝 תיאור מפורט:
+────────────────
+שרשרת ארוכה עשויה מחוליות אור זהובות-ורודות משתלבות, כל חוליה זוהרת בנפרד. 
+מעגלים של אנרגיה עוברים דרך החוליות. תליון בצורת לב כפול זוהר תלוי באמצע. 
+השרשרת מרחפת ומתעקלת בצורה אלגנטית בצורת S. השרשרת מחברת בין נשמות תאומות 
+ומגינה על קשרים קדושים.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K fantasy art: Long elegant chain made of interlocking golden-pink 
+light links, each individual link glowing with its own radiance. Circular energy patterns 
+flowing through the links like living electricity. A double-heart pendant glowing 
+brilliantly hanging at the center. The chain floats and curves gracefully in an elegant 
+S-shape pattern through the air, defying gravity.
+
+Each chain link is crafted from compressed light energy in golden-pink hues, glowing 
+individually yet connected as one. Energy flows visibly from link to link, creating 
+pulsing patterns of divine connection. The double-heart pendant (two hearts merged as one) 
+hangs at the chain's center, radiating intense pink-gold light symbolizing two souls united.
+
+VISUAL DETAILS:
+- Chain links: Golden-pink light links, each glowing individually
+- Link connection: Seamless interlocking, energy flowing between them
+- Energy flow: Circular energy patterns traveling through the chain
+- Pendant: Double-heart design (two hearts merged into one), glowing center
+- Shape: Graceful S-curve floating in mid-air
+- Background: Romantic soft gradient with pink-gold bokeh
+
+LIGHTING:
+- Each link emitting its own golden-pink glow
+- Energy flow creating pulsing light patterns along chain
+- Double-heart pendant as brightest point - intense radiance
+- Light flowing through links like liquid electricity
+- Warm romantic pink-gold ambient glow
+- Soft sparkles and light particles around chain
+- Bokeh effects creating dreamy atmosphere
+- Gentle bloom on brightest elements
+
+COMPOSITION:
+- Chain flowing in elegant S-curve from upper-left to lower-right
+- Double-heart pendant centered as focal point
+- Links creating flowing line leading eye through composition
+- Graceful curves showing movement and connection
+- Depth with foreground pendant, mid chain, soft background
+- Dynamic yet harmonious flowing composition
+- Romantic atmosphere with pink-gold lighting
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic romantic divine fantasy art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, energy flow simulation, Octane Render
+- Materials: Light energy links, glowing pendant, energy flow shader
+- Effects: Energy flow animation, link glow, particle effects
+- Lighting: Individual link illumination, energy flow, HDR, bokeh
+- Aspect Ratio: 3:4 (portrait) or 9:16 (vertical)
+- Quality: Photorealistic light rendering, smooth energy flow
+
+MOOD & ATMOSPHERE:
+- Connection, unity, eternal bonding
+- Divine soul connection
+- Graceful and elegant love
+- Unbreakable sacred bond
+- Sense of two becoming one in perfect harmony
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, broken chain, rusty, dark, gothic, skull pendant, evil symbols, 
+modern metal chain, silver, cheap jewelry, tangled, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה רומנטית היפר-ריאליסטית 8K: שרשרת ארוכה ואלגנטית עשויה מחוליות 
+אור זהובות-ורודות משתלבות, כל חוליה בודדת זוהרת בזוהר משלה. דוגמאות אנרגיה 
+מעגליות זורמות דרך החוליות כמו חשמל חי. תליון לב כפול זוהר בצורה מבריקה 
+תלוי במרכז. השרשרת מרחפת ומתעקלת בחן בדוגמת S אלגנטית באוויר, מתריסה כנגד 
+כוח המשיכה.
+
+כל חוליה בשרשרת מעוצבת מאנרגיית אור דחוסה בגוונים זהובים-ורודים, זוהרת 
+באופן אינדיבידואלי אך מחוברת כאחת. אנרגיה זורמת בצורה נראית מחוליה לחוליה, 
+יוצרת דוגמאות פועמות של חיבור אלוהי. תליון הלב הכפול (שני לבבות ממוזגים 
+לאחד) תלוי במרכז השרשרת ומקרין אור ורוד-זהוב עז.
+
+חומרים: חוליות אור זהובות-ורודות, תליון לב כפול זוהר
+תאורה: כל חוליה זוהרת, זרימת אנרגיה, תליון מקרין
+סגנון: היפר-ריאליסטי רומנטי, סימולציית זרימת אנרגיה, Unreal Engine 5
+מצב רוח: חיבור, אחדות, קשר נצחי
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 3:4 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את זרימת האנרגיה בין החוליות
+✅ Stable Diffusion: השתמש ב-energy flow + chain models
+✅ Leonardo.ai: Fantasy Art v2 עם energy flow effects
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "energy flow chain, glowing links"
+• הוסף "double heart pendant, soul connection"
+• הוסף "S-curve chain, flowing energy patterns"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

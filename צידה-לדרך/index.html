@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צידה לדרך - מדריך מעשי למלחמת הניצוצות 🌟</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            font-family: 'Arial', 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 11pt;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-header h1 {
+            color: #1a1a2e;
+            font-size: 1.8rem;
+            margin: 0 0 0.3rem 0;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .main-header p {
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0.8rem 1rem;
+        }
+
+        .intro-section {
+            background: linear-gradient(145deg, #2c2c3e, #1e1e30);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .intro-section h2 {
+            color: #ffd700;
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem 0;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: #d0d0d0;
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .navigation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .nav-card {
+            background: linear-gradient(145deg, #2a2a3e, #1a1a2e);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            border: 1px solid transparent;
+            cursor: pointer;
+            page-break-inside: avoid;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            border-color: #ffd700;
+        }
+
+        .nav-card.light {
+            background: linear-gradient(145deg, #2a3a4e, #1a2a3e);
+            border-color: rgba(255, 215, 0, 0.2);
+        }
+
+        .nav-card.dark {
+            background: linear-gradient(145deg, #3e2a2a, #2e1a1a);
+            border-color: rgba(255, 68, 68, 0.2);
+        }
+
+        .nav-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .nav-card h3 {
+            color: #ffd700;
+            margin: 0 0 0.4rem 0;
+            font-size: 1.1rem;
+        }
+
+        .nav-card.dark h3 {
+            color: #ff6b6b;
+        }
+
+        .nav-card p {
+            color: #b0b0b0;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .purpose-section {
+            background: linear-gradient(145deg, #2c3e2a, #1e301e);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(144, 238, 144, 0.2);
+            page-break-inside: avoid;
+        }
+
+        .purpose-section h2 {
+            color: #90ee90;
+            text-align: center;
+            margin: 0 0 0.8rem 0;
+            font-size: 1.2rem;
+        }
+
+        .purpose-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .purpose-item {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 0.5rem 0;
+            padding: 0.6rem 1rem;
+            border-radius: 5px;
+            border-right: 3px solid #90ee90;
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .purpose-item strong {
+            color: #ffd700;
+            display: inline;
+            margin-left: 0.3rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, #1a1a2e, #0f0f1e);
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* הדפסה */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 9pt;
+            }
+
+            .main-header {
+                background: #ffd700;
+                padding: 0.5cm;
+                page-break-after: avoid;
+            }
+
+            .main-header h1 {
+                font-size: 16pt;
+                color: black;
+            }
+
+            .main-header p {
+                font-size: 10pt;
+                color: #333;
+            }
+
+            .container {
+                padding: 0.3cm;
+            }
+
+            .intro-section,
+            .purpose-section {
+                border: 1px solid #ccc;
+                padding: 0.3cm;
+                margin-bottom: 0.3cm;
+                page-break-inside: avoid;
+            }
+
+            .intro-section h2,
+            .purpose-section h2 {
+                color: black;
+                font-size: 12pt;
+            }
+
+            .intro-text {
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+
+            .navigation-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.3cm;
+            }
+
+            .nav-card {
+                border: 1px solid #ccc;
+                padding: 0.3cm;
+                background: #f5f5f5;
+                page-break-inside: avoid;
+            }
+
+            .nav-card:hover {
+                transform: none;
+            }
+
+            .nav-card h3 {
+                color: black;
+                font-size: 10pt;
+            }
+
+            .nav-card p {
+                color: #333;
+                font-size: 8pt;
+            }
+
+            .purpose-item {
+                border: 1px solid #ccc;
+                margin: 0.2cm 0;
+                padding: 0.2cm;
+                font-size: 8pt;
+            }
+
+            footer {
+                page-break-before: avoid;
+                padding: 0.3cm;
+                font-size: 8pt;
+            }
+
+            a {
+                color: black;
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navigation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>✨ צידה לדרך - מלחמת הניצוצות ✨</h1>
+        <p>מדריך מעשי מקיף לכלים רוחניים ודרכי הגנה במאבק בין אור לחושך</p>
+    </header>
+
+    <div class="container">
+        <section class="intro-section">
+            <h2>🌟 ברוכים הבאים למדריך המעשי 🌟</h2>
+            <p class="intro-text">
+                מדריך זה נועד לספק לך כלים מעשיים ורוחניים להתמודדות עם האתגרים של החיים.
+                <br>במלחמת הניצוצות, כל אחד מאיתנו נושא ניצוץ פנימי ייחודי,
+                <br>והמאבק האמיתי מתרחש בין כוחות האור לכוחות החושך שבתוכנו ומסביבנו.
+            </p>
+            <div class="intro-text">
+                <strong style="color: #ffd700; font-size: 1.2rem;">המדריך כולל:</strong>
+                <br>• כלים מעשיים מכוחות האור להגנה, ריפוי וחיזוק
+                <br>• הכרת כוחות החושך להיזהר ולהתגונן מפניהם
+                <br>• טכניקות רוחניות ותרגילים יומיומיים
+                <br>• מדריך ספירות הקבלה ויכולות השתלטות
+                <br>• תרגילים מעשיים להגנה עצמית רוחנית
+            </div>
+        </section>
+
+        <h2 style="color: #ffd700; text-align: center; font-size: 2rem; margin-bottom: 2rem;">
+            📚 תוכן המדריך 📚
+        </h2>
+
+        <div class="navigation-grid">
+            <!-- קלפי כלים -->
+            <a href="קלפי-כלים.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">🎴</span>
+                    <h3>קלפי כלים מפורטים</h3>
+                    <p>
+                        קלפי צידה לדרך בפורמט A4 להדפסה.
+                        כל קלף מציג כלי מלא עם תיאור, יכולות, נתונים סטטיסטיים, שימוש והשפעות.
+                        21 קלפים עשירים: 13 כלי אור ו-8 כלי חושך - מוכנים להדפסה!
+                    </p>
+                </div>
+            </a>
+
+            <!-- הוראות תמונת רקע -->
+            <a href="הוראות-תמונת-רקע.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">🎨</span>
+                    <h3>הוראות תמונת רקע AI</h3>
+                    <p>
+                        הוראות מפורטות ליצירת תמונת רקע ענקית אולטרה-ריאליסטית.
+                        כולל תיאור חזותי מדויק של כל 21 הכלים, מפרט טכני, ו-Prompt מוכן להעתקה
+                        לכלי AI כמו Midjourney, DALL-E, Stable Diffusion.
+                    </p>
+                </div>
+            </a>
+
+            <!-- כוחות האור -->
+            <a href="כלי-האור.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">🌟</span>
+                    <h3>כלי כוחות האור</h3>
+                    <p>
+                        מדריך מקיף לכלים של ארבעת חיילות האור:
+                        חיל האורות, חיל מטאטא, חיל טכנולוגיית האור, וחיל השידוכים.
+                        כולל כלי נשק, יכולות, וטכניקות שימוש.
+                    </p>
+                </div>
+            </a>
+
+            <a href="כלי-החושך.html" style="text-decoration: none;">
+                <div class="nav-card dark">
+                    <span class="nav-icon">🌑</span>
+                    <h3>הכרת כוחות החושך</h3>
+                    <p>
+                        הבנה מעמיקה של כלי כוחות האופל:
+                        חיל טומאה, חיל כפירה, חיל זנות, וחיל טכנולוגיה.
+                        ללמוד להכיר ולהתגונן מפניהם.
+                    </p>
+                </div>
+            </a>
+
+            <a href="טכניקות-רוחניות.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">🧘</span>
+                    <h3>טכניקות רוחניות</h3>
+                    <p>
+                        תפילות, מדיטציות, מנטרות, ושיטות התמקדות.
+                        כלים יומיומיים לחיזוק הניצוץ הפנימי
+                        והגנה מפני השפעות שליליות.
+                    </p>
+                </div>
+            </a>
+
+            <a href="ספירות-קבלה.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">🔯</span>
+                    <h3>ספירות הקבלה</h3>
+                    <p>
+                        מדריך לעשר הספירות ואיך הן מתקשרות
+                        למאבק הרוחני. הבנת יכולות השתלטות
+                        ודרכי הגנה על כל ספירה.
+                    </p>
+                </div>
+            </a>
+
+            <a href="דמויות-לוחמים.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">👥</span>
+                    <h3>לוחמי האור</h3>
+                    <p>
+                        הכרת 24 הלוחמים של כוחות האור,
+                        תכונותיהם, כליהם המיוחדים,
+                        ואיך אפשר ללמוד מהם.
+                    </p>
+                </div>
+            </a>
+
+            <a href="תרגילים-מעשיים.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">📝</span>
+                    <h3>תרגילים מעשיים</h3>
+                    <p>
+                        תרגילים יומיומיים, שבועיים וחודשיים
+                        לחיזוק הניצוץ הפנימי, הגנה עצמית רוחנית,
+                        וטיהור האנרגיה האישית.
+                    </p>
+                </div>
+            </a>
+
+            <a href="מקומות-קדושים.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">🏛️</span>
+                    <h3>מקומות ואנרגיות</h3>
+                    <p>
+                        מדריך למקומות בעלי אנרגיה חזקה,
+                        מוקדי אור ומוקדי חושך,
+                        וכיצד לנווט ביניהם בבטחה.
+                    </p>
+                </div>
+            </a>
+
+            <a href="תכנית-אימון.html" style="text-decoration: none;">
+                <div class="nav-card light">
+                    <span class="nav-icon">💪</span>
+                    <h3>תכנית אימון רוחנית</h3>
+                    <p>
+                        תכנית מובנית להתפתחות רוחנית
+                        מתחיל ועד מתקדם, עם מסלולי התמחות
+                        בכל אחד מהחיילות.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <section class="purpose-section">
+            <h2>🎯 מטרות המדריך</h2>
+            <ul class="purpose-list">
+                <li class="purpose-item">
+                    <strong>🛡️ הגנה עצמית רוחנית:</strong>
+                    ללמוד לזהות ולהתגונן מפני השפעות שליליות, קסמים, וכוחות אפלים בחיי היומיום.
+                </li>
+                <li class="purpose-item">
+                    <strong>✨ חיזוק הניצוץ הפנימי:</strong>
+                    טכניקות לפיתוח והעצמה של הניצוץ הייחודי שבכל אחד מאיתנו.
+                </li>
+                <li class="purpose-item">
+                    <strong>🧹 טיהור וניקוי:</strong>
+                    שיטות לטיהור עצמי, טיהור הבית, ויצירת סביבה מוגנת ומאירה.
+                </li>
+                <li class="purpose-item">
+                    <strong>💝 חיזוק קשרים:</strong>
+                    כלים לבניית קשרים בריאים, הגנה על המשפחה, ויצירת אהבה אמיתית.
+                </li>
+                <li class="purpose-item">
+                    <strong>🔮 התפתחות רוחנית:</strong>
+                    מסלול מובנה להתקדמות רוחנית ולהגעה לרמות גבוהות יותר של תודעה.
+                </li>
+                <li class="purpose-item">
+                    <strong>🤝 שירות הקהילה:</strong>
+                    איך להשתמש בכלים האלה לא רק למען עצמך, אלא גם למען משפחתך, קהילתך והעולם.
+                </li>
+            </ul>
+        </section>
+
+        <section class="intro-section" style="margin-top: 3rem; text-align: center;">
+            <h2>⚠️ הערה חשובה</h2>
+            <p class="intro-text">
+                מדריך זה הוא כלי לימודי ורוחני המבוסס על המיתולוגיה של "מלחמת הניצוצות".
+                <br>יש להשתמש בו באחריות, בכבוד, ובמטרה להביא אור וטוב לעולם.
+                <br><strong style="color: #ffd700;">הכלים שכאן הם סמליים - השימוש האמיתי הוא בפיתוח המידות הטובות
+                    והחיזוק הרוחני האישי.</strong>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>✨ כל הזכויות שמורות © 2024 - מלחמת הניצוצות ✨</p>
+        <p>נוצר באהבה למען האור והטוב בעולם 🌟</p>
+    </footer>
+</body>
+
+</html>

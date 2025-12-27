@@ -1,0 +1,123 @@
+════════════════════════════════════════════════════════════════════════
+              💰 הוראות ליצירת תמונה: קסמי שוחד ופיתוי 💰
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: קסמי שוחד ופיתוי
+קטגוריה: חיל כפירה
+כוח: כוחות החושך ☠️
+סכנה: קריטית
+עוצמה: 85 | הגנה: 55 | מהירות: 90
+
+📝 תיאור מפורט:
+────────────────
+מטבעות זהב מזויפים מרחפים הזוהרים בזוהר ירוק-זהוב מטעה. שטרות כסף עתיקים 
+מתעופפים. תכשיטים מרהיבים אך מושחתים. כל אחד מוקף בהילה ירוקה מפתה אך רעילה. 
+סמלי פיתוי מתנוצצים. הקסמים מביאים לחולשה מוסרית ופיתוי.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנگלית):
+──────────────────────────
+Epic hyper-realistic 8K dark fantasy art: Floating collection of deceptive treasures - 
+fake gold coins glowing with misleading green-gold light, old corrupted banknotes flying 
+through air, stunning but tainted jewelry pieces. Each item surrounded by toxic green aura 
+that appears tempting but is poisonous. Sparkling temptation symbols and dollar signs 
+glittering around the objects. Everything floats in circular formation creating web of greed.
+
+The treasures hover enticingly, designed to tempt and corrupt. Fake gold coins shimmer 
+with false promise, their green-gold glow deceptive and toxic. Ancient corrupted bills 
+flutter like trapped souls. Jewelry - rings, necklaces, crowns - appears magnificent but 
+radiates corruption. Each piece surrounded by sick green aura appearing beautiful but 
+deadly poisonous. Symbols of greed, dollar signs, and temptation sparkle throughout.
+
+VISUAL DETAILS:
+- Coins: Fake gold coins with deceptive green-gold shimmer
+- Banknotes: Old corrupted bills floating and fluttering
+- Jewelry: Stunning but tainted rings, necklaces, crowns, gems
+- Aura: Toxic green glow around each item, beautiful but poisonous
+- Symbols: Dollar signs, greed symbols, temptation marks sparkling
+- Background: Dark atmosphere with green-gold toxic gradient
+
+LIGHTING:
+- Deceptive green-gold glow from treasures appearing attractive
+- Toxic green aura creating false sense of beauty
+- Glittering sparkles on coins and jewelry
+- Misleading warm light suggesting wealth
+- Sick green undertones revealing poison
+- False glamour lighting creating temptation
+- Contrast between beautiful surface and toxic essence
+
+COMPOSITION:
+- Treasures floating in circular/spiral formation
+- Coins, bills, jewelry arranged creating web of greed
+- Green auras overlapping creating toxic atmosphere
+- Temptation symbols scattered throughout
+- Dynamic floating motion captured
+- Depth with foreground coins, mid jewelry, background bills
+- Seductive yet dangerous composition
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic dark fantasy, deceptive beauty aesthetic
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, Octane Render quality
+- Materials: Fake gold shader, corrupted paper, toxic gem shaders
+- Effects: Toxic aura glow, floating simulation, sparkle effects
+- Lighting: Deceptive green-gold light, false glamour, HDR
+- Aspect Ratio: 1:1 (square) or 16:9 (landscape)
+- Quality: Photorealistic deceptive beauty, detailed corruption
+
+MOOD & ATMOSPHERE:
+- Tempting, corrupting, deceptive, seductive
+- False promises and hollow wealth
+- Moral corruption and spiritual poison
+- Greed and material temptation
+- Sense of beautiful trap and deadly allure
+
+⚠️ NEGATIVE PROMPT:
+────────────────────────────────────
+real gold, blessed coins, holy treasures, pure jewelry, clean money, 
+divine wealth, sacred treasures, honest, righteous, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה אפלה היפר-ריאליסטית 8K: אוסף מרחף של אוצרות מטעים - מטבעות 
+זהב מזויפים זוהרים באור ירוק-זהוב מטעה, שטרות ישנים מושחתים מעופפים באוויר, 
+תכשיטים מהממים אך מוכתמים. כל פריט מוקף בהילה ירוקה רעילה שנראית מפתה אך 
+מסוכנת. סמלי פיתוי וסימני דולר נוצצים מסביב לחפצים. הכל מרחף בפורמציה 
+מעגלית ויוצר רשת של חמדנות.
+
+האוצרות מרחפים בצורה מפתה, מעוצבים לפתות ולהשחית. מטבעות זהב מזויפים 
+מנצנצים בהבטחה שקרית, הזוהר הירוק-זהוב שלהם מטעה ורעיל. שטרות עתיקים 
+מושחתים מתנופפים כמו נשמות כלואות. תכשיטים - טבעות, שרשראות, כתרים - 
+נראים מפוארים אך מקרינים שחיתות. כל פריט מוקף בהילה ירוקה חולנית.
+
+חומרים: מטבעות זהב מזויפים, שטרות מושחתים, תכשיטים מוכתמים
+תאורה: זוהר ירוק-זהוב מטעה, הילה רעילה, נצנוצים כוזבים
+סגנון: היפר-ריאליסטי יופי מטעה, Unreal Engine 5
+מצב רוח: מפתה, משחית, מטעה, מפתה
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 1:1 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את ההילה הירוקה הרעילה והזוהר המטעה
+✅ Stable Diffusion: השתמש ב-deceptive beauty + toxic glow
+✅ Leonardo.ai: Fantasy Art v2 עם toxic aura effects
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "fake gold, deceptive glow, toxic green aura"
+• הוסף "corrupted treasures, temptation symbols"
+• הוסף "greed trap, poisonous beauty"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות החושך ☠️
+⚠️ כלי מסוכן - לידיעה בלבד, להתגונן מפניו!
+════════════════════════════════════════════════════════════════════════

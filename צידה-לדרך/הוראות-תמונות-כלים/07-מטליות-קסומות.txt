@@ -1,0 +1,121 @@
+════════════════════════════════════════════════════════════════════════
+                🧼 הוראות ליצירת תמונה: מטליות קסומות 🧼
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: מטליות קסומות
+קטגוריה: חיל מטאטא
+כוח: כוחות האור ⭐
+נדירות: נפוץ
+עוצמה: 50 | הגנה: 75 | מהירות: 100
+
+📝 תיאור מפורט:
+────────────────
+שלוש מטליות משי לבנות מתעופפות ומרחפות, רקומות בחוטי כסף וזהב בדוגמאות 
+גאומטריות קדושות. הן זוהרות בזוהר פנימי עדין. סביבן נוצצות טיפות מים 
+קסומות מגבישות. המטליות משמשות לניקוי וטיהור עדין של אובייקטים קדושים.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K fantasy art: Three white silk cloths floating and flowing 
+gracefully in mid-air, each embroidered with intricate silver-gold thread patterns of 
+sacred geometry. The cloths are glowing with soft inner luminescence. Surrounding them 
+are sparkling crystalline water droplets suspended in air, each droplet reflecting 
+rainbow light. The cloths move in a gentle flowing motion creating an elegant dance.
+
+Each cloth is made of pristine white silk with elaborate embroidery featuring sacred 
+geometric patterns in silver and gold threads. The cloths glow with soft internal light, 
+semi-transparent and ethereal. Magical crystalline water drops float around them, 
+perfectly spherical and sparkling like diamonds. The three cloths float at different 
+heights creating dynamic composition.
+
+VISUAL DETAILS:
+- Cloths: Pure white silk, soft texture, flowing fabric
+- Embroidery: Silver-gold sacred geometric patterns, intricate details
+- Glow: Soft white-blue internal luminescence, gentle radiance
+- Water drops: Crystalline spherical droplets, rainbow reflections, sparkling
+- Motion: Gentle flowing movement, elegant draping, graceful dance
+- Background: Clean ethereal atmosphere with soft blue-white gradient
+
+LIGHTING:
+- Cloths emitting soft internal glow (white-blue light)
+- Embroidery catching light with metallic sheen
+- Water droplets refracting rainbow light
+- Soft ambient illumination creating pure atmosphere
+- Sparkles and glimmers from water and embroidery
+- Clean, bright lighting emphasizing purity
+- Subtle lens flares from water droplets
+
+COMPOSITION:
+- Three cloths positioned at different heights and angles
+- Flowing diagonally creating dynamic movement
+- Water droplets scattered around creating depth
+- Upper-center positioning with graceful draping
+- Sense of gentle motion and flow
+- Clean background allowing cloths to stand out
+- Layered depth with foreground, mid, and background elements
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic elegant fantasy art, clean aesthetic
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, cloth simulation, Octane Render
+- Materials: Silk fabric shader, metallic thread embroidery, water droplet shader
+- Simulation: Cloth physics, realistic fabric flow
+- Lighting: Soft volumetric lighting, prismatic water effects, HDR
+- Aspect Ratio: 4:5 (portrait) or 16:9 (landscape)
+- Quality: Photorealistic fabric texture, crisp embroidery details
+
+MOOD & ATMOSPHERE:
+- Pure, clean, gentle, elegant
+- Soft soothing energy
+- Sacred and delicate presence
+- Graceful and flowing beauty
+- Sense of cleansing and renewal
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, dirty cloths, torn, stained, old rags, dark, gloomy, static, 
+stiff fabric, modern towels, synthetic material, text, watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה היפר-ריאליסטית 8K: שלוש מטליות משי לבנות מרחפות וזורמות בחן 
+באוויר, כל אחת רקומה בחוטי כסף-זהב בדוגמאות גאומטריה קדושה מורכבות. 
+המטליות זוהרות בזוהר פנימי רך. מסביבן מרחפות טיפות מים גבישיות נוצצות 
+התלויות באוויר, כל טיפה משקפת אור קשת. המטליות נעות בתנועה זורמת עדינה 
+היוצרת ריקוד אלגנטי.
+
+כל מטלית עשויה ממשי לבן טהור עם רקמה משוכללת של דוגמאות גאומטריות קדושות 
+בחוטי כסף וזהב. המטליות זוהרות באור פנימי רך, שקופות למחצה ועלעליות. טיפות 
+מים גבישיות קסומות מרחפות מסביבן, כדוריות מושלמות ונוצצות כמו יהלומים.
+
+חומרים: משי לבן טהור, רקמת כסף-זהב, טיפות מים גבישיות
+תאורה: זוהר פנימי לבן-כחול, נצנוצים, השתקפויות קשת
+סגנון: היפר-ריאליסטי אלגנטי, סימולציית בד, Unreal Engine 5
+מצב רוח: טהור, נקי, עדין, אלגנטי
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 4:5 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את זרימת הבד והטיפות המגבישות
+✅ Stable Diffusion: השתמש ב-cloth simulation models
+✅ Leonardo.ai: PhotoReal v2 עם cloth physics
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "flowing fabric, cloth simulation"
+• הוסף "crystalline water droplets, prismatic reflections"
+• הוסף "sacred embroidery, metallic threads"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

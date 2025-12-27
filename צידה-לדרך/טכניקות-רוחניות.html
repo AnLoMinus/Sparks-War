@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טכניקות רוחניות - צידה לדרך 🧘</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a3a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 9pt;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #90ee90 0%, #4ecdc4 100%);
+            padding: 0.8rem 0.5rem;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            color: #1a1a2e;
+            font-size: 1.4rem;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #90ee90;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(144, 238, 144, 0.4);
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0.5cm;
+        }
+
+        .technique-section {
+            background: #2a3e3a;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 1px solid rgba(144, 238, 144, 0.2);
+            page-break-inside: avoid;
+        }
+
+        .technique-section h2 {
+            color: #90ee90;
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .technique-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        .technique-card {
+            background: #2c3e3c;
+            border-radius: 6px;
+            padding: 0.8rem;
+            border: 1px solid rgba(144, 238, 144, 0.1);
+            page-break-inside: avoid;
+        }
+
+        .technique-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .technique-icon {
+            font-size: 2rem;
+        }
+
+        .technique-name {
+            color: #90ee90;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0 0 0.4rem 0;
+        }
+
+        .technique-description {
+            color: #d0d0d0;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .steps-section,
+        .benefits-section,
+        .timing-section {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        .section-title {
+            color: #4ecdc4;
+            font-size: 0.9rem;
+            margin: 0 0 0.4rem 0;
+            font-weight: bold;
+        }
+
+        .steps-list,
+        .benefits-list,
+        .timing-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .step-item,
+        .benefit-item,
+        .timing-item {
+            padding: 0.3rem 0.5rem;
+            margin: 0.2rem 0;
+            background: rgba(144, 238, 144, 0.05);
+            border-radius: 3px;
+            border-right: 2px solid #90ee90;
+            line-height: 1.2;
+            font-size: 0.8rem;
+        }
+
+        .step-number {
+            color: #4ecdc4;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        .intro-box {
+            background: linear-gradient(145deg, #2c3e3a, #1a2e2a);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid #90ee90;
+            text-align: center;
+        }
+
+        .intro-box h2 {
+            color: #90ee90;
+            margin-bottom: 1rem;
+        }
+
+        .intro-box p {
+            color: #d0d0d0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .warning-note {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: #ffed4e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            background: #1a1a2e;
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 8pt;
+            }
+
+            .main-header {
+                background: #90ee90;
+                padding: 0.3cm;
+            }
+
+            .main-header h1 {
+                font-size: 14pt;
+                color: black;
+            }
+
+            .back-button {
+                display: none;
+            }
+
+            .container {
+                padding: 0.3cm;
+            }
+
+            .technique-section {
+                border: 1px solid #ccc;
+                padding: 0.3cm;
+                margin: 0.2cm 0;
+                background: white;
+            }
+
+            .technique-section h2 {
+                font-size: 12pt;
+                color: black;
+            }
+
+            .technique-card {
+                border: 1px solid #ddd;
+                padding: 0.2cm;
+                background: #f9f9f9;
+            }
+
+            .technique-name {
+                color: black;
+                font-size: 9pt;
+            }
+
+            .section-title {
+                color: black;
+                font-size: 8pt;
+            }
+
+            .step-item,
+            .benefit-item,
+            .timing-item {
+                font-size: 7pt;
+                padding: 0.1cm;
+            }
+
+            footer {
+                padding: 0.2cm;
+                font-size: 7pt;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .technique-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>🧘 טכניקות רוחניות 🧘</h1>
+        <p>כלים יומיומיים לחיזוק הניצוץ הפנימי והגנה רוחנית</p>
+        <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+    </header>
+
+    <div class="container">
+        <div class="intro-box">
+            <h2>🌟 מבוא לטכניקות הרוחניות</h2>
+            <p>
+                טכניקות אלה נועדו לחזק את הניצוץ הפנימי שלך, להגן מפני השפעות שליליות,
+                <br>ולפתח את היכולות הרוחניות שלך. התמדה וכנות הם המפתח להצלחה.
+            </p>
+            <p>
+                <strong style="color: #4ecdc4;">כל טכניקה יכולה להיעשות בכל מקום וזמן, והיא מתאימה לכולם.</strong>
+            </p>
+        </div>
+
+        <!-- תפילות והגנה -->
+        <section class="technique-section">
+            <h2>📿 תפילות והגנה רוחנית</h2>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">🙏</span>
+                        <h3 class="technique-name">תפילת הגנה יומית</h3>
+                    </div>
+                    <p class="technique-description">
+                        תפילה קצרה אך עוצמתית להגנה מפני כוחות שליליים לאורך היום.
+                        מומלץ לומר בבוקר לפני יציאה מהבית ובערב לפני השינה.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">שלבים:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> התיישב במקום שקט ונוח</li>
+                            <li class="step-item"><span class="step-number">2.</span> נשום עמוק 3 פעמים</li>
+                            <li class="step-item"><span class="step-number">3.</span> הצהר: "אני מוגן/ת באור הטהור. אני
+                                מוקף/ת באהבה ובחמלה"</li>
+                            <li class="step-item"><span class="step-number">4.</span> דמיין/י מעגל אור זהוב מקיף אותך
+                            </li>
+                            <li class="step-item"><span class="step-number">5.</span> הודה על ההגנה שקיבלת</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">🛡️ הגנה מפני אנרגיות שליליות</li>
+                            <li class="benefit-item">✨ חיזוק האור הפנימי</li>
+                            <li class="benefit-item">🌟 שיפור המצב הרוחני</li>
+                            <li class="benefit-item">💪 הגברת הביטחון העצמי</li>
+                        </ul>
+                    </div>
+                    <div class="timing-section">
+                        <h4 class="section-title">מתי לבצע:</h4>
+                        <ul class="timing-list">
+                            <li class="timing-item">🌅 בוקר - לפני יציאה מהבית</li>
+                            <li class="timing-item">🌙 ערב - לפני השינה</li>
+                            <li class="timing-item">⚠️ בזמן מתח או חרדה</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">🕉️</span>
+                        <h3 class="technique-name">מנטרות להגנה</h3>
+                    </div>
+                    <p class="technique-description">
+                        חזרה על מילים או צלילים קדושים המחזקים את האנרגיה החיובית
+                        ומגנים מפני השפעות שליליות. המנטרות פועלות בתדר גבוה שמרחיק אופל.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">מנטרות מומלצות:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item">✨ "אני אור, אני אהבה, אני שלם/ה"</li>
+                            <li class="step-item">🌟 "האור שבי חזק מכל חושך"</li>
+                            <li class="step-item">💫 "אני מוגן/ת, אני בטוח/ה, אני מאיר/ה"</li>
+                            <li class="step-item">🙏 "תודה על האור, תודה על האהבה"</li>
+                        </ul>
+                    </div>
+                    <div class="steps-section">
+                        <h4 class="section-title">איך להשתמש:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> בחר מנטרה שמתחברת אליך</li>
+                            <li class="step-item"><span class="step-number">2.</span> חזור עליה 7, 21 או 108 פעמים</li>
+                            <li class="step-item"><span class="step-number">3.</span> שים לב לתחושות בגוף</li>
+                            <li class="step-item"><span class="step-number">4.</span> המשך כל יום למשך 40 יום</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">🔊 העלאת תדר האנרגיה</li>
+                            <li class="benefit-item">🧘 הרגעת המוח והנפש</li>
+                            <li class="benefit-item">✨ חיזוק הקשר לעצמי הגבוה</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">📖</span>
+                        <h3 class="technique-name">קריאת כתבים קדושים</h3>
+                    </div>
+                    <p class="technique-description">
+                        קריאה והרהור בכתבים קדושים מחזקת את החיבור לאור ומספקת הגנה רוחנית.
+                        הטקסטים נושאים אנרגיה גבוהה שמטהרת ומעלה.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">שלבים:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> בחר פרק או פסוק משמעותי</li>
+                            <li class="step-item"><span class="step-number">2.</span> קרא בכוונה ובריכוז</li>
+                            <li class="step-item"><span class="step-number">3.</span> הרהר במשמעות</li>
+                            <li class="step-item"><span class="step-number">4.</span> יישם את הלקח בחיים</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">📚 העמקת הידע הרוחני</li>
+                            <li class="benefit-item">💡 קבלת הדרכה והשראה</li>
+                            <li class="benefit-item">✨ חיזוק האמונה</li>
+                            <li class="benefit-item">🛡️ הגנה רוחנית עוצמתית</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- מדיטציה והתמקדות -->
+        <section class="technique-section">
+            <h2>🧘 מדיטציה והתמקדות</h2>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">🌬️</span>
+                        <h3 class="technique-name">מדיטציית נשימה</h3>
+                    </div>
+                    <p class="technique-description">
+                        טכניקת נשימה פשוטה אך עוצמתית לריכוז המחשבות, הרגעת הנפש,
+                        וחיזוק החיבור לניצוץ הפנימי. מתאימה למתחילים ומתקדמים כאחד.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">שלבים:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> שב בנוחות, גב ישר</li>
+                            <li class="step-item"><span class="step-number">2.</span> עצום עיניים או מבט רך</li>
+                            <li class="step-item"><span class="step-number">3.</span> שאף לאט דרך האף ל-4 ספירות</li>
+                            <li class="step-item"><span class="step-number">4.</span> עצור את הנשימה ל-4 ספירות</li>
+                            <li class="step-item"><span class="step-number">5.</span> נשוף לאט דרך הפה ל-6 ספירות</li>
+                            <li class="step-item"><span class="step-number">6.</span> חזור 10-20 פעמים</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">😌 הרגעה מיידית</li>
+                            <li class="benefit-item">🧠 ריכוז משופר</li>
+                            <li class="benefit-item">💆 הפחתת מתח וחרדה</li>
+                            <li class="benefit-item">✨ חיזוק האנרגיה הפנימית</li>
+                        </ul>
+                    </div>
+                    <div class="timing-section">
+                        <h4 class="section-title">משך זמן:</h4>
+                        <ul class="timing-list">
+                            <li class="timing-item">מתחילים: 5 דקות</li>
+                            <li class="timing-item">מתקדמים: 10-20 דקות</li>
+                            <li class="timing-item">מומחים: 30+ דקות</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">✨</span>
+                        <h3 class="technique-name">מדיטציית אור פנימי</h3>
+                    </div>
+                    <p class="technique-description">
+                        מדיטציה לחיזוק הניצוץ הפנימי והרחבת האור שבתוכך. טכניקה זו
+                        מחברת אותך לכוח האור שבך ומחזקת אותו.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">שלבים:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> שב בנוחות ונשום עמוק</li>
+                            <li class="step-item"><span class="step-number">2.</span> דמיין נקודת אור זהוב בלב</li>
+                            <li class="step-item"><span class="step-number">3.</span> צפה באור גדל וזוהר יותר</li>
+                            <li class="step-item"><span class="step-number">4.</span> האור ממלא את כל גופך</li>
+                            <li class="step-item"><span class="step-number">5.</span> האור מתפשט סביבך במעגלים</li>
+                            <li class="step-item"><span class="step-number">6.</span> הרגש את החום והאהבה</li>
+                            <li class="step-item"><span class="step-number">7.</span> הודה לאור שבך</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">💫 חיזוק הניצוץ הפנימי</li>
+                            <li class="benefit-item">🌟 הרחבת השדה האנרגטי</li>
+                            <li class="benefit-item">❤️ פתיחת הלב</li>
+                            <li class="benefit-item">🛡️ יצירת הגנה טבעית</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">🔮</span>
+                        <h3 class="technique-name">מדיטציית הגנה</h3>
+                    </div>
+                    <p class="technique-description">
+                        מדיטציה ליצירת מגן אנרגטי סביבך. מתאימה במיוחד לפני כניסה
+                        למקומות עם אנרגיה קשה או מפגש עם אנשים מאתגרים.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">שלבים:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> נשימה עמוקה 3 פעמים</li>
+                            <li class="step-item"><span class="step-number">2.</span> דמיין בועת אור כחול-לבן</li>
+                            <li class="step-item"><span class="step-number">3.</span> הבועה מקיפה אותך לגמרי</li>
+                            <li class="step-item"><span class="step-number">4.</span> הצהר: "אני מוגן/ת באור"</li>
+                            <li class="step-item"><span class="step-number">5.</span> הרגש את החוזק של המגן</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">🛡️ הגנה אנרגטית מיידית</li>
+                            <li class="benefit-item">💪 תחושת ביטחון וכוח</li>
+                            <li class="benefit-item">✨ סינון השפעות שליליות</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- טיהור וניקוי -->
+        <section class="technique-section">
+            <h2>🧹 טיהור וניקוי אנרגטי</h2>
+
+            <div class="technique-grid">
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">🌊</span>
+                        <h3 class="technique-name">טבילה טיהור</h3>
+                    </div>
+                    <p class="technique-description">
+                        טבילה במים (מקווה, ים, או אמבטיה) עם כוונה רוחנית לטיהור
+                        וחידוש. המים מטהרים את הגוף והנפש.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">שלבים:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> התכוון לטיהור לפני הכניסה</li>
+                            <li class="step-item"><span class="step-number">2.</span> טבול בכוונה לשלוש פעמים</li>
+                            <li class="step-item"><span class="step-number">3.</span> דמיין שחורה יוצאת, אור נכנס</li>
+                            <li class="step-item"><span class="step-number">4.</span> הודה על הטיהור</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">🌊 טיהור עמוק מאנרגיות ישנות</li>
+                            <li class="benefit-item">✨ חידוש רוחני</li>
+                            <li class="benefit-item">💫 הסרת קללות ועין הרע</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">🕯️</span>
+                        <h3 class="technique-name">טיהור בעשן קדוש</h3>
+                    </div>
+                    <p class="technique-description">
+                        שימוש בעשן של צמחי מרפא (לבונה, מור, מרווה) לטיהור המרחב
+                        והגוף מאנרגיות שליליות. טכניקה עתיקה ויעילה.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">שלבים:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> הדלק צמח מרפא או קטורת</li>
+                            <li class="step-item"><span class="step-number">2.</span> העבר את העשן סביב גופך</li>
+                            <li class="step-item"><span class="step-number">3.</span> טייל בחדר עם העשן</li>
+                            <li class="step-item"><span class="step-number">4.</span> התכוון לטיהור ולשחרור</li>
+                            <li class="step-item"><span class="step-number">5.</span> פתח חלונות לאוורור</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">🏠 טיהור מרחב המגורים</li>
+                            <li class="benefit-item">✨ הסרת אנרגיות תקועות</li>
+                            <li class="benefit-item">😌 יצירת אווירה שלווה</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="technique-card">
+                    <div class="technique-header">
+                        <span class="technique-icon">🧂</span>
+                        <h3 class="technique-name">טיהור במלח</h3>
+                    </div>
+                    <p class="technique-description">
+                        שימוש במלח ים לטיהור אנרגטי. המלח סופג אנרגיות שליליות
+                        ומטהר את המרחב. טכניקה פשוטה ויעילה לשימוש יומיומי.
+                    </p>
+                    <div class="steps-section">
+                        <h4 class="section-title">שלבים:</h4>
+                        <ul class="steps-list">
+                            <li class="step-item"><span class="step-number">1.</span> פזר מלח ים בפינות החדר</li>
+                            <li class="step-item"><span class="step-number">2.</span> השאר למשך 24 שעות</li>
+                            <li class="step-item"><span class="step-number">3.</span> אסוף ושטוף לכיור</li>
+                            <li class="step-item"><span class="step-number">4.</span> חזור פעם בשבוע</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-section">
+                        <h4 class="section-title">תועלות:</h4>
+                        <ul class="benefits-list">
+                            <li class="benefit-item">🏠 טיהור הבית מאנרגיות כבדות</li>
+                            <li class="benefit-item">✨ שמירה על אנרגיה חיובית</li>
+                            <li class="benefit-item">🛡️ הגנה מפני עין הרע</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="warning-note">
+            <strong>💡 טיפ חשוב:</strong> התמדה היא המפתח! טכניקות אלה יעילות ביותר כאשר מבצעים אותן באופן קבוע.
+            התחל עם טכניקה אחת או שתיים והוסף בהדרגה.
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>✨ כל הזכויות שמורות © 2024 - מלחמת הניצוצות ✨</p>
+        <p>תרגל באהבה, תרגל בכוונה, תרגל בהתמדה 🙏</p>
+    </footer>
+</body>
+
+</html>

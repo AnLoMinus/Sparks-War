@@ -1,0 +1,124 @@
+════════════════════════════════════════════════════════════════════════
+            💍 הוראות ליצירת תמונה: טבעת הזיווג המקודשת 💍
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: טבעת הזיווג המקודשת
+קטגוריה: חיל השידוכים
+כוח: כוחות האור ⭐
+נדירות: אגדי
+עוצמה: 85 | הגנה: 90 | מהירות: 60
+
+📝 תיאור מפורט:
+────────────────
+טבעת זהב מפוארת גדולה מרחפת, משובצת באבן יהלום ענקית מאירה באור ורוד-לבן. 
+גילופים עדינים של לבבות ונשמות מתחברות על הטבעת. קרני אור ורודות זוהרות 
+יוצאות מהיהלום. שתי הילות אור מתחברות מעל הטבעת. הטבעת מחזקת קשרים זוגיים 
+ומגינה על אהבה אמיתית.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K fantasy art: Grand magnificent golden ring floating vertically, 
+set with a huge glowing diamond radiating pink-white light. Delicate engravings of hearts 
+and connecting souls carved along the ring band. Brilliant pink light rays emanating from 
+the diamond in all directions. Two luminous auras of light meeting and merging above the 
+ring creating a sacred union symbol.
+
+The ring hovers majestically in vertical position, showcasing the enormous center diamond. 
+The gold band is intricately carved with scenes of souls connecting, hearts intertwining, 
+and love symbols. The diamond shines with divine pink-white radiance, sending out rays of 
+pure love energy. Above the ring, two distinct light auras (representing two souls) meet 
+and blend together in perfect harmony.
+
+VISUAL DETAILS:
+- Ring band: Polished gold with intricate soul-connection engravings
+- Diamond: Massive brilliant-cut diamond glowing pink-white from within
+- Engravings: Hearts, intertwined souls, love symbols, unity patterns
+- Light rays: Pink radiant beams emanating from diamond center
+- Auras: Two distinct light auras (gold and white) merging above ring
+- Background: Romantic soft gradient pink-gold with bokeh
+
+LIGHTING:
+- Diamond as main light source - intense pink-white brilliance
+- Light rays spreading radially creating star-burst effect
+- Gold band reflecting diamond's glow with metallic sheen
+- Two merging auras glowing softly (warm gold and pure white)
+- Romantic ambient pink-gold illumination
+- Sparkles and light particles around diamond
+- Lens flares and prismatic effects from diamond
+- Soft bloom creating dreamy atmosphere
+
+COMPOSITION:
+- Ring centered, floating vertically showing full frontal view
+- Diamond prominently displayed at center
+- Light rays creating radial composition
+- Two auras meeting above ring creating focal point
+- Vertical orientation emphasizing height and majesty
+- Soft romantic background allowing ring to dominate
+- Depth with foreground ring, mid rays, background auras
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic romantic divine fantasy art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, diamond shader, Octane Render
+- Materials: Polished gold shader, brilliant diamond with caustics
+- Lighting: Diamond brilliance, light rays, aura glow, HDR
+- Effects: Prismatic light rays, bokeh, bloom, lens flares
+- Aspect Ratio: 2:3 (portrait) or 4:5 (portrait)
+- Quality: Photorealistic jewelry detail, maximum sparkle
+
+MOOD & ATMOSPHERE:
+- Sacred union, eternal love, divine marriage
+- Powerful bonding energy
+- Romantic and majestic presence
+- Holy commitment and fidelity
+- Sense of souls joining in perfect harmony
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, cheap ring, fake diamond, broken, cracked, dark, gothic, 
+skull ring, evil symbols, modern plain ring, silver, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה רומנטית היפר-ריאליסטית 8K: טבעת זהב מפוארת וגדולה מרחפת 
+אנכית, משובצת ביהלום ענק זוהר המקרין אור ורוד-לבן. גילופים עדינים של 
+לבבות ונשמות מתחברות חרוטים לאורך טבעת הזהב. קרני אור ורודות מבריקות 
+יוצאות מהיהלום לכל הכיוונים. שתי הילות אור זוהרות נפגשות ומתמזגות מעל 
+הטבעת ויוצרות סמל איחוד קדוש.
+
+הטבעת מרחפת במלכותיות במצב אנכי, מציגה את יהלום המרכז העצום. טבעת הזהב 
+מגולפת בצורה מורכבת עם סצנות של נשמות מתחברות, לבבות משתלבים וסמלי אהבה. 
+היהלום זוהר בזוהר אלוהי ורוד-לבן ושולח קרני אנרגיית אהבה טהורה. מעל 
+הטבעת, שתי הילות אור (המייצגות שתי נשמות) נפגשות ומתמזגות בהרמוניה מושלמת.
+
+חומרים: זהב מלוטש, יהלום מבריק ענק, גילופי נשמות
+תאורה: ברק יהלום ורוד-לבן, קרני אור, הילות מתמזגות
+סגנון: היפר-ריאליסטי תכשיטים, Unreal Engine 5
+מצב רוח: איחוד קדוש, אהבה נצחית, נישואין אלוהיים
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 4:5 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את היהלום הענק וקרני האור הורודות
+✅ Stable Diffusion: השתמש ב-jewelry + diamond models
+✅ Leonardo.ai: PhotoReal v2 עם diamond caustics
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "brilliant diamond, pink-white radiance"
+• הוסף "soul connection engravings, merging auras"
+• הוסף "wedding ring, eternal love symbol"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

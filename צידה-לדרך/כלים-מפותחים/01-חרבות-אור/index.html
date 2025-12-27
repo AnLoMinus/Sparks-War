@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swords of Light — Card 01</title>
+    <style>
+        /* ===== Print & Size ===== */
+        @page {
+            size: 150mm 200mm;
+            margin: 6mm;
+        }
+
+        :root {
+            --bg1: #0b0f17;
+            --bg2: #111827;
+            --gold: #f5d47b;
+            --gold2: #ffd36b;
+            --halo: #a7c7ff;
+            --blue: #6bc9ff;
+            --white: #ffffff;
+            --silver: #cdd6f4;
+            --frame: #7bd1ff;
+            --accent: #f0f9ff;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: radial-gradient(120% 120% at 50% 0%, #0e1525 0%, #070b12 45%, #03060b 100%);
+            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            color: var(--accent)
+        }
+
+        /* ===== Card Canvas ===== */
+        .card {
+            width: 150mm;
+            height: 200mm;
+            position: relative;
+            margin: 0 auto;
+            border-radius: 16mm;
+            padding: 10mm 8mm 8mm;
+            overflow: hidden;
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+                radial-gradient(120% 100% at 50% 0%, rgba(123, 209, 255, 0.18), rgba(255, 211, 107, 0.08) 40%, rgba(255, 255, 255, 0) 70%);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.06), 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 120px rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== Holographic Border ===== */
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 4mm;
+            border-radius: 14mm;
+            padding: 2px;
+            background: conic-gradient(from 0deg, #7bd1ff, #f5d47b, #b388ff, #7bd1ff);
+            -webkit-mask: linear-gradient(#0000, #000 10%, #000 90%, #0000) content-box, linear-gradient(#000, #000) padding-box;
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: spin 12s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ===== Header ===== */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8mm;
+            margin-bottom: 6mm;
+        }
+
+        .title {
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 10.5mm;
+            line-height: 1;
+            color: var(--accent);
+            text-shadow: 0 0 10px rgba(255, 255, 255, .3), 0 0 30px rgba(123, 209, 255, .4);
+        }
+
+        .rarity {
+            font-size: 5mm;
+            padding: 2mm 4mm;
+            border-radius: 6mm;
+            color: #0a0f18;
+            font-weight: 800;
+            background: linear-gradient(180deg, var(--gold2), #ffb84d);
+            box-shadow: 0 0 18px rgba(255, 211, 107, .35);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* ===== Stats Bar ===== */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 3mm;
+            margin-bottom: 6mm;
+        }
+
+        .chip {
+            background: linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .03));
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 6mm;
+            padding: 2.5mm 3.5mm;
+            text-align: center;
+            font-weight: 700;
+            font-size: 4mm;
+        }
+
+        /* ===== Illustration Holder ===== */
+        .illust {
+            position: relative;
+            height: 96mm;
+            border-radius: 10mm;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(70% 80% at 50% 45%, rgba(255, 211, 107, .20), rgba(123, 209, 255, .16) 40%, rgba(255, 255, 255, 0) 70%),
+                radial-gradient(80% 60% at 50% 70%, rgba(167, 199, 255, .15), rgba(255, 255, 255, 0) 68%);
+            border: 1px solid rgba(255, 255, 255, .14);
+            box-shadow: inset 0 0 80px rgba(255, 255, 255, .08), 0 20px 60px rgba(0, 0, 0, .45);
+            margin-bottom: 6mm;
+        }
+
+        /* Glow halo */
+        .halo {
+            position: absolute;
+            width: 140mm;
+            height: 140mm;
+            border-radius: 50%;
+            filter: blur(22px);
+            opacity: .65;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, .65), rgba(255, 211, 107, .35) 40%, rgba(123, 209, 255, .25) 60%, rgba(255, 255, 255, 0) 70%);
+            mix-blend-mode: screen;
+        }
+
+        /* ===== SVG Swords ===== */
+        svg {
+            width: 90mm;
+            height: 90mm;
+            overflow: visible;
+        }
+
+        .spark {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+
+        /* ===== Description ===== */
+        .desc {
+            font-size: 4.2mm;
+            line-height: 1.45;
+            color: var(--silver);
+            background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 6mm;
+            padding: 4mm 5mm;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            margin-top: 6mm;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 3.6mm;
+            color: #c7d2fe;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 3mm;
+        }
+
+        .dot {
+            width: 4mm;
+            height: 4mm;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #fff, #7bd1ff 60%, transparent 70%);
+            box-shadow: 0 0 12px #7bd1ff;
+        }
+
+        .credits a {
+            color: #a5f3fc;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(165, 243, 252, .5);
+        }
+
+        /* Print helper */
+        .print-note {
+            position: absolute;
+            top: 4mm;
+            right: 8mm;
+            font-size: 3.5mm;
+            opacity: .5
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" role="img" aria-label="Card 01 — Swords of Light">
+        <div class="print-note">Card size: 150×200 mm • Print bleed handled by page margins</div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="title">SWORDS OF LIGHT</div>
+            <div class="rarity" title="Legendary">Legendary</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="chip">Legion: Light</div>
+            <div class="chip">Power ★</div>
+            <div class="chip">STR 90</div>
+            <div class="chip">DEF 70</div>
+            <div class="chip">SPD 85</div>
+            <div class="chip">Aspect: Holy</div>
+        </div>
+
+        <!-- Illustration -->
+        <div class="illust">
+            <div class="halo"></div>
+            <!-- SVG crossed swords (vector, glow-ready) -->
+            <svg viewBox="0 0 512 512" aria-hidden="true">
+                <defs>
+                    <linearGradient id="blade" x1="0" x2="1">
+                        <stop offset="0%" stop-color="#fff9e6" />
+                        <stop offset="50%" stop-color="#ffe59a" />
+                        <stop offset="100%" stop-color="#fff" />
+                    </linearGradient>
+                    <linearGradient id="edge" x1="0" x2="1">
+                        <stop offset="0%" stop-color="#fff" />
+                        <stop offset="100%" stop-color="#ffd36b" />
+                    </linearGradient>
+                    <radialGradient id="gem" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#fff" />
+                        <stop offset="50%" stop-color="#7bd1ff" />
+                        <stop offset="100%" stop-color="#1e90ff" />
+                    </radialGradient>
+                    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="6" result="b" />
+                        <feMerge>
+                            <feMergeNode in="b" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+                <!-- Left sword -->
+                <g transform="translate(90,40) rotate(-45,166,210)" filter="url(#glow)">
+                    <path d="M166 40 L176 60 L176 320 L156 320 L156 60 Z" fill="url(#blade)" stroke="url(#edge)"
+                        stroke-width="3" />
+                    <circle cx="166" cy="60" r="12" fill="url(#gem)" />
+                    <rect x="146" y="320" width="40" height="28" rx="8" fill="#d6b25e" />
+                    <rect x="138" y="348" width="56" height="16" rx="8" fill="#caa24c" />
+                </g>
+                <!-- Right sword -->
+                <g transform="translate(250,40) rotate(45,0,210)" filter="url(#glow)">
+                    <path d="M0 40 L10 60 L10 320 L-10 320 L-10 60 Z" fill="url(#blade)" stroke="url(#edge)"
+                        stroke-width="3" />
+                    <circle cx="0" cy="60" r="12" fill="url(#gem)" />
+                    <rect x="-20" y="320" width="40" height="28" rx="8" fill="#d6b25e" />
+                    <rect x="-28" y="348" width="56" height="16" rx="8" fill="#caa24c" />
+                </g>
+                <!-- Central flare -->
+                <circle cx="256" cy="210" r="36" fill="url(#gem)" opacity="0.9" />
+            </svg>
+
+            <!-- Light particles -->
+            <canvas class="spark" id="sparks" width="1200" height="900"></canvas>
+        </div>
+
+        <!-- Description -->
+        <div class="desc">
+            Two consecrated swords forged from pure golden‑white light. Their radiant beams shatter dark enchantments.
+            Each blade is soul‑bound to its wielder and grows in might with unwavering faith.
+            【17†files_uploaded_in_conversation】
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="badge"><span class="dot"></span><span>Card 01 · Swords of Light</span></div>
+            <div class="credits">Date: October 14, 2025 · Project: <a href="https://anlominus.github.io/"
+                    target="_blank" rel="noopener">Sparks War — Legion of Light</a></div>
+        </div>
+    </div>
+
+    <script>
+        // Minimal particle system for divine sparks (no external libs)
+        const c = document.getElementById('sparks');
+        const ctx = c.getContext('2d');
+        const DPR = Math.max(1, window.devicePixelRatio || 1);
+        c.width *= DPR; c.height *= DPR; ctx.scale(DPR, DPR);
+        const W = c.clientWidth, H = c.clientHeight;
+
+        const N = 140; const parts = [];
+        function rnd(a, b) { return a + Math.random() * (b - a) }
+        for (let i = 0; i < N; i++) {
+            parts.push({ x: rnd(W * 0.2, W * 0.8), y: rnd(H * 0.2, H * 0.8), r: rnd(0.6, 1.8), a: rnd(0.35, 0.85), vx: rnd(-0.25, 0.25), vy: rnd(-0.25, 0.25) })
+        }
+        function tick() {
+            ctx.clearRect(0, 0, W, H);
+            for (const p of parts) {
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+                const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 8);
+                g.addColorStop(0, 'rgba(255,255,255,' + p.a + ')');
+                g.addColorStop(0.4, 'rgba(255,211,107,' + (p.a * 0.6) + ')');
+                g.addColorStop(1, 'rgba(123,209,255,0)');
+                ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 8, 0, Math.PI * 2); ctx.fill();
+            }
+            requestAnimationFrame(tick);
+        }
+        tick();
+    </script>
+</body>
+
+</html>

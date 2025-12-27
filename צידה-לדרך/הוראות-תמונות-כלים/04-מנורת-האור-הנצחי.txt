@@ -1,0 +1,121 @@
+════════════════════════════════════════════════════════════════════════
+                🏮 הוראות ליצירת תמונה: מנורת האור הנצחי 🏮
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: מנורת האור הנצחי
+קטגוריה: חיל האורות
+כוח: כוחות האור ⭐
+נדירות: נדיר ביותר
+עוצמה: 85 | הגנה: 65 | מהירות: 30
+
+📝 תיאור מפורט:
+────────────────
+מנורה עתיקה מפוארת עשויה זהב מלוטש שלעולם לא כבתה. בתוכה להבה של אור 
+טהור לבן-זהוב בוערת ללא דלק. זכוכית גבישית צבעונית מקיפה את הלהבה, 
+ומידיות מגולפות בצורת כנפי מלאך. המנורה מטהרת אזורים מהשפעות שליליות.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K fantasy art: Magnificent ancient ornate lantern made of polished 
+gold metal. Inside burns an eternal flame of pure white-golden light without any fuel. 
+Surrounded by colorful crystal stained glass panels - blue, purple, amber, creating 
+prismatic rainbow effects. Handles carved in shape of angel wings extending from sides. 
+Soft divine light rays emanating in all directions.
+
+The lantern is floating in mid-air, suspended by invisible divine power. Golden 
+metallic body intricately carved with sacred patterns and religious motifs. The 
+eternal flame inside dancing gracefully, never flickering out. Colored glass panels 
+casting beautiful rainbow light patterns. Angel wing handles with detailed feather 
+engravings spread majestically.
+
+VISUAL DETAILS:
+- Lantern body: Polished gold metal with intricate sacred engravings
+- Flame: Pure white-gold eternal flame, dancing gently, ethereal
+- Glass panels: Colorful stained crystal glass - sapphire blue, amethyst purple, 
+  amber gold, emerald green creating prismatic effects
+- Handles: Detailed angel wing sculptures with individual feather carvings
+- Light effects: Soft warm rays radiating outward, rainbow refractions, glow
+- Background: Ethereal mist with warm golden ambient light
+
+LIGHTING:
+- Central eternal flame as main light source - warm white-gold glow
+- Colored glass creating rainbow light patterns and refractions
+- Soft rays emanating in all directions creating god rays effect
+- Warm ambient glow filling the surrounding space
+- Prismatic rainbow effects from stained glass
+- Magical particles of light floating around
+- Gentle lens flares and bloom effects
+
+COMPOSITION:
+- Lantern centered, floating at mid-height
+- Frontal-angled view showing intricate details
+- Angel wings spread symmetrically on sides
+- Soft background with ethereal mist
+- Light rays creating radial composition
+- Depth with foreground glow and background fade
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic divine fantasy art, sacred aesthetic
+- Resolution: 8K ultra-detailed rendering
+- Rendering: Unreal Engine 5, Octane Render, path tracing
+- Materials: Polished gold shader, stained glass shader, volumetric flame
+- Lighting: Volumetric lighting, god rays, HDR, global illumination
+- Aspect Ratio: 1:1 (square) or 4:5 (portrait)
+- Quality: Photorealistic, maximum detail, 4K textures, ray-traced
+
+MOOD & ATMOSPHERE:
+- Divine, eternal, peaceful, purifying
+- Warm comforting light creating sense of safety and holiness
+- Mystical and sacred presence
+- Timeless and imperishable essence
+- Gentle and soothing energy
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, low quality, cartoon, broken glass, extinguished flame, dark, rusty, 
+modern lamp, electric, cables, dark atmosphere, demonic, horror, text, watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה היפר-ריאליסטית 8K: מנורה עתיקה מפוארת ומעוטרת עשויה ממתכת זהב 
+מלוטשת. בפנים בוערת להבה נצחית של אור טהור לבן-זהוב ללא כל דלק. מוקפת 
+בלוחות זכוכית גבישית צבעונית - כחול, סגול, ענבר, היוצרים אפקטים פריזמטיים. 
+ידיות מגולפות בצורת כנפי מלאך משתרעות מהצדדים. קרני אור רכות אלוהיות 
+מקרינות לכל הכיוונים.
+
+המנורה מרחפת באוויר, תלויה בכוח אלוהי בלתי נראה. גוף מתכתי זהוב מגולף 
+בדוגמאות קדושות. הלהבה הנצחית בפנים רוקדת בחן, אף פעם לא כבה. לוחות 
+הזכוכית הצבעוניים משליכים דוגמאות אור קשת יפהפיות. ידיות כנפי מלאך עם 
+גילופי נוצות מפורטים פרושות במלכותיות.
+
+חומרים: זהב מלוטש, להבה נצחית, זכוכית צבעונית, כנפי מלאך
+תאורה: להבה זוהרת, קרניים רכות, אפקטי קשת, הילה זהובה
+סגנון: היפר-ריאליסטי אלוהי, Unreal Engine 5
+מצב רוח: אלוהי, נצחי, שליו, מטהר
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 4:5 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את אפקטי הזכוכית הצבעונית והקשת
+✅ Stable Diffusion: השתמש במודלי fantasy עם volumetric lighting
+✅ Leonardo.ai: PhotoReal v2, הדגש stained glass effects
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "stained glass art, divine illumination"
+• הוסף "ethereal light, heavenly atmosphere"
+• הוסף "prismatic rainbow effects, volumetric god rays"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

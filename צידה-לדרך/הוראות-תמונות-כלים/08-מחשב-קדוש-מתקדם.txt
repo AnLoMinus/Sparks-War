@@ -1,0 +1,123 @@
+════════════════════════════════════════════════════════════════════════
+              💻 הוראות ליצירת תמונה: מחשב קדוש מתקדם 💻
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: מחשב קדוש מתקדם
+קטגוריה: חיל טכנולוגיית האור
+כוח: כוחות האור ⭐
+נדירות: מיתי
+עוצמה: 80 | הגנה: 90 | מהירות: 100
+
+📝 תיאור מפורט:
+────────────────
+מחשב עתידני מרחף עשוי זכוכית וזהב עם מסכים הולוגרפיים זהובים-כחולים המציגים 
+סמלים מיסטיים. שבבים זהובים מאירים בתוכו. קווי אנרגיה כחולים-זהובים זורמים 
+סביבו. ממשק גרפי תלת-מימדי מרחף מעליו. המחשב משלב טכנולוגיה מתקדמת עם קדושה.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K sci-fi fantasy art: Futuristic floating computer made of 
+transparent glass panels and golden metallic components. Multiple blue-gold holographic 
+displays showing mystical sacred symbols and ancient Hebrew letters. Golden glowing 
+circuits and chips visible inside the transparent casing. Blue-gold energy lines flowing 
+around the device like data streams. 3D holographic interface floating above displaying 
+sacred geometry and divine information.
+
+The computer hovers horizontally in mid-air, sleek and futuristic design merging 
+technology with divinity. Glass panels reveal intricate golden circuitry glowing from 
+within. Multiple holographic screens project upward showing sacred symbols, mystical 
+runes, and flowing data in gold and blue light. Energy lines connect different 
+components creating a living technological organism.
+
+VISUAL DETAILS:
+- Main body: Transparent glass panels revealing golden internal components
+- Circuits: Glowing golden circuit boards, luminous chips and processors
+- Holographic displays: Blue-gold semi-transparent screens with sacred symbols
+- Energy lines: Flowing blue-gold data streams and energy connections
+- Interface: 3D holographic projections floating above device
+- Background: Tech-sacred atmosphere with soft blue-gold ambient glow
+
+LIGHTING:
+- Internal golden circuits glowing warmly
+- Holographic screens emitting blue-gold light
+- Energy lines flowing with electric blue-gold shimmer
+- Ambient technological glow surrounding device
+- Screen reflections on glass surfaces
+- Soft lens flares from bright elements
+- Cyberpunk-meets-divine lighting aesthetic
+
+COMPOSITION:
+- Computer floating horizontally in center
+- Multiple holographic screens projecting upward
+- Energy lines flowing around creating dynamic movement
+- 3/4 view angle showing depth and complexity
+- Layered depth with hologram foreground, device mid, energy background
+- Futuristic yet sacred composition
+- Clean background allowing tech to stand out
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic sci-fi fantasy, cyberpunk-divine fusion
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, ray-traced holograms, Octane Render
+- Materials: Glass shader, metallic gold circuits, holographic displays
+- Effects: Volumetric holograms, energy particle systems, HDR
+- Technology: Photorealistic tech details, functioning UI elements
+- Aspect Ratio: 16:9 (landscape) or 1:1 (square)
+- Quality: Maximum detail, 4K textures, realistic tech aesthetics
+
+MOOD & ATMOSPHERE:
+- Advanced, divine, powerful, intelligent
+- Sacred technology merging ancient wisdom with future tech
+- Glowing with holy digital energy
+- Mysterious yet purposeful presence
+- Sense of unlimited knowledge and power
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, old computer, vintage tech, broken screen, damaged, dark, evil AI, 
+demonic technology, horror style, modern laptop, text watermark, low quality
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה מדע-בדיוני היפר-ריאליסטית 8K: מחשב עתידני מרחף עשוי ללוחות 
+זכוכית שקופים ורכיבי מתכת זהובים. מספר צגים הולוגרפיים כחולים-זהובים 
+המציגים סמלים קדושים מיסטיים ואותיות עבריות עתיקות. מעגלים ושבבים זהובים 
+זוהרים נראים בתוך המארז השקוף. קווי אנרגיה כחולים-זהובים זורמים סביב 
+המכשיר כמו זרמי נתונים. ממשק הולוגרפי תלת-מימדי מרחף למעלה.
+
+המחשב מרחף אופקית באוויר, עיצוב חלק ועתידני המשלב טכנולוגיה עם אלוהיות. 
+לוחות זכוכית חושפים מעגלים זהובים מורכבים זוהרים מבפנים. מספר מסכים 
+הולוגרפיים מקרינים כלפי מעלה ומציגים סמלים קדושים, רונים מיסטיים ונתונים 
+זורמים באור זהוב וכחול.
+
+חומרים: זכוכית שקופה, מעגלים זהובים, הולוגרמות כחולות-זהובות
+תאורה: מעגלים זהובים זוהרים, מסכים הולוגרפיים, קווי אנרגיה
+סגנון: היפר-ריאליסטי סייברפאנק-אלוהי, Unreal Engine 5
+מצב רוח: מתקדם, אלוהי, עוצמתי, חכם
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 16:9 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את ההולוגרמות וקווי האנרגיה
+✅ Stable Diffusion: השתמש ב-cyberpunk + fantasy models
+✅ Leonardo.ai: Sci-Fi v2 משולב עם divine elements
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "holographic displays, sacred technology"
+• הוסף "cyberpunk divine, futuristic holy computer"
+• הוסף "glowing circuits, energy streams"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

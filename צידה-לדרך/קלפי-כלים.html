@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קלפי כלים - צידה לדרך | מלחמת הניצוצות</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Heebo', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            padding: 1cm;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2.5rem;
+            margin-bottom: 0.5cm;
+            text-shadow: 2px 2px 8px rgba(255, 215, 0, 0.5);
+            font-weight: 700;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            margin-bottom: 1cm;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5cm;
+            margin-bottom: 1cm;
+        }
+
+        .weapon-card {
+            background: linear-gradient(145deg, #2c2c3e, #1e1e30);
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            padding: 0.5cm;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            page-break-inside: avoid;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-height: 12cm;
+        }
+
+        .weapon-card.dark {
+            border-color: #ff4444;
+            background: linear-gradient(145deg, #3e2c2c, #2e1e1e);
+        }
+
+        .weapon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0.8cm;
+            background: linear-gradient(90deg, #ffd700, #ff8c00);
+            opacity: 0.3;
+        }
+
+        .weapon-card.dark::before {
+            background: linear-gradient(90deg, #ff4444, #cc0000);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4cm;
+            margin-bottom: 0.4cm;
+            position: relative;
+            z-index: 1;
+        }
+
+        .weapon-icon {
+            font-size: 2.5rem;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+        }
+
+        .weapon-name {
+            flex: 1;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .weapon-card.dark .weapon-name {
+            color: #ff6b6b;
+        }
+
+        .weapon-category {
+            position: absolute;
+            top: 0.3cm;
+            left: 0.3cm;
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 0.1cm 0.3cm;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .weapon-card.dark .weapon-category {
+            background: rgba(255, 68, 68, 0.2);
+            color: #ff6b6b;
+        }
+
+        .force-badge {
+            position: absolute;
+            top: 0.3cm;
+            right: 0.3cm;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+            color: #000;
+            padding: 0.15cm 0.4cm;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            z-index: 2;
+            border: 2px solid #ffd700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .weapon-card.dark .force-badge {
+            border-color: #000;
+            border-width: 2.5px;
+            background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
+        }
+
+        .weapon-description {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.3cm;
+            border-radius: 8px;
+            margin-bottom: 0.3cm;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: #d0d0d0;
+            border-right: 3px solid #ffd700;
+        }
+
+        .weapon-card.dark .weapon-description {
+            border-right-color: #ff4444;
+        }
+
+        .section-title {
+            color: #ffd700;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0.3cm 0 0.2cm 0;
+            display: flex;
+            align-items: center;
+            gap: 0.2cm;
+        }
+
+        .weapon-card.dark .section-title {
+            color: #ff6b6b;
+        }
+
+        .abilities-list {
+            list-style: none;
+            margin-bottom: 0.3cm;
+        }
+
+        .abilities-list li {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.15cm 0.3cm;
+            margin: 0.1cm 0;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            border-right: 2px solid rgba(255, 215, 0, 0.5);
+        }
+
+        .weapon-card.dark .abilities-list li {
+            border-right-color: rgba(255, 68, 68, 0.5);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.2cm;
+            margin-bottom: 0.3cm;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.2cm;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: #b0b0b0;
+            margin-bottom: 0.1cm;
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .weapon-card.dark .stat-value {
+            color: #ff6b6b;
+        }
+
+        .stat-bar {
+            width: 100%;
+            height: 0.15cm;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-top: 0.1cm;
+            overflow: hidden;
+        }
+
+        .stat-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ff8c00);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .weapon-card.dark .stat-fill {
+            background: linear-gradient(90deg, #ff4444, #cc0000);
+        }
+
+        .usage-section {
+            background: rgba(255, 215, 0, 0.05);
+            padding: 0.25cm;
+            border-radius: 8px;
+            margin-bottom: 0.2cm;
+        }
+
+        .weapon-card.dark .usage-section {
+            background: rgba(255, 68, 68, 0.05);
+        }
+
+        .usage-text {
+            font-size: 0.75rem;
+            line-height: 1.3;
+            color: #d0d0d0;
+        }
+
+        .effects-section {
+            background: rgba(100, 255, 100, 0.05);
+            padding: 0.25cm;
+            border-radius: 8px;
+            border: 1px solid rgba(100, 255, 100, 0.2);
+        }
+
+        .weapon-card.dark .effects-section {
+            background: rgba(255, 100, 100, 0.05);
+            border-color: rgba(255, 100, 100, 0.2);
+        }
+
+        .effects-list {
+            list-style: none;
+            font-size: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .effects-list li {
+            padding: 0.1cm 0;
+            color: #c0c0c0;
+        }
+
+        .effects-list li::before {
+            content: "⚡";
+            margin-left: 0.2cm;
+            color: #ffd700;
+        }
+
+        .weapon-card.dark .effects-list li::before {
+            content: "💀";
+            color: #ff4444;
+        }
+
+        .card-footer {
+            margin-top: 0.3cm;
+            padding-top: 0.2cm;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            color: #888;
+        }
+
+        .rarity {
+            background: linear-gradient(90deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        /* הדפסה */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .page-title,
+            .page-subtitle {
+                color: black;
+                text-shadow: none;
+            }
+
+            .weapon-card {
+                border-color: #333;
+                background: white;
+                box-shadow: none;
+                margin-bottom: 0.3cm;
+            }
+
+            .weapon-card.dark {
+                border-color: #666;
+            }
+
+            .weapon-card::before {
+                display: none;
+            }
+
+            .weapon-name {
+                color: #000;
+                text-shadow: none;
+            }
+
+            .section-title,
+            .stat-value {
+                color: #000;
+            }
+
+            .weapon-category {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border: 1px solid #333;
+            }
+
+            .force-badge {
+                background: white !important;
+                color: black !important;
+                border: 2px solid #000 !important;
+                font-weight: 900 !important;
+            }
+
+            .weapon-card.dark .force-badge {
+                border: 3px solid #000 !important;
+                background: #e0e0e0 !important;
+            }
+
+            @page {
+                size: A4;
+                margin: 1cm;
+            }
+        }
+
+        @media screen {
+            .weapon-card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            }
+
+            .weapon-card.dark:hover {
+                box-shadow: 0 10px 30px rgba(255, 68, 68, 0.4);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="page-title">⚔️ קלפי כלים - צידה לדרך ⚔️</h1>
+    <p class="page-subtitle">21 קלפים מפורטים לכלי המלחמה במלחמת הניצוצות | 13 כלי אור ו-8 כלי חושך</p>
+
+    <div class="cards-container">
+        <!-- חרבות אור -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל האורות</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">⚔️</div>
+                <h2 class="weapon-name">חרבות אור</h2>
+            </div>
+
+            <div class="weapon-description">
+                חרבות קדושות המייצרות קרני אור חזקות ועוצמתיות. החרבות נוצרו מאור טהור ומשמשות לשבירת קסמים של
+                כוחות הרשע. כל חרב מחוברת לנשמת הלוחם ומתחזקת עם עוצמת האמונה שלו.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>חיתוך קסמים שליליים</strong> - שוברת קללות וכישופים בקרן אור ממוקדת</li>
+                <li><strong>הפצת אור מרפא</strong> - קרני החרב יכולות לרפא פצעים רוחניים ופיזיים</li>
+                <li><strong>יצירת מחסומי אור</strong> - הנפת החרב יוצרת חומת הגנה מאור טהור</li>
+                <li><strong>פיצוץ אור</strong> - התקפה רחבה הפוגעת במספר אויבים בו זמנית</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">90</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">70</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להחזיק את החרב בשתי ידיים ולהתרכז באור הפנימי. יש לכוון את קרן האור לעבר האויב או הקסם
+                    השלילי תוך אמירת "יהי אור". החרב תגיב לרצון טהור ולכוונה ישרה בלבד.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מייצרת הילת אור סביב הלוחם (רדיוס 3 מטר)</li>
+                    <li>מחלישה כוחות אופל בקרבת מקום</li>
+                    <li>מגבירה ביטחון עצמי ואומץ לב</li>
+                    <li>משפרת ראייה רוחנית וחוש שישי</li>
+                    <li>דורשת טעינה יומית באור השמש או תפילה</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: אגדי</span>
+                <span>🎭 לוחמי אור מנוסים</span>
+            </div>
+        </div>
+
+        <!-- מגן אור -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל האורות</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">🛡️</div>
+                <h2 class="weapon-name">מגן האור</h2>
+            </div>
+
+            <div class="weapon-description">
+                מגן קסום העשוי מאור טהור וגבישי קדושה. המגן מגן מפני כל התקפה של כוחות האופל ויכול להחזיר
+                התקפות חזרה לשולחן. המגן גדל ומתחזק ככל שהלוחם מתקדם ברמתו הרוחנית.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>מחסום אור בלתי חדיר</strong> - יצירת קיר אור שאי אפשר לחדור דרכו</li>
+                <li><strong>החזרת התקפות אופל</strong> - משקף קסמים וקללות חזרה לשולח</li>
+                <li><strong>הגנה קבוצתית</strong> - הרחבת המגן להגנה על עד 10 אנשים</li>
+                <li><strong>ספיגת אנרגיה שלילית</strong> - הופך אנרגיה אפלה לאור טהור</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">60</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">95</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">50</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להרים את המגן ולדמיין אור זהוב זורם דרכו. בזמן התקפה, יש לכוון את המגן לכיוון האיום תוך
+                    התרכזות בהגנה וביטחון. המגן מגיב אוטומטית לכוונות זדוניות ויוצר מחסום מיידי.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>יוצר שדה הגנה קבוע סביב הנושא</li>
+                    <li>מקל על חרדות ופחדים</li>
+                    <li>משפר תחושת ביטחון ושלווה</li>
+                    <li>מזהה סכנות נסתרות ומזהיר מראש</li>
+                    <li>דורש טעינה שבועית בטקס הקדשה</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: נדיר</span>
+                <span>🎭 מגיני אור</span>
+            </div>
+        </div>
+
+        <!-- ספר הידע -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל האורות</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">📚</div>
+                <h2 class="weapon-name">ספר הידע הקדוש</h2>
+            </div>
+
+            <div class="weapon-description">
+                ספר עתיק המכיל את כל הידע הרוחני והקסמים הקדושים. הספר נכתב על ידי חכמי האור בדורות הראשונים
+                ומתעדכן מעצמו עם כל דור חדש. כל לוחם רואה בספר את המידע המותאם אישית עבורו.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>לימוד טכניקות קדושות</strong> - חשיפה לקסמים וטכניקות חדשות</li>
+                <li><strong>זיהוי חולשות האויב</strong> - הספר חושף נקודות תורפה של כוחות האופל</li>
+                <li><strong>שיפור יכולות קרב</strong> - העצמת כל היכולות הלוחמות של הקורא</li>
+                <li><strong>גישה לחכמת הדורות</strong> - קריאה בניסיון של אלפי לוחמים</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">75</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">60</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">40</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 40%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש לפתוח את הספר ולשאול שאלה ברורה בלב טהור. הספר יפתח בדף המתאים ויציג את המידע הנדרש.
+                    ניתן גם להניח את הידיים על הספר ולקבל חזיונות והבנות רוחניות ישירות.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>משפר חכמה והבנה רוחנית</li>
+                    <li>מגביר כוח זיכרון ויכולת למידה</li>
+                    <li>מעניק גישה לאקשיק רקורד הקדוש</li>
+                    <li>מחזק אינטואיציה ותובנות</li>
+                    <li>דורש קריאה יומית של עמוד אחד לפחות</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: מיתי</span>
+                <span>🎭 חוקרי אור</span>
+            </div>
+        </div>
+
+        <!-- מנורת האור -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל האורות</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">🏮</div>
+                <h2 class="weapon-name">מנורת האור הנצחי</h2>
+            </div>
+
+            <div class="weapon-description">
+                מנורה קסומה שלעולם לא כבתה, המפיצה אור קדוש המטהר אזורים מהשפעות שליליות. המנורה נוצרה מאש
+                קדושה שאינה שורפת אלא מטהרת. אורה חודר לכל פינה ומגלה את הנסתר.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>טיהור שטח נרחב</strong> - מטהרת אזור של עד 100 מטר רדיוס</li>
+                <li><strong>חשיפת ישויות נסתרות</strong> - מגלה רוחות, שדים וישויות אפלות</li>
+                <li><strong>ריפוי קבוצתי</strong> - מרפאת את כל הנמצאים באור המנורה</li>
+                <li><strong>הארת הדרך</strong> - מראה את הנתיב הנכון במבוכים רוחניים</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">65</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">30</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להרים את המנורה גבוה ולומר "יאר ה' פניו אלינו". המנורה תתחיל לזרוח באור זהוב עז שיאיר את
+                    כל הסביבה. ניתן לכוון את האור למקומות ספציפיים הדורשים טיהור מיוחד.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מטהרת בתים ומבנים מאנרגיות שליליות</li>
+                    <li>משפרת איכות שינה ומרגיעה סיוטים</li>
+                    <li>מגבירה רוגע ושלווה נפשית</li>
+                    <li>מחזקת קשר למקורות אור עליונים</li>
+                    <li>דורשת תפילה יומית ושמירה על טהרה</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: נדיר ביותר</span>
+                <span>🎭 מטהרי אור</span>
+            </div>
+        </div>
+
+        <!-- מטאטא הטיהור -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל מטאטא</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">🧹</div>
+                <h2 class="weapon-name">מטאטא הטיהור הקדוש</h2>
+            </div>
+
+            <div class="weapon-description">
+                מטאטא קסום עתיק המסוגל לטאטא ולנקות אנרגיות שליליות, רוחות רעות וחלקיקי אופל. המטאטא עשוי
+                מסיבי אור דחוסים ומחובר ישירות למקור הטיהור העליון. כל תנועה של המטאטא מנקה שכבה נוספת של טומאה.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>טיהור אזורים נרחבים</strong> - ניקוי מהיר של שטחים גדולים</li>
+                <li><strong>הסרת קללות</strong> - ביטול קסמים שליליים בטאטוא אחד</li>
+                <li><strong>ניקוי אנרגטי עמוק</strong> - טיהור שכבות עמוקות של אנרגיה</li>
+                <li><strong>סילוק רוחות שוטטות</strong> - הרחקת ישויות לא רצויות</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">70</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">80</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">90</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש לטאטא בתנועות סדורות מימין לשמאל תוך ויזואליזציה של אור זהוב מוציא את החושך החוצה. כדאי
+                    להתחיל מהפינות והזוויות ולסיים במרכז החלל. יש לשים לב לאזורים כהים במיוחד.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>משאיר תחושת רעננות ונקיות רוחנית</li>
+                    <li>מסלק ריחות רעים ואנרגיות כבדות</li>
+                    <li>משפר זרימת אנרגיה חיובית במרחב</li>
+                    <li>מונע חזרת אנרגיות שליליות למקום</li>
+                    <li>דורש ניקוי שבועי של המטאטא עצמו</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: נפוץ</span>
+                <span>🎭 מנקי אור</span>
+            </div>
+        </div>
+
+        <!-- אבקת טיהור קסומה -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל מטאטא</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">✨</div>
+                <h2 class="weapon-name">אבקת טיהור קסומה</h2>
+            </div>
+
+            <div class="weapon-description">
+                אבקה מיוחדת העשויה מגבישי אור טהור, מלח קדוש ועשבי תבלין מבורכים. האבקה מטהרת ומנקה השפעות
+                שליליות באופן מיידי. כל גרגר של האבקה מכיל ניצוץ של אור קדוש שמתפרץ במגע עם חושך.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>נטרול כישופים</strong> - ביטול קסמים שליליים מיידית</li>
+                <li><strong>יצירת מחסום הגנה</strong> - פיזור מעגלי מגן סביב המשתמש</li>
+                <li><strong>טיהור מיידי</strong> - ניקוי מהיר של פצעים רוחניים</li>
+                <li><strong>הפצת קדושה</strong> - הרחבת אזור אור סביב נקודת הפיזור</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">60</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">95</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש לקחת קומץ אבקה ולפזר אותה באוויר תוך אמירת "טהר וקדש". האבקה תתפזר ותיצור עננת אור
+                    קדושה. ניתן גם לפזר בפינות החדר או על אדם הזקוק לטיהור. האבקה פועלת מיידית.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>משאירה ניחוח של פרחי גן עדן</li>
+                    <li>יוצרת הרגשה של קלילות ורוחניות</li>
+                    <li>מחזקת מערכת חיסון רוחנית</li>
+                    <li>מונעת זיהומים אנרגטיים עד 24 שעות</li>
+                    <li>יש לשמור במקום יבש ומוגן מאור שמש ישיר</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: נדיר</span>
+                <span>🎭 מטהרי קדושה</span>
+            </div>
+        </div>
+
+        <!-- מחשב קדוש -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל טכנולוגיית האור</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">💻</div>
+                <h2 class="weapon-name">מחשב קדוש מתקדם</h2>
+            </div>
+
+            <div class="weapon-description">
+                מחשב המשלב טכנולוגיה מתקדמת עם קדושה וכוחות רוחניים. המחשב מחובר לרשת האור העולמית ומאפשר
+                ניטור, ניתוח והגנה מפני כוחות האופל. כל שבב במחשב מבורך ומוגן בקסמי הגנה.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>ניתוח התקפות אויב</strong> - זיהוי וניתוח דפוסי התקפה בזמן אמת</li>
+                <li><strong>פיתוח הגנות מתקדמות</strong> - יצירת מערכות הגנה אוטומטיות</li>
+                <li><strong>תיאום כוחות</strong> - תקשורת וסנכרון בין כל לוחמי האור</li>
+                <li><strong>סריקת ממדים</strong> - גילוי פעילות אופל בממדים מקבילים</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">80</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">90</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">100</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להפעיל את המחשב תוך קריאת ברכת "ברוך אתה מקור הידע". המערכת תסרוק את הסביבה ותציג מפת
+                    איומים בזמן אמת. ניתן לחבר מכשירים נוספים ולסנכרן עם רשת האור העולמית.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מספק גישה למאגר הידע העליון</li>
+                    <li>מזהה פריצות והתקפות סייבר רוחניות</li>
+                    <li>מאפשר תקשורת מוצפנת בין לוחמים</li>
+                    <li>משדרג את עצמו אוטומטית עם טכנולוגיות חדשות</li>
+                    <li>דורש עדכון תוכנת הגנה יומי</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: מיתי</span>
+                <span>🎭 מומחי טכנולוגיה</span>
+            </div>
+        </div>
+
+        <!-- קשת האהבה -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל השידוכים</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">💘</div>
+                <h2 class="weapon-name">קשת האהבה העליונה</h2>
+            </div>
+
+            <div class="weapon-description">
+                קשת קסומה היוצרת חיבורים של אהבה אמיתית בין נשמות תאומות. החיצים עשויים מאור ורוד טהור ופוגעים
+                ישירות בלב הרוחני. כל חץ נושא בתוכו ברכה של אהבה, נאמנות ושלום בית.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>יצירת קשרי אהבה</strong> - חיבור בין שתי נשמות המיועדות זו לזו</li>
+                <li><strong>חיזוק זוגיות</strong> - העצמת הקשר בין בני זוג קיימים</li>
+                <li><strong>הגנה על משפחות</strong> - הקפת המשפחה במעגל אהבה מגן</li>
+                <li><strong>ריפוי פצעי לב</strong> - טיפול בפגיעות רגשיות וכאב עמוק</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">95</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">70</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">80</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש למתוח את המיתר תוך מחשבה על האהבה האמיתית והטהורה. החץ ייווצר מעצמו מאור האהבה. יש
+                    לכוון בדייקנות ולשגר את החץ בברכה. החץ תמיד מוצא את דרכו ללב הנכון.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מעוררת רגשות אהבה אמיתיים וטהורים</li>
+                    <li>מחזקת נאמנות ומחויבות זוגית</li>
+                    <li>משפרת תקשורת ורגישות בזוגיות</li>
+                    <li>מגינה מפני פיתויים חיצוניים</li>
+                    <li>דורשת כוונה טהורה וצנועה בלבד</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: אגדי</span>
+                <span>🎭 שדכני אור</span>
+            </div>
+        </div>
+
+        <!-- חרבות טומאה -->
+        <div class="weapon-card dark">
+            <div class="weapon-category">חיל טומאה</div>
+            <div class="force-badge">☠️ כוחות החושך</div>
+            <div class="card-header">
+                <div class="weapon-icon">⚔️</div>
+                <h2 class="weapon-name">חרבות טומאה</h2>
+            </div>
+
+            <div class="weapon-description">
+                חרבות אפלות המפיצות כוחות רשע וטומאה. החרבות נוצרו מחושך מוחלט ושואבות את האור מהסביבה. כל חתך
+                של החרב משאיר עקבות של אנרגיה שלילית וכאב רוחני. הן כלי הנשק המסוכן ביותר של כוחות האופל.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>חיתוך אור קדוש</strong> - פגיעה וביטול של הגנות וקסמי אור</li>
+                <li><strong>הפצת חושך</strong> - יצירת ענן אפלה המכסה אזור שלם</li>
+                <li><strong>שיבוש אנרגיות חיוביות</strong> - הפיכת אור לחושך</li>
+                <li><strong>זריעת יאוש</strong> - הכנסת רגשות שליליים עמוקים</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">95</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">60</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">90</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 התמודדות עם הכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    כיצד להתגונן: יש להשתמש במגן אור או בחרב אור חזקה. מומלץ ליצור מחסום של אור טהור ולהימנע ממגע
+                    ישיר. ניתן לנטרל את החרב באמצעות אבקת טיהור או מנורת אור עזה.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות וסכנות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>גורמת לנזק רוחני חמור ולהחלשת הניצוץ</li>
+                    <li>משאירה צלקות רוחניות שדורשות ריפוי ממושך</li>
+                    <li>מחלישה הגנות ומערכות אור</li>
+                    <li>פוגעת באמונה ובתקווה</li>
+                    <li>חשיפה ממושכת עלולה לגרום לנזק בלתי הפיך</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ סכנה: קריטית</span>
+                <span>☠️ להימנע ממגע</span>
+            </div>
+        </div>
+
+        <!-- אבק שחור -->
+        <div class="weapon-card dark">
+            <div class="weapon-category">חיל טומאה</div>
+            <div class="force-badge">☠️ כוחות החושך</div>
+            <div class="card-header">
+                <div class="weapon-icon">💨</div>
+                <h2 class="weapon-name">כוחות אבק שחור</h2>
+            </div>
+
+            <div class="weapon-description">
+                אבק רעיל המחליש ומזהם אנרגיות חיוביות. האבק מורכב מחלקיקי חושך זעירים שחודרים לכל מקום ופוגעים
+                באור הפנימי. חשיפה לאבק גורמת להחלשה הדרגתית של הניצוץ ויכולה להוביל לחולי רוחני חמור.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>זיהום אנרגטי</strong> - זיהום מהיר של אזורים נקיים באנרגיה שלילית</li>
+                <li><strong>החלשת כוחות אור</strong> - הפחתת עוצמת הלוחמים ויכולותיהם</li>
+                <li><strong>יצירת ערפל רעיל</strong> - כיסוי אזורים בערפל מבלבל ומחליש</li>
+                <li><strong>חסימת תקשורת רוחנית</strong> - ניתוק הקשר למקורות אור עליונים</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">70</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">100</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 התמודדות עם הכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    כיצד להתגונן: יש להשתמש במטאטא הטיהור או באבקת טיהור קסומה מיידית. מומלץ לכסות את הפה
+                    והאף ולהתרחק מהאזור. ניתן לנקות את האבק באמצעות רוח קדושה או מים מבורכים.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות וסכנות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>גורם לעייפות רוחנית ופיזית חמורה</li>
+                    <li>פוגע ביכולת ריכוז ומחשבה צלולה</li>
+                    <li>מחליש את מערכת ההגנה הרוחנית</li>
+                    <li>יוצר תחושות של דיכאון וחרדה</li>
+                    <li>חשיפה ממושכת עלולה לגרום להתמכרות לחושך</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ סכנה: גבוהה מאוד</span>
+                <span>☠️ דורש טיפול מיידי</span>
+            </div>
+        </div>
+
+        <!-- טכנולוגיה של רשע -->
+        <div class="weapon-card dark">
+            <div class="weapon-category">חיל טכנולוגיה</div>
+            <div class="force-badge">☠️ כוחות החושך</div>
+            <div class="card-header">
+                <div class="weapon-icon">🤖</div>
+                <h2 class="weapon-name">טכנולוגיה של רשע</h2>
+            </div>
+
+            <div class="weapon-description">
+                מערכות טכנולוגיות מתקדמות המשמשות להפצת רוע ושיבוש מערכות אור. המערכות כוללות בינה מלאכותית
+                מושחתת, וירוסים רוחניים, ומכשירי שיבוש חזקים. הטכנולוגיה יכולה לחדור למערכות מוגנות ולהחליש אותן
+                מבפנים.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>שיבוש מערכות</strong> - פגיעה במערכות אור ובתשתיות קדושות</li>
+                <li><strong>התקפות סייבר</strong> - חדירה למערכות והשתלת וירוסים רוחניים</li>
+                <li><strong>הפצת וירוסים רוחניים</strong> - זיהום מסיבי של רשתות אור</li>
+                <li><strong>שליטה על התודעה</strong> - השפעה על מחשבות ורגשות דרך טכנולוגיה</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">90</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">80</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">95</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 התמודדות עם הכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    כיצד להתגונן: יש להשתמש במחשב קדוש מתקדם עם מערכות הגנה מעודכנות. חיוני לנתק מערכות נגועות
+                    מיידית ולהפעיל סריקת טיהור מלאה. מומלץ לשמור על עדכון תוכנת הגנה יומי.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות וסכנות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>גורמת לשיבוש תקשורת בין לוחמי אור</li>
+                    <li>משבשת מערכות ניווט רוחניות</li>
+                    <li>פוגעת ביכולת קבלת החלטות נכונות</li>
+                    <li>יוצרת תלות במערכות מושחתות</li>
+                    <li>חשיפה ממושכת עלולה לגרום להשתלטות מלאה</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ סכנה: קריטית</span>
+                <span>☠️ דורש מומחיות גבוהה</span>
+            </div>
+        </div>
+
+        <!-- מטליות קסומות -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל מטאטא</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">🧼</div>
+                <h2 class="weapon-name">מטליות קסומות</h2>
+            </div>
+
+            <div class="weapon-description">
+                מטליות מיוחדות לניקוי וטיהור עדין של אובייקטים וישויות. המטליות עשויות מסיבי משי קדוש שנארגו
+                בברכה ובתפילה. כל מטלית מכילה תבניות קסומות המסוגלות לספוג ולהסיר כתמי טומאה רוחנית בעדינות.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>ניקוי מדויק</strong> - ניקוי עדין של חפצים קדושים ורגישים</li>
+                <li><strong>הסרת כתמי טומאה</strong> - מחיקת עקבות אנרגיה שלילית</li>
+                <li><strong>שיקום אנרגטי</strong> - החזרת החפץ לטוהר מקורי</li>
+                <li><strong>ליטוף רוחני</strong> - מרגיעה ומנחמת נפשות פגועות</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">50</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">75</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">100</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להרטיב את המטלית במים מבורכים ולמשוח בעדינות את החפץ או האזור הזקוק לטיהור. תנועות
+                    מעגליות בכיוון השעון מגבירות את האפקט. לאחר השימוש יש לשטוף את המטלית היטב.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מעניקה תחושת נקיות ורעננות מיידית</li>
+                    <li>משפרת את האנרגיה של חפצים קדושים</li>
+                    <li>מחזירה ברק וזוהר למשטחים רוחניים</li>
+                    <li>מרככת אנרגיות קשות וקשוחות</li>
+                    <li>דורשת כביסה קדושה פעם בשבוע</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: נפוץ</span>
+                <span>🎭 מנקי מקדשים</span>
+            </div>
+        </div>
+
+        <!-- שרת הגנה אוטומטי -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל טכנולוגיית האור</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">🛡️</div>
+                <h2 class="weapon-name">שרת הגנה אוטומטי</h2>
+            </div>
+
+            <div class="weapon-description">
+                שרת מתקדם המספק הגנה אוטומטית מפני התקפות רוחניות וטכנולוגיות. השרת פועל 24/7 וסורק את הרשת
+                הקדושה בחיפוש אחר איומים. מערכת הבינה המלאכותית המקודשת לומדת ומשתפרת עם כל התקפה שהיא חוסמת.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>הגנה רשתית</strong> - הגנה על כל נקודות הרשת בו-זמנית</li>
+                <li><strong>זיהוי איומים</strong> - גילוי מוקדם של התקפות פוטנציאליות</li>
+                <li><strong>תגובה מיידית</strong> - ניטרול איומים אוטומטית ללא השהייה</li>
+                <li><strong>למידה עצמית</strong> - שיפור מתמיד של מערכות ההגנה</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">70</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">100</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">95</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להתקין את השרת במקום מאובטח ומקודש ולחבר אותו לרשת האור. לאחר הפעלה ראשונית, השרת יפעל
+                    באופן עצמאי. מומלץ לבדוק את דוחות האבטחה מדי יום ולעדכן את מערכת ההגנה בהתאם.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מגן על כל המערכות המחוברות לרשת</li>
+                    <li>מזהה ומנטרל עד 99.9% מהתקפות</li>
+                    <li>מספק שקט נפשי ובטחון מלא</li>
+                    <li>משתלב בצורה מושלמת עם מערכות אור אחרות</li>
+                    <li>דורש אנרגיית אור קבועה ויציבה</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: נדיר מאוד</span>
+                <span>🎭 מומחי אבטחה</span>
+            </div>
+        </div>
+
+        <!-- מכשירי תקשורת מקודשים -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל טכנולוגיית האור</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">📱</div>
+                <h2 class="weapon-name">מכשירי תקשורת מקודשים</h2>
+            </div>
+
+            <div class="weapon-description">
+                מערכת תקשורת מאובטחת המוגנת מפני האזנות והתקפות רוחניות. המכשירים משדרים דרך תדרים קדושים שכוחות
+                האופל אינם יכולים לגלות או לפענח. כל מסר עובר דרך שבעה שכבות של הצפנה קדושה.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>תקשורת מוצפנת</strong> - הצפנה כפולה פיזית ורוחנית</li>
+                <li><strong>זיהוי שיבושים</strong> - גילוי ניסיונות האזנה או שיבוש</li>
+                <li><strong>העברת אנרגיה חיובית</strong> - שליחת ברכות ואור בשיחות</li>
+                <li><strong>טלפורטציה קולית</strong> - העברת מסרים מיידית בכל מרחק</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">60</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">100</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להפעיל את המכשיר ולהתחבר לרשת האור. כל שיחה מתחילה בברכת שלום והגנה אוטומטית. המכשיר יזהיר
+                    במקרה של ניסיון האזנה או שיבוש. ניתן גם לשלוח מסרים טקסט מוצפנים ותמונות מבורכות.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מאפשר תקשורת בטוחה בכל תנאי שטח</li>
+                    <li>מחזק קשרים בין לוחמי אור</li>
+                    <li>משדר אנרגיה חיובית בכל שיחה</li>
+                    <li>מונע חדירת כוחות שלילים דרך התקשורת</li>
+                    <li>דורש טעינה יומית באור קדוש</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: נדיר</span>
+                <span>🎭 קשרי קרב</span>
+            </div>
+        </div>
+
+        <!-- טבעת הזיווג -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל השידוכים</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">💍</div>
+                <h2 class="weapon-name">טבעת הזיווג המקודשת</h2>
+            </div>
+
+            <div class="weapon-description">
+                טבעת קדושה המחזקת קשרים זוגיים ומגינה על אהבה אמיתית. הטבעת עשויה מזהב טהור המהול בגבישי אהבה
+                נצחית. כשנמצאת על האצבע, היא יוצרת קשר בלתי נפרד בין שתי נשמות ומגינה מפני כל פיתוי חיצוני.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>חיזוק קשר זוגי</strong> - העצמת האהבה והמחויבות בין בני הזוג</li>
+                <li><strong>הגנה מפני פיתויים</strong> - חסימת ניסיונות פיתוי והשפעה שלילית</li>
+                <li><strong>העצמת אהבה</strong> - הגברת רגשות חיוביים ושמחה בזוגיות</li>
+                <li><strong>תקשורת לבבית</strong> - שיפור התקשורת והקשר הרגשי</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">90</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">60</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להעביר את הטבעת בטקס חתונה קדוש ולהניחה על אצבע הבן או הבת זוג. הטבעת תפעל מיידית ותיצור
+                    קשר אנרגטי בין הזוג. חשוב לשמור על הטבעת נקייה ולברך עליה מדי שבוע.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מעצימה את תחושת האהבה והשייכות</li>
+                    <li>מגנה מפני משברים זוגיים וקשיים</li>
+                    <li>משפרת אינטימיות רגשית ורוחנית</li>
+                    <li>יוצרת הילת קדושה סביב הזוג</li>
+                    <li>דורשת טיפול והקדשה שבועית</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: אגדי</span>
+                <span>🎭 זוגות מקודשים</span>
+            </div>
+        </div>
+
+        <!-- שרשרת החיבורים -->
+        <div class="weapon-card">
+            <div class="weapon-category">חיל השידוכים</div>
+            <div class="force-badge">⭐ כוחות האור</div>
+            <div class="card-header">
+                <div class="weapon-icon">📿</div>
+                <h2 class="weapon-name">שרשרת החיבורים הקדושה</h2>
+            </div>
+
+            <div class="weapon-description">
+                שרשרת קסומה המחברת בין נשמות תאומות ומגינה על קשרים קדושים. כל חוליה בשרשרת מייצגת קשר רוחני
+                אחד ונוצרת מאור טהור של אהבה. השרשרת יכולה לזהות זיווגים אמיתיים ולחבר ביניהם גם ממרחק.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>זיהוי זיווגים אמיתיים</strong> - גילוי נשמות תאומות המיועדות זו לזו</li>
+                <li><strong>חיבור נשמות</strong> - יצירת קשר עמוק ובלתי נפרד</li>
+                <li><strong>הגנה על קשרים</strong> - שמירה על קשרים קיימים מפני נזקים</li>
+                <li><strong>ריפוי קשרים</strong> - תיקון קשרים שנפגעו או נקרעו</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">90</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">70</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 שימוש בכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    יש להניח את השרשרת על הלב ולהתפלל לחיבור אמיתי. השרשרת תאיר בזוהר מיוחד כאשר זיווג אמיתי
+                    קרוב. ניתן להשתמש בה גם לחיזוק קשרים קיימים על ידי החזקתה בשתי ידיים של בני הזוג ביחד.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות והשלכות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>מזהה זיווגים אמיתיים במדויק מוחלט</li>
+                    <li>מחברת בין נשמות גם ממרחקים גדולים</li>
+                    <li>מגנה על הקשר מפני כוחות מפרידים</li>
+                    <li>מחזקת את הקשר עם כל יום שעובר</li>
+                    <li>דורשת הקדשה וברכה חודשית</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ נדירות: מיתי</span>
+                <span>🎭 מחברי נשמות</span>
+            </div>
+        </div>
+
+        <!-- מקלות כפירה -->
+        <div class="weapon-card dark">
+            <div class="weapon-category">חיל כפירה</div>
+            <div class="force-badge">☠️ כוחות החושך</div>
+            <div class="card-header">
+                <div class="weapon-icon">🏴</div>
+                <h2 class="weapon-name">מקלות הכפירה השחורים</h2>
+            </div>
+
+            <div class="weapon-description">
+                מקלות שחורים שמבזבזים את כוח האמונה של אחרים ומפיצים כפירה וספקות. המקלות עשויים מעץ מת שנחשף
+                לחושך במשך מאות שנים. כל מקל מכיל תולעת ספק שמפילה רעיונות שליליים בלב המאמינים.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>הפצת כפירה</strong> - הטלת ספקות עמוקים באמונות ומערכות ערכים</li>
+                <li><strong>שיבוש אמונה</strong> - הפרעה בתהליך האמונה ויצירת חוסר אמון</li>
+                <li><strong>יצירת פיצולים רעיוניים</strong> - זריעת מחלוקות ובלבול רעיוני</li>
+                <li><strong>ריקון משמעות</strong> - הפיכת דברים קדושים לחסרי משמעות</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">80</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">65</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">75</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 התמודדות עם הכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    כיצד להתגונן: יש לחזק את האמונה הפנימית באמצעות לימוד ותפילה יומית. להשתמש בספר הידע הקדוש
+                    לחיזוק הידע והבנת האמת. חשוב להקיף את עצמך בחברה מאמינה ותומכת.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות וסכנות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>גורם לספקות עמוקים באמונות יסוד</li>
+                    <li>מחליש קשר למקורות רוחניים</li>
+                    <li>יוצר בידוד חברתי ורוחני</li>
+                    <li>פוגע בתחושת המשמעות והמטרה בחיים</li>
+                    <li>חשיפה ממושכת עלולה לגרום לאובדן אמונה מוחלט</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ סכנה: גבוהה</span>
+                <span>☠️ דורש אמונה חזקה</span>
+            </div>
+        </div>
+
+        <!-- קסמי שוחד -->
+        <div class="weapon-card dark">
+            <div class="weapon-category">חיל זנות</div>
+            <div class="force-badge">☠️ כוחות החושך</div>
+            <div class="card-header">
+                <div class="weapon-icon">💰</div>
+                <h2 class="weapon-name">קסמי שוחד ופיתוי</h2>
+            </div>
+
+            <div class="weapon-description">
+                קסמים מסוכנים שמביאים לחולשה מוסרית ופיתוי. הקסמים נראים כהצעות מושכות וטובות לכאורה, אבל מסתירים
+                מלכודות רוחניות מסוכנות. כל קסם מכיל הבטחה ריקה שמושכת את האדם הרחק מהדרך הנכונה.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>פיתוי ממוקד</strong> - יכולת לפתות דמויות לסטות מהדרך הישרה</li>
+                <li><strong>השפעה שלילית</strong> - השפעה על התנהגות ויצירת חוסר יושר</li>
+                <li><strong>הפרעה מוסרית</strong> - שיבוש המצפן המוסרי ויצירת בלבול ערכי</li>
+                <li><strong>יצירת תלות</strong> - הפיכת הקורבן לתלוי בפיתויים</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">85</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">55</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 55%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">90</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 התמודדות עם הכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    כיצד להתגונן: יש לחזק את הערכים המוסריים והאישיים. להשתמש במגן אור ובטבעת הזיווג להגנה על
+                    הטוהר. חשוב להיות ערים לניסיונות פיתוי ולזהות אותם מראש. תפילה וצניעות הן המגן הטוב ביותר.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות וסכנות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>גורם להחלשה מוסרית הדרגתית</li>
+                    <li>פוגע בקשרים משפחתיים וזוגיים</li>
+                    <li>יוצר תחושות אשם וחרטה מאוחרות</li>
+                    <li>מחליש את הניצוץ הפנימי והטוהר</li>
+                    <li>חשיפה ממושכת עלולה לגרום לנפילה רוחנית חמורה</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ סכנה: קריטית</span>
+                <span>☠️ דורש ערנות מתמדת</span>
+            </div>
+        </div>
+
+        <!-- אומנויות השפעה -->
+        <div class="weapon-card dark">
+            <div class="weapon-category">חיל זנות</div>
+            <div class="force-badge">☠️ כוחות החושך</div>
+            <div class="card-header">
+                <div class="weapon-icon">🎭</div>
+                <h2 class="weapon-name">אומנויות השפעה כפולה</h2>
+            </div>
+
+            <div class="weapon-description">
+                טכניקות מתוחכמות של השפעה פסיכולוגית ורוחנית שמביאות לשינוי התנהגות הרסני. האומנויות כוללות מניפולציה
+                רגשית, הטעיה, ויצירת אשליות של אושר שווא. כל טכניקה בנויה לגרום לאדם להרגיש שהוא עושה את הבחירה
+                הנכונה בעוד שהוא למעשה נופל למלכודת.
+            </div>
+
+            <div class="section-title">✨ יכולות מרכזיות</div>
+            <ul class="abilities-list">
+                <li><strong>מניפולציה רגשית</strong> - שליטה על רגשות ותחושות הקורבן</li>
+                <li><strong>יצירת אשליות</strong> - הצגת מציאות מעוותת ומפתה</li>
+                <li><strong>שיבוש שיפוט</strong> - פגיעה ביכולת לקבל החלטות נכונות</li>
+                <li><strong>בידוד חברתי</strong> - הרחקת הקורבן מסביבה תומכת</li>
+            </ul>
+
+            <div class="section-title">📊 נתונים סטטיסטיים</div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">עוצמה</div>
+                    <div class="stat-value">92</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">הגנה</div>
+                    <div class="stat-value">50</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">מהירות</div>
+                    <div class="stat-value">88</div>
+                    <div class="stat-bar">
+                        <div class="stat-fill" style="width: 88%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-title">🎯 התמודדות עם הכלי</div>
+            <div class="usage-section">
+                <p class="usage-text">
+                    כיצד להתגונן: יש לפתח מודעות עצמית גבוהה ולשמור על קשר הדוק עם קהילה תומכת. להשתמש בספר הידע
+                    לחיזוק השכל והשיפוט. חשוב להתייעץ עם אנשים נבונים לפני קבלת החלטות חשובות. כנות עם עצמך היא המפתח.
+                </p>
+            </div>
+
+            <div class="section-title">💫 השפעות וסכנות</div>
+            <div class="effects-section">
+                <ul class="effects-list">
+                    <li>גורם לאובדן זהות אישית ואותנטיות</li>
+                    <li>יוצר תלות רגשית והתמכרות להשפעות חיצוניות</li>
+                    <li>פוגע ביכולת לסמוך על השיפוט העצמי</li>
+                    <li>מביא לבידוד מחברים ומשפחה אמיתיים</li>
+                    <li>חשיפה ממושכת עלולה לגרום להרס חיים מוחלט</li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <span class="rarity">⭐ סכנה: קריטית ביותר</span>
+                <span>☠️ דורש מודעות גבוהה</span>
+            </div>
+        </div>
+    </div>
+
+    <div
+        style="text-align: center; margin-top: 1cm; padding: 0.5cm; background: rgba(255, 215, 0, 0.1); border-radius: 10px;">
+        <p style="color: #ffd700; font-size: 1.1rem; font-weight: 600;">
+            💡 הערה חשובה: קלפי הכלים נועדו למטרות לימוד והכרה בלבד
+        </p>
+        <p style="color: #b0b0b0; font-size: 0.9rem; margin-top: 0.3cm;">
+            השתמש בכלי האור במודעות ובאחריות | הכר את כלי החושך כדי להתגונן מפניהם | האור תמיד מנצח!
+        </p>
+    </div>
+
+    <footer style="text-align: center; margin-top: 1cm; padding: 0.5cm; color: #888; font-size: 0.85rem;">
+        <p>✨ כל הזכויות שמורות © 2024 - מלחמת הניצוצות ✨</p>
+        <p>נוצר באהבה למען האור והטוב בעולם 🌟</p>
+    </footer>
+</body>
+
+</html>

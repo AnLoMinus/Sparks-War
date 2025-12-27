@@ -1,0 +1,126 @@
+════════════════════════════════════════════════════════════════════════
+            🏴 הוראות ליצירת תמונה: מקלות הכפירה השחורים 🏴
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: מקלות הכפירה השחורים
+קטגוריה: חיל כפירה
+כוח: כוחות החושך ☠️
+סכנה: גבוהה
+עוצמה: 80 | הגנה: 65 | מהירות: 75
+
+📝 תיאור מפורט:
+────────────────
+מקלות מעץ מת שחור מרוקב, מגולפים בסמלי כפירה וספק. תולעים שחורות זורמות 
+בתוך העץ. ערפל אפור-שחור עולה מהמקלות. עיניים צהובות זוהרות מופיעות בעץ. 
+סדקים אדומים זוהרים לאורך המקל. המקלות מבזבזים את כוח האמונה ומפיצים כפירה.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K dark fantasy art: Three dark staffs made of dead rotting black 
+wood, one standing upright and two leaning at angles. Carved with symbols of heresy, 
+doubt, and blasphemy covering the surface. Black worms and maggots crawling through and 
+inside the wood, visible through cracks. Gray-black mist rising eerily from the staffs. 
+Yellow glowing eyes appearing within the wood grain itself. Glowing red cracks running 
+along the length of the staffs.
+
+The staffs are ancient and corrupted, made from trees that died in darkness. The black 
+rotted wood is covered with heretical symbols and carvings of doubt. Living black worms 
+crawl through the wood like veins of corruption. Spectral gray mist rises like breath 
+of disbelief. Demonic yellow eyes open randomly within the wood, watching with doubt. 
+Red glowing cracks pulse with the energy of broken faith.
+
+VISUAL DETAILS:
+- Staffs: Dead black rotting wood, one upright, two leaning
+- Carvings: Heresy symbols, doubt marks, blasphemous text
+- Worms: Black crawling worms/maggots moving through wood
+- Mist: Gray-black fog rising from staffs
+- Eyes: Yellow glowing demonic eyes appearing in wood grain
+- Cracks: Red glowing fissures along staff length
+- Background: Desolate dark atmosphere with gray-black gradient
+
+LIGHTING:
+- Minimal ambient light creating oppressive darkness
+- Yellow eyes providing eerie spot lighting
+- Red cracks glowing with corrupt energy
+- Gray mist creating volumetric fog effects
+- Dark shadows emphasizing decay
+- Ominous backlight showing staff silhouettes
+- Sickly yellow-red combined glow
+
+COMPOSITION:
+- Center staff standing upright, two leaning diagonally
+- Worms creating movement and life within death
+- Mist rising upward creating vertical flow
+- Eyes scattered creating unease
+- Red cracks drawing attention along staffs
+- Depth with foreground staff, mid mist, background darkness
+- Unsettling asymmetrical composition
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic dark fantasy horror art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, decay simulation, Octane Render
+- Materials: Rotted wood shader, crawling worms, mist simulation
+- Effects: Volumetric mist, glowing eyes, pulsing cracks, HDR
+- Lighting: Yellow eye glow, red crack illumination, minimal ambient
+- Aspect Ratio: 3:4 (portrait) or 2:3 (portrait)
+- Quality: Photorealistic decay, disturbing details
+
+MOOD & ATMOSPHERE:
+- Corrupting faith, spreading doubt, destroying belief
+- Decaying spirituality and lost faith
+- Unsettling and disturbing presence
+- Seeds of heresy and disbelief
+- Sense of spiritual rot and corruption
+
+⚠️ NEGATIVE PROMPT:
+────────────────────────────────────
+holy staff, blessed wood, golden, pure, sacred symbols, clean, 
+wizard staff, magical staff, bright, angelic, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה אפלה היפר-ריאליסטית 8K: שלושה מטות אפלים עשויים מעץ מת שחור 
+נרקב, אחד עומד זקוף ושניים נשענים בזוויות. מגולפים בסמלים של כפירה, ספק 
+וחילול הקודש המכסים את פני השטח. תולעים ורמות שחורות זוחלות דרך ובתוך 
+העץ, נראות דרך סדקים. ערפל אפור-שחור עולה בצורה מפחידה מהמטות. עיניים 
+צהובות זוהרות מופיעות בתוך גרגירי העץ עצמו. סדקים אדומים זוהרים עוברים 
+לאורך המטות.
+
+המטות עתיקים ומושחתים, עשויים מעצים שמתו בחושך. העץ השחור הנרקב מכוסה 
+בסמלים כופרים וגילופי ספק. תולעים שחורות חיות זוחלות דרך העץ כמו ורידי 
+שחיתות. ערפל אפור רוחני עולה כמו נשימת חוסר אמונה. עיניים שטניות צהובות 
+נפתחות באקראי בתוך העץ.
+
+חומרים: עץ שחור נרקב, תולעים זוחלות, ערפל אפור-שחור
+תאורה: עיניים צהובות זוהרות, סדקים אדומים, חושך דומיננטי
+סגנון: היפר-ריאליסטי אימה אפלה, Unreal Engine 5
+מצב רוח: משחית אמונה, מפיץ ספק, הורס אמונה
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 3:4 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את התולעים, העיניים הצהובות והסדקים האדומים
+✅ Stable Diffusion: השתמש ב-dark horror + decay models
+✅ Leonardo.ai: Dark Horror v2 עם decay effects
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "rotting wood, crawling worms"
+• הוסף "heresy symbols, yellow demonic eyes"
+• הוסף "dead black wood, glowing red cracks"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות החושך ☠️
+⚠️ כלי מסוכן - לידיעה בלבד, להתגונן מפניו!
+════════════════════════════════════════════════════════════════════════

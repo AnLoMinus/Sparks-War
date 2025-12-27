@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חרבות אור - משחק אימון | v0.0.1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1>⚔️ חרבות אור - אימון לוחם ⚔️</h1>
+            <div class="version">גרסה 0.0.1</div>
+        </header>
+
+        <!-- Game Info Panel -->
+        <div class="info-panel">
+            <div class="stat-box">
+                <div class="stat-label">אנרגיה</div>
+                <div class="energy-bar-container">
+                    <div class="energy-bar" id="energyBar"></div>
+                </div>
+                <div class="stat-value" id="energyValue">100%</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-label">נקודות</div>
+                <div class="stat-value" id="scoreValue">0</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-label">רמה</div>
+                <div class="stat-value" id="levelValue">1</div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-label">קומבו</div>
+                <div class="stat-value combo" id="comboValue">x1</div>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area" id="gameArea">
+            <div class="sword left-sword" id="leftSword">⚔️</div>
+            <div class="sword right-sword" id="rightSword">⚔️</div>
+
+            <!-- Targets will spawn here -->
+            <div class="targets-container" id="targetsContainer"></div>
+
+            <!-- Effects -->
+            <div class="effects-container" id="effectsContainer"></div>
+
+            <!-- Instructions -->
+            <div class="instructions" id="instructions">
+                <h2>הוראות משחק</h2>
+                <p>🎯 השתמש במקלדת לתקוף מטרות:</p>
+                <ul>
+                    <li><kbd>A</kbd> - חרב שמאל</li>
+                    <li><kbd>D</kbd> - חרב ימין</li>
+                    <li><kbd>Space</kbd> - מתקפה כפולה</li>
+                    <li><kbd>Q</kbd> - מגן אור</li>
+                </ul>
+                <button class="btn-start" onclick="startGame()">התחל משחק</button>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <button class="btn-primary" onclick="startGame()" id="btnStart">התחל</button>
+            <button class="btn-secondary" onclick="pauseGame()" id="btnPause">השהה</button>
+            <button class="btn-secondary" onclick="resetGame()">התחל מחדש</button>
+            <button class="btn-info" onclick="showInstructions()">הוראות</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div class="game-over" id="gameOver">
+            <h2>🎮 משחק הסתיים!</h2>
+            <div class="final-score">
+                <p>ניקוד סופי: <span id="finalScore">0</span></p>
+                <p>רמה שהושגה: <span id="finalLevel">1</span></p>
+                <p>מקסימום קומבו: <span id="maxCombo">1</span></p>
+            </div>
+            <div class="achievements" id="achievements"></div>
+            <button class="btn-primary" onclick="resetGame()">שחק שוב</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="game-footer">
+            <p>מלחמת הניצוצות © 2024 | האור תמיד מנצח 🌟</p>
+        </footer>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

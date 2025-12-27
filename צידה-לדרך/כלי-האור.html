@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כלי כוחות האור - צידה לדרך 🌟</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a2a3e 0%, #16213e 100%);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 9pt;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            padding: 0.8rem 0.5rem;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            color: #1a1a2e;
+            font-size: 1.4rem;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #2c3e50;
+            color: #ffd700;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0.3rem;
+            font-size: 0.85rem;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0.5cm;
+        }
+
+        .force-section {
+            background: #2a3a4e;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            page-break-inside: avoid;
+        }
+
+        .force-section h2 {
+            color: #ffd700;
+            font-size: 1.3rem;
+            text-align: center;
+            margin: 0 0 0.8rem 0;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        .tool-card {
+            background: #2c3c4e;
+            border-radius: 6px;
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            page-break-inside: avoid;
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-icon {
+            font-size: 1.3rem;
+        }
+
+        .tool-name {
+            color: #ffd700;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .tool-description {
+            color: #d0d0d0;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .abilities-section,
+        .stats-section {
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        .section-title {
+            color: #90ee90;
+            font-size: 0.9rem;
+            margin: 0 0 0.4rem 0;
+            font-weight: bold;
+        }
+
+        .abilities-list,
+        .stats-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ability-item,
+        .stat-item {
+            padding: 0.3rem 0.5rem;
+            margin: 0.2rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+            border-right: 2px solid #ffd700;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .category-intro {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            border-right: 3px solid #ffd700;
+        }
+
+        .category-intro h3 {
+            color: #ffd700;
+            margin: 0 0 0.4rem 0;
+            font-size: 1rem;
+        }
+
+        .category-intro p {
+            color: #d0d0d0;
+            line-height: 1.3;
+            margin: 0.3rem 0;
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            background: #1a1a2e;
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 8pt;
+            }
+
+            .main-header {
+                background: #ffd700;
+                padding: 0.3cm;
+                page-break-after: avoid;
+            }
+
+            .main-header h1 {
+                font-size: 14pt;
+                color: black;
+            }
+
+            .back-button {
+                display: none;
+            }
+
+            .container {
+                padding: 0.3cm;
+            }
+
+            .force-section {
+                border: 1px solid #ccc;
+                padding: 0.3cm;
+                margin: 0.2cm 0;
+                background: white;
+                page-break-inside: avoid;
+            }
+
+            .force-section h2 {
+                font-size: 12pt;
+                color: black;
+                margin-bottom: 0.3cm;
+            }
+
+            .tool-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.3cm;
+            }
+
+            .tool-card {
+                border: 1px solid #ddd;
+                padding: 0.2cm;
+                background: #f9f9f9;
+                page-break-inside: avoid;
+            }
+
+            .tool-name {
+                color: black;
+                font-size: 9pt;
+            }
+
+            .tool-description {
+                font-size: 7.5pt;
+                line-height: 1.2;
+            }
+
+            .abilities-section,
+            .stats-section {
+                padding: 0.2cm;
+                margin-top: 0.2cm;
+            }
+
+            .section-title {
+                color: black;
+                font-size: 8pt;
+            }
+
+            .ability-item,
+            .stat-item {
+                font-size: 7pt;
+                padding: 0.1cm;
+                margin: 0.1cm 0;
+                border: none;
+                border-right: 1px solid #ccc;
+            }
+
+            .category-intro {
+                border: 1px solid #ddd;
+                padding: 0.2cm;
+                margin-bottom: 0.3cm;
+            }
+
+            .category-intro h3 {
+                font-size: 9pt;
+                color: black;
+            }
+
+            .category-intro p {
+                font-size: 7.5pt;
+            }
+
+            footer {
+                page-break-before: avoid;
+                padding: 0.2cm;
+                font-size: 7pt;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>🌟 כלי כוחות האור 🌟</h1>
+        <p>מדריך מקיף לכלים, נשקים ויכולות של ארבעת חיילות האור</p>
+        <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+    </header>
+
+    <div class="container">
+        <!-- חיל האורות -->
+        <section class="force-section">
+            <h2>✨ חיל האורות - מגני האור והטוהר</h2>
+
+            <div class="category-intro">
+                <h3>תפקיד החיל:</h3>
+                <p>
+                    חיל האורות מייצג את הטוב הטהור. לוחמים אלה משתמשים בניצוצותיהם להאיר את הדרך,
+                    לחשוף את האמת ולרפא פצועים. הם החזית הראשונה במאבק נגד כוחות החושך ומשמשים
+                    כמגן אנושי להגנה על הטוב בעולם.
+                </p>
+                <p>
+                    <strong>מנהיג החיל:</strong> אור – מפקד חיל האורות, המוביל את כוחות האור במלחמתם נגד החושך.
+                </p>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">⚔️</span>
+                        <h3 class="tool-name">חרבות אור</h3>
+                    </div>
+                    <p class="tool-description">
+                        חרבות קסומות המייצרות קרני אור חזקות שיכולות לשבור קסמים של כוחות הרשע
+                        ולחתוך את האפלה. החרבות עשויות מאור טהור וניזונות מהניצוץ הפנימי של המשתמש.
+                    </p>
+                    <div class="abilities-section">
+                        <h4 class="section-title">יכולות:</h4>
+                        <ul class="abilities-list">
+                            <li class="ability-item">💫 חיתוך קסמים שליליים והפרת כישופים</li>
+                            <li class="ability-item">✨ הפצת אור מרפא המחזיר חיות</li>
+                            <li class="ability-item">🛡️ יצירת מחסומי אור להגנה</li>
+                            <li class="ability-item">⚡ שיגור קרני אור ממוקדות</li>
+                        </ul>
+                    </div>
+                    <div class="stats-section">
+                        <h4 class="section-title">נתונים:</h4>
+                        <ul class="stats-list">
+                            <li class="stat-item">⚡ עוצמה: 90/100</li>
+                            <li class="stat-item">🛡️ הגנה: 70/100</li>
+                            <li class="stat-item">💨 מהירות: 85/100</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">🛡️</span>
+                        <h3 class="tool-name">מגן אור</h3>
+                    </div>
+                    <p class="tool-description">
+                        מגן קסום העשוי מאור טהור המגן על הלוחמים מפני התקפות רשע ומשקף קסמים.
+                        המגן יכול להרחיב את עצמו להגן על קבוצות שלמות ולהחזיר התקפות אל האויב.
+                    </p>
+                    <div class="abilities-section">
+                        <h4 class="section-title">יכולות:</h4>
+                        <ul class="abilities-list">
+                            <li class="ability-item">🛡️ יצירת מחסום אור בלתי חדיר</li>
+                            <li class="ability-item">🔄 החזרת התקפות אופל לשולח</li>
+                            <li class="ability-item">👥 הגנה קבוצתית על כוחות</li>
+                            <li class="ability-item">💫 ספיגת אנרגיה שלילית והמרתה לאור</li>
+                        </ul>
+                    </div>
+                    <div class="stats-section">
+                        <h4 class="section-title">נתונים:</h4>
+                        <ul class="stats-list">
+                            <li class="stat-item">⚡ עוצמה: 60/100</li>
+                            <li class="stat-item">🛡️ הגנה: 95/100</li>
+                            <li class="stat-item">💨 מהירות: 50/100</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">📚</span>
+                        <h3 class="tool-name">ספר הידע הקדוש</h3>
+                    </div>
+                    <p class="tool-description">
+                        ספר עתיק המכיל ידע קדוש, טכניקות לחימה באופל, וחוכמה עתיקת יומים.
+                        הספר מתעדכן בעצמו עם ידע חדש ומגלה סודות בזמן הצורך.
+                    </p>
+                    <div class="abilities-section">
+                        <h4 class="section-title">יכולות:</h4>
+                        <ul class="abilities-list">
+                            <li class="ability-item">📖 לימוד טכניקות קדושות מתקדמות</li>
+                            <li class="ability-item">🔍 זיהוי חולשות האויב וחשיפתן</li>
+                            <li class="ability-item">⚔️ שיפור יכולות קרב באופן משמעותי</li>
+                            <li class="ability-item">🧠 הבנת דפוסי האופל והתנהגותו</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">🏮</span>
+                        <h3 class="tool-name">מנורת האור הנצחי</h3>
+                    </div>
+                    <p class="tool-description">
+                        מנורה קסומה המפיצה אור קדוש המטהר אזורים מהשפעות שליליות וחושפת ישויות נסתרות.
+                        האור של המנורה אינו נכבה לעולם ומגיע לכל פינה אפלה.
+                    </p>
+                    <div class="abilities-section">
+                        <h4 class="section-title">יכולות:</h4>
+                        <ul class="abilities-list">
+                            <li class="ability-item">🌟 טיהור שטח נרחב מחושך</li>
+                            <li class="ability-item">👁️ חשיפת ישויות נסתרות ומוסוות</li>
+                            <li class="ability-item">💖 ריפוי קבוצתי של פצועים</li>
+                            <li class="ability-item">✨ יצירת אזור מוגן ומואר</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- חיל מטאטא -->
+        <section class="force-section">
+            <h2>🧹 חיל מטאטא - מטהרי האנרגיות השליליות</h2>
+
+            <div class="category-intro">
+                <h3>תפקיד החיל:</h3>
+                <p>
+                    חיל מטאטא מתמקד בניקוי והרחקת הרוחות הרעות. לוחמים אלה מתמחים בטיהור שטחים,
+                    הסרת קללות, וניקוי אנרגיות שליליות. הם מגנים על הרוחות מהשפעות רעות
+                    ומנקים את האוויר באמצעות כלים קסומים וטכניקות טיהור מתקדמות.
+                </p>
+                <p>
+                    <strong>מנהיג החיל:</strong> ליאון – שומר הרוח, המגן על הרוחות מהשפעות רעות ומנקה את האוויר.
+                </p>
+            </div>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">🧹</span>
+                        <h3 class="tool-name">מטאטא הטיהור הקדוש</h3>
+                    </div>
+                    <p class="tool-description">
+                        מטאטא קסום המסוגל לטאטא ולנקות אנרגיות שליליות, קללות והשפעות רעות.
+                        המטאטא עובד בממדים הפיזי והרוחני בו זמנית.
+                    </p>
+                    <div class="abilities-section">
+                        <h4 class="section-title">יכולות:</h4>
+                        <ul class="abilities-list">
+                            <li class="ability-item">🌪️ טיהור אזורים נרחבים בתנועה אחת</li>
+                            <li class="ability-item">✨ הסרת קללות וכישופים</li>
+                            <li class="ability-item">💫 ניקוי אנרגטי עמוק של מקומות</li>
+                            <li class="ability-item">🛡️ יצירת מחסום הגנה אחרי הניקוי</li>
+                        </ul>
+                    </div>
+                    <div class="stats-section">
+                        <h4 class="section-title">נתונים:</h4>
+                        <ul class="stats-list">
+                            <li class="stat-item">⚡ עוצמה: 70/100</li>
+                            <li class="stat-item">🛡️ הגנה: 80/100</li>
+                            <li class="stat-item">💨 מהירות: 90/100</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">✨</span>
+                        <h3 class="tool-name">אבקת טיהור קסומה</h3>
+                    </div>
+                    <p class="tool-description">
+                        אבקה מיוחדת העשויה מחומרים קדושים המטהרת ומנקה השפעות שליליות באופן מיידי.
+                        האבקה זורחת באור כחול-לבן בעת שימוש.
+                    </p>
+                    <div class="abilities-section">
+                        <h4 class="section-title">יכולות:</h4>
+                        <ul class="abilities-list">
+                            <li class="ability-item">⚡ נטרול כישופים מיידי</li>
+                            <li class="ability-item">🛡️ יצירת מחסום הגנה זמני</li>
+                            <li class="ability-item">💨 טיהור מהיר של אזורים קטנים</li>
+                            <li class="ability-item">✨ ניקוי אובייקטים נגועים</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">🧼</span>
+                        <h3 class="tool-name">מטליות קסומות</h3>
+                    </div>
+                    <p class="tool-description">
+                        מטליות מיוחדות לניקוי וטיהור עדין של אובייקטים וישויות.
+                        כל מטלית יכולה לספוג כמויות עצומות של אנרגיה שלילית.
+                    </p>
+                    <div class="abilities-section">
+                        <h4 class="section-title">יכולות:</h4>
+                        <ul class="abilities-list">
+                            <li class="ability-item">🎯 ניקוי מדויק ועדין</li>
+                            <li class="ability-item">🌟 הסרת כתמי טומאה רוחניים</li>
+                            <li class="ability-item">💫 שיקום אנרגטי של אובייקטים</li>
+                            <li class="ability-item">🔄 התחדשות עצמית אחרי כל שימוש</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <span class="tool-icon">🌬️</span>
+                        <h3 class="tool-name">מסנן הרוחות הקסום</h3>
+                    </div>
+                    <p class="tool-description">
+                        מכשיר קסום המסנן את הרוח מהשפעות רעות ומנקה את האזור מרעלים רוחניים.
+                        המסנן עובד באופן אוטומטי וללא הפסקה.
+                    </p>
+                    <div class="abilities-section">
+                        <h4 class="section-title">יכולות:</h4>
+                        <ul class="abilities-list">
+                            <li class="ability-item">🌪️ סינון אנרגיות שליליות מהאוויר</li>
+                            <li class="ability-item">💨 טיהור האוויר מרעלים רוחניים</li>
+                            <li class="ability-item">🌀 יצירת זרמי אוויר מטהרים</li>
+                            <li class="ability-item">✨ שמירה על אוויר נקי ומואר</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="back-button" style="margin: 0 1rem;">🏠 חזרה לדף הראשי</a>
+            <a href="כלי-האור-2.html" class="back-button" style="margin: 0 1rem;">➡️ המשך לחלק 2</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>✨ כל הזכויות שמורות © 2024 - מלחמת הניצוצות ✨</p>
+        <p>חלק 1 מתוך 2 - כלי כוחות האור</p>
+    </footer>
+</body>
+
+</html>

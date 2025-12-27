@@ -1,0 +1,120 @@
+════════════════════════════════════════════════════════════════════════
+              🛡️ הוראות ליצירת תמונה: שרת הגנה אוטומטי 🛡️
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: שרת הגנה אוטומטי
+קטגוריה: חיל טכנולוגיית האור
+כוח: כוחות האור ⭐
+נדירות: נדיר מאוד
+עוצמה: 70 | הגנה: 100 | מהירות: 95
+
+📝 תיאור מפורט:
+────────────────
+מגדל שרת עתידני מרחף, עשוי מתכת זהובה וזכוכית שקופה. אורות כחולים-זהובים 
+מהבהבים לאורך המגדל. שדות אנרגיה מגן כחולים מקיפים אותו. קווי מעגלים זוהרים 
+על פני השטח. השרת פועל 24/7 ומספק הגנה אוטומטית מפני התקפות רוחניות וטכנולוגיות.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K sci-fi fantasy art: Futuristic server tower floating vertically, 
+made of golden metal and transparent glass panels. Blue-gold lights pulsing rhythmically 
+along the tower's length creating heartbeat-like pattern. Translucent blue energy shield 
+barriers surrounding the server in concentric layers. Glowing circuit patterns visible 
+on the metallic surface creating intricate technological mandalas.
+
+The server tower stands tall and vertical, hovering in mid-air with divine technological 
+presence. Golden metallic panels alternate with transparent glass sections revealing 
+glowing blue-gold components inside. Shield barriers pulse with protective energy, 
+creating multiple layers of defense. The entire structure emanates power and security.
+
+VISUAL DETAILS:
+- Tower structure: Vertical server tower, golden metal + transparent glass panels
+- Lights: Blue-gold LED patterns pulsing in rhythmic sequence
+- Energy shields: Translucent blue force field barriers in concentric layers
+- Circuit patterns: Glowing golden circuit designs on metallic surfaces
+- Components: Visible internal tech glowing blue-gold through glass
+- Background: Digital-divine atmosphere with soft blue-gold gradient
+
+LIGHTING:
+- Pulsing blue-gold lights creating rhythmic heartbeat pattern
+- Energy shields glowing with translucent blue power
+- Internal components emitting warm golden-blue light
+- Circuit patterns glowing on surface like living technology
+- Ambient technological aura surrounding tower
+- Soft lens flares from bright pulsing elements
+- Cybernetic divine illumination
+
+COMPOSITION:
+- Vertical server tower centered, standing tall
+- Energy shields creating concentric circles around it
+- Pulsing lights drawing eye up and down the tower
+- Frontal view showing full height and power
+- Layered depth with shield barriers creating 3D space
+- Clean background emphasizing protective presence
+- Dynamic energy flow showing active defense
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic sci-fi divine technology art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, volumetric shields, Octane Render
+- Materials: Metallic gold shader, glass panels, energy shield shader
+- Effects: Pulsing light animation, shield barriers, circuit glow
+- Lighting: Pulsing rhythmic lights, energy fields, HDR
+- Aspect Ratio: 3:4 (portrait) or 9:16 (vertical)
+- Quality: Photorealistic tech, maximum detail, 4K textures
+
+MOOD & ATMOSPHERE:
+- Protective, powerful, vigilant, reliable
+- Constant guardian presence
+- Advanced defensive technology with divine purpose
+- Sense of absolute security and safety
+- Pulsing with living protective energy
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, broken server, damaged, old computer, dark evil tech, red lights, 
+alarm state, error messages, smoking, fire, destroyed, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות מדע-בדיוני-פנטזיה היפר-ריאליסטית 8K: מגדל שרת עתידני מרחף אנכית, 
+עשוי ממתכת זהובה ולוחות זכוכית שקופים. אורות כחולים-זהובים פועמים בקצב 
+לאורך המגדל ויוצרים דפוס כמו פעימות לב. מחסומי שדה אנרגיה כחולים שקופים 
+מקיפים את השרת בשכבות קונצנטריות. דוגמאות מעגלים זוהרות נראות על פני 
+השטח המתכתי ויוצרות מנדלות טכנולוגיות מורכבות.
+
+מגדל השרת ניצב גבוה ואנכי, מרחף באוויר עם נוכחות טכנולוגית אלוהית. פאנלים 
+מתכתיים זהובים מתחלפים עם חלקי זכוכית שקופים החושפים רכיבים זוהרים בכחול-זהוב 
+בפנים. מחסומי המגן פועמים באנרגיה מגינה ויוצרים שכבות הגנה מרובות.
+
+חומרים: מתכת זהובה, זכוכית שקופה, שדות אנרגיה כחולים
+תאורה: אורות פועמים כחול-זהוב, מגנים זוהרים, מעגלים מאירים
+סגנון: היפר-ריאליסטי סייברנטי-אלוהי, Unreal Engine 5
+מצב רוח: מגן, עוצמתי, ערני, אמין
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 3:4 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את שדות האנרגיה הפועמים והקונצנטריים
+✅ Stable Diffusion: השתמש ב-sci-fi models עם energy shields
+✅ Leonardo.ai: Sci-Fi v2 עם protective shield effects
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "pulsing energy shields, protective barriers"
+• הוסף "server tower, defensive technology"
+• הוסף "rhythmic pulsing lights, heartbeat pattern"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

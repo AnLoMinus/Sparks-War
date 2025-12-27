@@ -1,0 +1,113 @@
+════════════════════════════════════════════════════════════════════════
+                    🗡️ הוראות ליצירת תמונה: חרבות אור 🗡️
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: חרבות אור
+קטגוריה: חיל האורות
+כוח: כוחות האור ⭐
+נדירות: אגדי
+עוצמה: 90 | הגנה: 70 | מהירות: 85
+
+📝 תיאור מפורט:
+────────────────
+שתי חרבות צולבות קדושות עשויות מאור טהור. החרבות מייצרות קרני אור חזקות 
+ועוצמתיות ומשמשות לשבירת קסמים של כוחות הרשע. כל חרב מחוברת לנשמת הלוחם 
+ומתחזקת עם עוצמת האמונה שלו.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K fantasy art: Two magnificent crossed holy swords made of pure 
+golden-white light. Crystal-glass transparent blades glowing with divine radiance. 
+Golden ornate handles engraved with sacred symbols and holy geometry patterns. 
+
+The swords are positioned at 45-degree angle cross formation, floating in mid-air. 
+Strong golden light beams radiating from the blades in all directions. Luminous 
+butterflies made of pure light dancing around the swords. Sparkles and light particles 
+floating in the air creating a magical atmosphere.
+
+VISUAL DETAILS:
+- Blade material: Transparent crystal glass with inner golden-white light
+- Handle material: Polished gold with intricate sacred engravings
+- Light effects: Golden light rays, lens flares, god rays, particle effects
+- Aura: Bright golden-white halo surrounding both swords
+- Background: Soft gradient from golden-yellow to white, ethereal light fog
+- Additional elements: Glowing butterflies, floating light particles, sparkles
+
+LIGHTING:
+- Main light source: The swords themselves emitting powerful golden light
+- Dramatic rim lighting highlighting the edges
+- Soft ambient golden glow filling the scene
+- Light beams piercing through like sun rays
+- Sparkling particle effects throughout
+
+COMPOSITION:
+- Center focus on crossed swords
+- Dynamic diagonal positioning at 45 degrees
+- Depth of field with soft background blur
+- Floating mid-air with ethereal support
+- Magical particles creating movement and life
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic fantasy art, divine aesthetic
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, Octane Render quality
+- Lighting: Ray-tracing, volumetric lighting, HDR
+- Post-processing: Bloom effect, lens flares, color grading
+- Aspect Ratio: 1:1 (square) or 4:3 (portrait)
+- Quality: Maximum detail, photorealistic materials, 4K textures
+
+MOOD & ATMOSPHERE:
+- Divine, holy, powerful, majestic
+- Warm golden light creating hope and strength
+- Magical and ethereal feeling
+- Epic and legendary presence
+
+NEGATIVE PROMPT (מה להימנע ממנו):
+────────────────────────────────────
+blurry, low quality, cartoon, anime style, dark, gloomy, rusty, broken, damaged, 
+modern weapons, guns, text, watermark, signature, deformed, distorted, ugly, 
+pixelated, low resolution
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית (לכלי תומך בעברית):
+─────────────────────────────────────────────
+
+אמנות פנטזיה היפר-ריאליסטית ברזולוציית 8K: שתי חרבות קדושות מפוארות צלובות, 
+עשויות מאור טהור זהוב-לבן. להבי זכוכית גבישית שקופה זוהרים בזוהר אלוהי. 
+ידיות זהב מעוטרות חרוטות בסמלי קדושה ודוגמאות גאומטריה קדושה.
+
+החרבות ממוקמות בזווית של 45 מעלות, מרחפות באוויר. קרני אור זהובות חזקות 
+מקרינות מהלהבים לכל הכיוונים. פרפרי אור מנצנצים רוקדים סביב החרבות. 
+ניצוצות וחלקיקי אור מרחפים באוויר ויוצרים אווירה קסומה.
+
+חומרים: זכוכית גבישית שקופה עם אור פנימי זהוב-לבן, ידיות זהב מלוטש
+תאורה: קרני אור זהובות, אפקטי עדשה, אפקטי חלקיקים
+רקע: גרדיאנט רך מזהוב-צהוב ללבן, ערפל אור עלעלי
+סגנון: היפר-ריאליסטי, Unreal Engine 5, רינדור אוקטיין
+מצב רוח: אלוהי, קדוש, עוצמתי, מלכותי
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: הוסף --ar 1:1 --v 6 --style raw --q 2
+✅ DALL-E 3: השתמש בפרומפט המלא, בקש רזולוציה HD
+✅ Stable Diffusion: השתמש ב-SDXL, הוסף את ה-negative prompt
+✅ Leonardo.ai: בחר PhotoReal v2, dimension 1:1
+
+🎯 המלצות נוספות:
+─────────────────
+• הוסף "award winning photography, professional lighting" לאיכות גבוהה יותר
+• הוסף "trending on ArtStation" לסגנון מודרני
+• הוסף "masterpiece, best quality" לשיפור הפלט
+• נסה מספר פעמים - כל AI מפרש אחרת
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

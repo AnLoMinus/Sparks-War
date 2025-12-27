@@ -1,0 +1,122 @@
+════════════════════════════════════════════════════════════════════════
+            📱 הוראות ליצירת תמונה: מכשירי תקשורת מקודשים 📱
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: מכשירי תקשורת מקודשים
+קטגוריה: חיל טכנולוגיית האור
+כוח: כוחות האור ⭐
+נדירות: נדיר
+עוצמה: 60 | הגנה: 85 | מהירות: 100
+
+📝 תיאור מפורט:
+────────────────
+מכשירי תקשורת עתידניים בצורת קריסטלים זהובים מרחפים, משדרים גלי אור 
+כחולים-זהובים. סמלים קדושים זוהרים על המסכים. אנטנות מגולפות בצורת נוצות 
+מלאך. קרני תקשורת זוהרות מתחברות ביניהם. מערכת תקשורת מאובטחת המוגנת מפני 
+האזנות והתקפות רוחניות.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K sci-fi fantasy art: Multiple futuristic communication devices 
+shaped like golden crystals floating in a group formation. Each device transmitting 
+blue-gold light waves and energy beams connecting to each other. Sacred symbols and 
+Hebrew letters glowing on their transparent screens. Antennas carved in the shape of 
+angel feathers extending from the devices. Glowing communication rays linking the 
+devices creating a divine network.
+
+Three to five crystal-shaped communication devices hover together, each one a perfect 
+golden crystal with glowing screens. They transmit visible light wave frequencies in 
+blue and gold, creating a web of divine communication. Angel feather-shaped antennas 
+extend gracefully. Sacred symbols animate on the screens in flowing patterns.
+
+VISUAL DETAILS:
+- Devices: Golden crystal geometric shapes, floating in cluster
+- Screens: Transparent displays showing sacred symbols and Hebrew letters
+- Antennas: Carved angel feather designs with detailed barbs and rachis
+- Light waves: Blue-gold energy beams connecting devices visibly
+- Transmissions: Visible frequency waves radiating in circular patterns
+- Background: Communication network atmosphere with soft blue-gold glow
+
+LIGHTING:
+- Screens emitting soft blue-gold glow showing sacred symbols
+- Communication beams creating bright connection lines
+- Light waves radiating outward in circular frequency patterns
+- Golden crystal surfaces reflecting divine light
+- Antennas glowing at tips with transmission energy
+- Ambient network glow surrounding device cluster
+- Lens flares from communication beams
+
+COMPOSITION:
+- 3-5 devices clustered in upper-center area
+- Arranged in triangular or circular formation
+- Communication beams connecting them creating geometric pattern
+- Light waves radiating outward showing active transmission
+- Depth with foreground device, middle connections, background glow
+- Dynamic energy flow between devices
+- Clean background showing network clearly
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic sci-fi divine communication art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, volumetric light beams, Octane Render
+- Materials: Golden crystal shader, holographic screens, feather details
+- Effects: Light wave transmission, energy beams, frequency visualization
+- Lighting: Screen glow, beam lights, transmission waves, HDR
+- Aspect Ratio: 16:9 (landscape) or 1:1 (square)
+- Quality: Photorealistic, crystal-clear details, 4K textures
+
+MOOD & ATMOSPHERE:
+- Connected, secure, divine communication
+- Sacred network of holy information
+- Instant celestial messaging
+- Protected and encrypted presence
+- Sense of divine connection and unity
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, modern smartphone, broken screen, dark, disconnected, error, 
+static, interference, hacked, virus, demon symbols, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות מדע-בדיוני-פנטזיה היפר-ריאליסטית 8K: מספר מכשירי תקשורת עתידניים 
+בצורת קריסטלים זהובים מרחפים בפורמציית קבוצה. כל מכשיר משדר גלי אור 
+כחולים-זהובים וקרני אנרגיה המתחברות זה לזה. סמלים קדושים ואותיות עבריות 
+זוהרות על המסכים השקופים. אנטנות מגולפות בצורת נוצות מלאך משתרעות מהמכשירים. 
+קרני תקשורת זוהרות מקשרות בין המכשירים ויוצרות רשת אלוהית.
+
+שלושה עד חמישה מכשירים בצורת קריסטל מרחפים ביחד, כל אחד קריסטל זהוב מושלם 
+עם מסכים זוהרים. הם משדרים תדרי גל אור נראים בכחול וזהב, יוצרים רשת של 
+תקשורת אלוהית. אנטנות בצורת נוצות מלאך משתרעות בחן.
+
+חומרים: קריסטל זהוב, מסכים הולוגרפיים, נוצות מלאך מגולפות
+תאורה: זוהר מסכים, קרני תקשורת, גלי אור, תדרים נראים
+סגנון: היפר-ריאליסטי סייברנטי-קדוש, Unreal Engine 5
+מצב רוח: מחובר, מאובטח, תקשורת אלוהית
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 16:9 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את גלי האור המקשרים בין המכשירים
+✅ Stable Diffusion: השתמש ב-crystal + communication beam models
+✅ Leonardo.ai: Sci-Fi v2 עם energy beam effects
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "crystal communication devices, light wave transmission"
+• הוסף "sacred symbols display, angel feather antenna"
+• הוסף "divine network, encrypted holy communication"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

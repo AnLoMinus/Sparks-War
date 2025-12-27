@@ -1,0 +1,126 @@
+════════════════════════════════════════════════════════════════════════
+                🕷️ הוראות ליצירת תמונה: רשת השיבוש 🕷️
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: רשת השיבוש
+קטגוריה: חיל זנות
+כוח: כוחות החושך ☠️
+סכנה: בינונית
+עוצמה: 70 | הגנה: 60 | מהירות: 85
+
+📝 תיאור מפורט:
+────────────────
+קורי עכביש שחורים-סגולים מאירים חלוש, רשת מסובכת עם טיפות רעל ירוקות זוהרות. 
+עכבישים קטנים עם עיניים אדומות זוחלים על הקורים. הרשת מתפרשת ויוצרת דוגמאות 
+מבלבלות. זוהר סגול עובר דרך הקורים. הרשת משמשת לבלבול ושיבוש.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K dark fantasy art: Intricate spider web made of black-purple 
+glowing threads spread across the frame. Complex confusing patterns creating maze-like 
+structure. Glowing green poison droplets suspended on the web like deadly dewdrops. 
+Small spiders with bright red glowing eyes crawling along the threads. Purple glow 
+running through the web strands like veins of corruption. The web creates hypnotic 
+confusing geometric patterns designed to trap and disorient.
+
+The spider web stretches in complex interconnected patterns, designed to confuse and 
+ensnare. Black-purple threads glow with faint sinister light. Each intersection holds 
+a glowing green poison droplet, beautiful yet deadly. Small dark spiders move along the 
+web, their multiple red eyes glowing like warning lights. Purple energy flows through 
+the web creating living network of confusion. The patterns create optical illusions and 
+disorienting geometry.
+
+VISUAL DETAILS:
+- Web threads: Black-purple glowing strands, intricate patterns
+- Poison drops: Glowing green droplets at web intersections
+- Spiders: Small dark spiders with multiple red glowing eyes
+- Patterns: Confusing geometric maze-like structures
+- Glow: Purple light flowing through web like veins
+- Background: Dark void with purple-black gradient
+
+LIGHTING:
+- Faint purple glow from web threads
+- Bright green glow from poison droplets creating accent lights
+- Red pinpoint glows from spider eyes
+- Purple energy flowing like bioluminescence
+- Minimal ambient light creating mysterious darkness
+- Backlight showing web silhouette and structure
+- Eerie glow creating disorienting atmosphere
+
+COMPOSITION:
+- Web spread across entire frame creating full coverage
+- Complex patterns creating depth and layers
+- Multiple spiders scattered creating movement
+- Poison drops creating focal points throughout
+- Geometric confusion drawing eye in circles
+- Depth with foreground threads, mid spiders, background web
+- Disorienting maze-like composition
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic dark nature horror art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, web simulation, Octane Render
+- Materials: Glowing thread shader, liquid poison droplets, spider
+- Effects: Web pattern complexity, glowing elements, flowing energy
+- Lighting: Purple thread glow, green droplet glow, red eye glow, HDR
+- Aspect Ratio: 16:9 (landscape) or 1:1 (square)
+- Quality: Photorealistic web detail, intricate patterns
+
+MOOD & ATMOSPHERE:
+- Confusing, trapping, disorienting, entangling
+- Web of deception and confusion
+- Poisonous and dangerous presence
+- Predatory intelligence and patience
+- Sense of being trapped in maze of lies
+
+⚠️ NEGATIVE PROMPT:
+────────────────────────────────────
+simple web, clean web, white web, golden threads, blessed web, 
+holy, divine, clear patterns, straight lines, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה אפלה היפר-ריאליסטית 8K: קורי עכביש מורכבים עשויים מחוטים 
+שחורים-סגולים זוהרים פרושים על פני המסגרת. דוגמאות מבלבלות מורכבות יוצרות 
+מבנה דמוי מבוך. טיפות רעל ירוקות זוהרות תלויות על הרשת כמו טיפות טל קטלניות. 
+עכבישים קטנים עם עיניים אדומות זוהרות בוהקות זוחלים לאורך החוטים. זוהר סגול 
+עובר דרך קווי הרשת כמו ורידי שחיתות. הרשת יוצרת דוגמאות גאומטריות היפנוטיות 
+מבלבלות שנועדו ללכוד ולבלבל.
+
+קורי העכביש משתרעים בדוגמאות מורכבות מחוברות, מעוצבים לבלבל וללכוד. חוטים 
+שחורים-סגולים זוהרים באור מרושע עמום. כל צומת מחזיק טיפת רעל ירוקה זוהרת, 
+יפה אך קטלנית. עכבישים אפלים קטנים נעים על הרשת, עיניהם האדומות המרובות 
+זוהרות כמו אורות אזהרה. אנרגיה סגולה זורמת דרך הרשת.
+
+חומרים: חוטים שחורים-סגולים זוהרים, טיפות רעל ירוקות, עכבישים
+תאורה: זוהר סגול חלש, טיפות ירוקות, עיניים אדומות
+סגנון: היפר-ריאליסטי אימת טבע אפלה, Unreal Engine 5
+מצב רוח: מבלבל, לוכד, מבלבל, סובך
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 16:9 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את הדוגמאות המבלבלות, הטיפות הירוקות והעכבישים
+✅ Stable Diffusion: השתמש ב-spider web + confusing patterns
+✅ Leonardo.ai: Dark Fantasy v2 עם web simulation
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "intricate spider web, confusing patterns"
+• הוסף "glowing green poison drops, red spider eyes"
+• הוסף "purple glowing threads, maze-like structure"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות החושך ☠️
+⚠️ כלי מסוכן - לידיעה בלבד, להתגונן מפניו!
+════════════════════════════════════════════════════════════════════════

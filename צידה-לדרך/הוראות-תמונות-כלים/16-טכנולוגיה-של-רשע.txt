@@ -1,0 +1,123 @@
+════════════════════════════════════════════════════════════════════════
+              🤖 הוראות ליצירת תמונה: טכנולוגיה של רשע 🤖
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: טכנולוגיה של רשע
+קטגוריה: חיל טכנולוגיה
+כוח: כוחות החושך ☠️
+סכנה: קריטית
+עוצמה: 90 | הגנה: 80 | מהירות: 95
+
+📝 תיאור מפורט:
+────────────────
+מכשיר טכנולוגי מעוות עשוי מתכת שחורה וחלקי מכונה אפלים. מסכים אדומים מזעיקים 
+עם קוד בינארי זוהר. חוטים וצינורות שחורים מתפתלים. ניצוצות חשמל אדומים 
+מהבהבים. עיני מצלמה אדומות זוהרות. המערכת משמשת להפצת רוע ושיבוש מערכות אור.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K dark sci-fi art: Twisted corrupted technological device floating 
+in distorted position, made of black metal and dark mechanical components. Red alarm 
+screens displaying glowing binary code (0s and 1s) and error messages. Black writhing 
+cables and tubes extending from the device like tentacles. Red electric sparks crackling 
+and flashing. Multiple glowing red camera eyes watching ominously from the machinery.
+
+The device hovers in chaotic tilted angle, clearly corrupted and evil. Black metallic 
+body covered with twisted machinery and exposed corrupted circuits. Red screens flash 
+alarm states and malicious code. Cables and tubes move like living serpents. Red electric 
+discharge sparks violently. Camera eyes glow with malevolent red light, scanning and 
+watching. The entire device pulses with corrupt technological energy.
+
+VISUAL DETAILS:
+- Main body: Distorted black metal with corrupted mechanical parts
+- Screens: Red alarm displays showing binary code and errors
+- Cables: Black writhing tubes/wires extending like tentacles
+- Sparks: Red electric crackling and discharge
+- Eyes: Multiple red glowing camera lenses, evil surveillance
+- Background: Dark corrupted digital atmosphere with red-black gradient
+
+LIGHTING:
+- Red screens providing harsh alarm lighting
+- Red electric sparks creating dramatic flashes
+- Camera eyes glowing with menacing red light
+- Dark shadows emphasizing corrupted nature
+- Harsh red rim lighting on metal edges
+- Ominous backlight showing evil silhouette
+- Electric discharge creating intense moments
+
+COMPOSITION:
+- Device positioned off-center, tilted in corrupted angle
+- Cables extending outward creating tentacle-like reach
+- Red screens visible and prominent
+- Camera eyes scattered across surface watching
+- Dynamic electric sparks adding chaos
+- Depth with foreground device, mid cables, background darkness
+- Chaotic evil technological composition
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic dark cyberpunk horror art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, corrupted tech aesthetic, Octane Render
+- Materials: Black metal shader, red screen displays, cable simulation
+- Effects: Electric sparks, glowing screens, animated code, HDR
+- Lighting: Red alarm lights, electric discharge, camera glow
+- Aspect Ratio: 1:1 (square) or 4:3 (standard)
+- Quality: Photorealistic corrupted technology details
+
+MOOD & ATMOSPHERE:
+- Corrupted, malevolent, invasive, controlling
+- Evil artificial intelligence presence
+- Technological horror and dystopia
+- Surveillance and manipulation
+- Sense of digital possession and control
+
+⚠️ NEGATIVE PROMPT:
+────────────────────────────────────
+clean tech, holy computer, golden circuits, blue screens, friendly AI, 
+smooth design, angelic technology, blessed, divine, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות מדע-בדיוני אפל היפר-ריאליסטי 8K: מכשיר טכנולוגי מעוות ומושחת מרחף 
+במצב מעוות, עשוי ממתכת שחורה ורכיבים מכניים אפלים. מסכים אדומים מזעיקים 
+המציגים קוד בינארי זוהר (0 ו-1) והודעות שגיאה. כבלים וצינורות שחורים מתפתלים 
+משתרעים מהמכשיר כמו מחושים. ניצוצות חשמל אדומים מפצפצים ומבזיקים. עיני 
+מצלמה אדומות זוהרות מרובות צופות בצורה מאיימת מהמכונה.
+
+המכשיר מרחף בזווית כאוטית מוטה, ברור שהוא מושחת ומרושע. גוף מתכתי שחור 
+מכוסה במכונות מעוותות ומעגלים חשופים משובשים. מסכים אדומים מהבהבים במצבי 
+אזעקה וקוד זדוני. כבלים וצינורות נעים כמו נחשים חיים. פריקה חשמלית אדומה 
+מבזיקה באלימות. עיני מצלמה זוהרות באור אדום זדוני.
+
+חומרים: מתכת שחורה מעוותת, מסכים אדומים, כבלים שחורים
+תאורה: מסכי אזעקה אדומים, ניצוצות חשמל, עיני מצלמה זוהרות
+סגנון: היפר-ריאליסטי סייברפאנק-אימה, Unreal Engine 5
+מצב רוח: מושחת, זדוני, פולשני, שולט
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 1:1 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את המסכים האדומים, הכבלים המתפתלים והעיניים
+✅ Stable Diffusion: השתמש ב-dark cyberpunk + horror tech
+✅ Leonardo.ai: Cyberpunk v2 עם dark corrupted aesthetics
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "corrupted AI, evil technology"
+• הוסף "red alarm screens, binary code"
+• הוסף "writhing cables, electric discharge"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות החושך ☠️
+⚠️ כלי מסוכן - לידיעה בלבד, להתגונן מפניו!
+════════════════════════════════════════════════════════════════════════

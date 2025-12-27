@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תרגילים מעשיים - צידה לדרך 📝</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 9pt;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            padding: 0.8rem 0.5rem;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #2c3e50;
+            color: #3498db;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0.3rem;
+            font-size: 0.85rem;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0.5cm;
+        }
+
+        .daily-routine {
+            background: #34495e;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            page-break-inside: avoid;
+        }
+
+        .daily-routine h2 {
+            color: #3498db;
+            text-align: center;
+            margin: 0 0 0.8rem 0;
+            font-size: 1.3rem;
+        }
+
+        .time-block {
+            background: #3c5066;
+            border-radius: 6px;
+            padding: 0.6rem;
+            margin: 0.6rem 0;
+            border-right: 3px solid #3498db;
+            page-break-inside: avoid;
+        }
+
+        .time-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .time-icon {
+            font-size: 1.2rem;
+        }
+
+        .time-title {
+            color: #3498db;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .practice-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .practice-item {
+            padding: 0.4rem;
+            margin: 0.3rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            border-right: 2px solid #2ecc71;
+        }
+
+        .practice-name {
+            color: #2ecc71;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin: 0 0 0.2rem 0;
+        }
+
+        .practice-description {
+            color: #d0d0d0;
+            line-height: 1.2;
+            font-size: 0.8rem;
+        }
+
+        .practice-duration {
+            color: #f39c12;
+            font-size: 0.75rem;
+            margin-top: 0.2rem;
+        }
+
+        .weekly-plan {
+            background: #34495e;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            page-break-inside: avoid;
+        }
+
+        .weekly-plan h2 {
+            color: #2ecc71;
+            text-align: center;
+            margin: 0 0 0.8rem 0;
+            font-size: 1.3rem;
+        }
+
+        .day-card {
+            background: #3c5066;
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin: 0.4rem 0;
+            border-right: 2px solid #2ecc71;
+            page-break-inside: avoid;
+        }
+
+        .day-header {
+            color: #2ecc71;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .day-focus {
+            color: #3498db;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist-item {
+            padding: 0.2rem;
+            margin: 0.15rem 0;
+            color: #d0d0d0;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .checklist-item::before {
+            content: '☐ ';
+            color: #3498db;
+            font-size: 1rem;
+            margin-left: 0.3rem;
+        }
+
+        .emergency-tools {
+            background: #c0392b;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 1px solid rgba(231, 76, 60, 0.5);
+            page-break-inside: avoid;
+        }
+
+        .emergency-tools h2 {
+            color: #fff;
+            text-align: center;
+            margin: 0 0 0.8rem 0;
+            font-size: 1.3rem;
+        }
+
+        .emergency-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 0.6rem;
+            margin: 0.4rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            page-break-inside: avoid;
+        }
+
+        .emergency-title {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0 0 0.4rem 0;
+        }
+
+        .emergency-steps {
+            color: #fff;
+            line-height: 1.3;
+            font-size: 0.8rem;
+        }
+
+        .emergency-steps ol {
+            margin: 0.3rem 0;
+            padding-right: 1.2rem;
+        }
+
+        .emergency-steps li {
+            margin: 0.2rem 0;
+            font-size: 0.75rem;
+        }
+
+        .progress-tracker {
+            background: #34495e;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin: 0.8rem 0;
+            border: 1px solid rgba(241, 196, 15, 0.3);
+            page-break-inside: avoid;
+        }
+
+        .progress-tracker h2 {
+            color: #f1c40f;
+            text-align: center;
+            margin: 0 0 0.8rem 0;
+            font-size: 1.3rem;
+        }
+
+        .level-card {
+            background: #3c5066;
+            border-radius: 4px;
+            padding: 0.6rem;
+            margin: 0.4rem 0;
+            border-right: 3px solid #f1c40f;
+            page-break-inside: avoid;
+        }
+
+        .level-name {
+            color: #f1c40f;
+            font-size: 1rem;
+            font-weight: bold;
+            margin: 0 0 0.4rem 0;
+        }
+
+        .level-requirements {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .level-requirement {
+            padding: 0.3rem;
+            margin: 0.2rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+            color: #d0d0d0;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            background: #1a1a2e;
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 8pt;
+            }
+
+            .main-header {
+                background: #3498db;
+                padding: 0.3cm;
+            }
+
+            .main-header h1 {
+                font-size: 14pt;
+                color: white;
+            }
+
+            .back-button {
+                display: none;
+            }
+
+            .container {
+                padding: 0.3cm;
+            }
+
+            .daily-routine,
+            .weekly-plan,
+            .emergency-tools,
+            .progress-tracker {
+                border: 1px solid #ccc;
+                padding: 0.3cm;
+                margin: 0.2cm 0;
+                background: white;
+            }
+
+            .daily-routine h2,
+            .weekly-plan h2,
+            .emergency-tools h2,
+            .progress-tracker h2 {
+                font-size: 12pt;
+                color: black;
+            }
+
+            .time-block,
+            .day-card,
+            .emergency-card,
+            .level-card {
+                border: 1px solid #ddd;
+                padding: 0.2cm;
+                margin: 0.15cm 0;
+                background: #f9f9f9;
+            }
+
+            .time-title,
+            .day-header,
+            .emergency-title,
+            .level-name {
+                font-size: 9pt;
+                color: black;
+            }
+
+            .practice-item,
+            .checklist-item,
+            .level-requirement {
+                font-size: 7pt;
+                padding: 0.08cm;
+            }
+
+            footer {
+                padding: 0.2cm;
+                font-size: 7pt;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .time-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>📝 תרגילים מעשיים 📝</h1>
+        <p>תכנית יומית, שבועית וחודשית לחיזוק הניצוץ הפנימי</p>
+        <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+    </header>
+
+    <div class="container">
+        <!-- תכנית יומית -->
+        <section class="daily-routine">
+            <h2>🌅 תכנית יומית</h2>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span class="time-icon">🌅</span>
+                    <h3 class="time-title">בוקר (5:00-7:00)</h3>
+                </div>
+                <ul class="practice-list">
+                    <li class="practice-item">
+                        <div class="practice-name">🙏 תפילת השכמה</div>
+                        <div class="practice-description">
+                            מיד עם הקיצה, הודה על היום החדש והצהר: "אני מוכן/ה להיות כלי לאור"
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 2 דקות</div>
+                    </li>
+                    <li class="practice-item">
+                        <div class="practice-name">🧘 מדיטציית בוקר</div>
+                        <div class="practice-description">
+                            ישיבה בשקט, נשימה עמוקה, והדלקת הניצוץ הפנימי
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 10-20 דקות</div>
+                    </li>
+                    <li class="practice-item">
+                        <div class="practice-name">📚 לימוד קצר</div>
+                        <div class="practice-description">
+                            קריאת פרק מכתבים קדושים או חכמה רוחנית
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 15 דקות</div>
+                    </li>
+                    <li class="practice-item">
+                        <div class="practice-name">🛡️ תפילת הגנה</div>
+                        <div class="practice-description">
+                            יצירת מגן אור סביבך ליום הקרב
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 5 דקות</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span class="time-icon">☀️</span>
+                    <h3 class="time-title">צהריים (12:00-13:00)</h3>
+                </div>
+                <ul class="practice-list">
+                    <li class="practice-item">
+                        <div class="practice-name">🧘 הפסקת מיינדפולנס</div>
+                        <div class="practice-description">
+                            5 דקות של נשימה מודעת והתחברות לניצוץ
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 5 דקות</div>
+                    </li>
+                    <li class="practice-item">
+                        <div class="practice-name">🙏 תפילת אמצע היום</div>
+                        <div class="practice-description">
+                            הודיה על הטוב שקרה עד כה והמשך ברכה
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 3 דקות</div>
+                    </li>
+                    <li class="practice-item">
+                        <div class="practice-name">💝 מעשה חסד</div>
+                        <div class="practice-description">
+                            עשה מעשה טוב אחד - קטן או גדול
+                        </div>
+                        <div class="practice-duration">⏱️ משך: משתנה</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="time-block">
+                <div class="time-header">
+                    <span class="time-icon">🌙</span>
+                    <h3 class="time-title">ערב (20:00-22:00)</h3>
+                </div>
+                <ul class="practice-list">
+                    <li class="practice-item">
+                        <div class="practice-name">📝 חשבון נפש</div>
+                        <div class="practice-description">
+                            סקירת היום - מה הצליח, מה ניתן לשפר, מה למדתי
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 10 דקות</div>
+                    </li>
+                    <li class="practice-item">
+                        <div class="practice-name">🧹 טיהור אנרגטי</div>
+                        <div class="practice-description">
+                            שחרור מתחים, דאגות ואנרגיות שליליות מהיום
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 5 דקות</div>
+                    </li>
+                    <li class="practice-item">
+                        <div class="practice-name">🙏 תפילת לילה</div>
+                        <div class="practice-description">
+                            הודיה על היום, בקשת סליחה, וברכה למחר
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 5 דקות</div>
+                    </li>
+                    <li class="practice-item">
+                        <div class="practice-name">💫 מדיטציית שינה</div>
+                        <div class="practice-description">
+                            הרגעה עמוקה והכנה לשינה איכותית
+                        </div>
+                        <div class="practice-duration">⏱️ משך: 10 דקות</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- תכנית שבועית -->
+        <section class="weekly-plan">
+            <h2>📅 תכנית שבועית</h2>
+
+            <div class="day-card">
+                <div class="day-header">יום ראשון - התחדשות</div>
+                <div class="day-focus">🎯 מיקוד: תכנון השבוע והצבת כוונות</div>
+                <ul class="checklist">
+                    <li class="checklist-item">כתוב 3 מטרות לשבוע</li>
+                    <li class="checklist-item">בחר ספירה לעבוד עליה</li>
+                    <li class="checklist-item">תכנן 7 מעשי חסד</li>
+                    <li class="checklist-item">קבע זמן ללימוד מעמיק</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">יום שני - חוזק</div>
+                <div class="day-focus">🎯 מיקוד: חיזוק הכוח הפנימי והנחישות</div>
+                <ul class="checklist">
+                    <li class="checklist-item">תרגול גבורה - עמוד באתגר</li>
+                    <li class="checklist-item">אימון פיזי או רוחני מאתגר</li>
+                    <li class="checklist-item">התמודדות עם פחד אחד</li>
+                    <li class="checklist-item">מדיטציית כוח ואומץ</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">יום שלישי - חכמה</div>
+                <div class="day-focus">🎯 מיקוד: לימוד והעמקת הידע</div>
+                <ul class="checklist">
+                    <li class="checklist-item">למד נושא חדש 30 דקות</li>
+                    <li class="checklist-item">קרא טקסט קדוש בעיון</li>
+                    <li class="checklist-item">שוחח עם מורה או חבר</li>
+                    <li class="checklist-item">כתוב תובנה שלמדת</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">יום רביעי - חסד</div>
+                <div class="day-focus">🎯 מיקוד: נתינה ואהבת הזולת</div>
+                <ul class="checklist">
+                    <li class="checklist-item">עשה 3 מעשי חסד היום</li>
+                    <li class="checklist-item">התנדב או עזור למישהו</li>
+                    <li class="checklist-item">תרגול אהבת חינם</li>
+                    <li class="checklist-item">מדיטציית חמלה</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">יום חמישי - תפארת</div>
+                <div class="day-focus">🎯 מיקוד: איזון והרמוניה</div>
+                <ul class="checklist">
+                    <li class="checklist-item">בדוק את האיזון בחייך</li>
+                    <li class="checklist-item">יצירה אמנותית או מוזיקלית</li>
+                    <li class="checklist-item">מדיטציית איזון</li>
+                    <li class="checklist-item">טיפול בגוף ובנפש</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">יום שישי - הכנה</div>
+                <div class="day-focus">🎯 מיקוד: טיהור והכנה לשבת</div>
+                <ul class="checklist">
+                    <li class="checklist-item">ניקוי ואירגון הבית</li>
+                    <li class="checklist-item">טיהור אנרגטי מלא</li>
+                    <li class="checklist-item">הכנה רוחנית לשבת</li>
+                    <li class="checklist-item">מדיטציית שלום</li>
+                </ul>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">שבת - מנוחה ועילוי</div>
+                <div class="day-focus">🎯 מיקוד: מנוחה רוחנית וחיבור עמוק</div>
+                <ul class="checklist">
+                    <li class="checklist-item">ניתוק מטכנולוגיה</li>
+                    <li class="checklist-item">לימוד מעמיק</li>
+                    <li class="checklist-item">זמן איכות עם משפחה</li>
+                    <li class="checklist-item">מדיטציה ארוכה (60 דק')</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- כלים לשעת חירום -->
+        <section class="emergency-tools">
+            <h2>🆘 כלים לשעת חירום</h2>
+
+            <div class="emergency-card">
+                <div class="emergency-title">⚠️ התקף חרדה או פחד</div>
+                <div class="emergency-steps">
+                    <strong>מה לעשות:</strong>
+                    <ol>
+                        <li>עצור - נשום עמוק 3 פעמים</li>
+                        <li>הצהר: "אני מוגן/ת באור, אני בטוח/ה"</li>
+                        <li>דמיין מעגל אור זהוב סביבך</li>
+                        <li>מנטרה: "האור שבי חזק מכל פחד" (7 פעמים)</li>
+                        <li>התקשר לחבר או יועץ רוחני</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="emergency-card">
+                <div class="emergency-title">🌑 התקף אנרגיה שלילית</div>
+                <div class="emergency-steps">
+                    <strong>מה לעשות:</strong>
+                    <ol>
+                        <li>הרחק עצמך מהמקור מיד</li>
+                        <li>רחץ ידיים במים קרים</li>
+                        <li>הצהר: "אני משחרר/ת כל אנרגיה שלילית"</li>
+                        <li>טיהור מהיר באבק/מלח</li>
+                        <li>מדיטציית הגנה מיידית</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="emergency-card">
+                <div class="emergency-title">💔 ניסיון פיתוי</div>
+                <div class="emergency-steps">
+                    <strong>מה לעשות:</strong>
+                    <ol>
+                        <li>עצור - זכור את המטרה הגדולה</li>
+                        <li>צא מהמצב פיזית</li>
+                        <li>קרא תפילה או מנטרת הגנה</li>
+                        <li>התקשר למישהו מאמין</li>
+                        <li>חזק את הזיכרון למה זה חשוב</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="emergency-card">
+                <div class="emergency-title">😔 תחושת ייאוש או כישלון</div>
+                <div class="emergency-steps">
+                    <strong>מה לעשות:</strong>
+                    <ol>
+                        <li>זכור: זה זמני, אתה לא לבד</li>
+                        <li>כתוב 5 דברים שהצלחת בהם</li>
+                        <li>קרא סיפור השראה</li>
+                        <li>תפילת תודה על הטוב שיש</li>
+                        <li>דבר עם מנטור או יועץ</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- מעקב התקדמות -->
+        <section class="progress-tracker">
+            <h2>📈 מערכת דרגות והתקדמות</h2>
+
+            <div class="level-card">
+                <div class="level-name">🌱 דרגה 1: מתחיל</div>
+                <p style="color: #d0d0d0; margin-bottom: 1rem;">
+                    אתה בתחילת הדרך, לומד את היסודות ובונה הרגלים ראשונים.
+                </p>
+                <ul class="level-requirements">
+                    <li class="level-requirement">✅ תרגול יומי 30 ימים רצופים</li>
+                    <li class="level-requirement">✅ לימוד בסיסי של כל הספירות</li>
+                    <li class="level-requirement">✅ מדיטציה 10 דקות ביום</li>
+                    <li class="level-requirement">✅ מעשה חסד אחד ביום</li>
+                </ul>
+            </div>
+
+            <div class="level-card">
+                <div class="level-name">🌿 דרגה 2: מתקדם</div>
+                <p style="color: #d0d0d0; margin-bottom: 1rem;">
+                    אתה מכיר את הדרך, מעמיק בתרגול ומתמיד בפעולה.
+                </p>
+                <ul class="level-requirements">
+                    <li class="level-requirement">✅ תרגול יומי 90 ימים רצופים</li>
+                    <li class="level-requirement">✅ עבודה מעמיקה על 3 ספירות</li>
+                    <li class="level-requirement">✅ מדיטציה 20 דקות ביום</li>
+                    <li class="level-requirement">✅ מעשי חסד קבועים</li>
+                    <li class="level-requirement">✅ ניהול קבוצת לימוד או תמיכה</li>
+                </ul>
+            </div>
+
+            <div class="level-card">
+                <div class="level-name">🌳 דרגה 3: מומחה</div>
+                <p style="color: #d0d0d0; margin-bottom: 1rem;">
+                    אתה מאסטר בתחומך, מנחה אחרים ומשפיע לטובה.
+                </p>
+                <ul class="level-requirements">
+                    <li class="level-requirement">✅ תרגול יומי שנה שלמה</li>
+                    <li class="level-requirement">✅ שליטה בכל 10 הספירות</li>
+                    <li class="level-requirement">✅ מדיטציה 40+ דקות ביום</li>
+                    <li class="level-requirement">✅ הדרכת תלמידים</li>
+                    <li class="level-requirement">✅ יצירת תוכן והפצת אור</li>
+                </ul>
+            </div>
+
+            <div class="level-card">
+                <div class="level-name">✨ דרגה 4: מאסטר</div>
+                <p style="color: #d0d0d0; margin-bottom: 1rem;">
+                    אתה מאור לאומות, מורה ומנהיג רוחני אמיתי.
+                </p>
+                <ul class="level-requirements">
+                    <li class="level-requirement">✅ שנים של תרגול מסור</li>
+                    <li class="level-requirement">✅ תרומה משמעותית לעולם</li>
+                    <li class="level-requirement">✅ חיים כדוגמא אישית</li>
+                    <li class="level-requirement">✅ העברת המסורת הלאה</li>
+                    <li class="level-requirement">✅ הבאת אור למקומות חשוכים</li>
+                </ul>
+            </div>
+        </section>
+
+        <div
+            style="text-align: center; margin: 3rem 0; padding: 2rem; background: rgba(52, 152, 219, 0.1); border-radius: 15px;">
+            <h3 style="color: #3498db; margin-bottom: 1rem;">💡 זכור תמיד</h3>
+            <p style="color: #d0d0d0; font-size: 1.1rem; line-height: 1.8;">
+                <strong>ההתקדמות האמיתית אינה נמדדת בזמן, אלא בכוונה ובמסירות.</strong>
+                <br>כל יום שאתה מתרגל, אתה מחזק את האור שבך ובעולם.
+                <br>אל תוותר, גם אם נפלת - קום והמשך. זה הכוח האמיתי.
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>✨ כל הזכויות שמורות © 2024 - מלחמת הניצוצות ✨</p>
+        <p><strong>תרגל, תמיד, תחזק - הדרך היא המטרה 🙏</strong></p>
+    </footer>
+</body>
+
+</html>

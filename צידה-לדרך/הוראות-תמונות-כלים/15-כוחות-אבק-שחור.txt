@@ -1,0 +1,122 @@
+════════════════════════════════════════════════════════════════════════
+              💨 הוראות ליצירת תמונה: כוחות אבק שחור 💨
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: כוחות אבק שחור
+קטגוריה: חיל טומאה
+כוח: כוחות החושך ☠️
+סכנה: גבוהה מאוד
+עוצמה: 85 | הגנה: 70 | מהירות: 100
+
+📝 תיאור מפורט:
+────────────────
+ענן של אבק שחור-סגול רעיל מסתחרר, מורכב מחלקיקי חושך זעירים. עיניים אדומות 
+קטנות מנצנצות בתוך הענן. מערבולת אפלה מסתובבת. קווי אנרגיה סגולה חשמלית 
+מהבהבים בתוך הערפל. האבק מחליש ומזהם אנרגיות חיוביות ופוגע באור הפנימי.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K dark fantasy art: Swirling toxic cloud of black-purple dust 
+particles forming a menacing vortex. Tiny glowing red eyes appearing and disappearing 
+within the dust cloud. Dark spiral vortex spinning ominously at the center. Purple 
+electric energy lines crackling and flashing throughout the toxic mist creating web of 
+corruption.
+
+The dust cloud churns and swirls like a living entity of darkness. Composed of millions 
+of tiny black-purple particles, each one a fragment of corruption. Small demonic red eyes 
+glow eerily from within the cloud, watching malevolently. A dark vortex at the center 
+pulls everything toward darkness. Purple lightning webs through the dust creating electric 
+menace. The entire cloud pulses with toxic energy.
+
+VISUAL DETAILS:
+- Dust cloud: Black-purple swirling particle vortex, toxic appearance
+- Particles: Millions of tiny dark particles creating dense cloud
+- Eyes: Small red glowing eyes scattered within cloud
+- Vortex: Dark spiral at center, pulling and rotating
+- Lightning: Purple electric crackling energy throughout
+- Background: Dark toxic atmosphere with purple-black gradient
+
+LIGHTING:
+- Minimal ambient light - dust absorbs illumination
+- Red eyes providing eerie pin-point glows
+- Purple lightning flashes creating dramatic electric light
+- Toxic purple ambient glow from within cloud
+- Dark shadows and void areas
+- Ominous backlight showing cloud silhouette
+- Electric sparks and crackling energy
+
+COMPOSITION:
+- Swirling cloud centered, vortex in middle
+- Spiral motion creating circular composition
+- Red eyes scattered creating pattern
+- Purple lightning creating web-like structure
+- Dynamic swirling movement captured
+- Depth with foreground particles, mid vortex, background dissipation
+- Chaotic yet structured evil composition
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic dark fantasy, toxic horror aesthetic
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, particle system, Octane Render
+- Simulation: Volumetric dust cloud, vortex dynamics, particle physics
+- Materials: Toxic dust particles, glowing eyes, electric energy
+- Effects: Swirling vortex, particle cloud, electric lightning, HDR
+- Aspect Ratio: 1:1 (square) or 16:9 (landscape)
+- Quality: Photorealistic particle rendering, detailed corruption
+
+MOOD & ATMOSPHERE:
+- Toxic, corrupting, weakening, infectious
+- Living darkness with malevolent intelligence
+- Overwhelming and suffocating presence
+- Poisonous and destructive energy
+- Sense of spiritual contamination
+
+⚠️ NEGATIVE PROMPT:
+────────────────────────────────────
+clean, pure, golden dust, sparkles, fairy dust, bright, holy, 
+light cloud, white smoke, blessed, divine, text, watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה אפלה היפר-ריאליסטית 8K: ענן מסתחרר של חלקיקי אבק שחור-סגול 
+רעיל היוצר מערבולת מאיימת. עיניים אדומות זוהרות זעירות מופיעות ונעלמות 
+בתוך ענן האבק. מערבולת ספירלה אפלה מסתובבת בצורה מאיימת במרכז. קווי אנרגיה 
+חשמלית סגולה מפצפצים ומבזיקים בכל הערפל הרעיל ויוצרים רשת של שחיתות.
+
+ענן האבק מתערבל ומסתחרר כמו ישות חיה של חושך. מורכב ממיליוני חלקיקים זעירים 
+שחורים-סגולים, כל אחד שבר של שחיתות. עיניים אדומות שטניות קטנות זוהרות 
+בצורה מפחידה מתוך הענן. מערבולת אפלה במרכז שואבת הכל לעבר החושך. ברק סגול 
+משתרג דרך האבק ויוצר איום חשמלי.
+
+חומרים: חלקיקי אבק שחור-סגול, עיניים אדומות זוהרות, חשמל סגול
+תאורה: תאורה מינימלית, עיניים אדומות, ברקים סגולים
+סגנון: היפר-ריאליסטי אפל רעיל, Unreal Engine 5, מערכת חלקיקים
+מצב רוח: רעיל, משחית, מחליש, מדבק
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 1:1 --v 6 --style raw --q 2 --chaos 30
+✅ DALL-E 3: הדגש את המערבולת, העיניים האדומות והחשמל הסגול
+✅ Stable Diffusion: השתמש ב-particle system + toxic cloud
+✅ Leonardo.ai: Dark Fantasy v2 עם particle effects
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "toxic dust cloud, swirling vortex"
+• הוסף "red demonic eyes, purple lightning"
+• הוסף "corrupting particles, dark spiral"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות החושך ☠️
+⚠️ כלי מסוכן - לידיעה בלבד, להתגונן מפניו!
+════════════════════════════════════════════════════════════════════════

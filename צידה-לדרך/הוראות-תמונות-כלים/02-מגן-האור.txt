@@ -1,0 +1,106 @@
+════════════════════════════════════════════════════════════════════════
+                    🛡️ הוראות ליצירת תמונה: מגן האור 🛡️
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: מגן האור
+קטגוריה: חיל האורות
+כוח: כוחות האור ⭐
+נדירות: נדיר
+עוצמה: 60 | הגנה: 95 | מהירות: 50
+
+📝 תיאור מפורט:
+────────────────
+מגן עגול קסום גדול עשוי מגביש אור שקוף-זהוב. המגן מגן מפני כל התקפה של 
+כוחות האופל ויכול להחזיר התקפות חזרה לשולחן. המגן גדל ומתחזק ככל שהלוחם 
+מתקדם ברמתו הרוחנית.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K fantasy art: Large magnificent circular holy shield made of 
+transparent golden crystal glass. Six-pointed star of David glowing brilliantly in 
+the center. Ornate golden metal frame carved with intricate sacred geometric patterns. 
+Blue-gold energy shield field shimmering around the shield creating a protective barrier.
+
+The shield is floating vertically in mid-air, frontal view showing its full glory. 
+Crystal surface reflecting divine light with prismatic rainbow effects. Golden frame 
+decorated with Hebrew letters and mystical symbols. Energy field pulsing with power.
+
+VISUAL DETAILS:
+- Shield material: Transparent golden crystal with inner luminescence
+- Frame material: Carved golden metal with sacred geometry engravings
+- Center symbol: Glowing six-pointed Star of David radiating power
+- Energy field: Translucent blue-gold force field surrounding the shield
+- Light effects: Prismatic reflections, lens flares, energy ripples
+- Background: Soft gradient blue to golden, ethereal atmosphere
+
+LIGHTING:
+- Central star emitting bright golden light
+- Energy field glowing blue-gold with electric shimmer
+- Reflections and refractions through crystal surface
+- Soft ambient holy glow
+- Dramatic rim lighting on the golden frame
+- Lens flares and light particles
+
+COMPOSITION:
+- Center focus on shield, frontal vertical view
+- Shield floating at eye level
+- Energy field creating concentric circles around it
+- Depth with soft background blur
+- Magical particles and light rays
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic divine fantasy art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, Octane Render quality
+- Lighting: Ray-tracing, volumetric effects, HDR
+- Materials: Crystal glass shader, metallic gold, energy field shader
+- Aspect Ratio: 1:1 (square) or 3:4 (portrait)
+- Quality: Photorealistic, maximum detail, 4K textures
+
+MOOD & ATMOSPHERE:
+- Protective, divine, majestic, powerful
+- Calm blue-gold energy creating sense of safety
+- Holy and sacred presence
+- Impenetrable and eternal strength
+
+NEGATIVE PROMPT:
+────────────────────────────────────
+blurry, low quality, cartoon, broken, cracked, damaged, rusty, dark, evil, 
+demonic, modern shield, military, text, watermark, deformed, distorted
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה היפר-ריאליסטית 8K: מגן עגול גדול ומפואר עשוי זכוכית גבישית 
+זהובה שקופה. מגן דוד בן שש קרניים זוהר בעוצמה במרכז. מסגרת מתכת זהובה 
+מגולפת בדוגמאות גאומטריה קדושה מורכבות. שדה אנרגיה כחול-זהוב מנצנץ 
+סביב המגן ויוצר מחסום הגנה.
+
+המגן מרחף אנכית באוויר, מבט חזיתי המציג את כל הדרו. משטח הגביש משקף 
+אור אלוהי עם אפקטי קשת פריזמטיים. מסגרת זהב מעוטרת באותיות עבריות 
+וסמלים מיסטיים. שדה אנרגיה פועם בכוח.
+
+חומרים: גביש זהוב שקוף, מתכת זהב מגולפת, שדה כוח כחול-זהוב
+תאורה: כוכב מרכזי זוהר, שדה אנרגיה מאיר, השתקפויות פריזמטיות
+סגנון: היפר-ריאליסטי, Unreal Engine 5
+מצב רוח: מגן, אלוהי, מלכותי, עוצמתי
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: הוסף --ar 1:1 --v 6 --style raw --q 2
+✅ DALL-E 3: התמקד בפרטי המגן דוד והשדה האנרגטי
+✅ Stable Diffusion: השתמש ב-SDXL עם מודלים לפנטזיה
+✅ Leonardo.ai: בחר PhotoReal v2, הדגש את אפקטי האנרגיה
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות האור 🌟
+════════════════════════════════════════════════════════════════════════

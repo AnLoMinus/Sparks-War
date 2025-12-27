@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספירות הקבלה - צידה לדרך 🔯</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #2a1a4e 0%, #16213e 100%);
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 9pt;
+        }
+
+        .main-header {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            padding: 0.8rem 0.5rem;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #2c3e50;
+            color: #9b59b6;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0.3rem;
+            font-size: 0.85rem;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0.5cm;
+        }
+
+        .intro-section {
+            background: #3a2a5e;
+            border-radius: 6px;
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(155, 89, 182, 0.3);
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            color: #9b59b6;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .intro-section p {
+            color: #d0d0d0;
+            line-height: 1.3;
+            font-size: 0.85rem;
+            margin: 0.3rem 0;
+        }
+
+        .sephirot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+        }
+
+        .sephirah-card {
+            background: #3a2a5e;
+            border-radius: 6px;
+            padding: 0.8rem;
+            border: 1px solid rgba(155, 89, 182, 0.2);
+            page-break-inside: avoid;
+        }
+
+        .sephirah-header {
+            text-align: center;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+        }
+
+        .sephirah-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .sephirah-name {
+            color: #9b59b6;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0.3rem 0;
+        }
+
+        .sephirah-meaning {
+            color: #b19cd9;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .side-section {
+            margin: 0.6rem 0;
+            padding: 0.6rem;
+            border-radius: 4px;
+        }
+
+        .light-side {
+            background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border-right: 4px solid #ffd700;
+        }
+
+        .dark-side {
+            background: linear-gradient(145deg, rgba(255, 68, 68, 0.1), rgba(255, 68, 68, 0.05));
+            border-right: 4px solid #ff4444;
+        }
+
+        .side-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin: 0 0 0.4rem 0;
+        }
+
+        .light-side .side-title {
+            color: #ffd700;
+        }
+
+        .dark-side .side-title {
+            color: #ff6b6b;
+        }
+
+        .side-content {
+            color: #d0d0d0;
+            line-height: 1.3;
+            font-size: 0.85rem;
+        }
+
+        .powers-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.4rem 0;
+        }
+
+        .power-item {
+            padding: 0.3rem;
+            margin: 0.2rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .defense-section {
+            margin-top: 0.6rem;
+            padding: 0.6rem;
+            background: rgba(144, 238, 144, 0.1);
+            border-radius: 4px;
+            border-right: 2px solid #90ee90;
+        }
+
+        .defense-title {
+            color: #90ee90;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin: 0 0 0.4rem 0;
+        }
+
+        .defense-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .defense-item {
+            padding: 0.3rem;
+            margin: 0.2rem 0;
+            background: rgba(144, 238, 144, 0.05);
+            border-radius: 3px;
+            color: #b0e0b0;
+            font-size: 0.8rem;
+            line-height: 1.2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            background: #1a1a2e;
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 8pt;
+            }
+
+            .main-header {
+                background: #9b59b6;
+                padding: 0.3cm;
+            }
+
+            .main-header h1 {
+                font-size: 14pt;
+                color: white;
+            }
+
+            .back-button {
+                display: none;
+            }
+
+            .container {
+                padding: 0.3cm;
+            }
+
+            .intro-section {
+                border: 1px solid #ccc;
+                padding: 0.3cm;
+                margin-bottom: 0.3cm;
+            }
+
+            .sephirot-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.3cm;
+            }
+
+            .sephirah-card {
+                border: 1px solid #ddd;
+                padding: 0.25cm;
+                background: #f9f9f9;
+            }
+
+            .sephirah-name {
+                font-size: 10pt;
+                color: black;
+            }
+
+            .side-title {
+                font-size: 8.5pt;
+                color: black;
+            }
+
+            .power-item,
+            .defense-item {
+                font-size: 7pt;
+                padding: 0.08cm;
+            }
+
+            footer {
+                padding: 0.2cm;
+                font-size: 7pt;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sephirot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>🔯 ספירות הקבלה 🔯</h1>
+        <p>עשר הספירות והמאבק הרוחני</p>
+        <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+    </header>
+
+    <div class="container">
+        <div class="intro-section">
+            <h2>מבוא לספירות הקבלה</h2>
+            <p>
+                עשר הספירות הן עשרת הכוחות הרוחניים היסודיים שדרכם מתנהל העולם.
+                <br>כל ספירה מייצגת היבט שונה של הקיום והתודעה, ומהווה שדה קרב במלחמת הניצוצות.
+            </p>
+            <p>
+                <strong style="color: #9b59b6;">כוחות האור פועלים לחזק את היבטי הקדושה של כל ספירה,
+                    <br>בעוד כוחות החושך מנסים להשתלט עליהן ולעוותן.</strong>
+            </p>
+        </div>
+
+        <div class="sephirot-grid">
+            <!-- כתר -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">👑</div>
+                    <h3 class="sephirah-name">כתר - Keter</h3>
+                    <p class="sephirah-meaning">שלטון עליון וקדושה</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> מייצג את הכוח העליון, הקדושה הטהורה ביותר, והשלטון האלוהי.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">👑 חיבור לרצון העליון</li>
+                            <li class="power-item">✨ קבלת השראה אלוהית</li>
+                            <li class="power-item">🌟 שלטון מלכותי טהור</li>
+                            <li class="power-item">💫 בטול מוחלט לטובה</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 חיל כפירה</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> ערעור האמונה בשלטון העליון.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">💭 יצירת ספקות עמוקים</li>
+                            <li class="power-item">⚠️ ערעור יסודות האמונה</li>
+                            <li class="power-item">🌀 ניתוק מהמקור העליון</li>
+                            <li class="power-item">😈 התרוממות יהירה</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">🙏 תפילה עמוקה ומסירות</li>
+                        <li class="defense-item">📚 לימוד והעמקה באמונה</li>
+                        <li class="defense-item">💪 חיזוק הביטחון בבורא</li>
+                        <li class="defense-item">🧘 ביטול היש ושפלות</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- חכמה -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">📚</div>
+                    <h3 class="sephirah-name">חכמה - Chochmah</h3>
+                    <p class="sephirah-meaning">בינה עליונה ותבונה</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> החוכמה העליונה, התובנה הטהורה, וכוח ההבנה העמוקה.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">💡 תובנות פתאומיות</li>
+                            <li class="power-item">🔍 ראיית האמת העמוקה</li>
+                            <li class="power-item">📖 חוכמת הלימוד</li>
+                            <li class="power-item">✨ הבנה אינטואיטיבית</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 חיל טומאה</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> זיהום האינטליגנציה והתובנה.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">🗣️ דיבורים חיצוניים מבלבלים</li>
+                            <li class="power-item">🌀 ערבוב טוב ורע</li>
+                            <li class="power-item">💭 מחשבות זרות ומטעות</li>
+                            <li class="power-item">😵 בלבול השיפוט</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">📚 לימוד תורה וחוכמה</li>
+                        <li class="defense-item">🧠 פיתוח חשיבה ביקורתית</li>
+                        <li class="defense-item">🙏 בקשת חוכמה מלמעלה</li>
+                        <li class="defense-item">👨‍🏫 חיפוש מורה אמת</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- בינה -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">🔮</div>
+                    <h3 class="sephirah-name">בינה - Binah</h3>
+                    <p class="sephirah-meaning">תובנה וביטוי פנימי</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> התובנה העמוקה, ההבנה הפנימית, והיכולת לפתח רעיונות.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">🔍 הבנה מעמיקה</li>
+                            <li class="power-item">💭 פיתוח מחשבות</li>
+                            <li class="power-item">🌱 הבנת קשרי סיבה ותוצאה</li>
+                            <li class="power-item">🎯 בהירות מחשבתית</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 חיל זנות</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> יצירת פיתויים המנתקים מהאמת הפנימית.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">✨ אשליות מפתות</li>
+                            <li class="power-item">💫 עיוות התפיסה</li>
+                            <li class="power-item">🌀 ניתוק מהמציאות</li>
+                            <li class="power-item">💔 פגיעה בתובנה הטהורה</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">🧘 מדיטציה והתבוננות</li>
+                        <li class="defense-item">📝 רישום והבנת דפוסים</li>
+                        <li class="defense-item">💪 שמירה על טוהר המחשבה</li>
+                        <li class="defense-item">🛡️ הגנה מפני פיתויים</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- חסד -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">💝</div>
+                    <h3 class="sephirah-name">חסד - Chesed</h3>
+                    <p class="sephirah-meaning">חסד ואהבה</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> האהבה הטהורה, החסד האמיתי, והנדיבות הבלתי מוגבלת.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">❤️ אהבה ללא תנאי</li>
+                            <li class="power-item">🤲 נדיבות ונתינה</li>
+                            <li class="power-item">💝 חמלה עמוקה</li>
+                            <li class="power-item">🌟 חסד עילאי</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 חיל טכנולוגיה</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> השפעה על היכולת להרגיש חסד אמיתי.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">📱 ניכור דיגיטלי</li>
+                            <li class="power-item">💔 חסד שטחי ומזויף</li>
+                            <li class="power-item">🤖 התרוקנות מתוכן</li>
+                            <li class="power-item">😐 אדישות רגשית</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">❤️ תרגול אהבת הזולת</li>
+                        <li class="defense-item">🤲 מעשי חסד יומיומיים</li>
+                        <li class="defense-item">💝 פיתוח אמפתיה</li>
+                        <li class="defense-item">⏸️ ניתוק מטכנולוגיה</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- גבורה -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">⚔️</div>
+                    <h3 class="sephirah-name">גבורה - Gevurah</h3>
+                    <p class="sephirah-meaning">כוח ונחישות</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> הכוח והנחישות הטהורים, המשמעת העצמית, והגבורה הרוחנית.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">💪 כוח פנימי עז</li>
+                            <li class="power-item">🎯 נחישות בלתי מתפשרת</li>
+                            <li class="power-item">⚖️ משמעת עצמית</li>
+                            <li class="power-item">🛡️ עמידה באתגרים</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 התקפות על הנחישות</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> החלשת הכוח והנחישות הפנימיים.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">😰 פחד ותחושת חולשה</li>
+                            <li class="power-item">🌀 חוסר החלטיות</li>
+                            <li class="power-item">💔 שבירת הרצון</li>
+                            <li class="power-item">😔 ייאוש ווויתור</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">💪 אימון פיזי ורוחני</li>
+                        <li class="defense-item">🎯 הצבת יעדים ברורים</li>
+                        <li class="defense-item">⚔️ תרגול אומץ לב</li>
+                        <li class="defense-item">🧘 חיזוק הרצון</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- תפארת -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">🌟</div>
+                    <h3 class="sephirah-name">תפארת - Tiferet</h3>
+                    <p class="sephirah-meaning">הרמוניה ואיזון</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> ההרמוניה והאיזון המושלם, היופי הרוחני, והחמלה.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">⚖️ איזון מושלם</li>
+                            <li class="power-item">🌟 יופי וחמלה</li>
+                            <li class="power-item">💫 הרמוניה פנימית</li>
+                            <li class="power-item">🎨 אסתטיקה רוחנית</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 חיל כפירה</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> הרס ההרמוניה ויצירת כאוס.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">🌀 פיצול ובלבול</li>
+                            <li class="power-item">💔 הרס האיזון</li>
+                            <li class="power-item">😵 עיוות התפיסה</li>
+                            <li class="power-item">⚡ התנגשות פנימית</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">🧘 מדיטציית איזון</li>
+                        <li class="defense-item">🎨 יצירה ואמנות</li>
+                        <li class="defense-item">💚 טיפוח אמצע זהב</li>
+                        <li class="defense-item">⚖️ שמירה על הרמוניה</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- נצח -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">⚡</div>
+                    <h3 class="sephirah-name">נצח - Netzach</h3>
+                    <p class="sephirah-meaning">נצחיות והתמדה</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> הנצחיות, ההתמדה, והניצחון על המכשולים.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">♾️ תחושת נצחיות</li>
+                            <li class="power-item">💪 התמדה בלתי נלאית</li>
+                            <li class="power-item">🏆 שאיפה לניצחון</li>
+                            <li class="power-item">✨ אופטימיות מתמדת</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 חיל זנות</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> החלשת תחושת הנצחיות והמשמעות.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">⏳ תחושת חוסר משמעות</li>
+                            <li class="power-item">😔 ייאוש מהמאמץ</li>
+                            <li class="power-item">💔 שחיקת ההתמדה</li>
+                            <li class="power-item">🌫️ אובדן כיוון</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">🎯 חיזוק המטרה</li>
+                        <li class="defense-item">📅 תכנון ארוך טווח</li>
+                        <li class="defense-item">💪 תרגול סבלנות</li>
+                        <li class="defense-item">🌟 חיבור למשמעות</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- הוד -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">👑</div>
+                    <h3 class="sephirah-name">הוד - Hod</h3>
+                    <p class="sephirah-meaning">כבוד ואומץ</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> הכבוד והאומץ האמיתי, ההכרה בערך העצמי.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">👑 כבוד עצמי בריא</li>
+                            <li class="power-item">💎 הכרת הערך האישי</li>
+                            <li class="power-item">🦁 אומץ וגאווה טהורה</li>
+                            <li class="power-item">✨ זוהר פנימי</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 חיל טומאה</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> פגיעה בכבוד ובערך העצמי.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">😔 ביזוי עצמי</li>
+                            <li class="power-item">💔 תחושת חוסר ערך</li>
+                            <li class="power-item">😰 בושה ופחד</li>
+                            <li class="power-item">🌑 כיבוי הזוהר הפנימי</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">💪 חיזוק הביטחון העצמי</li>
+                        <li class="defense-item">🙏 הכרת הטוב האישי</li>
+                        <li class="defense-item">👑 שמירה על כבוד</li>
+                        <li class="defense-item">✨ פיתוח גאווה בריאה</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- יסוד -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">🏛️</div>
+                    <h3 class="sephirah-name">יסוד - Yesod</h3>
+                    <p class="sephirah-meaning">יסוד ותמיכה</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> היסודות הפנימיים, התמיכה הרוחנית, והחיבור.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">🏛️ יסודות חזקים</li>
+                            <li class="power-item">🤝 קשרים טהורים</li>
+                            <li class="power-item">💫 תקשורת רוחנית</li>
+                            <li class="power-item">🌊 זרימה בריאה</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 חיל טכנולוגיה</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> פגיעה ביסודות ובקשרים.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">📱 ניתוק דיגיטלי</li>
+                            <li class="power-item">💔 קשרים שטחיים</li>
+                            <li class="power-item">🌀 חוסר יציבות</li>
+                            <li class="power-item">⚠️ רעש תקשורתי</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">🏛️ חיזוק היסודות</li>
+                        <li class="defense-item">🤝 בניית קשרים אמיתיים</li>
+                        <li class="defense-item">💑 שמירה על טוהר</li>
+                        <li class="defense-item">⏸️ ניתוק מטכנולוגיה</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- מלכות -->
+            <div class="sephirah-card">
+                <div class="sephirah-header">
+                    <div class="sephirah-icon">🌍</div>
+                    <h3 class="sephirah-name">מלכות - Malchut</h3>
+                    <p class="sephirah-meaning">שלטון ויכולת השפעה</p>
+                </div>
+
+                <div class="side-section light-side">
+                    <h4 class="side-title">✨ צד האור</h4>
+                    <div class="side-content">
+                        <p><strong>מהות:</strong> השלטון הפיזי, היכולת להשפיע, והביטוי בעולם.</p>
+                        <p><strong>כוחות:</strong></p>
+                        <ul class="powers-list">
+                            <li class="power-item">👑 שלטון מלכותי</li>
+                            <li class="power-item">🌍 השפעה על העולם</li>
+                            <li class="power-item">💪 כוח מימוש</li>
+                            <li class="power-item">✨ הבאת אור לעולם</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-section dark-side">
+                    <h4 class="side-title">🌑 התקפות על השלטון</h4>
+                    <div class="side-content">
+                        <p><strong>השתלטות:</strong> פגיעה ביכולת להנהיג ולהשפיע.</p>
+                        <ul class="powers-list">
+                            <li class="power-item">😔 חוסר יכולת להנהיג</li>
+                            <li class="power-item">💔 תחושת חוסר השפעה</li>
+                            <li class="power-item">🌀 חוסר כיוון</li>
+                            <li class="power-item">⚠️ חוסר יכולת לממש</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="defense-section">
+                    <h4 class="defense-title">🛡️ דרכי הגנה</h4>
+                    <ul class="defense-list">
+                        <li class="defense-item">💪 פיתוח מנהיגות</li>
+                        <li class="defense-item">🎯 הגדרת מטרות ברורות</li>
+                        <li class="defense-item">✨ יצירת השפעה חיובית</li>
+                        <li class="defense-item">👑 קבלת אחריות</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="back-button">🏠 חזרה לדף הראשי</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>✨ כל הזכויות שמורות © 2024 - מלחמת הניצוצות ✨</p>
+        <p>עשר הספירות - עשרת שערי הקרב הרוחני 🔯</p>
+    </footer>
+</body>
+
+</html>

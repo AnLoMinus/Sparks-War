@@ -1,0 +1,125 @@
+════════════════════════════════════════════════════════════════════════
+            🎭 הוראות ליצירת תמונה: אומנויות השפעה כפולה 🎭
+════════════════════════════════════════════════════════════════════════
+
+📋 מידע כללי:
+────────────────
+שם הכלי: אומנויות השפעה כפולה
+קטגוריה: חיל זנות
+כוח: כוחות החושך ☠️
+סכנה: קריטית ביותר
+עוצמה: 92 | הגנה: 50 | מהירות: 88
+
+📝 תיאור מפורט:
+────────────────
+מסכה כפולה מרחפת - צד אחד יפה וזוהר בלבן-זהוב, הצד השני מפחיד ואפל בשחור-אדום. 
+העיניים של המסכה זוהרות בצבעים מתחלפים. קסמי מניפולציה בצורת חוטים סגולים 
+יוצאים מהמסכה. המסכה משמשת למניפולציה רגשית ויצירת אשליות.
+
+🎨 תיאור חזותי למודל AI:
+────────────────────────────
+
+MAIN PROMPT (באנגלית):
+──────────────────────────
+Epic hyper-realistic 8K dark fantasy art: Double-faced floating mask spinning slowly, 
+one side beautiful and radiant in white-gold (angelic smiling face), the other side 
+terrifying and dark in black-red (demonic grimacing face). The mask's eyes glow with 
+constantly changing colors - shifting between gold, red, purple, creating hypnotic effect. 
+Purple manipulation threads extending from the mask like puppet strings, writhing and 
+reaching outward to control.
+
+The mask hovers and rotates showing both faces alternately. The beautiful side glows 
+with false angelic light - perfect features, warm smile, golden radiance. The dark side 
+reveals true horror - twisted features, menacing expression, black-red corruption. Eyes 
+on both sides glow with shifting hypnotic colors. Purple ethereal threads extend from 
+edges like manipulation strings seeking to control minds and hearts.
+
+VISUAL DETAILS:
+- Beautiful side: White-gold, perfect angelic features, warm smile
+- Dark side: Black-red, twisted demonic features, terrifying grimace
+- Eyes: Glowing with color-shifting effect (gold→red→purple→repeat)
+- Threads: Purple manipulation strings extending like puppet controls
+- Rotation: Mask slowly spinning showing both faces
+- Background: Split gradient - gold light on one side, dark red on other
+
+LIGHTING:
+- Beautiful side emitting false golden angelic glow
+- Dark side radiating ominous black-red darkness
+- Eyes creating hypnotic color-shifting light show
+- Purple threads glowing with manipulation energy
+- Dramatic split lighting - light vs dark
+- Contrast between deceptive beauty and true horror
+- Hypnotic pulsing glow from eyes
+
+COMPOSITION:
+- Mask centered, captured mid-rotation showing both sides
+- Purple threads extending outward in all directions
+- Eyes as hypnotic focal points with color shifts
+- Dynamic rotation creating movement
+- Split background emphasizing duality
+- Depth with foreground mask, mid threads, background gradient
+- Unsettling dual-nature composition
+
+TECHNICAL SPECS:
+- Style: Hyper-realistic dark psychological horror art
+- Resolution: 8K ultra-detailed
+- Rendering: Unreal Engine 5, animated elements, Octane Render
+- Materials: Porcelain mask shader (dual-textured), glowing eyes
+- Effects: Color-shifting glow, thread simulation, rotation blur
+- Lighting: Split lighting (golden/dark-red), hypnotic eye glow, HDR
+- Aspect Ratio: 1:1 (square) or 4:5 (portrait)
+- Quality: Photorealistic dual-face details, disturbing realism
+
+MOOD & ATMOSPHERE:
+- Deceptive, manipulative, hypnotic, controlling
+- False beauty hiding true darkness
+- Psychological manipulation and mind control
+- Dual nature of deception
+- Sense of being puppeteered and controlled
+
+⚠️ NEGATIVE PROMPT:
+────────────────────────────────────
+single face mask, comedy mask, theater mask, happy mask, pure white mask, 
+solid black mask, static, honest, straightforward, text watermark
+
+════════════════════════════════════════════════════════════════════════
+
+🇮🇱 פרומפט בעברית:
+─────────────────────
+
+אמנות פנטזיה אפלה פסיכולוגית היפר-ריאליסטית 8K: מסכה כפולת-פנים מרחפת 
+מסתובבת לאט, צד אחד יפה וזוהר בלבן-זהוב (פנים מלאכיות מחייכות), הצד השני 
+מפחיד ואפל בשחור-אדום (פנים שטניות מעוותות). עיני המסכה זוהרות בצבעים 
+משתנים כל הזמן - מתחלפים בין זהב, אדום, סגול, יוצרים אפקט היפנוטי. חוטי 
+מניפולציה סגולים משתרעים מהמסכה כמו חוטי בובה, מתפתלים ומושיטים החוצה 
+כדי לשלוט.
+
+המסכה מרחפת ומסתובבת ומציגה את שני הפנים לסירוגין. הצד היפה זוהר באור 
+מלאכי כוזב - תווים מושלמים, חיוך חם, זוהר זהוב. הצד האפל חושף אימה 
+אמיתית - תווים מעוותים, הבעה מאיימת, שחיתות שחורה-אדומה. עיניים בשני 
+הצדדים זוהרות בצבעים היפנוטיים משתנים.
+
+חומרים: חרסינה לבנה-זהובה, חרסינה שחורה-אדומה, חוטים סגולים
+תאורה: זוהר מלאכי כוזב, חושך שחור-אדום, עיניים משנות צבע
+סגנון: היפר-ריאליסטי אימה פסיכולוגית, Unreal Engine 5
+מצב רוח: מטעה, מניפולטיבי, היפנוטי, שולט
+
+════════════════════════════════════════════════════════════════════════
+
+💡 טיפים לשימוש:
+─────────────────
+✅ Midjourney: --ar 1:1 --v 6 --style raw --q 2
+✅ DALL-E 3: הדגש את הדואליות, העיניים המשנות צבע והחוטים
+✅ Stable Diffusion: השתמש ב-dual face + manipulation threads
+✅ Leonardo.ai: Dark Fantasy v2 עם hypnotic effects
+
+🎯 שיפורים אפשריים:
+─────────────────────
+• הוסף "double-faced mask, deceptive beauty"
+• הוסף "color-shifting hypnotic eyes"
+• הוסף "purple manipulation threads, puppet strings"
+
+════════════════════════════════════════════════════════════════════════
+נוצר עבור: מלחמת הניצוצות ⚔️ כוחות החושך ☠️
+⚠️ כלי מסוכן - לידיעה בלבד, להתגונן מפניו!
+════════════════════════════════════════════════════════════════════════

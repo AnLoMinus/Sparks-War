@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אינדקס כלים - מלחמת הניצוצות</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Heebo', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #b0b0b0;
+            font-weight: 300;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            margin-top: 0.3rem;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .column {
+            background: rgba(30, 30, 46, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .column.light {
+            border: 3px solid #ffd700;
+            background: linear-gradient(145deg, rgba(30, 30, 46, 0.95), rgba(50, 50, 70, 0.95));
+        }
+
+        .column.dark {
+            border: 3px solid #ff4444;
+            background: linear-gradient(145deg, rgba(46, 30, 30, 0.95), rgba(70, 50, 50, 0.95));
+        }
+
+        .column-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .column-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .column.light .column-title {
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .column.dark .column-title {
+            color: #ff6b6b;
+            text-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+        }
+
+        .column-count {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            font-weight: 300;
+        }
+
+        .category {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding: 0.8rem 1.2rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .column.light .category-title {
+            color: #90ee90;
+            border-right: 4px solid #ffd700;
+        }
+
+        .column.dark .category-title {
+            color: #ff9999;
+            border-right: 4px solid #ff4444;
+        }
+
+        .items-list {
+            list-style: none;
+        }
+
+        .item {
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .item a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .item a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-5px);
+        }
+
+        .column.light .item a:hover {
+            border-color: #ffd700;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .column.dark .item a:hover {
+            border-color: #ff4444;
+            box-shadow: 0 5px 20px rgba(255, 68, 68, 0.3);
+        }
+
+        .item-number {
+            font-size: 1.2rem;
+            font-weight: 800;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .column.light .item-number {
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            color: #000;
+        }
+
+        .column.dark .item-number {
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            color: #fff;
+        }
+
+        .item-icon {
+            font-size: 2rem;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .column.light .item-name {
+            color: #ffd700;
+        }
+
+        .column.dark .item-name {
+            color: #ff9999;
+        }
+
+        .item-meta {
+            font-size: 0.85rem;
+            color: #888;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            padding: 0.2rem 0.6rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            font-size: 0.75rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            color: #888;
+        }
+
+        .footer-note {
+            margin: 1rem 0;
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+
+        .warning {
+            background: rgba(255, 68, 68, 0.1);
+            border: 2px solid #ff4444;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+            color: #ff9999;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .stats {
+                gap: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>⚔️ אינדקס כלים - מלחמת הניצוצות ⚔️</h1>
+            <p class="subtitle">מדריך מלא ליצירת תמונות לכל 21 הכלים</p>
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-number">21</div>
+                    <div class="stat-label">סך הכל כלים</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">כלי אור</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">כלי חושך</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-grid">
+            <!-- כלי האור - עמודה ימנית -->
+            <div class="column light">
+                <div class="column-header">
+                    <h2 class="column-title">⭐ כוחות האור</h2>
+                    <p class="column-count">13 כלים קדושים</p>
+                </div>
+
+                <!-- חיל האורות -->
+                <div class="category">
+                    <h3 class="category-title">🗡️ חיל האורות</h3>
+                    <ul class="items-list">
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/01-חרבות-אור.txt">
+                                <span class="item-number">01</span>
+                                <span class="item-icon">⚔️</span>
+                                <div class="item-info">
+                                    <div class="item-name">חרבות אור</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">אגדי</span>
+                                        <span class="meta-badge">עוצמה: 90</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/02-מגן-האור.txt">
+                                <span class="item-number">02</span>
+                                <span class="item-icon">🛡️</span>
+                                <div class="item-info">
+                                    <div class="item-name">מגן האור</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">נדיר</span>
+                                        <span class="meta-badge">הגנה: 95</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/03-ספר-הידע-הקדוש.txt">
+                                <span class="item-number">03</span>
+                                <span class="item-icon">📚</span>
+                                <div class="item-info">
+                                    <div class="item-name">ספר הידע הקדוש</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">מיתי</span>
+                                        <span class="meta-badge">עוצמה: 75</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/04-מנורת-האור-הנצחי.txt">
+                                <span class="item-number">04</span>
+                                <span class="item-icon">🏮</span>
+                                <div class="item-info">
+                                    <div class="item-name">מנורת האור הנצחי</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">נדיר ביותר</span>
+                                        <span class="meta-badge">עוצמה: 85</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- חיל מטאטא -->
+                <div class="category">
+                    <h3 class="category-title">🧹 חיל מטאטא</h3>
+                    <ul class="items-list">
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/05-מטאטא-הטיהור-הקדוש.txt">
+                                <span class="item-number">05</span>
+                                <span class="item-icon">🧹</span>
+                                <div class="item-info">
+                                    <div class="item-name">מטאטא הטיהור הקדוש</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">נפוץ</span>
+                                        <span class="meta-badge">מהירות: 90</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/06-אבקת-טיהור-קסומה.txt">
+                                <span class="item-number">06</span>
+                                <span class="item-icon">✨</span>
+                                <div class="item-info">
+                                    <div class="item-name">אבקת טיהור קסומה</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">נדיר</span>
+                                        <span class="meta-badge">מהירות: 95</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/07-מטליות-קסומות.txt">
+                                <span class="item-number">07</span>
+                                <span class="item-icon">🧼</span>
+                                <div class="item-info">
+                                    <div class="item-name">מטליות קסומות</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">נפוץ</span>
+                                        <span class="meta-badge">מהירות: 100</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- חיל טכנולוגיית האור -->
+                <div class="category">
+                    <h3 class="category-title">💻 חיל טכנולוגיית האור</h3>
+                    <ul class="items-list">
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/08-מחשב-קדוש-מתקדם.txt">
+                                <span class="item-number">08</span>
+                                <span class="item-icon">💻</span>
+                                <div class="item-info">
+                                    <div class="item-name">מחשב קדוש מתקדם</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">מיתי</span>
+                                        <span class="meta-badge">מהירות: 100</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/09-שרת-הגנה-אוטומטי.txt">
+                                <span class="item-number">09</span>
+                                <span class="item-icon">🛡️</span>
+                                <div class="item-info">
+                                    <div class="item-name">שרת הגנה אוטומטי</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">נדיר מאוד</span>
+                                        <span class="meta-badge">הגנה: 100</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/10-מכשירי-תקשורת-מקודשים.txt">
+                                <span class="item-number">10</span>
+                                <span class="item-icon">📱</span>
+                                <div class="item-info">
+                                    <div class="item-name">מכשירי תקשורת מקודשים</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">נדיר</span>
+                                        <span class="meta-badge">מהירות: 100</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- חיל השידוכים -->
+                <div class="category">
+                    <h3 class="category-title">💘 חיל השידוכים</h3>
+                    <ul class="items-list">
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/11-קשת-האהבה-העליונה.txt">
+                                <span class="item-number">11</span>
+                                <span class="item-icon">💘</span>
+                                <div class="item-info">
+                                    <div class="item-name">קשת האהבה העליונה</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">אגדי</span>
+                                        <span class="meta-badge">עוצמה: 95</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/12-טבעת-הזיווג-המקודשת.txt">
+                                <span class="item-number">12</span>
+                                <span class="item-icon">💍</span>
+                                <div class="item-info">
+                                    <div class="item-name">טבעת הזיווג המקודשת</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">אגדי</span>
+                                        <span class="meta-badge">הגנה: 90</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/13-שרשרת-החיבורים-הקדושה.txt">
+                                <span class="item-number">13</span>
+                                <span class="item-icon">📿</span>
+                                <div class="item-info">
+                                    <div class="item-name">שרשרת החיבורים הקדושה</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">מיתי</span>
+                                        <span class="meta-badge">עוצמה: 90</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- כלי החושך - עמודה שמאלית -->
+            <div class="column dark">
+                <div class="column-header">
+                    <h2 class="column-title">☠️ כוחות החושך</h2>
+                    <p class="column-count">8 כלים מסוכנים</p>
+                </div>
+
+                <div class="warning">
+                    ⚠️ כלים אלו מוצגים לידיעה בלבד - ללמוד כיצד להתגונן מפניהם!
+                </div>
+
+                <!-- חיל טומאה -->
+                <div class="category">
+                    <h3 class="category-title">⚔️ חיל טומאה</h3>
+                    <ul class="items-list">
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/14-חרבות-טומאה.txt">
+                                <span class="item-number">14</span>
+                                <span class="item-icon">⚔️</span>
+                                <div class="item-info">
+                                    <div class="item-name">חרבות טומאה</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">סכנה: קריטית</span>
+                                        <span class="meta-badge">עוצמה: 95</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/15-כוחות-אבק-שחור.txt">
+                                <span class="item-number">15</span>
+                                <span class="item-icon">💨</span>
+                                <div class="item-info">
+                                    <div class="item-name">כוחות אבק שחור</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">סכנה: גבוהה מאוד</span>
+                                        <span class="meta-badge">מהירות: 100</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- חיל טכנולוגיה -->
+                <div class="category">
+                    <h3 class="category-title">🤖 חיל טכנולוגיה</h3>
+                    <ul class="items-list">
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/16-טכנולוגיה-של-רשע.txt">
+                                <span class="item-number">16</span>
+                                <span class="item-icon">🤖</span>
+                                <div class="item-info">
+                                    <div class="item-name">טכנולוגיה של רשע</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">סכנה: קריטית</span>
+                                        <span class="meta-badge">מהירות: 95</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- חיל כפירה -->
+                <div class="category">
+                    <h3 class="category-title">🏴 חיל כפירה</h3>
+                    <ul class="items-list">
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/17-מקלות-הכפירה-השחורים.txt">
+                                <span class="item-number">17</span>
+                                <span class="item-icon">🏴</span>
+                                <div class="item-info">
+                                    <div class="item-name">מקלות הכפירה השחורים</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">סכנה: גבוהה</span>
+                                        <span class="meta-badge">עוצמה: 80</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/18-קסמי-שוחד-ופיתוי.txt">
+                                <span class="item-number">18</span>
+                                <span class="item-icon">💰</span>
+                                <div class="item-info">
+                                    <div class="item-name">קסמי שוחד ופיתוי</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">סכנה: קריטית</span>
+                                        <span class="meta-badge">מהירות: 90</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- חיל זנות -->
+                <div class="category">
+                    <h3 class="category-title">🎭 חיל זנות</h3>
+                    <ul class="items-list">
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/19-אומנויות-השפעה-כפולה.txt">
+                                <span class="item-number">19</span>
+                                <span class="item-icon">🎭</span>
+                                <div class="item-info">
+                                    <div class="item-name">אומנויות השפעה כפולה</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">סכנה: קריטית ביותר</span>
+                                        <span class="meta-badge">עוצמה: 92</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/20-קללת-פיצול.txt">
+                                <span class="item-number">20</span>
+                                <span class="item-icon">💔</span>
+                                <div class="item-info">
+                                    <div class="item-name">קללת פיצול</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">סכנה: גבוהה</span>
+                                        <span class="meta-badge">עוצמה: 75</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="item">
+                            <a href="../הוראות-תמונות-כלים/21-רשת-השיבוש.txt">
+                                <span class="item-number">21</span>
+                                <span class="item-icon">🕷️</span>
+                                <div class="item-info">
+                                    <div class="item-name">רשת השיבוש</div>
+                                    <div class="item-meta">
+                                        <span class="meta-badge">סכנה: בינונית</span>
+                                        <span class="meta-badge">מהירות: 85</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-note">
+                🎨 כל קישור מוביל לקובץ הוראות מפורט ליצירת תמונה של הכלי
+            </p>
+            <p class="footer-note">
+                💡 פשוט לחץ על הכלי הרצוי, פתח את הקובץ והעתק את הפרומפט
+            </p>
+            <p style="margin-top: 2rem; font-size: 0.9rem;">
+                ✨ נוצר באהבה למען מלחמת הניצוצות ⚔️ כל הזכויות שמורות © 2024
+            </p>
+            <p style="margin-top: 0.5rem; color: #ffd700; font-weight: 600;">
+                האור תמיד מנצח! 🌟
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
