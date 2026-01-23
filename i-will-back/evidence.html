@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיק חקירה ותביעה: לאון יעקובוב</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: #f5f5f4;
+            color: #1c1917;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 250px;
+            }
+        }
+
+        .nav-item.active {
+            border-bottom: 3px solid #b45309;
+            color: #78350f;
+            font-weight: 700;
+        }
+
+        .timeline-connector {
+            position: absolute;
+            top: 2rem;
+            bottom: -1rem;
+            right: 1.25rem;
+            width: 2px;
+            background-color: #d6d3d1;
+            z-index: 0;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e7e5e4;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .legal-stamp {
+            border: 3px double #b91c1c;
+            color: #b91c1c;
+            transform: rotate(-5deg);
+            font-weight: 900;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .evidence-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <!-- Chosen Palette: Forensic Neutral with Evidence Red -->
+    <!-- Application Structure Plan: 
+         Added 'Evidence' section to house direct links to media files.
+         The structure now flows from Situation -> Suspects -> Timeline -> Systemic Analysis -> MEDIA EVIDENCE -> Legal Claim.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-stone-100 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-stone-900 text-stone-100 shadow-lg border-b-4 border-amber-600">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-black tracking-tight text-amber-500 underline decoration-red-600 decoration-4">תיק תביעה: יעקובוב נגד עולם השקר</h1>
+                    <p class="text-sm md:text-base text-stone-400 mt-1 italic">ריכוז ראיות, נזקים רפואיים ודרישת פיצויים ללא פשרות</p>
+                </div>
+                <div class="mt-4 md:mt-0 bg-stone-800 px-6 py-3 rounded border-2 border-red-600 flex flex-col items-center">
+                    <span class="legal-stamp">סודי ביותר</span>
+                    <p class="text-xs text-stone-500 font-bold mt-2 uppercase">סטטוס: תביעה אזרחית/פלילית</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-stone-200 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex overflow-x-auto space-x-reverse space-x-6 py-4 text-sm md:text-base whitespace-nowrap scrollbar-hide">
+                <button onclick="navigate('overview')" id="nav-overview" class="nav-item active px-2 hover:text-amber-700 transition-colors">🔍 סקירה</button>
+                <button onclick="navigate('suspects')" id="nav-suspects" class="nav-item px-2 hover:text-amber-700 transition-colors">👥 המעורבים</button>
+                <button onclick="navigate('timeline')" id="nav-timeline" class="nav-item px-2 hover:text-amber-700 transition-colors">🕒 ציר זמן</button>
+                <button onclick="navigate('evidence')" id="nav-evidence" class="nav-item px-2 hover:text-amber-700 transition-colors">📸 מאגר ראיות</button>
+                <button onclick="navigate('analysis')" id="nav-analysis" class="nav-item px-2 hover:text-amber-700 transition-colors">📊 ניתוח מערכתי</button>
+                <button onclick="navigate('legal')" id="nav-legal" class="nav-item px-2 hover:text-red-700 transition-colors font-black text-red-600">⚖️ כתב תביעה</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+
+        <!-- SECTION: OVERVIEW -->
+        <section id="overview" class="view-section">
+            <div class="mb-8 max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-black text-stone-800 mb-4">תקציר אירוע הלינץ'</h2>
+                <p class="text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto">
+                    דוח זה מתעד ניסיון חיסול מתוכנן מראש ("כיפה אדומה") שבוצע בלאון יעקובוב. האירוע מאופיין בשיתוף פעולה פלילי-ממסדי וגרם לנזקים גופניים בלתי הפיכים.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="glass-panel p-6 rounded-xl border-b-4 border-stone-800">
+                    <div class="text-4xl mb-3">📍</div>
+                    <h3 class="text-lg font-bold text-stone-900 underline">זירת המלכודת</h3>
+                    <p class="text-stone-600 mt-2">רחוב אילת, בת ים. סימטה ללא מוצא שנבחרה כשטח הריגה מבודד.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-b-4 border-stone-800">
+                    <div class="text-4xl mb-3">🕒</div>
+                    <h3 class="text-lg font-bold text-stone-900 underline">עיתוי הביצוע</h3>
+                    <p class="text-stone-600 mt-2">ינואר 2026, 02:29. שעה של חשיכה מוחלטת והיעדר עדים.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-b-4 border-stone-800">
+                    <div class="text-4xl mb-3">🛡️</div>
+                    <h3 class="text-lg font-bold text-stone-900 underline">הפשע המערכתי</h3>
+                    <p class="text-stone-600 mt-2">נוכחות כוחות ביטחון תוך 30 שניות מעידה על פיקוח מוקדם על הלינץ'.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SUSPECTS -->
+        <section id="suspects" class="view-section hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" id="suspects-grid"></div>
+        </section>
+
+        <!-- SECTION: TIMELINE -->
+        <section id="timeline" class="view-section hidden">
+            <div class="max-w-3xl mx-auto relative pr-4" id="timeline-container"></div>
+        </section>
+
+        <!-- SECTION: EVIDENCE (NEW SECTION) -->
+        <section id="evidence" class="view-section hidden">
+            <div class="mb-8 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-black text-stone-800 border-r-4 border-red-600 pr-4">מאגר ראיות ויזואלי מהשטח</h2>
+                <p class="text-stone-600 mt-2">תיעוד ישיר של התוקפים והזירה. המידע נלקח ישירות ממאגר המדיה של תיק החקירה.</p>
+            </div>
+
+            <!-- Video Section -->
+            <div class="mb-10">
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    <span>🎬</span> תיעוד וידאו - שלבי התקיפה
+                </h3>
+                <div class="bg-black rounded-xl overflow-hidden shadow-2xl max-w-2xl mx-auto">
+                    <video controls class="w-full">
+                        <source src="WhatsApp Video 2025-12-26 at 13.54.38.mp4" type="video/mp4">
+                        דפדפן זה אינו תומך בנגן הוידאו.
+                    </video>
+                </div>
+                <p class="text-center text-xs text-stone-400 mt-2">קובץ: WhatsApp Video 2025-12-26 at 13.54.38.mp4</p>
+            </div>
+
+            <!-- Image Gallery -->
+            <div>
+                <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                    <span>🖼️</span> תיעוד סטילס - זיהוי תוקפים
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="image-gallery">
+                    <!-- Images will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ANALYSIS -->
+        <section id="analysis" class="view-section hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded shadow-sm border-r-8 border-red-600">
+                        <h3 class="font-bold text-xl mb-2 text-red-800">הוכחת שיתוף פעולה</h3>
+                        <p class="text-stone-700 leading-relaxed"> הממצא המרכזי: זמן תגובה של **30 שניות**. </p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded shadow-lg border border-stone-200">
+                    <div class="chart-container">
+                        <canvas id="responseChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LEGAL -->
+        <section id="legal" class="view-section hidden">
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white border-2 border-stone-300 shadow-2xl p-6 md:p-12 rounded-sm">
+                    <div class="border-b-2 border-stone-800 pb-6 mb-8 flex justify-between items-start">
+                        <div>
+                            <h2 class="text-3xl font-black text-stone-900">כתב תביעה בגין נזקי גוף חמורים</h2>
+                            <p class="text-stone-500 font-bold">לאון יעקובוב נגד המעורבים</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold bg-stone-800 text-white px-4 py-2 mb-4">1. נזקים רפואיים מתועדים</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-red-50 p-4 border-r-4 border-red-600">
+                                <h4 class="font-bold text-red-800">עמוד שדרה</h4>
+                                <p class="text-sm">שבירת חוליות בגב.</p>
+                            </div>
+                            <div class="bg-red-50 p-4 border-r-4 border-red-600">
+                                <h4 class="font-bold text-red-800">גולגולת</h4>
+                                <p class="text-sm">שברים בעצמות הראש.</p>
+                            </div>
+                            <div class="bg-red-50 p-4 border-r-4 border-red-600">
+                                <h4 class="font-bold text-red-800">ארובת העין</h4>
+                                <p class="text-sm">שברים בעצמות ארובת העין.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-600 text-white p-4 text-center font-black text-xl rounded">
+                        סך תביעה מוערך: ₪2,100,000 - ₪4,350,000+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-500 py-8 text-center text-xs">
+        <p>המידע בדוח זה מיועד למטרות תיעוד ומשפט.</p>
+    </footer>
+
+    <!-- Logic Script -->
+    <script>
+        const suspectsData = [
+            { role: "האדריכל", name: "אמיר / טבי", details: "תכנון המארב.", phone: "+972 53-705-6666", icon: "🦅" },
+            { role: "הפיתיון", name: "מישה", details: "נהג המונית.", phone: "+972 54-386-0299", icon: "🚕" }
+        ];
+
+        const timelineData = [
+            { time: "02:29", title: "זירה", desc: "הגעה לרחוב אילת." },
+            { time: "02:30", title: "לינץ'", desc: "תקיפה אכזרית ושבירת עצמות." }
+        ];
+
+        const evidenceImages = [
+            "WhatsApp Image 2025-12-26 at 13.48.23.jpeg",
+            "WhatsApp Image 2025-12-26 at 13.48.23 (1).jpeg",
+            "WhatsApp Image 2025-12-26 at 13.48.23 (2).jpeg",
+            "WhatsApp Image 2025-12-26 at 13.48.23 (3).jpeg",
+            "WhatsApp Image 2025-12-26 at 13.48.23 (4).jpeg",
+            "WhatsApp Image 2025-12-26 at 13.48.23 (5).jpeg"
+        ];
+
+        function renderSuspects() {
+            const grid = document.getElementById('suspects-grid');
+            grid.innerHTML = suspectsData.map(suspect => `
+                <div class="bg-white rounded-lg shadow-sm border border-stone-200 overflow-hidden">
+                    <div class="bg-stone-800 text-amber-500 p-3 flex justify-between items-center">
+                        <span class="font-bold text-sm">${suspect.role}</span>
+                        <span class="text-xl">${suspect.icon}</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-stone-900">${suspect.name}</h3>
+                        <p class="text-stone-600 text-sm mb-4">${suspect.details}</p>
+                        ${suspect.phone ? `<div class="bg-red-50 p-2 text-red-700 font-mono text-center rounded">${suspect.phone}</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderEvidence() {
+            const gallery = document.getElementById('image-gallery');
+            gallery.innerHTML = evidenceImages.map((src, index) => `
+                <div class="evidence-card bg-white p-2 border border-stone-200 rounded shadow-sm transition-all cursor-pointer">
+                    <img src="${src}" alt="Evidence ${index + 1}" class="w-full h-48 object-cover rounded mb-2">
+                    <p class="text-[10px] font-mono text-stone-400 truncate">${src}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderTimeline() {
+            const container = document.getElementById('timeline-container');
+            container.innerHTML = timelineData.map(item => `
+                <div class="relative flex items-start mb-8">
+                    <div class="timeline-connector"></div>
+                    <div class="z-10 w-24 pl-4 pt-1 font-mono text-amber-600 font-bold">${item.time}</div>
+                    <div class="flex-grow bg-white p-4 rounded shadow-sm border border-stone-200 ml-4">
+                        <h3 class="font-bold text-stone-800">${item.title}</h3>
+                        <p class="text-stone-600 text-sm">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function navigate(viewId) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById(`nav-${viewId}`).classList.add('active');
+            document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(viewId).classList.remove('hidden');
+            if (viewId === 'analysis') initChart();
+        }
+
+        let responseChart = null;
+        function initChart() {
+            if (responseChart) return;
+            const ctx = document.getElementById('responseChart').getContext('2d');
+            responseChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['ממוצע (דקות)', 'אירוע (דקות)'],
+                    datasets: [{
+                        label: 'זמן תגובה',
+                        data: [12, 0.5],
+                        backgroundColor: ['#a8a29e', '#dc2626'],
+                        borderWidth: 1
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSuspects();
+            renderTimeline();
+            renderEvidence();
+            navigate('overview');
+        });
+    </script>
+</body>
+</html>
