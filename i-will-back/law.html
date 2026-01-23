@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיק חקירה ותביעה: לאון יעקובוב</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Heebo', sans-serif;
+            background-color: #f5f5f4;
+            color: #1c1917;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 250px;
+            }
+        }
+
+        .nav-item.active {
+            border-bottom: 3px solid #b45309;
+            color: #78350f;
+            font-weight: 700;
+        }
+
+        .timeline-connector {
+            position: absolute;
+            top: 2rem;
+            bottom: -1rem;
+            right: 1.25rem;
+            width: 2px;
+            background-color: #d6d3d1;
+            z-index: 0;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #e7e5e4;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .legal-stamp {
+            border: 3px double #b91c1c;
+            color: #b91c1c;
+            transform: rotate(-5deg);
+            font-weight: 900;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+    </style>
+    <!-- Chosen Palette: Warm Neutrals with Legal Red and Professional Gold -->
+    <!-- Application Structure Plan: 
+         Updated to include 'Legal Claim' section. 
+         The app now transitions from an investigative forensic tool to a formal legal demand.
+         The structure: Overview -> Suspects -> Timeline -> Systemic Analysis -> Medical & Legal Claim.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="bg-stone-100 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-stone-900 text-stone-100 shadow-lg border-b-4 border-amber-600">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-black tracking-tight text-amber-500 underline decoration-red-600 decoration-4">תיק תביעה: יעקובוב נגד עולם השקר</h1>
+                    <p class="text-sm md:text-base text-stone-400 mt-1 italic">ריכוז ראיות, נזקים רפואיים ודרישת פיצויים ללא פשרות</p>
+                </div>
+                <div class="mt-4 md:mt-0 bg-stone-800 px-6 py-3 rounded border-2 border-red-600 flex flex-col items-center">
+                    <span class="legal-stamp">סודי ביותר</span>
+                    <p class="text-xs text-stone-500 font-bold mt-2 uppercase">סטטוס: תביעה אזרחית/פלילית</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-stone-200 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex overflow-x-auto space-x-reverse space-x-6 py-4 text-sm md:text-base whitespace-nowrap scrollbar-hide">
+                <button onclick="navigate('overview')" id="nav-overview" class="nav-item active px-2 hover:text-amber-700 transition-colors">🔍 סקירה</button>
+                <button onclick="navigate('suspects')" id="nav-suspects" class="nav-item px-2 hover:text-amber-700 transition-colors">👥 המעורבים</button>
+                <button onclick="navigate('timeline')" id="nav-timeline" class="nav-item px-2 hover:text-amber-700 transition-colors">🕒 ציר זמן</button>
+                <button onclick="navigate('analysis')" id="nav-analysis" class="nav-item px-2 hover:text-amber-700 transition-colors">📊 ניתוח מערכתי</button>
+                <button onclick="navigate('legal')" id="nav-legal" class="nav-item px-2 hover:text-red-700 transition-colors font-black text-red-600">⚖️ כתב תביעה</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+
+        <!-- SECTION: OVERVIEW -->
+        <section id="overview" class="view-section">
+            <div class="mb-8 max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-black text-stone-800 mb-4">תקציר אירוע הלינץ'</h2>
+                <p class="text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto">
+                    דוח זה מתעד ניסיון חיסול מתוכנן מראש ("כיפה אדומה") שבוצע בלאון יעקובוב. האירוע מאופיין בשיתוף פעולה פלילי-ממסדי וגרם לנזקים גופניים בלתי הפיכים.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="glass-panel p-6 rounded-xl border-b-4 border-stone-800 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">📍</div>
+                    <h3 class="text-lg font-bold text-stone-900 underline">זירת המלכודת</h3>
+                    <p class="text-stone-600 mt-2">רחוב אילת, בת ים. סימטה ללא מוצא שנבחרה כשטח הריגה מבודד.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-b-4 border-stone-800 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">🕒</div>
+                    <h3 class="text-lg font-bold text-stone-900 underline">עיתוי הביצוע</h3>
+                    <p class="text-stone-600 mt-2">ינואר 2026, 02:29. שעה של חשיכה מוחלטת והיעדר עדים.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-b-4 border-stone-800 hover:scale-105 transition-transform">
+                    <div class="text-4xl mb-3">🛡️</div>
+                    <h3 class="text-lg font-bold text-stone-900 underline">הפשע המערכתי</h3>
+                    <p class="text-stone-600 mt-2">נוכחות כוחות ביטחון תוך 30 שניות מעידה על פיקוח מוקדם על הלינץ'.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SUSPECTS -->
+        <section id="suspects" class="view-section hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6" id="suspects-grid"></div>
+        </section>
+
+        <!-- SECTION: TIMELINE -->
+        <section id="timeline" class="view-section hidden">
+            <div class="max-w-3xl mx-auto relative pr-4" id="timeline-container"></div>
+        </section>
+
+        <!-- SECTION: ANALYSIS -->
+        <section id="analysis" class="view-section hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded shadow-sm border-r-8 border-red-600">
+                        <h3 class="font-bold text-xl mb-2 text-red-800">הוכחת שיתוף פעולה</h3>
+                        <p class="text-stone-700 leading-relaxed">
+                            הממצא המרכזי: זמן תגובה של **30 שניות**. במיקום זה ובשעה זו, מדובר בהוכחה חותכת לכך שהניידות המתינו בקרבת מקום לסיום הלינץ'.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded shadow-lg border border-stone-200">
+                    <div class="chart-container">
+                        <canvas id="responseChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: LEGAL (NEW SECTION) -->
+        <section id="legal" class="view-section hidden">
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white border-2 border-stone-300 shadow-2xl p-6 md:p-12 rounded-sm relative">
+                    <!-- Letterhead -->
+                    <div class="border-b-2 border-stone-800 pb-6 mb-8 flex justify-between items-start">
+                        <div>
+                            <h2 class="text-3xl font-black text-stone-900">כתב תביעה בגין נזקי גוף חמורים</h2>
+                            <p class="text-stone-500 font-bold">לאון יעקובוב נגד: אמיר/טבי, מישה, ומשטרת ישראל (חשד למחדל מכוון)</p>
+                        </div>
+                        <div class="text-left font-mono text-sm">
+                            <p>תיק מס': LY-2026-BTY</p>
+                            <p>תאריך: 23.01.2026</p>
+                        </div>
+                    </div>
+
+                    <!-- Medical Damages Grid -->
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold bg-stone-800 text-white px-4 py-2 mb-4">1. נזקים רפואיים מתועדים</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-red-50 p-4 border-r-4 border-red-600">
+                                <h4 class="font-bold text-red-800">עמוד שדרה</h4>
+                                <p class="text-sm">שבירת חוליות בגב. פגיעה עצבית פוטנציאלית ומוגבלות תנועה לצמיתות.</p>
+                            </div>
+                            <div class="bg-red-50 p-4 border-r-4 border-red-600">
+                                <h4 class="font-bold text-red-800">גולגולת</h4>
+                                <p class="text-sm">שברים בעצמות הראש כתוצאה ממכות אלות וברזלים. חשד לנזק מוחי.</p>
+                            </div>
+                            <div class="bg-red-50 p-4 border-r-4 border-red-600">
+                                <h4 class="font-bold text-red-800">ארובת העין</h4>
+                                <p class="text-sm">שברים בעצמות ארובת העין. סכנת פגיעה בראייה ועיוות פנים תמידי.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compensation Estimation -->
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold bg-stone-800 text-white px-4 py-2 mb-4">2. הערכת פיצויים (ללא פשרות)</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-right border-collapse">
+                                <thead>
+                                    <tr class="bg-stone-100 border-b-2 border-stone-300">
+                                        <th class="p-3">ראש נזק</th>
+                                        <th class="p-3">תיאור</th>
+                                        <th class="p-3">פיצוי מינימלי</th>
+                                        <th class="p-3">פיצוי מקסימלי</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr class="border-b border-stone-200">
+                                        <td class="p-3 font-bold">כאב וסבל</td>
+                                        <td class="p-3 text-stone-600">פגיעה רב-מערכתית, ניתוחים ושיקום</td>
+                                        <td class="p-3">₪450,000</td>
+                                        <td class="p-3">₪800,000+</td>
+                                    </tr>
+                                    <tr class="border-b border-stone-200">
+                                        <td class="p-3 font-bold">הפסד כושר השתכרות</td>
+                                        <td class="p-3 text-stone-600">נכות לצמיתות, אובדן הכנסה עתידית</td>
+                                        <td class="p-3">₪1,200,000</td>
+                                        <td class="p-3">₪2,500,000+</td>
+                                    </tr>
+                                    <tr class="border-b border-stone-200">
+                                        <td class="p-3 font-bold">עזרת צד ג'</td>
+                                        <td class="p-3 text-stone-600">ליווי סיעודי ושיקומי צמוד</td>
+                                        <td class="p-3">₪300,000</td>
+                                        <td class="p-3">₪650,000</td>
+                                    </tr>
+                                    <tr class="border-b border-stone-200">
+                                        <td class="p-3 font-bold">הוצאות רפואיות</td>
+                                        <td class="p-3 text-stone-600">טיפולים, תרופות והתאמת דיור</td>
+                                        <td class="p-3">₪150,000</td>
+                                        <td class="p-3">₪400,000</td>
+                                    </tr>
+                                    <tr class="bg-red-600 text-white font-black text-lg">
+                                        <td class="p-3">סה"כ תביעה</td>
+                                        <td class="p-3 italic">לא כולל פיצויים עונשיים</td>
+                                        <td class="p-3">₪2,100,000</td>
+                                        <td class="p-3">₪4,350,000+</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Final Demand -->
+                    <div class="bg-stone-50 border-2 border-dashed border-stone-400 p-6 rounded">
+                        <h4 class="font-black text-red-700 mb-2">דרישה סופית:</h4>
+                        <p class="text-stone-800 leading-relaxed font-bold">
+                            "הנתבעים פעלו מתוך כוונה תחילה להשבית, להטיל מום ולחסל את התובע. לא תתקבל כל פשרה מתחת לסכום המינימום של 2.1 מיליון ש"ח. דרישה להעמדה לדין פלילי בגין ניסיון לרצח וקשירת קשר לביצוע פשע כנגד כל המעורבים."
+                        </p>
+                        <div class="mt-6 flex justify-between items-end">
+                            <div class="h-16 w-48 border-b border-stone-900 flex items-end justify-center text-xs text-stone-400">חתימת העד</div>
+                            <div class="text-4xl">⚖️</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-500 py-8 text-center text-xs">
+        <p>המידע בדוח זה מיועד למטרות תיעוד ומשפט. האמת היא הכוח היחיד.</p>
+    </footer>
+
+    <!-- Logic Script -->
+    <script>
+        const suspectsData = [
+            { role: "האדריכל", name: "אמיר / טבי", details: "תכנון המארב והובלה.", phone: "+972 53-705-6666", icon: "🦅", visual: "כובע שחור, חולצה ירוקה" },
+            { role: "הפיתיון", name: "מישה", details: "הנהג שהוביל למלכודת.", phone: "+972 54-386-0299", icon: "🚕", visual: "נהג המונית" },
+            { role: "התוקף", name: "הפדופיל הקניבליסט", details: "תקיפה ברוטאלית.", phone: "לא ידוע", icon: "🏋️", visual: "תמונות חדר כושר" },
+            { role: "הבקרה", name: "מתעדת", details: "צילום הלינץ'.", phone: "לא ידוע", icon: "📹", visual: "שלחה את הסרטון" }
+        ];
+
+        const timelineData = [
+            { time: "02:15", title: "איסוף", desc: "מישה אוסף את לאון למונית." },
+            { time: "02:29", title: "זירה", desc: "הגעה לרחוב אילת בבת ים." },
+            { time: "02:30", title: "לינץ'", desc: "תקיפה באלות וברזלים. שבירת חוליות וגולגולת." },
+            { time: "02:32:30", title: "ממסד", desc: "הופעת משטרה תוך 30 שניות." }
+        ];
+
+        function renderSuspects() {
+            const grid = document.getElementById('suspects-grid');
+            grid.innerHTML = suspectsData.map(suspect => `
+                <div class="bg-white rounded-lg shadow-sm border border-stone-200 overflow-hidden hover:scale-[1.02] transition-transform">
+                    <div class="bg-stone-800 text-amber-500 p-3 flex justify-between items-center">
+                        <span class="font-bold text-sm">${suspect.role}</span>
+                        <span class="text-xl">${suspect.icon}</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-stone-900 mb-1">${suspect.name}</h3>
+                        <p class="text-stone-600 text-sm mb-4">${suspect.details}</p>
+                        ${suspect.phone !== "לא ידוע" ? `<div class="bg-red-50 p-2 text-red-700 font-mono text-center rounded">${suspect.phone}</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderTimeline() {
+            const container = document.getElementById('timeline-container');
+            container.innerHTML = timelineData.map(item => `
+                <div class="relative flex items-start mb-8">
+                    <div class="timeline-connector"></div>
+                    <div class="z-10 w-24 pl-4 pt-1 font-mono text-amber-600 font-bold">${item.time}</div>
+                    <div class="flex-grow bg-white p-4 rounded shadow-sm border border-stone-200 ml-4">
+                        <h3 class="font-bold text-stone-800">${item.title}</h3>
+                        <p class="text-stone-600 text-sm">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function navigate(viewId) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById(`nav-${viewId}`).classList.add('active');
+            document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(viewId).classList.remove('hidden');
+            if (viewId === 'analysis') initChart();
+        }
+
+        let responseChart = null;
+        function initChart() {
+            if (responseChart) return;
+            const ctx = document.getElementById('responseChart').getContext('2d');
+            responseChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['ממוצע הגעה (דקות)', 'הגעה באירוע (דקות)'],
+                    datasets: [{
+                        label: 'זמן תגובה',
+                        data: [12, 0.5],
+                        backgroundColor: ['rgba(168, 162, 158, 0.5)', 'rgba(220, 38, 38, 0.9)'],
+                        borderColor: ['#a8a29e', '#dc2626'],
+                        borderWidth: 1
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSuspects();
+            renderTimeline();
+            navigate('overview');
+        });
+    </script>
+</body>
+</html>
