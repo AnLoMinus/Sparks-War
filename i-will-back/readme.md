@@ -61,4 +61,4 @@
 https://github.com/user-attachments/assets/0b0d243d-d243-45bf-956f-72d7932dcb26
 
 
-- גיבוי: https://drive.google.com/file/d/1WAmB_LkxcMEW7UuDkZExLetHLDTqnmL4/view?usp=sharing
+- גיבוי גוגל: https://drive.google.com/drive/folders/1m_lBCQHtkezNwo2BgDkCZTIT7LnD-Vy2?usp=sharing
