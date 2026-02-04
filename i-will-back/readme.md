@@ -18,6 +18,10 @@
 - <img width="1237" height="1050" alt="image" src="https://github.com/user-attachments/assets/ce1b9c6f-ae9a-4112-91da-0e1265eeca4b" />
 - <img width="1245" height="1050" alt="image" src="https://github.com/user-attachments/assets/ed761cd7-2761-4b8e-ab21-2bc12da14f95" />
 - <img width="1241" height="1050" alt="image" src="https://github.com/user-attachments/assets/1b125a73-d1cf-4063-8c5e-62e651bf1e53" />
+- <img width="1239" height="1050" alt="image" src="https://github.com/user-attachments/assets/9395aabb-453c-4106-9f11-43cde8ee2067" />
+
+
+
 
 
 2. **מישה (הסוס הטרויאני / משת"פ):**  
