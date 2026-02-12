@@ -1,8 +1,9 @@
 <div dir="rtl">
-  
-![bg](https://github.com/user-attachments/assets/fd66458e-3f71-46d3-ad8b-7d7bed7440b9)
 
+  
 # ✨ מלחמת הניצוצות (War of the Sparks)
+
+![bg](https://github.com/user-attachments/assets/fd66458e-3f71-46d3-ad8b-7d7bed7440b9)
 
 ## 📖 תקציר הפרויקט
 
